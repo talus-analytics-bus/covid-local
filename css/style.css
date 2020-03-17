@@ -102,7 +102,7 @@
          url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-400.svg') format('svg');
     font-weight: 400;
     font-style: normal;
-
+    font-display: swap;
 }
 
 
@@ -132,7 +132,7 @@
          url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500.svg') format('svg');
     font-weight: 500;
     font-style: normal;
-
+    font-display: swap;
 }
 
 
@@ -147,7 +147,7 @@
          url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500i.svg') format('svg');
     font-weight: 500;
     font-style: italic;
-
+    font-display: swap;
 }
 
 
@@ -192,7 +192,7 @@
          url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-700.svg') format('svg');
     font-weight: 700;
     font-style: normal;
-
+    font-display: swap;
 }
 
 
@@ -220,7 +220,7 @@
          url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-800.svg') format('svg');
     font-weight: 800;
     font-style: normal;
-
+    font-display: swap;
 }
 
 
