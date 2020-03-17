@@ -162,7 +162,7 @@ nav a:hover {
     flex-direction: column;
     margin: auto;
     margin-top: 30px;
-    max-width: 90%;
+    max-width: 80%;
 }
 
 .expanding-boxes section {
@@ -198,7 +198,7 @@ nav a:hover {
     height: 2em;
     width: 3.5em;
     text-align: center;
-    padding-left: 1.7em;
+    padding-left: 1.8em;
     padding-right: .5em;
     padding-top: .225em;
     font-weight: 700;
@@ -231,7 +231,7 @@ nav a:hover {
 
 .expanding-boxes h3 {
     font-size: 1.2rem;
-    margin-top: 1rem;
+    margin-top: 0rem;
 }
 
 .expanding-boxes p {
@@ -239,6 +239,108 @@ nav a:hover {
     font-weight: 500;
 }
 
-.expand-area {
-    margin-top: 1rem;
+.expand-hider {
+    height: 0px;
+    overflow: hidden;
+    transition: .25s ease;
+    margin: 2rem -1rem 0 -1rem;
+    padding: 0rem 1rem;
 }
+
+.background {
+    margin: 1rem -1rem;
+    padding: .5rem 1rem;
+}
+
+.background.white {
+    background-color: white;
+}
+
+.background.green {
+    background-color: #DBEBE8;
+    border: 1px solid rgb(144, 144, 144);
+}
+
+.background h3 {
+    color: #409385;
+    margin-bottom: 1rem;
+}
+
+.background li {
+    padding: .5rem 0;
+}
+
+.background > li,
+.background > ol {
+    position: relative;
+    margin-left: 60px;
+}
+
+.expand-area > ol {
+    display: block;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+    padding-bottom: 1rem;
+}
+
+.expanding-boxes li {
+    position: relative;
+}
+
+.background li.header {
+    font-style: italic;
+}
+
+.background > li:before,
+.background > ol > li:before {
+    position: absolute;
+    display: inline-block;
+    content: '';
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: white;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+}
+
+.background > li:before {
+    left: -60px;
+}
+
+.background > ol > li:before {
+    left: -100px;
+}
+
+.background > li:after,
+.background > ol > li:after {
+    position: absolute;
+    display: inline-block;
+    content: '';
+    top: 1px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.background > li:after {
+    left: -60px;
+    border: .5px solid darkgrey;
+}
+
+.background > ol > li:after {
+    left: -100px;
+    border: .5px solid lightgrey;
+}
+
+.background li.header:before,
+.background > li:first-of-type:after,
+.background > ol > li:first-of-type:after {
+    content: none;
+}
+
+
+
+
+

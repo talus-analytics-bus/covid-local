@@ -48,10 +48,9 @@
 			<div class="first-section">
 				<div class="expand-listener">
 					<h2>OVERVIEW</h2>
-					<div class="number">10</div>
+					<!-- <div class="number">10</div> -->
 					<h1>Context and purpose of tool</h1>
 				</div>
-				<button aria-label="Expand Details" class="expand-button"></button>
 			</div>
 		</section>
 		<section>
@@ -61,15 +60,82 @@
 				<h1>Activate an Emergency Operations Center (EOC) and establish a whole-of-community incident management structure</h1>
 				<p>Controlling a pandemic outbreak is a multi-disciplinary and whole-of-society endeavor; it requires engagement and coordination among government leaders, public health officials, civil society and religious leaders, the business community, academia, and others. The official response, and public reaction, is likely to have other community impacts such as supply chain disruption and public safety workforce shortages. Additionally, the EOC must begin to plan for potential attrition of first responders by establishing a continuity of operations plan to replace and supplement critical personnel.</p>
 				<p>A best practice from previous novel outbreak responses is to establish an EOC to host a whole-of-community incident management structure, leveraging existing plans and organizations where possible, that brings these domains together to streamline communication, planning, decision-making, and operational coordination. Ensure EOC is effectively communicating and aligned with higher-level EOC processes and decision cycles through liaison exchange whenever possible.</p>
-				<button aria-label="Expand Details" class="expand-button"></button>
 			</div>
-			<div class="expand-area">
-				<h3>Immediate Priorities</h3>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam maxime facilis quisquam deleniti ducimus numquam hic alias architecto unde voluptatibus veritatis officia quod, eius nostrum qui cum eaque, expedita consectetur!</p>
-				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam maxime facilis quisquam deleniti ducimus numquam hic alias architecto unde voluptatibus veritatis officia quod, eius nostrum qui cum eaque, expedita consectetur!</p>
+			<div class="expand-hider">
+				<div class="expand-area">
+					<ol>
+						<div class="white background">
+							<h3>Immediate Priorities</h3>
+							<li>Have you activated your emergency plans and emergency operations centers to assist with coordination?</li>
+							<li class="header">Have you designated or appointed a response coordinator with:</li>
+							<ol type="a">
+								<li>The authority to convene community and business leaders and officials across all departments and agencies?</li>
+								<li>The authority to bring issues directly to you?</li>
+								<li>The ability to connect with other state, local, and federal officials in charge of the response?</li>
+							</ol>
+						</div>
+						<div class="green background">
+							<h3>Phase 0</h3>
+							<li>Have you defined the goals for the response and values you want to preserve in the response?</li>
+							<li class="header">Are key governmental and non-governmental partners represented in the EOC and have they shared their continuity/contingency planning documents with the EOC?</li>
+							<ol>
+								<li>Hospitals, public health, EMS and other key elements of the health and medical sector</li>
+								<li>Civil society groups, religious institutions, and other community leaders</li>
+								<li>Appropriate representation from all departments and agencies</li>
+							</ol>
+							<li>Linkages to technical advisory experts to keep abreast of emerging research</li>
+							<li>Is there a clearly delineated process by which these ESF-8 stakeholders advance resource requests to the jurisdictional EOC?</li>
+							<li>Do you have a Continuity of Government plan to ensure continued essential services?</li>
+						</div>
+					</ol>
+				</div>
+			</div>
+		</section>
+		<section>
+			<div class="first-section">
+				<h2>KEY ACTION #1</h2>
+				<div class="number">2</div>
+				<h1>Activate an Emergency Operations Center (EOC) and establish a whole-of-community incident management structure</h1>
+				<p>Controlling a pandemic outbreak is a multi-disciplinary and whole-of-society endeavor; it requires engagement and coordination among government leaders, public health officials, civil society and religious leaders, the business community, academia, and others. The official response, and public reaction, is likely to have other community impacts such as supply chain disruption and public safety workforce shortages. Additionally, the EOC must begin to plan for potential attrition of first responders by establishing a continuity of operations plan to replace and supplement critical personnel.</p>
+				<p>A best practice from previous novel outbreak responses is to establish an EOC to host a whole-of-community incident management structure, leveraging existing plans and organizations where possible, that brings these domains together to streamline communication, planning, decision-making, and operational coordination. Ensure EOC is effectively communicating and aligned with higher-level EOC processes and decision cycles through liaison exchange whenever possible.</p>
+			</div>
+			<div class="expand-hider">
+				<div class="expand-area">
+					<h3>Immediate Priorities</h3>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam maxime facilis quisquam deleniti ducimus numquam hic alias architecto unde voluptatibus veritatis officia quod, eius nostrum qui cum eaque, expedita consectetur!</p>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam maxime facilis quisquam deleniti ducimus numquam hic alias architecto unde voluptatibus veritatis officia quod, eius nostrum qui cum eaque, expedita consectetur!</p>
+				</div>
 			</div>
 		</section>
 	</article>
 </body>
+
+<script>
+	const expandButton = '<button aria-label="Expand Details" class="expand-button"></button>'
+
+	Array.from(document.querySelectorAll('.expanding-boxes section'))
+		.map(section => {
+			if (section.querySelectorAll('.expand-hider').length > 0) {
+				section.children[0].innerHTML += expandButton
+			}
+		})
+
+	Array.from(document.querySelectorAll('.expand-button'))
+		.map(button => {
+			button.addEventListener('click', event => {
+				const button = event.target;
+				const hider = button.parentElement.parentElement.children[1]
+				const content = hider.children[0]
+				if (button.getAttribute('aria-label') === "Expand Details") {
+					button.setAttribute('aria-label', 'Collapse Details')
+					hider.style.height = content.offsetHeight + 'px';
+				} else {
+					button.setAttribute('aria-label', 'Expand Details')
+					hider.style.height = '0px'
+				}
+			})
+		})
+</script>
+
 </html>
 
