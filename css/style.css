@@ -706,6 +706,22 @@ a.introduction-download:hover {
     background-color: #8CBEB6;
 }
 
+.phase.two {
+    border-top: #66A99D 15px solid;
+}
+
+.phase.two > .phase-description > div {
+    background-color: #66A99D;
+}
+
+.phase.three {
+    border-top: #409385 15px solid;
+}
+
+.phase.three > .phase-description > div {
+    background-color: #409385;
+}
+
 .phase h3 {
     color: #273349;
     font-size: .8rem;
