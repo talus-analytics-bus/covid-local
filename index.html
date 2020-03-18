@@ -57,7 +57,7 @@
 						<div class="phase zero">
 							<h3>PHASE</h3>
 							<div class="phase-description">
-								<div>0</div>
+								<div></div>
 								<p>No detected cases </br>No burden on healthcare</p>
 							</div>
 							<li class="header">Have you activated your emergency plans and emergency operations centers to assist with coordination of: </li>
@@ -84,7 +84,7 @@
 						<div class="phase one">
 							<h3>PHASE</h3>
 							<div class="phase-description">
-								<div>1</div>
+								<div></div>
 								<p>Individually detected cases, </br>traceable to know sources of transmission</p>
 							</div>
 							<li>Have you activated your emergency plans and EOCs to assist with coordination? </li>
@@ -110,7 +110,7 @@
 						<div class="phase zero">
 							<h3>PHASE</h3>
 							<div class="phase-description">
-								<div>0</div>
+								<div></div>
 								<p>No detected cases </br>No burden on healthcare</p>
 							</div>
 							<li>Does your response system allow your EOC to receive notice of all cases tested in your community from both public and private health facilities? </li>
@@ -130,7 +130,7 @@
 						<div class="phase one">
 							<h3>PHASE</h3>
 							<div class="phase-description">
-								<div>1</div>
+								<div></div>
 								<p>Individually detected cases, </br>traceable to know sources of transmission</p>
 							</div>
 							<li>Is there a lag time for receiving the laboratory and clinical data and, if so, what is that amount of time?  What actions can be taken to reduce lag time?</li>
@@ -159,7 +159,7 @@
 						<div class="phase zero">
 							<h3>PHASE</h3>
 							<div class="phase-description">
-								<div>0</div>
+								<div></div>
 								<p>No detected cases </br>No burden on healthcare</p>
 							</div>
 							<li class="header">Have you considered local factors,  including the epidemiology of the disease, characteristics of your community, healthcare capacity, and public health capacity, when determining mitigation strategies for: </li>
@@ -189,7 +189,7 @@
 						<div class="phase one">
 							<h3>PHASE</h3>
 							<div class="phase-description">
-								<div>1</div>
+								<div></div>
 								<p>Individually detected cases, </br>traceable to know sources of transmission</p>
 							</div>
 							<li>Do you know the general number of cases in your community?</li>
@@ -204,7 +204,7 @@
 						<div class="phase two">
 							<h3>PHASE</h3>
 							<div class="phase-description">
-								<div>2</div>
+								<div></div>
 								<p>Individually detected cases, </br>traceable to know sources of transmission</p>
 							</div>
 							<li>Has your community established guidance criteria or official limitations on gatherings consistent with current public health guidance (as of this date it is 50 people or above)? </li>
@@ -221,7 +221,7 @@
 						<div class="phase three">
 							<h3>PHASE</h3>
 							<div class="phase-description">
-								<div>3</div>
+								<div></div>
 								<p>Individually detected cases, </br>traceable to know sources of transmission</p>
 							</div>
 							<li>Is there a lag time for receiving the laboratory and clinical data and, if so, what is that amount of time?  What actions can be taken to reduce lag time?</li>
@@ -308,6 +308,7 @@
 	Array.from(document.querySelectorAll('.expand-area li'))
 		.map(item => {
 			item.addEventListener('click', event => {
+				console.log(event.clientX)
 				if (event.clientX < 100) {
 					alert('To fill out the checklist, please download it here: (this alert is a placeholder for a modal popup I will build in a bit...)')
 				}
