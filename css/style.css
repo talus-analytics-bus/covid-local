@@ -682,6 +682,7 @@ a.introduction-download:hover {
     padding: 0rem 1rem;
 }
 
+
 .phase {
     margin: .5rem -1rem;
     padding: .5rem 1rem;
@@ -689,11 +690,11 @@ a.introduction-download:hover {
 }
 
 .phase.one {
-    border-left: darkslategray 15px solid;
+    border-left: #CFE4E0 15px solid;
 }
 
 .phase.two {
-    border-left: darkslategray 15px solid;
+    border-left: #8CBEB6 15px solid;
 }
 
 .phase h3 {
@@ -727,6 +728,7 @@ a.introduction-download:hover {
     margin-inline-end: 0px;
     padding-inline-start: 0px;
     padding-bottom: 1rem;
+    margin-top: 1rem;
 }
 
 .expanding-boxes li {
