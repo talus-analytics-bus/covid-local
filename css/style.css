@@ -682,35 +682,35 @@ a.introduction-download:hover {
     padding: 0rem 1rem;
 }
 
-.background {
-    margin: 1rem -1rem;
+.phase {
+    margin: .5rem -1rem;
     padding: .5rem 1rem;
-}
-
-.background.white {
     background-color: white;
 }
 
-.background.green {
-    background-color: #DBEBE8;
-    border: 1px solid #409385;
+.phase.one {
+    border-left: darkslategray 15px solid;
 }
 
-.background h3 {
+.phase.two {
+    border-left: darkslategray 15px solid;
+}
+
+.phase h3 {
     color: #409385;
     margin-bottom: 1rem;
 }
 
-.background li {
+.phase li {
     padding: .5rem 0;
 }
 
-.background > ol {
+.phase > ol {
     list-style-type: lower-alpha;
 }
 
-.background > li,
-.background > ol {
+.phase > li,
+.phase > ol {
     position: relative;
     margin-left: 60px;
 }
@@ -733,12 +733,12 @@ a.introduction-download:hover {
     position: relative;
 }
 
-.background li.header {
+.phase li.header {
     font-style: italic;
 }
 
-.background > li:before,
-.background > ol > li:before {
+.phase > li:before,
+.phase > ol > li:before {
     position: absolute;
     display: inline-block;
     content: '';
@@ -749,16 +749,16 @@ a.introduction-download:hover {
     border-radius: 5px;
 }
 
-.background > li:before {
+.phase > li:before {
     left: -60px;
 }
 
-.background > ol > li:before {
+.phase > ol > li:before {
     left: -100px;
 }
 
-.background > li:after,
-.background > ol > li:after {
+.phase > li:after,
+.phase > ol > li:after {
     position: absolute;
     display: inline-block;
     content: '';
@@ -767,19 +767,19 @@ a.introduction-download:hover {
     border-radius: 5px;
 }
 
-.background > li:after {
+.phase > li:after {
     left: -60px;
     border: .5px solid darkgrey;
 }
 
-.background > ol > li:after {
+.phase > ol > li:after {
     left: -100px;
     border: .5px solid lightgrey;
 }
 
-.background li.header:before,
-.background > li:first-of-type:after,
-.background > ol > li:first-of-type:after {
+.phase li.header:before,
+.phase > li:first-of-type:after,
+.phase > ol > li:first-of-type:after {
     content: none;
 }
 
