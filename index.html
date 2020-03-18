@@ -175,6 +175,15 @@
 				}
 			})
 		})
+
+	Array.from(document.querySelectorAll('.expand-area li'))
+		.map(item => {
+			item.addEventListener('click', event => {
+				if (event.clientX < 100) {
+					alert('To fill out the checklist, please download it here: (this alert is a placeholder for a modal popup I will build in a bit...)')
+				}
+			})
+		})
 </script>
 
 </html>

@@ -746,7 +746,7 @@ a.introduction-download:hover {
 }
 
 .phase li.header {
-    font-style: italic;
+    font-style: normal;
 }
 
 .phase > li:before,
