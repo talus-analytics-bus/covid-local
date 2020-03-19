@@ -342,7 +342,7 @@ body {
 
 /* * { border: .5px solid black !important; } */
 
-nav {
+nav.main-nav {
     position: relative;
     top: 0;
     display: flex;
@@ -356,7 +356,28 @@ nav {
     z-index: 3;
 }
 
-nav:after {
+nav.document-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0px;
+    background-color: white;
+    z-index: 2;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    transition: .25s height ease;
+}
+
+nav.document-nav h1 {
+    margin-left: 1rem;
+    font-size: 1.2rem;
+}
+
+nav.document-nav:after,
+nav.main-nav:after {
     display: block;
     position: absolute;
     bottom: 0;
@@ -438,12 +459,12 @@ nav:after {
     position: relative;
 }
 
-.navbar-right li:last-of-type:before {
+/* .navbar-right li:last-of-type:before {
     position: relative;
     content: '';
     border-right: 1px solid rgba(38,50,74, .5);
     margin: 0 1rem;
-}
+} */
 
 @media only print {
     .navbar-right {
@@ -605,6 +626,10 @@ a.introduction-download:hover {
     width: 1rem;
 }
 
+.expanding-boxes > h3 {
+    margin-bottom: .5rem;
+}
+
 .first-section {
     position: relative;
     padding-right: 50px;
@@ -682,10 +707,10 @@ a.introduction-download:hover {
     padding: 0rem 1rem;
 }
 
-
+.resources,
 .phase {
     margin: .25rem -1rem;
-    padding: .5rem 1rem;
+    padding: .5rem 1rem 2rem 1rem;
     background-color: white;
     /* box-shadow: 0px 0px 15px -2px rgba(0,0,0,0.7); */
 }
@@ -753,7 +778,6 @@ a.introduction-download:hover {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
     padding-inline-start: 0px;
-    padding-bottom: 1rem;
     margin-top: 1rem;
 }
 
@@ -833,6 +857,22 @@ a.introduction-download:hover {
     margin: 0 0 1rem 1rem;
 }
 
+.resources {
+    margin-top: -.25rem;
+    padding-bottom: 1rem;
+    border-top: 1px solid #999999;
+}
+
+.resources h4 {
+    font-size: .8rem;
+    margin: .5rem 0;
+}
+
+.resources a {
+    display: block;
+    padding: .5rem 0;
+    color: #409385;
+}
 
 
 

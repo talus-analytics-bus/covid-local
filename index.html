@@ -8,19 +8,23 @@
 	<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-   <nav>
+   <nav class="main-nav">
 		<div class="navbar-logo"></div>
 		<div class="navbar-left-text">
 			<h1>FLATTEN THE CURVE</h1>
 			<h2>A Frontline Guide for Local Decision-Makers</h2>
 		</div>
-		<!-- <div class="navbar-right">
+		<div class="navbar-right">
 			<ul>
-				<li><a href="#">Resources</a></li>
-				<li><a href="#">Blog</a></li>
+				<!-- <li><a href="#">Resources</a></li> -->
+				<!-- <li><a href="#">Blog</a></li> -->
 				<li><a href="#">Contact</a></li>
 			</ul>
-		</div> -->
+		</div>
+	</nav>
+	<nav class="document-nav">
+		<!-- <div class="number">1</div>
+		<h1>KEY ACTION #1</h1> -->
 	</nav>
 	<header class="introduction">
 		<div class="left-col">
@@ -30,7 +34,8 @@
 			<button class="read-more">Read the overview about the guide</button>
 		</div>
 		<div class="right-col">
-			FLATTEN THE CURVE FRONTLINE GUIDE
+			<!-- FLATTEN THE CURVE FRONTLINE GUIDE -->
+			DOWNLOAD AND PRINT THE CHECKLIST
 			<a href="#" class="introduction-download">
 				Download the guide
 				<svg version="1.1" x="0px" y="0px" viewBox="0 0 89 89" style="enable-background:new 0 0 89 89;" xml:space="preserve">
@@ -43,6 +48,7 @@
 		</div>
 	</header>
 	<article class="expanding-boxes">
+	<h3>Key actions for local decision makers</h3>
 		<section>
 			<div class="first-section">
 				<h2>KEY ACTION #1</h2>
@@ -94,6 +100,12 @@
 							<li>Have you developed a process to maintain a common operating picture during a prolonged event?</li>
 						</div>
 					</ol>
+					<div class="resources">
+						<h4>RESOURCES</h4>
+						<a href="">National Response Framework, Fourth Edition</a>
+						<a href="">Incident Command System Primer for Public Health and Medical Professionals: Appendix B: Incident</a>
+						<a href="">Command System Primer for Public Health and Medical Professionals</a>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -288,7 +300,12 @@
 				const button = event.target;
 				const hider = button.parentElement.parentElement.children[1]
 				const content = hider.children[0]
+				const documentNav = document.querySelector('.document-nav')
+
 				if (button.getAttribute('aria-label') === "Expand Details") {
+
+					// if (!allSectionsCollapsed()) { toggleDocumentNav() };
+
 					button.setAttribute('aria-label', 'Collapse Details')
 					hider.style.height = content.offsetHeight + 'px';
 					setTimeout(() => {
@@ -296,6 +313,11 @@
 					}, 250)
 				} else {
 					button.setAttribute('aria-label', 'Expand Details')
+
+					// documentNav.style.height === '0px' & !allSectionsCollapsed()
+					// 	? documentNav.style.height = '5rem'
+					// 	: documentNav.style.height = '0px';
+
 					hider.style.height = content.offsetHeight + 'px';
 					window.requestAnimationFrame(() => {
 						console.log()
@@ -305,15 +327,68 @@
 			})
 		})
 
-	Array.from(document.querySelectorAll('.expand-area li'))
-		.map(item => {
-			item.addEventListener('click', event => {
-				console.log(event.clientX)
-				if (event.clientX < 100) {
-					alert('To fill out the checklist, please download it here: (this alert is a placeholder for a modal popup I will build in a bit...)')
-				}
-			})
-		})
+	// Array.from(document.querySelectorAll('.expand-area li'))
+	// 	.map(item => {
+	// 		item.addEventListener('click', event => {
+	// 			console.log(event.clientX)
+	// 			console.log(event.target)
+	// 			if (event.clientX < 100) {
+	// 				alert('To fill out the checklist, please download it here: (this alert is a placeholder for a modal popup I will build in a bit...)')
+	// 			}
+	// 		})
+	// 	})
+
+	const updateDocumentNav = (number) => {
+		const documentNav = document.querySelector('.document-nav')
+		documentNav.innerHTML = 
+			`<div class="number">${number}</div>
+			<h1>KEY ACTION #${number}</h1>`
+	};
+
+	let onScreen = [];
+	const sectionObserver = new IntersectionObserver((entries, observer) => {
+		const newOnScreen = entries
+			.filter(entry => entry.isIntersecting)
+			.map(entry => entry.target.querySelector('.number').innerHTML);
+
+		const newOffScreen = entries
+			.filter(entry => !entry.isIntersecting)
+			.map(entry => entry.target.querySelector('.number').innerHTML);
+
+		onScreen = onScreen
+			.concat(newOnScreen)
+			.filter(section => !newOffScreen.includes(section))
+			.sort();
+
+		updateDocumentNav(onScreen[0]);
+	})
+
+	Array.from(document.querySelectorAll('.expanding-boxes section'))
+		.map(section => { sectionObserver.observe(section) });
+
+	// This isn't working as expected due to asychronous event handling...
+	const allSectionsCollapsed = () => {
+		return Array.from(document.querySelectorAll('.expand-button'))
+			.filter(button => button
+				.getAttribute('aria-label') === 'Collapse Details')
+			.length < 1
+	}
+
+	const toggleDocumentNav = () => {
+		const documentNav = document.querySelector('.document-nav')
+		documentNav.style.height === '0px'
+			? documentNav.style.height = '5rem'
+			: documentNav.style.height = '0px';	
+	}
+
+	const headerObserver = new IntersectionObserver((entries, observer) => {
+		toggleDocumentNav()
+	});
+
+	headerObserver.observe(document.querySelector('.introduction'))
+
+
+
 </script>
 
 </html>
