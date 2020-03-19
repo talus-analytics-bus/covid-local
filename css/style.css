@@ -479,10 +479,12 @@ nav a {
     padding: .4rem 1rem .5rem 1rem;
     color: #26324a;
     border-radius: 3px;
+    transition: .25s background-color ease;
 }
 
 nav a:hover {
     background-color: rgba(64,147,133, .125);
+    transition: .25s background-color ease;
 }
 
 
@@ -622,12 +624,45 @@ a.introduction-download:hover {
     position: absolute;
     left: 0; 
     top: 0; 
-    height: 5rem;
+    /* bottom: 0; */
+    height: 8rem;
     width: 1rem;
 }
 
 .expanding-boxes > h3 {
     margin-bottom: .5rem;
+}
+
+.expanding-boxes-title {
+    display: flex;
+    /* flex-flow: row wrap; */
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+}
+
+.outbreak-phases-button {
+    border: none;
+	cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 51 103' style='enable-background:new 0 0 51 103;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:%23666666;stroke-miterlimit:10;%7D .st1%7Bfill:%23666E7E;stroke:%23666666;stroke-width:0.1301;stroke-miterlimit:10;%7D .st2%7Bfill:%23868D99;stroke:%23666666;stroke-width:0.1301;stroke-miterlimit:10;%7D .st3%7Bfill:%23409385;stroke:%23666666;stroke-width:0.1301;stroke-miterlimit:10;%7D .st4%7Bfill:%2366A99D;stroke:%23666666;stroke-width:0.1301;stroke-miterlimit:10;%7D .st5%7Bfill:%23BCD9D4;stroke:%23666666;stroke-width:0.1301;stroke-miterlimit:10;%7D .st6%7Bfill:%23CFE4E0;stroke:%23666666;stroke-width:0.1301;stroke-miterlimit:10;%7D .st7%7Bfill:%23273349;stroke:%23666666;stroke-width:0.1301;stroke-miterlimit:10;%7D%0A%3C/style%3E%3Cpath class='st0' d='M44.45,102.5H6.54c-3.32,0-6.04-2.72-6.04-6.04V6.54c0-3.32,2.72-6.04,6.04-6.04h37.91 c3.32,0,6.04,2.72,6.04,6.04v89.91C50.5,99.78,47.78,102.5,44.45,102.5z'/%3E%3Cg%3E%3Cpath class='st1' d='M13.9,70.12h23.7c1.03,0,1.87,0.84,1.87,1.87v5.59c0,1.03-0.84,1.87-1.87,1.87H13.9 c-1.03,0-1.87-0.84-1.87-1.87V72C12.02,70.96,12.86,70.12,13.9,70.12z'/%3E%3Cpath class='st2' d='M13.9,58.28h23.7c1.03,0,1.87,0.84,1.87,1.87v5.59c0,1.03-0.84,1.87-1.87,1.87H13.9 c-1.03,0-1.87-0.84-1.87-1.87v-5.59C12.02,59.12,12.86,58.28,13.9,58.28z'/%3E%3Cpath class='st3' d='M13.9,46.27h23.7c1.03,0,1.87,0.84,1.87,1.87v5.59c0,1.03-0.84,1.87-1.87,1.87H13.9 c-1.03,0-1.87-0.84-1.87-1.87v-5.59C12.02,47.11,12.86,46.27,13.9,46.27z'/%3E%3Cpath class='st4' d='M13.9,34.25h23.7c1.03,0,1.87,0.84,1.87,1.87v5.59c0,1.03-0.84,1.87-1.87,1.87H13.9 c-1.03,0-1.87-0.84-1.87-1.87v-5.59C12.02,35.09,12.86,34.25,13.9,34.25z'/%3E%3Cpath class='st5' d='M13.9,22.24h23.7c1.03,0,1.87,0.84,1.87,1.87v5.59c0,1.03-0.84,1.87-1.87,1.87H13.9 c-1.03,0-1.87-0.84-1.87-1.87v-5.59C12.02,23.08,12.86,22.24,13.9,22.24z'/%3E%3Cpath class='st6' d='M13.9,9.97h23.7c1.03,0,1.87,0.84,1.87,1.87v5.59c0,1.03-0.84,1.87-1.87,1.87H13.9 c-1.03,0-1.87-0.84-1.87-1.87v-5.59C12.02,10.81,12.86,9.97,13.9,9.97z'/%3E%3Cpath class='st7' d='M37.59,91.47H13.9c-1.03,0-1.87-0.84-1.87-1.87v-5.59c0-1.03,0.84-1.87,1.87-1.87h23.7 c1.03,0,1.87,0.84,1.87,1.87v5.59C39.47,90.63,38.63,91.47,37.59,91.47z'/%3E%3C/g%3E%3C/svg%3E%0A");
+    width: 10rem;
+    height: 4rem;
+    flex-shrink: 0;
+    padding: .5rem;
+    margin-right: -.45rem;
+    padding-right: 2.5rem;
+    background-size: 2.5rem 3rem;
+    background-repeat: no-repeat;
+    background-position: right;
+    text-align: right;
+    background-color: rgba(64,147,133, 0);
+    transition: .25s background-color ease;
+    border-radius: 5px;
+}
+
+.outbreak-phases-button:hover {
+    background-color: rgba(64,147,133, .125);
+    transition: .25s background-color ease;
 }
 
 .first-section {
@@ -656,9 +691,18 @@ a.introduction-download:hover {
     background-position: calc(100% + 3.5rem) .55rem;
     padding-right: 3rem;
     padding-left: 5px;
+    padding-bottom: 5px;
     margin-left: -5px;
     margin-top: 1rem;
     color: #38685E;
+    border-radius: 5px;
+    background-color: rgba(64,147,133, 0);
+    transition: .25s background-color ease;
+}
+
+.read-more:hover {
+    background-color: rgba(64,147,133, .125);
+    transition: .25s background-color ease;
 }
 
 .expand-button {
@@ -873,7 +917,3 @@ a.introduction-download:hover {
     padding: .5rem 0;
     color: #409385;
 }
-
-
-
-

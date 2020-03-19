@@ -48,7 +48,19 @@
 		</div>
 	</header>
 	<article class="expanding-boxes">
-	<h3>Key actions for local decision makers</h3>
+		<div class="expanding-boxes-title">
+			<h3>Key actions for local decision makers</h3>
+			<button class="outbreak-phases-button">view outbreak phases</button>
+			<!-- <div class="outbreak-phases-container">
+				<div class="outbreak-phases">
+					<table>
+						<tr>
+
+						</tr>
+					</table>
+				</div>
+			</div> -->
+		</div>
 		<section>
 			<div class="first-section">
 				<h2>KEY ACTION #1</h2>
@@ -294,36 +306,48 @@
 			}
 		})
 
+	const toggleExpandHider = (hider, button) => {
+		const content = hider.children[0]
+		if (button.getAttribute('aria-label') === "Expand Details") {
+			button.setAttribute('aria-label', 'Collapse Details')
+			hider.style.height = content.offsetHeight + 'px';
+			setTimeout(() => {
+				hider.style.height = 'auto';
+			}, 250)
+		} else {
+			button.setAttribute('aria-label', 'Expand Details')
+			hider.style.height = content.offsetHeight + 'px';
+
+			// setTimeout zero to kick it to the end of the callback queue...
+			// I feel like requestAnimationFrame should be enough here?
+			setTimeout(() => {
+				// window.requestAnimationFrame(() => {
+					hider.style.height = '0px';
+				// });
+			}, 0)
+		}
+	}
+
 	Array.from(document.querySelectorAll('.expand-button'))
 		.map(button => {
 			button.addEventListener('click', event => {
+				event.stopPropagation();
 				const button = event.target;
 				const hider = button.parentElement.parentElement.children[1]
-				const content = hider.children[0]
-				const documentNav = document.querySelector('.document-nav')
+				toggleExpandHider(hider, button)
+			})
+		})
 
-				if (button.getAttribute('aria-label') === "Expand Details") {
 
-					// if (!allSectionsCollapsed()) { toggleDocumentNav() };
+	Array.from(document.querySelectorAll('.first-section'))
+		.map(section => {
+			section.addEventListener('click', event => {
+				const hider = event.target.parentElement.querySelector('.expand-hider')
+					? event.target.parentElement.querySelector('.expand-hider')
+					: event.target.parentElement.parentElement.querySelector('.expand-hider')
 
-					button.setAttribute('aria-label', 'Collapse Details')
-					hider.style.height = content.offsetHeight + 'px';
-					setTimeout(() => {
-						hider.style.height = 'auto';
-					}, 250)
-				} else {
-					button.setAttribute('aria-label', 'Expand Details')
-
-					// documentNav.style.height === '0px' & !allSectionsCollapsed()
-					// 	? documentNav.style.height = '5rem'
-					// 	: documentNav.style.height = '0px';
-
-					hider.style.height = content.offsetHeight + 'px';
-					window.requestAnimationFrame(() => {
-						console.log()
-						hider.style.height = '0px';
-					});
-				}
+				const button = hider.parentElement.querySelector('.expand-button')
+				toggleExpandHider(hider, button)
 			})
 		})
 
