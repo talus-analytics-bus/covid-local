@@ -71,7 +71,7 @@
 		</div>
 		<section>
 			<div class="first-section">
-				<a id="action-1"></a>
+				<a id="action-1" class="page-anchor"></a>
 				<h2>KEY ACTION #1</h2>
 				<div class="number">1</div>
 				<h1>Activate an Emergency Operations Center and establish a whole-of-community incident management structure</h1>
@@ -132,7 +132,7 @@
 		</section>
 		<section>
 			<div class="first-section">
-				<a id="action-2"></a>
+				<a id="action-2" class="page-anchor"></a>
 				<h2>KEY ACTION #2</h2>
 				<div class="number">2</div>
 				<h1>Understand the real-time spread of disease in your community</h1>
@@ -182,7 +182,7 @@
 		</section>
 		<section>
 			<div class="first-section">
-				<a id="action-3"></a>
+				<a id="action-3" class="page-anchor"></a>
 				<h2>KEY ACTION #3</h2>
 				<div class="number">3</div>
 				<h1>Delay or reduce transmission, #FlattenTheCurve</h1>
@@ -274,7 +274,7 @@
 		</section>
 		<section>
 			<div class="first-section">
-				<a id="action-4"></a>
+				<a id="action-4" class="page-anchor"></a>
 				<h2>KEY ACTION #4</h2>
 				<div class="number">4</div>
 				<h1>Focus protection on high risk groups and facilities</h1>
@@ -283,7 +283,7 @@
 		</section>
 		<section>
 			<div class="first-section">
-				<a id="action-5"></a>
+				<a id="action-5" class="page-anchor"></a>
 				<h2>KEY ACTION #5</h2>
 				<div class="number">5</div>
 				<h1>Reinforce and expand health system surge capacity to avoid high mortality</h1>
@@ -292,7 +292,7 @@
 		</section>
 		<section>
 			<div class="first-section">
-				<a id="action-6"></a>
+				<a id="action-6" class="page-anchor"></a>
 				<h2>KEY ACTION #6</h2>
 				<div class="number">6</div>
 				<h1>Risk communication and community engagement</h1>
@@ -301,7 +301,7 @@
 		</section>
 		<section>
 			<div class="first-section">
-				<a id="action-7"></a>
+				<a id="action-7" class="page-anchor"></a>
 				<h2>KEY ACTION #7</h2>
 				<div class="number">7</div>
 				<h1>Mitigating economic and social consequences</h1>
@@ -345,6 +345,22 @@
 		}
 	}
 
+	// Hide / show the sticky nav... this needs to be improved
+	const toggleDocumentNav = () => {
+		const documentNav = document.querySelector('.document-nav')
+		documentNav.style.height === '0px'
+			? documentNav.style.height = '5rem'
+			: documentNav.style.height = '0px';	
+	}
+
+	// Update sticky navbar
+	const updateDocumentNav = (number) => {
+		const documentNav = document.querySelector('.document-nav')
+		documentNav.innerHTML = 
+			`<div class="number">${number}</div>
+			<h1>KEY ACTION #${number}</h1>`
+	};
+
 	// Expand button click handler
 	Array.from(document.querySelectorAll('.expand-button'))
 		.map(button => {
@@ -370,6 +386,8 @@
 			})
 		})
 
+
+	// Expand correct section when toc link is clicked
 	Array.from(document.querySelectorAll('.toc a'))
 		.map(link => {
 			link.addEventListener('click', event => {
@@ -378,8 +396,6 @@
 					? event.target.getAttribute('href')
 					: event.target.parentElement.getAttribute('href')
 
-				console.log(anchorID)
-
 				const section = document.querySelector(anchorID).parentElement
 				const button = section.querySelector('.expand-button')
 				const hider = section.parentElement.querySelector('.expand-hider')
@@ -387,8 +403,38 @@
 				// Not using the toggle handler so that we skip the animation
 				hider.style.height = 'auto'
 				button.setAttribute('aria-label', 'Collapse Details')
+
+				// This is a horrible horrible hack to deal with 
+				// the intersectionObserver only using the top of 
+				// the window, not the top of the nav
+				setTimeout(() => {
+					console.log(anchorID.split('-')[1])
+					updateDocumentNav(anchorID.split('-')[1]);
+				}, 100)
 			})
 		})
+
+	if (window.location.hash.includes('action')) {
+		const anchorID = window.location.hash;
+
+		const section = document.querySelector(anchorID).parentElement
+		const button = section.querySelector('.expand-button')
+		const hider = section.parentElement.querySelector('.expand-hider')
+
+		// Not using the toggle handler so that we skip the animation
+		hider.style.height = 'auto'
+		button.setAttribute('aria-label', 'Collapse Details')
+
+		toggleDocumentNav();
+
+		// This is a horrible horrible hack to deal with 
+		// the intersectionObserver only using the top of 
+		// the window, not the top of the nav
+		setTimeout(() => {
+			console.log(anchorID.split('-')[1])
+			updateDocumentNav(anchorID.split('-')[1]);
+		}, 100)
+	}
 
 	// fake "checkbox" click handler
 	Array.from(document.querySelectorAll('.expand-area li'))
@@ -408,14 +454,6 @@
 			})
 		})
 
-
-	// Update sticky navbar
-	const updateDocumentNav = (number) => {
-		const documentNav = document.querySelector('.document-nav')
-		documentNav.innerHTML = 
-			`<div class="number">${number}</div>
-			<h1>KEY ACTION #${number}</h1>`
-	};
 
 
 	// calculate which sections are onscreen any time an intersection 
@@ -455,14 +493,6 @@
 	// 			.getAttribute('aria-label') === 'Collapse Details')
 	// 		.length < 1
 	// }
-
-	// Hide / show the sticky nav... this needs to be improved
-	const toggleDocumentNav = () => {
-		const documentNav = document.querySelector('.document-nav')
-		documentNav.style.height === '0px'
-			? documentNav.style.height = '5rem'
-			: documentNav.style.height = '0px';	
-	}
 
 
 	// open the document nav after the first section has passed
