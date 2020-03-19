@@ -417,7 +417,8 @@
 	if (window.location.hash.includes('action')) {
 		const anchorID = window.location.hash;
 
-		const section = document.querySelector(anchorID).parentElement
+		const anchor = document.querySelector(anchorID)
+		const section = anchor.parentElement
 		const button = section.querySelector('.expand-button')
 		const hider = section.parentElement.querySelector('.expand-hider')
 
@@ -431,7 +432,6 @@
 		// the intersectionObserver only using the top of 
 		// the window, not the top of the nav
 		setTimeout(() => {
-			console.log(anchorID.split('-')[1])
 			updateDocumentNav(anchorID.split('-')[1]);
 		}, 100)
 	}
