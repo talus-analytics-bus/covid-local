@@ -613,21 +613,12 @@ a.introduction-download:hover {
     margin-top: 30px;
 }
 
-.expanding-boxes-intersector {
-    margin-top: -20rem;
-    padding-top: 20rem;
-    height: 30rem;
-    z-index: -3;
-}
-
 .expanding-boxes section {
     position: relative;
     background-color: #D4EEF9;
     margin-bottom: 15px;
     padding: 15px 30px;
-    z-index: 0;
 }
-
 
 .expanding-boxes section:before {
     display: block;
@@ -724,10 +715,14 @@ a.page-anchor {
     top: -6rem;
 }
 
-.toc p{
+.toc p {
     margin: 0;
     margin-left: 1rem;
     /* padding-bottom: .25rem; */
+}
+
+.toc a:hover p {
+    text-decoration: underline;
 }
 
 .outbreak-phases-button {
