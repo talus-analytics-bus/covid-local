@@ -1096,16 +1096,19 @@ a.page-anchor {
     margin: 0 0 1rem 1rem;
 }
 
+.first-section-resources,
 .resources {
     padding-bottom: 1rem;
     border-top: 1px solid #999999;
 }
 
+.first-section-resources h4,
 .resources h4 {
     font-size: .8rem;
     margin: .5rem 0;
 }
 
+.first-section-resources a,
 .resources a {
     font-style: normal;
     display: block;
@@ -1113,6 +1116,15 @@ a.page-anchor {
     color: inherit;
     /* color: #409385; */
 }
+
+.first-section-resources a {
+    padding: 0;
+}
+
+.first-section-resources li {
+    padding: .5rem 0;
+}
+
 
 span[data-tippy-content] {
     display: inline-block;

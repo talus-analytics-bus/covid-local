@@ -6,7 +6,35 @@
 	<meta name=description content="A Frontline Guide for Local Decision-Makers Facing The COVID-19 Pandemic">
 	<title>COVID-19 Preparedness Dashboard</title>
 	<link rel="stylesheet" href="/css/style.css">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-161498398-1"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'UA-161498398-1');
+	</script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
 </head>
+<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+<script>
+window.cookieconsent.initialise({
+  "palette": {
+    "popup": {
+      "background": "#edeff5",
+      "text": "#838391"
+    },
+    "button": {
+      "background": "#469383"
+    }
+  },
+  "position": "bottom-right",
+  "content": {
+    "message": "COVID-Local uses cookies to ensure you get the best experience possible.",
+    "dismiss": "OK"
+  }
+});
+</script>
 <body>
    <nav class="main-nav">
 		<div class="navbar-logo"></div>
@@ -55,9 +83,14 @@
 			<div class="read-more-hider">
 				<div class="read-more-content">
 					<p>COVID-19, caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), can spread explosively if not rapidly addressed. Different cities will face differing risk profiles and require tailored mitigation strategies, depending on how far the outbreak has advanced in any given location. This document is intended to provide leaders and public officials at state, city, or locality level with a decision support tool to assist in informed strategy and decision-making on how to combat the resulting disease, COVID-19, in their jurisdiction. It is NOT a prescriptive set of instructions; rather it provides context and advice on how to tailor principles of outbreak control strategy, disaster management, and evolving knowledge on COVID-19 dynamics to different local conditions.</p>
-					<p>Battling a new virus pandemic is a unique public policy challenge: the human and economic costs of daily or weekly inaction grow exponentially. Early in an outbreak, when case counts are low, losing a week of potential action may not dramatically change outcomes. But as an outbreak begins to spread and accelerate, a 1-2-week delay can be the difference between cases in the thousands or cases in the tens of thousands. Research on the 1918-19 influenza pandemic in the United States has found that early, sustained application of measures like social distancing mitigated community-level impact of the outbreak. <span data-tippy-content="Markel H, Lipman HB, Navarro JA, et al. Nonpharmaceutical Interventions Implemented by US Cities During the 1918-1919 Influenza Pandemic. JAMA. 2007;298(6):644–654. doi:10.1001/jama.298.6.644 <a href='#src-1'>view endnotes</a>">(1)</span> It is beneficial to apply strong measures early on rather than to wait, even if those measures feel intuitively premature at the time. Lessons from Singapore, Hong Kong, and Taiwan during the current pandemic likewise affirm that early and disciplined action can limit or prevent explosive spread. However, state and local leaders must also weigh the public health benefits of disruptive measures against the second-order impacts that those measures may have on the economy, vulnerable populations, and other local factors.</p>
-					<p><strong>Given that this virus currently has no proven vaccines or treatments, the most important factor in limiting mortality is protecting effective functioning of the health system by urgently minimizing strain. It is important to recognize that cases requiring medical intervention are in addition to the existing healthcare demand.  Experience from China and Italy shows that this virus has the potential to rapidly and abruptly overwhelm health systems if swift and comprehensive action is not taken.</strong>While our understanding of COVID-19 remains imperfect, available evidence from China showed that the mortality rate ranged between 7 to 58 times as fatal as seasonal flu, depending on the timing of the response and the burden placed on the hospital system. In the epicenter of Wuhan, where delayed action meant hospitals became overwhelmed, the World Health Organization estimates that average mortality was 5.8%,<span data-tippy-content="Report of the WHO-China Joint Mission on Coronavirus Disease 2019 (COVID-19). <a href='https://www.who.int/docs/default-source/coronaviruse/who-china-joint-mission-on-covid-19-final-report.pdf'>https://www.who.int/docs/default-source/coronaviruse/who-china-joint-mission-on-covid-19-final-report.pdf</a> <a href='#src-2'>view endnotes</a>">(2)</span> while in other areas of China that had more warning and took drastic measures to suppress transmission, mortality was only 0.7% (seasonal flu mortality is roughly 0.1%). Evidence from China and elsewhere also shows that the disease is most dangerous to the elderly and to people with pre-existing medical complications; these high-risk groups died at much higher than average rates.</p>
-					<img src="/assets/images/epi_2-compressed.png" alt="Figure 1 The epidemiologic curve of Covid-19 laboratory confirmed cases, by date of onset of illness, reported in China, as of February 20, 2020.">
+					<p>Battling a new virus pandemic is a unique public policy challenge: the human and economic costs of daily or weekly inaction grow exponentially. Early in an outbreak, when case counts are low, losing a week of potential action may not dramatically change outcomes. But as an outbreak begins to spread and accelerate, a 1-2-week delay can be the difference between cases in the thousands or cases in the tens of thousands. Research on the 1918-19 influenza pandemic in the United States has found that early, sustained application of measures like social distancing mitigated community-level impact of the outbreak. <span data-tippy-content="Markel H, Lipman HB, Navarro JA, et al. Nonpharmaceutical Interventions Implemented by US Cities During the 1918-1919 Influenza Pandemic. JAMA. 2007;298(6):644–654. doi:10.1001/jama.298.6.644 <a href='#read-more-endnotes'>view endnotes</a>">(1)</span> It is beneficial to apply strong measures early on rather than to wait, even if those measures feel intuitively premature at the time. Lessons from Singapore, Hong Kong, and Taiwan during the current pandemic likewise affirm that early and disciplined action can limit or prevent explosive spread. However, state and local leaders must also weigh the public health benefits of disruptive measures against the second-order impacts that those measures may have on the economy, vulnerable populations, and other local factors.</p>
+					<p><strong>Given that this virus currently has no proven vaccines or treatments, the most important factor in limiting mortality is protecting effective functioning of the health system by urgently minimizing strain. It is important to recognize that cases requiring medical intervention are in addition to the existing healthcare demand.  Experience from China and Italy shows that this virus has the potential to rapidly and abruptly overwhelm health systems if swift and comprehensive action is not taken.</strong>While our understanding of COVID-19 remains imperfect, available evidence from China showed that the mortality rate ranged between 7 to 58 times as fatal as seasonal flu, depending on the timing of the response and the burden placed on the hospital system. In the epicenter of Wuhan, where delayed action meant hospitals became overwhelmed, the World Health Organization estimates that average mortality was 5.8%,<span data-tippy-content="Report of the WHO-China Joint Mission on Coronavirus Disease 2019 (COVID-19). <a href='https://www.who.int/docs/default-source/coronaviruse/who-china-joint-mission-on-covid-19-final-report.pdf'>https://www.who.int/docs/default-source/coronaviruse/who-china-joint-mission-on-covid-19-final-report.pdf</a> <a href='#read-more-endnotes'>view endnotes</a>">(2)</span> while in other areas of China that had more warning and took drastic measures to suppress transmission, mortality was only 0.7% (seasonal flu mortality is roughly 0.1%). Evidence from China and elsewhere also shows that the disease is most dangerous to the elderly and to people with pre-existing medical complications; these high-risk groups died at much higher than average rates.</p>
+					<figure>
+						<img src="/assets/images/China Cases-min.svg" alt="Figure 1 The epidemiologic curve of Covid-19 laboratory confirmed cases, by date of onset of illness, reported in China, as of February 20, 2020.">
+						<figcaption>
+							<strong>Figure 2.</strong> The epidemiologic curve of Covid-19 laboratory confirmed cases, by date of onset of illness, reported in China, as of February 20, 2020. <a href="https://www.who.int/docs/default-source/coronaviruse/who-china-joint-mission-on-covid-19-final-report.pdf">WHO-China joint mission report on Covid-19</a>
+						</figcaption>
+					</figure>
 					<p>All elements of response strategy should connect to the overarching goal of limiting deaths by minimizing strain on the health system. Rapid and aggressive action can create a positive cycle, in which measures to slow spread will reduce the critical case volume, which will in turn limit pressures on intensive care units, delay peak case volume, and keep mortality under control. A slower infection rate means a less stressed health care system. Delayed action, in contrast, will allow the disease to spread widely, generating a sudden surge in critical cases and eroding care quality and worsening mortality rates. The difference between these scenarios may be as little as days or weeks, as shown in Figure 2, below.</p>
 					<figure>
 						<img src="/assets/images/epi_2-compressed.png" alt="Figure 1 The epidemiologic curve of Covid-19 laboratory confirmed cases, by date of onset of illness, reported in China, as of February 20, 2020.">
@@ -77,7 +110,7 @@
 					</figcaption>
 					<p>Please note that not all communities will experience each of these steps discretely but may experience them in rapid succession or “skip” steps in the process, especially early in the outbreak, or have to return to early steps if a locality experiences multiple waves of disease.</p>
 					<p>Different actions and approaches should be triggered as a city moves along these phases of transmission.  Knowing which phase a community is currently experiencing will be challenging during an ongoing outbreak, especially if diagnostic testing is not widely available. Outbreaks develop quickly and information will be imperfect or imperfectly shared. Decision-making will sometimes need to progress on a no-regrets basis before clear evidence of which phase a community is experiencing is available.</p>
-					<p>These phases are specific to this guide and not in reference to the Pandemic Intervals Framework issued by CDC in 2016.<span data-tippy-content="<a href=' https://www.cdc.gov/flu/pandemic-resources/national-strategy/intervals-framework.html'> www.cdc.gov/flu/pandemic-resources/national-strategy/intervals-framework.html</a> <a href='#src-3'>view endnotes</a>">(3)</span></p>
+					<p>These phases are specific to this guide and not in reference to the Pandemic Intervals Framework issued by CDC in 2016.<span data-tippy-content="<a href=' https://www.cdc.gov/flu/pandemic-resources/national-strategy/intervals-framework.html'> www.cdc.gov/flu/pandemic-resources/national-strategy/intervals-framework.html</a> <a href='#read-more-endnotes'>view endnotes</a>">(3)</span></p>
 					<figure>
 						<img src="/assets/images/epi_2-compressed.png" alt="Figure 1 The epidemiologic curve of Covid-19 laboratory confirmed cases, by date of onset of illness, reported in China, as of February 20, 2020.">
 						<figcaption>
@@ -85,6 +118,15 @@
 						</figcaption>
 					</figure>
 					<h3>The guide below provides local leaders with key questions, organized by type of action and phase of outbreak, to ask, answer, and track as they initiate COVID-19 preparedness and response.</h3>
+					<div class="first-section-resources" style="margin-top:4rem">
+						<a id="read-more-endnotes" class="page-anchor"></a>
+						<h4>RESOURCES</h4>
+						<ol>
+							<li>Markel H, Lipman HB, Navarro JA, et al. Nonpharmaceutical Interventions Implemented by US Cities During the 1918-1919 Influenza Pandemic. JAMA. 2007;298(6):644–654. doi:10.1001/jama.298.6.644</li>
+							<li>Report of the WHO-China Joint Mission on Coronavirus Disease 2019 (COVID-19). <a href='https://www.who.int/docs/default-source/coronaviruse/who-china-joint-mission-on-covid-19-final-report.pdf'>www.who.int/docs/default-source/coronaviruse/who-china-joint-mission-on-covid-19-final-report.pdf</a></li>
+							<li><a href='https://www.cdc.gov/flu/pandemic-resources/national-strategy/intervals-framework.html'>www.cdc.gov/flu/pandemic-resources/national-strategy/intervals-framework.html</a></li>
+						</ol>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -93,7 +135,7 @@
 				<div>
 					<h2>Table of Contents</h2>
 				</div>
-				<button class="outbreak-phases-button">view outbreak phases</button>
+				<!-- <button class="outbreak-phases-button">view outbreak phases</button> -->
 			</div>
 			<div class="toc">
 				<a href="#action-0"><div class="number"></div><p>Abbreviated Checklist</p></a>
@@ -121,15 +163,15 @@
 			<div class="expand-hider">
 				<div class="expand-area" style="border:none;">
 					<div class="implementation-metrics">
-						<div><div class="number">3</div><p>Are the hospitals in your city meeting demand for ICU needs and are you implementing measures to expand capacity?</p><input type="radio" id="y1" name="r1"><label for="y1">yes</label><input type="radio" id="n1" name="r1"><label for="n1">no</label></div>
-						<div><div class="number">3</div><p>High risk populations isolated; schools closed: restaurants closed except for take-out that considers IPC; No public gatherings of more than 10 people, telework in place for all non-essential personnel</p><input type="radio" id="y2" name="r2"><label for="y2">yes</label><input type="radio" id="n2" name="r2"><label for="n2">no</label></div>
-						<div><div class="number">3</div><p>Plan in place that considers IPC for critical infratructure, food, water supply, waste management, and other essentials</p><input type="radio" id="y3" name="r3"><label for="y3">yes</label><input type="radio" id="n3" name="r3"><label for="n3">no</label></div>
+						<div><div class="number">5</div><p>Are the hospitals in your city meeting demand for ICU needs and are you implementing measures to expand capacity?</p><input type="radio" id="y1" name="r1"><label for="y1">yes</label><input type="radio" id="n1" name="r1"><label for="n1">no</label></div>
+						<div><div class="number">4</div><p>High risk populations isolated; schools closed: restaurants closed except for take-out that considers IPC; No public gatherings of more than 10 people, telework in place for all non-essential personnel</p><input type="radio" id="y2" name="r2"><label for="y2">yes</label><input type="radio" id="n2" name="r2"><label for="n2">no</label></div>
+						<div><div class="number">4</div><p>Plan in place that considers IPC for critical infratructure, food, water supply, waste management, and other essentials</p><input type="radio" id="y3" name="r3"><label for="y3">yes</label><input type="radio" id="n3" name="r3"><label for="n3">no</label></div>
 						<!-- <div><div class="number">3</div><p>Steady supply of PPE for critical care units and testing centers</p><input type="radio" id="y4" name="r4"><label for="y4">yes</label><input type="radio" id="n4" name="r4"><label for="n4">no</label></div> -->
-						<div><div class="number">3</div><p>Alternative ICU capability for non-COVID patients</p><input type="radio" id="y5" name="r5"><label for="y5">yes</label><input type="radio" id="n5" name="r5"><label for="n5">no</label></div>
+						<div><div class="number">6</div><p>Alternative ICU capability for non-COVID patients</p><input type="radio" id="y5" name="r5"><label for="y5">yes</label><input type="radio" id="n5" name="r5"><label for="n5">no</label></div>
 						<div><div class="number">3</div><p>Availiability of drive by or in-home testing for all symptomatic persons</p><input type="radio" id="y6" name="r6"><label for="y6">yes</label><input type="radio" id="n6" name="r6"><label for="n6">no</label></div>
 						<div><div class="number">3</div><p>Incicent command structure up and running, common operating picture</p><input type="radio" id="y7" name="r7"><label for="y7">yes</label><input type="radio" id="n7" name="r7"><label for="n7">no</label></div>
-						<div><div class="number">3</div><p>Is there a differentiated system for intake</p><input type="radio" id="y8" name="r8"><label for="y8">yes</label><input type="radio" id="n8" name="r8"><label for="n8">no</label></div>
-						<div><div class="number">3</div><p>Key metric on testing?</p><input type="radio" id="y9" name="r9"><label for="y9">yes</label><input type="radio" id="n9" name="r9"><label for="n9">no</label></div>
+						<div><div class="number">5</div><p>Is there a differentiated system for intake</p><input type="radio" id="y8" name="r8"><label for="y8">yes</label><input type="radio" id="n8" name="r8"><label for="n8">no</label></div>
+						<div><div class="number">7</div><p>Key metric on testing?</p><input type="radio" id="y9" name="r9"><label for="y9">yes</label><input type="radio" id="n9" name="r9"><label for="n9">no</label></div>
 						<h3>Progress: 0%</h3>
 					</div>
 				</div>
@@ -148,7 +190,7 @@
 			<div class="expand-hider">
 				<div class="expand-area">
 					<p>Controlling a pandemic outbreak is a multi-disciplinary and whole-of-society endeavor; it requires engagement and coordination among government leaders, public health officials, civil society and religious leaders, the business community, academia, and others. The official response, and public reaction, is likely to have other community impacts such as supply chain disruption and public safety workforce shortages.</p>
-					<div>
+					<!-- <div>
 						<button aria-label="Expand Details" class="read-more-button">Read more</button>
 						<div class="read-more-hider">
 							<div class="read-more-content">
@@ -159,7 +201,7 @@
 								<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat, voluptatem nam, rem asperiores quaerat repellendus eligendi eaque quo illo error, voluptate debitis odit. Voluptatem expedita suscipit impedit vitae eligendi saepe.</p>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<!-- <p>Additionally, the EOC must begin to plan for potential attrition of first responders by establishing a continuity of operations plan to replace and supplement critical personnel. A best practice from previous novel outbreak responses is to establish an EOC to host a whole-of-community incident management structure, leveraging existing plans and organizations where possible, that brings these domains together to streamline communication, planning, decision-making, and operational coordination. Ensure EOC iseffectively communicating and aligned with higher-level EOC processes and decision cycles through liaison exchange whenever possible. </p> -->
 					<ol>
 						<div class="phase zero">
