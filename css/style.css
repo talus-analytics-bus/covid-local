@@ -505,6 +505,10 @@ a {
     font-style: italic;
 }
 
+p {
+    margin: 1rem 0;
+}
+
 header, 
 article {
     margin: auto;
@@ -907,6 +911,11 @@ a.page-anchor {
 .implementation-metrics > h3 {
     margin: 1rem 0 0 auto;
     text-align: right;
+}
+
+.implementation-metrics .number {
+    font-size: .8rem;
+    margin-top: .25em;
 }
 
 @media only screen and (max-width: 765px) {

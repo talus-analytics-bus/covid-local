@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name=description content="A Frontline Guide for Local Decision-Makers Facing The COVID-19 Pandemic">
 	<title>COVID-19 Preparedness Dashboard</title>
-	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/style.min.css">
 </head>
 <body>
    <nav class="main-nav">
@@ -32,19 +32,9 @@
 			<div class="left-col">
 				<h2>COVID-19</h2>
 				<h1>Flatten the Curve: a Frontline Guide for Local Decision-Makers</h1>
-				<p>The COVID-19 pandemic is causing significant disruptions to cities and local communities globally. Given these challenges, we have developed this guide to provide a decision framework for local leaders to think through what will need to be done to help reduce the impact of the outbreak, both by reducing spread and decreasing the number of cases, but also in responding and supporting communities effectively.</p>
-				<div>
-					<button aria-label="Expand Details" class="read-more-button">Read an overview about the guide</button>
-					<div class="read-more-hider">
-						<div class="read-more-content">
-							<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat, voluptatem nam, rem asperiores quaerat repellendus eligendi eaque quo illo error, voluptate debitis odit. Voluptatem expedita suscipit impedit vitae eligendi saepe.</p>
-							<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat, voluptatem nam, rem asperiores quaerat repellendus eligendi eaque quo illo error, voluptate debitis odit. Voluptatem expedita suscipit impedit vitae eligendi saepe.</p>
-							<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat, voluptatem nam, rem asperiores quaerat repellendus eligendi eaque quo illo error, voluptate debitis odit. Voluptatem expedita suscipit impedit vitae eligendi saepe.</p>
-							<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat, voluptatem nam, rem asperiores quaerat repellendus eligendi eaque quo illo error, voluptate debitis odit. Voluptatem expedita suscipit impedit vitae eligendi saepe.</p>
-							<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat, voluptatem nam, rem asperiores quaerat repellendus eligendi eaque quo illo error, voluptate debitis odit. Voluptatem expedita suscipit impedit vitae eligendi saepe.</p>
-						</div>
-					</div>
-				</div>
+				<p>The COVID-19 pandemic is causing significant disruptions to cities and local communities globally. We developed this guide to provide a decision framework for local leaders to think through what will need to be done to help reduce the impact of the outbreak, both by reducing spread and decreasing the number of cases, but also in responding and supporting communities effectively. </p>
+				<p>This document is informed by existing guidance from U.S. and global authorities, public health research findings, and lessons observed from countries that have been battling COVID-19 since January 2020. <strong> It is intended to complement, but not in any way supplant, advice and guidance from global, federal and local public health and other authorities.</strong></p>
+				<p><strong>**NOTE: This is an initial version of the guide.  We intend for it to be further developed by local experts as the COVID-19 pandemic continues. We are simultaneously launching a web-based platform for sharing best practices at: COVID_Local.org</strong></p>
 			</div>
 			<div class="right-col">
 				<!-- FLATTEN THE CURVE FRONTLINE GUIDE -->
@@ -58,6 +48,16 @@
 						<polygon class="download-button-st1" points="51.84,35.92 46.84,40.92 46.84,22.19 42.47,22.19 42.47,40.92 37.47,35.92 34.38,39 44.65,49.27 54.92,39"/>
 					</svg>
 				</a>
+			</div>
+		</div>
+		<div>
+			<button aria-label="Expand Details" class="read-more-button">Read an overview about the guide</button>
+			<div class="read-more-hider">
+				<div class="read-more-content">
+					<p>COVID-19, caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2), can spread explosively if not rapidly addressed. Different cities will face differing risk profiles and require tailored mitigation strategies, depending on how far the outbreak has advanced in any given location. This document is intended to provide leaders and public officials at state, city, or locality level with a decision support tool to assist in informed strategy and decision-making on how to combat the resulting disease, COVID-19, in their jurisdiction. It is NOT a prescriptive set of instructions; rather it provides context and advice on how to tailor principles of outbreak control strategy, disaster management, and evolving knowledge on COVID-19 dynamics to different local conditions.</p>
+					<p>Battling a new virus pandemic is a unique public policy challenge: the human and economic costs of daily or weekly inaction grow exponentially. Early in an outbreak, when case counts are low, losing a week of potential action may not dramatically change outcomes. But as an outbreak begins to spread and accelerate, a 1-2-week delay can be the difference between cases in the thousands or cases in the tens of thousands. Research on the 1918-19 influenza pandemic in the United States has found that early, sustained application of measures like social distancing mitigated community-level impact of the outbreak. It is beneficial to apply strong measures early on rather than to wait, even if those measures feel intuitively premature at the time. Lessons from Singapore, Hong Kong, and Taiwan during the current pandemic likewise affirm that early and disciplined action can limit or prevent explosive spread. However, state and local leaders must also weigh the public health benefits of disruptive measures against the second-order impacts that those measures may have on the economy, vulnerable populations, and other local factors.</p>
+					<p><strong>Given that this virus currently has no proven vaccines or treatments, the most important factor in limiting mortality is protecting effective functioning of the health system by urgently minimizing strain. It is important to recognize that cases requiring medical intervention are in addition to the existing healthcare demand.  Experience from China and Italy shows that this virus has the potential to rapidly and abruptly overwhelm health systems if swift and comprehensive action is not taken.</strong>While our understanding of COVID-19 remains imperfect, available evidence from China showed that the mortality rate ranged between 7 to 58 times as fatal as seasonal flu, depending on the timing of the response and the burden placed on the hospital system. In the epicenter of Wuhan, where delayed action meant hospitals became overwhelmed, the World Health Organization estimates that average mortality was 5.8%, while in other areas of China that had more warning and took drastic measures to suppress transmission, mortality was only 0.7% (seasonal flu mortality is roughly 0.1%). Evidence from China and elsewhere also shows that the disease is most dangerous to the elderly and to people with pre-existing medical complications; these high-risk groups died at much higher than average rates.</p>
+				</div>
 			</div>
 		</div>
 		<div class="table-of-contents">
@@ -364,242 +364,7 @@
 	</article>
 </body>
 
-<script>
-
-	// Automatically add expand buttons where necessary
-	const expandButton = '<button aria-label="Expand Details" class="expand-button"></button>'
-	Array.from(document.querySelectorAll('.expanding-boxes section'))
-		.map(section => {
-			if (section.querySelectorAll('.expand-hider').length > 0) {
-				section.children[0].innerHTML += expandButton
-			}
-		})
-
-	// Toggle expanding sections
-	const toggleExpandHider = (hider, button) => {
-		const content = hider.children[0]
-		if (button.getAttribute('aria-label') === "Expand Details") {
-			button.setAttribute('aria-label', 'Collapse Details')
-			hider.style.height = content.offsetHeight + 'px';
-			setTimeout(() => {
-				hider.style.height = 'auto';
-			}, 250)
-		} else {
-			button.setAttribute('aria-label', 'Expand Details')
-			hider.style.height = content.offsetHeight + 'px';
-
-			// setTimeout zero to kick it to the end of the callback queue...
-			// I feel like requestAnimationFrame should be enough here?
-			setTimeout(() => {
-				// window.requestAnimationFrame(() => {
-					hider.style.height = '0px';
-				// });
-			}, 0)
-		}
-	}
-
-	// Hide / show the sticky nav... this needs to be improved
-	const toggleDocumentNav = () => {
-		const documentNav = document.querySelector('.document-nav')
-		documentNav.style.height === '0px'
-			? documentNav.style.height = '5rem'
-			: documentNav.style.height = '0px';	
-	}
-
-	// Update sticky navbar
-	const updateDocumentNav = (number) => {
-		const documentNav = document.querySelector('.document-nav')
-		if (number) {
-			documentNav.innerHTML = 
-				`<div class="nav-squish">
-					<div class="number">${number}</div>
-					<h1>KEY ACTION #${number}</h1>
-				</div>`
-		} else {
-			documentNav.innerHTML = 
-				`<div class="nav-squish">
-					<h1>IMPLEMENTATION METRICS</h1>
-				</div>`
-		};
-	};
-
-
-	// Expand button click handler
-	Array.from(document.querySelectorAll('.expand-button'))
-		.map(button => {
-			button.addEventListener('click', event => {
-				event.stopPropagation();
-				const button = event.target;
-				const hider = button.parentElement.parentElement.children[1]
-				toggleExpandHider(hider, button)
-			})
-		})
-
-
-	// first section click handler
-	Array.from(document.querySelectorAll('.first-section'))
-		.map(section => {
-			section.addEventListener('click', event => {
-				const hider = event.target.parentElement.querySelector('.expand-hider')
-					? event.target.parentElement.querySelector('.expand-hider')
-					: event.target.parentElement.parentElement.querySelector('.expand-hider')
-
-				const button = hider.parentElement.querySelector('.expand-button')
-				toggleExpandHider(hider, button)
-			})
-		})
-
-
-	// Read More button click handler
-	Array.from(document.querySelectorAll('.read-more-button'))
-		.map(button => {
-			button.addEventListener('click', event => {
-				event.stopPropagation();
-				const button = event.target;
-				const hider = button.parentElement.children[1]
-				toggleExpandHider(hider, button)
-			})
-		})
-
-
-
-	// Expand correct section when toc link is clicked
-	Array.from(document.querySelectorAll('.toc a'))
-		.map(link => {
-			link.addEventListener('click', event => {
-
-				const anchorID = event.target.getAttribute('href')
-					? event.target.getAttribute('href')
-					: event.target.parentElement.getAttribute('href')
-
-				const section = document.querySelector(anchorID).parentElement
-				const button = section.querySelector('.expand-button')
-				const hider = section.parentElement.querySelector('.expand-hider')
-
-				// Not using the toggle handler so that we skip the animation
-				hider.style.height = 'auto'
-				button.setAttribute('aria-label', 'Collapse Details')
-
-				// This is a horrible horrible hack to deal with 
-				// the intersectionObserver only using the top of 
-				// the window, not the top of the nav
-				setTimeout(() => {
-					updateDocumentNav(anchorID.split('-')[1]);
-				}, 100)
-			})
-		})
-
-
-	// Parse #action- urls on page load so that people can send
-	// links to one another and the right section will open
-	if (window.location.hash.includes('action')) {
-		const anchorID = window.location.hash;
-
-		const anchor = document.querySelector(anchorID)
-		const section = anchor.parentElement
-		const button = section.querySelector('.expand-button')
-		const hider = section.parentElement.querySelector('.expand-hider')
-
-		// Not using the toggle handler so that we skip the animation
-		hider.style.height = 'auto'
-		button.setAttribute('aria-label', 'Collapse Details')
-
-		// This is a horrible hack to deal with 
-		// the intersectionObserver only using the top of 
-		// the window, not the top of the nav
-		setTimeout(() => {
-			updateDocumentNav(anchorID.split('-')[1]);
-			
-			// This fixes the bug where you can get the navbar inverted
-			// by refreshing a url with a has while scrolled to the top 
-			// of the page.
-			const expandBoxesRect = section.parentElement.parentElement.getBoundingClientRect()
-			console.log(section.parentElement.parentElement)
-			console.log(expandBoxesRect.top)
-			if (expandBoxesRect.top < 0) {
-			toggleDocumentNav();
-		}
-		}, 100)
-	}
-
-	// fake "checkbox" click handler
-	Array.from(document.querySelectorAll('.expand-area li'))
-		.map(item => {
-			item.addEventListener('click', event => {
-				const rect = event.target.getBoundingClientRect();
-				const elemX = event.clientX - rect.left;
-				if (elemX < -20) {
-					// need to add modal popup
-					alert('To fill out the checklist, please '+ 
-						'download the printable version at the '+
-						'top of this page.')
-						// 'download it here: (this alert is a '+
-						// 'placeholder for a modal popup I will'+
-						// ' build in a bit...)')
-				}
-			})
-		})
-
-
-	// calculate which sections are onscreen any time an intersection 
-	// event gets fired; I'm using intersectionObserver because it 
-	// produces only the events I need instead of listening to scroll 
-	// events, so this should be way more performant
-
-	// this needs to check whether the sections are open and only trigger
-	// the document nav when there are open sections on-screen
-	let onScreen = [];
-	const sectionObserver = new IntersectionObserver((entries, observer) => {
-
-		const newOnScreen = entries
-			.filter(entry => entry.isIntersecting)
-			.map(entry => entry.target.querySelector('.number').innerHTML);
-
-		const newOffScreen = entries
-			.filter(entry => !entry.isIntersecting)
-			.map(entry => entry.target.querySelector('.number').innerHTML);
-
-		onScreen = onScreen
-			.concat(newOnScreen)
-			.filter(section => !newOffScreen.includes(section))
-			.sort();
-
-		updateDocumentNav(onScreen[0]);
-	})
-
-	Array.from(document.querySelectorAll('.expanding-boxes section'))
-		.map(section => { sectionObserver.observe(section) });
-
-
-	// // This isn't safe, due to asychronous event handling...
-	// const allSectionsCollapsed = () => {
-	// 	return Array.from(document.querySelectorAll('.expand-button'))
-	// 		.filter(button => button
-	// 			.getAttribute('aria-label') === 'Collapse Details')
-	// 			.length < 1
-	// }
-
-
-	// open the document nav after the first section has passed
-	const headerObserver = new IntersectionObserver((entries, observer) => {
-		toggleDocumentNav()
-	});
-
-	headerObserver.observe(document.querySelector('.introduction-header'))
-
-	Array.from(document.querySelectorAll('.implementation-metrics input'))
-		.map(input => input.addEventListener('click', event => {
-
-			const results = Array.from(document.querySelectorAll('.implementation-metrics input:first-of-type'))
-			const sum = results.map(input => input.checked ? 1 : 0).reduce((a, b) => a + b)
-			const percent = sum / results.length * 100
-
-			document.querySelector('.implementation-metrics h3')
-				.innerHTML = `Progress: ${percent.toFixed()}%`
-		}))
-
-
-</script>
+<script src="/dist/main.js"></script>
 
 </html>
 
