@@ -509,6 +509,18 @@ p {
     margin: 1rem 0;
 }
 
+img {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+figcaption {
+    margin: 0 6rem;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+    border-left: 1px solid #999999;
+}
+
 header, 
 article {
     margin: auto;
@@ -861,6 +873,10 @@ a.page-anchor {
     transition: .25s ease;
 }
 
+.read-more-content svg {
+    width: 100%;
+}
+
 .implementation-metrics,
 .resources,
 .phase {
@@ -1092,4 +1108,18 @@ a.page-anchor {
     padding: .5rem 0;
     color: inherit;
     /* color: #409385; */
+}
+
+span[data-tippy-content] {
+    display: inline-block;
+    font-style: normal;
+    color: blue;
+    transform-origin: 0 0;
+    transform: scale(.80);
+    padding:  8px 12px 12px 8px;
+    margin:  -8px -12px -12px -8px;
+}
+
+.tippy-content a {
+    color: lightblue;
 }
