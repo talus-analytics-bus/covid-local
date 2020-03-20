@@ -22,18 +22,33 @@
 			</ul>
 		</div>
 	</nav>
-	<nav class="document-nav"></nav>
+	<nav class="document-nav">
+		<!-- <div class="nav-squish">
+
+		</div> -->
+	</nav>
 	<header class="introduction-header">
 		<div class="introduction">
 			<div class="left-col">
 				<h2>COVID-19</h2>
 				<h1>Flatten the Curve: a Frontline Guide for Local Decision-Makers</h1>
-				<p>The COVID-19 pandemic is causing significant disruptions to cities and local communities globally. Given these challenges, we have developed this guide to provide a decision framework for local leaders to think through what will need to be done to help reduce the impact of the outbreak, both by reducing spread and decreasing the number of cases, but also in responding and supporting communities effectively. <a href="#">Learn more about the guide</a> </p>
-				<!-- <button class="read-more">Read the overview about the guide</button> -->
+				<p>The COVID-19 pandemic is causing significant disruptions to cities and local communities globally. Given these challenges, we have developed this guide to provide a decision framework for local leaders to think through what will need to be done to help reduce the impact of the outbreak, both by reducing spread and decreasing the number of cases, but also in responding and supporting communities effectively.</p>
+				<div>
+					<button aria-label="Expand Details" class="read-more-button">Read an overview about the guide</button>
+					<div class="read-more-hider">
+						<div class="read-more-content">
+							<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat, voluptatem nam, rem asperiores quaerat repellendus eligendi eaque quo illo error, voluptate debitis odit. Voluptatem expedita suscipit impedit vitae eligendi saepe.</p>
+							<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat, voluptatem nam, rem asperiores quaerat repellendus eligendi eaque quo illo error, voluptate debitis odit. Voluptatem expedita suscipit impedit vitae eligendi saepe.</p>
+							<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat, voluptatem nam, rem asperiores quaerat repellendus eligendi eaque quo illo error, voluptate debitis odit. Voluptatem expedita suscipit impedit vitae eligendi saepe.</p>
+							<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat, voluptatem nam, rem asperiores quaerat repellendus eligendi eaque quo illo error, voluptate debitis odit. Voluptatem expedita suscipit impedit vitae eligendi saepe.</p>
+							<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat, voluptatem nam, rem asperiores quaerat repellendus eligendi eaque quo illo error, voluptate debitis odit. Voluptatem expedita suscipit impedit vitae eligendi saepe.</p>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div class="right-col">
 				<!-- FLATTEN THE CURVE FRONTLINE GUIDE -->
-				DOWNLOAD AND PRINT THE CHECKLIST
+				DOWNLOAD AND PRINT THE GUIDE
 				<a href="#" class="introduction-download">
 					Download the guide
 					<svg version="1.1" x="0px" y="0px" viewBox="0 0 89 89" style="enable-background:new 0 0 89 89;" xml:space="preserve">
@@ -48,12 +63,12 @@
 		<div class="table-of-contents">
 			<div class="toc-title">
 				<div>
-					<h2>The frontline guide outlines priorities, by phases of the outbreak, for seven key areas:</h2>
-					<a href="#">Select to view priorities</a>
+					<h2>Table of Contents</h2>
 				</div>
 				<button class="outbreak-phases-button">view outbreak phases</button>
 			</div>
 			<div class="toc">
+				<a href="#action-0"><div class="number"></div><p>Key Metrics</p></a>
 				<a href="#action-1"><div class="number">1</div><p>Activate an Emergency Operations Center (EOC) and establish a whole-of-community incident management structure</p></a>
 				<a href="#action-2"><div class="number">2</div><p>Understand the real-time disease spread of COVID-19 in your community</p></a>
 				<a href="#action-3"><div class="number">3</div><p>Delay or reduce transmission</p></a>
@@ -66,9 +81,35 @@
 		</div>
 	</header>
 	<article class="expanding-boxes">
-		<div class="expanding-boxes-intro">
+		<section>
+			<div class="first-section">
+				<a id="action-0" class="page-anchor"></a>
+				<h2>KEY ACTION</h2>
+				<!-- The number div is important because that's 
+					 what the sticky navbar looks for -->
+				<div class="number" style="display: none;"></div>
+				<h1>Implementation Metrics</h1>
+			</div>
+			<div class="expand-hider">
+				<div class="expand-area" style="border:none;">
+					<div class="implementation-metrics">
+						<div><div class="number">3</div><p>Are the hospitals in your city meeting demand for ICU needs and are you implementing measures to expand capacity?</p><input type="radio" id="y1" name="r1"><label for="y1">yes</label><input type="radio" id="n1" name="r1"><label for="n1">no</label></div>
+						<div><div class="number">3</div><p>High risk populations isolated; schools closed: restaurants closed except for take-out that considers IPC; No public gatherings of more than 10 people, telework in place for all non-essential personnel</p><input type="radio" id="y2" name="r2"><label for="y2">yes</label><input type="radio" id="n2" name="r2"><label for="n2">no</label></div>
+						<div><div class="number">3</div><p>Plan in place that considers IPC for critical infratructure, food, water supply, waste management, and other essentials</p><input type="radio" id="y3" name="r3"><label for="y3">yes</label><input type="radio" id="n3" name="r3"><label for="n3">no</label></div>
+						<!-- <div><div class="number">3</div><p>Steady supply of PPE for critical care units and testing centers</p><input type="radio" id="y4" name="r4"><label for="y4">yes</label><input type="radio" id="n4" name="r4"><label for="n4">no</label></div> -->
+						<div><div class="number">3</div><p>Alternative ICU capability for non-COVID patients</p><input type="radio" id="y5" name="r5"><label for="y5">yes</label><input type="radio" id="n5" name="r5"><label for="n5">no</label></div>
+						<div><div class="number">3</div><p>Availiability of drive by or in-home testing for all symptomatic persons</p><input type="radio" id="y6" name="r6"><label for="y6">yes</label><input type="radio" id="n6" name="r6"><label for="n6">no</label></div>
+						<div><div class="number">3</div><p>Incicent command structure up and running, common operating picture</p><input type="radio" id="y7" name="r7"><label for="y7">yes</label><input type="radio" id="n7" name="r7"><label for="n7">no</label></div>
+						<div><div class="number">3</div><p>Is there a differentiated system for intake</p><input type="radio" id="y8" name="r8"><label for="y8">yes</label><input type="radio" id="n8" name="r8"><label for="n8">no</label></div>
+						<div><div class="number">3</div><p>Key metric on testing?</p><input type="radio" id="y9" name="r9"><label for="y9">yes</label><input type="radio" id="n9" name="r9"><label for="n9">no</label></div>
+						<h3>Progress: 10%</h3>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- <div class="expanding-boxes-intro">
 			<h3>Key actions for local decision makers</h3>
-		</div>
+		</div> -->
 		<section>
 			<div class="first-section">
 				<a id="action-1" class="page-anchor"></a>
@@ -79,14 +120,26 @@
 			<div class="expand-hider">
 				<div class="expand-area">
 					<p>Controlling a pandemic outbreak is a multi-disciplinary and whole-of-society endeavor; it requires engagement and coordination among government leaders, public health officials, civil society and religious leaders, the business community, academia, and others. The official response, and public reaction, is likely to have other community impacts such as supply chain disruption and public safety workforce shortages.</p>
-					<p>Additionally, the EOC must begin to plan for potential attrition of first responders by establishing a continuity of operations plan to replace and supplement critical personnel. A best practice from previous novel outbreak responses is to establish an EOC to host a whole-of-community incident management structure, leveraging existing plans and organizations where possible, that brings these domains together to streamline communication, planning, decision-making, and operational coordination. Ensure EOC iseffectively communicating and aligned with higher-level EOC processes and decision cycles through liaison exchange whenever possible. </p>
+					<div>
+						<button aria-label="Expand Details" class="read-more-button">Read more</button>
+						<div class="read-more-hider">
+							<div class="read-more-content">
+								<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat, voluptatem nam, rem asperiores quaerat repellendus eligendi eaque quo illo error, voluptate debitis odit. Voluptatem expedita suscipit impedit vitae eligendi saepe.</p>
+								<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat, voluptatem nam, rem asperiores quaerat repellendus eligendi eaque quo illo error, voluptate debitis odit. Voluptatem expedita suscipit impedit vitae eligendi saepe.</p>
+								<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat, voluptatem nam, rem asperiores quaerat repellendus eligendi eaque quo illo error, voluptate debitis odit. Voluptatem expedita suscipit impedit vitae eligendi saepe.</p>
+								<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat, voluptatem nam, rem asperiores quaerat repellendus eligendi eaque quo illo error, voluptate debitis odit. Voluptatem expedita suscipit impedit vitae eligendi saepe.</p>
+								<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat, voluptatem nam, rem asperiores quaerat repellendus eligendi eaque quo illo error, voluptate debitis odit. Voluptatem expedita suscipit impedit vitae eligendi saepe.</p>
+							</div>
+						</div>
+					</div>
+					<!-- <p>Additionally, the EOC must begin to plan for potential attrition of first responders by establishing a continuity of operations plan to replace and supplement critical personnel. A best practice from previous novel outbreak responses is to establish an EOC to host a whole-of-community incident management structure, leveraging existing plans and organizations where possible, that brings these domains together to streamline communication, planning, decision-making, and operational coordination. Ensure EOC iseffectively communicating and aligned with higher-level EOC processes and decision cycles through liaison exchange whenever possible. </p> -->
 					<ol>
 						<div class="phase zero">
-							<h3>PHASE</h3>
+							<!-- <h3>PHASE</h3>
 							<div class="phase-description">
 								<div></div>
 								<p>No detected cases </br>No burden on healthcare</p>
-							</div>
+							</div> -->
 							<li class="header">Have you activated your emergency plans and emergency operations centers to assist with coordination of: </li>
 							<ol>
 								<li>Healthcare coalitions, including hospitals, public health, EMS and other key elements of the health and medical sector?</li>
@@ -109,11 +162,11 @@
 							<li>Is your EOC organized with teams with responsibilities for each key action?</li>
 						</div>
 						<div class="phase one">
-							<h3>PHASE</h3>
+							<!-- <h3>PHASE</h3>
 							<div class="phase-description">
 								<div></div>
 								<p>Individually detected cases, </br>traceable to know sources of transmission</p>
-							</div>
+							</div> -->
 							<li>Have you activated your emergency plans and EOCs to assist with coordination? </li>
 							<li>Have you defined the goals for the response and values you want to preserve in the response?</li>
 							<li>What special health measures have you implemented in your EOC to ensure the health and wellbeing of personnel assigned to work there? </li>
@@ -142,11 +195,11 @@
 					<p>The elements of a pandemic control strategy begin with understanding transmission and clinical severity dynamics in the community. This entails amplifying surveillance, diagnostic testing, and reporting systems to ensure that data on outbreak dynamics is available on a real-time basis to inform strategy-setting and daily tactical decision-making. All of this is currently difficult due to testing shortfalls; scaling up local access to testing will be critical as more laboratory capacity comes on line over the coming weeks.</p>
 					<ol>
 						<div class="phase zero">
-							<h3>PHASE</h3>
+							<!-- <h3>PHASE</h3>
 							<div class="phase-description">
 								<div></div>
 								<p>No detected cases </br>No burden on healthcare</p>
-							</div>
+							</div> -->
 							<li>Does your response system allow your EOC to receive notice of all cases tested in your community from both public and private health facilities? </li>
 							<li>Are hospitals and clinics in your area using syndromic surveillance to detect abnormal levels of respiratory or flu-like cases, inconsistent with normal seasonal progression? Are these testing negative for influenza or other common viruses?</li>
 							<li>Is your community able to analyze clinical outcomes for the infected patients (e.g., survival rate, case-fatality ratio, duration of infection, etc.)?</li>
@@ -162,11 +215,11 @@
 							<li>Are you continuing to pursue a strategy of containment through contact tracing and monitoring of close contacts?</li>
 						</div>
 						<div class="phase one">
-							<h3>PHASE</h3>
+							<!-- <h3>PHASE</h3>
 							<div class="phase-description">
 								<div></div>
 								<p>Individually detected cases, </br>traceable to know sources of transmission</p>
-							</div>
+							</div> -->
 							<li>Is there a lag time for receiving the laboratory and clinical data and, if so, what is that amount of time?  What actions can be taken to reduce lag time?</li>
 							<li>Has a threshold been identified past which you will reduce contact tracing efforts and and redirect those resources to protect those in high-risk setting?</li>
 							<li>Will you assess the effectiveness of inbound traveler screening Taking into account the resources required? </li>
@@ -192,11 +245,11 @@
 					<p>Slowing and limiting transmission through a community is a critical way of reducing the human cost of the outbreak, and ensuring that hospitals will be able to deliver lifesaving and life sustaining care. It can also be highly disruptive, as social distancing measures must become more aggressive in proportion to the exponential spread of the virus. Determinations on the best means of limiting transmission will depend on local factors, but in general should be calibrated to be more aggressive than what observable local conditions might intuitively suggest.</p>
 					<ol>
 						<div class="phase zero">
-							<h3>PHASE</h3>
+							<!-- <h3>PHASE</h3>
 							<div class="phase-description">
 								<div></div>
 								<p>No detected cases </br>No burden on healthcare</p>
-							</div>
+							</div> -->
 							<li class="header">Have you considered local factors,  including the epidemiology of the disease, characteristics of your community, healthcare capacity, and public health capacity, when determining mitigation strategies for: </li>
 							<ol>
 								<li>Populations considered most vulnerable to illness? </li>
@@ -222,11 +275,11 @@
 							<li>Do you have the legal authority to implement interventions that can slow community spread of disease in your community - social distancing, quarantine, isolation measures?</li>
 						</div>
 						<div class="phase one">
-							<h3>PHASE</h3>
+							<!-- <h3>PHASE</h3>
 							<div class="phase-description">
 								<div></div>
 								<p>Individually detected cases, </br>traceable to know sources of transmission</p>
-							</div>
+							</div> -->
 							<li>Do you know the general number of cases in your community?</li>
 							<li>Have you considered the public safety sector (police, military, or civil defense) to assist, if necessary, in the enforcement of social distancing? </li>
 							<li class="header">For all upcoming major conferences, sporting events, concerts, rallies, or other events where large numbers of people may gather, does your EOC have: </li>
@@ -237,11 +290,11 @@
 							</ol>
 						</div>
 						<div class="phase two">
-							<h3>PHASE</h3>
+							<!-- <h3>PHASE</h3>
 							<div class="phase-description">
 								<div></div>
 								<p>Individually detected cases, </br>traceable to know sources of transmission</p>
-							</div>
+							</div> -->
 							<li>Has your community established guidance criteria or official limitations on gatherings consistent with current public health guidance (as of this date it is 50 people or above)? </li>
 							<li>Are you engaging with key community, civil society, business, and religious leaders to ensure their active cooperation on social distancing measures?</li>
 							<li>Are support options available for populations who may face obstacles to complying with social distancing guidance?</li>
@@ -254,11 +307,11 @@
 							<li>For areas of intense community transmission, have you considered mandatory quarantine? Have you worked with the appropriate authorities to enforce quarantine measures?</li>
 						</div>
 						<div class="phase three">
-							<h3>PHASE</h3>
+							<!-- <h3>PHASE</h3>
 							<div class="phase-description">
 								<div></div>
 								<p>Individually detected cases, </br>traceable to know sources of transmission</p>
-							</div>
+							</div> -->
 							<li>Is there a lag time for receiving the laboratory and clinical data and, if so, what is that amount of time?  What actions can be taken to reduce lag time?</li>
 							<li>Has a threshold been identified past which you will reduce contact tracing efforts and and redirect those resources to protect those in high-risk setting?</li>
 							<li>Will you assess the effectiveness of inbound traveler screening Taking into account the resources required? </li>
@@ -356,10 +409,20 @@
 	// Update sticky navbar
 	const updateDocumentNav = (number) => {
 		const documentNav = document.querySelector('.document-nav')
-		documentNav.innerHTML = 
-			`<div class="number">${number}</div>
-			<h1>KEY ACTION #${number}</h1>`
+		if (number) {
+			documentNav.innerHTML = 
+				`<div class="nav-squish">
+					<div class="number">${number}</div>
+					<h1>KEY ACTION #${number}</h1>
+				</div>`
+		} else {
+			documentNav.innerHTML = 
+				`<div class="nav-squish">
+					<h1>IMPLEMENTATION METRICS</h1>
+				</div>`
+		};
 	};
+
 
 	// Expand button click handler
 	Array.from(document.querySelectorAll('.expand-button'))
@@ -387,6 +450,19 @@
 		})
 
 
+	// Read More button click handler
+	Array.from(document.querySelectorAll('.read-more-button'))
+		.map(button => {
+			button.addEventListener('click', event => {
+				event.stopPropagation();
+				const button = event.target;
+				const hider = button.parentElement.children[1]
+				toggleExpandHider(hider, button)
+			})
+		})
+
+
+
 	// Expand correct section when toc link is clicked
 	Array.from(document.querySelectorAll('.toc a'))
 		.map(link => {
@@ -408,12 +484,14 @@
 				// the intersectionObserver only using the top of 
 				// the window, not the top of the nav
 				setTimeout(() => {
-					console.log(anchorID.split('-')[1])
 					updateDocumentNav(anchorID.split('-')[1]);
 				}, 100)
 			})
 		})
 
+
+	// Parse #action- urls on page load so that people can send
+	// links to one another and the right section will open
 	if (window.location.hash.includes('action')) {
 		const anchorID = window.location.hash;
 
@@ -426,13 +504,21 @@
 		hider.style.height = 'auto'
 		button.setAttribute('aria-label', 'Collapse Details')
 
-		toggleDocumentNav();
-
-		// This is a horrible horrible hack to deal with 
+		// This is a horrible hack to deal with 
 		// the intersectionObserver only using the top of 
 		// the window, not the top of the nav
 		setTimeout(() => {
 			updateDocumentNav(anchorID.split('-')[1]);
+			
+			// This fixes the bug where you can get the navbar inverted
+			// by refreshing a url with a has while scrolled to the top 
+			// of the page.
+			const expandBoxesRect = section.parentElement.parentElement.getBoundingClientRect()
+			console.log(section.parentElement.parentElement)
+			console.log(expandBoxesRect.top)
+			if (expandBoxesRect.top < 0) {
+			toggleDocumentNav();
+		}
 		}, 100)
 	}
 
@@ -453,7 +539,6 @@
 				}
 			})
 		})
-
 
 
 	// calculate which sections are onscreen any time an intersection 
@@ -486,12 +571,12 @@
 		.map(section => { sectionObserver.observe(section) });
 
 
-	// // This isn't working as expected due to asychronous event handling...
+	// // This isn't safe, due to asychronous event handling...
 	// const allSectionsCollapsed = () => {
 	// 	return Array.from(document.querySelectorAll('.expand-button'))
 	// 		.filter(button => button
 	// 			.getAttribute('aria-label') === 'Collapse Details')
-	// 		.length < 1
+	// 			.length < 1
 	// }
 
 
@@ -502,6 +587,15 @@
 
 	headerObserver.observe(document.querySelector('.introduction-header'))
 
+	Array.from(document.querySelectorAll('.implementation-metrics input'))
+		.map(input => input.addEventListener('click', event => {
+			const results = Array.from(document.querySelectorAll('.implementation-metrics input:first-of-type'))
+			const sum = results.map(input => input.checked ? 1 : 0).reduce((a, b) => a + b)
+			const percent = sum / results.length * 100
+
+			document.querySelector('.implementation-metrics h3')
+				.innerHTML = `Progress: ${percent.toFixed()}%`
+		}))
 
 
 </script>
