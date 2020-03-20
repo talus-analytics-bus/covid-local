@@ -877,6 +877,10 @@ a.page-anchor {
     width: 100%;
 }
 
+.read-more-content h2 {
+    margin-top: 6rem;
+}
+
 .implementation-metrics,
 .resources,
 .phase {
