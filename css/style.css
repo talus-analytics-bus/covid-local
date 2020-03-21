@@ -384,12 +384,22 @@ nav.main-nav:after {
     display: block;
     position: absolute;
     bottom: 0;
-    left: 1rem;
-    right: 1rem;
+    left: 0rem;
+    right: 0rem;
     height: 2px;
     border-radius: 1.5px;
     background-color: #569185;
     content: '';
+}
+
+@media only screen and (max-width: 992px) {
+    nav.main-nav {
+        padding: 2rem 0;
+    }
+    nav.main-nav:after {
+        left: -2rem;
+        right: -2rem;
+    }
 }
 
 .nav-squish {
@@ -410,10 +420,15 @@ nav.main-nav:after {
     align-items: center;
 }
 
-.navbar-logo, 
-.navbar-left-text {
+.navbar-left-text,
+.navbar-logo{
     margin: .5rem 0;
 }
+
+.navbar-left-text {
+    padding-left: 0;
+}
+
 
 /* .navbar-top {
     display: flex;
@@ -471,12 +486,12 @@ nav.main-nav:after {
     position: relative;
 }
 
-/* .navbar-right li:last-of-type:before {
+.navbar-right li:last-of-type:before {
     position: relative;
     content: '';
     border-right: 1px solid rgba(38,50,74, .5);
     margin: 0 1rem;
-} */
+}
 
 /* @media only print {
     .navbar-right {
@@ -500,6 +515,11 @@ nav a:hover {
     transition: .25s background-color ease;
 }
 
+nav > a:hover{
+    background-color: rgba(64,147,133, 0);
+    transition: .25s background-color ease;
+}
+
 a {
     color: #368073;
     font-style: italic;
@@ -520,6 +540,18 @@ figcaption {
     padding-left: 1rem;
     border-left: 1px solid #999999;
 }
+
+@media only screen and (max-width: 765px) {
+    figcaption {
+        margin: 0 1rem;
+        margin-bottom: 2rem;
+        padding-left: 1rem;
+    } 
+}
+
+/* figure {
+
+} */
 
 header, 
 article {
@@ -556,6 +588,7 @@ article {
     align-items: stretch;
     font-size: 1.5rem;
     font-weight: 300;
+    margin-bottom: 1rem;
 }
 
 .introduction .right-col:before {
@@ -603,10 +636,6 @@ a.introduction-download:hover {
 @media only screen and (max-width: 992px) {
     .introduction {
         flex-wrap: wrap;
-    }
-
-    .introduction .left-col {
-        margin-bottom: 40px;
     }
 
     .introduction .right-col {
@@ -881,6 +910,21 @@ a.page-anchor {
     margin-top: 6rem;
 }
 
+.narrowimage {
+    width:auto;
+    height: 18rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 765px) {
+    .narrowimage {
+        width: 100%;
+        height: auto;
+    }
+}
+
 .implementation-metrics,
 .resources,
 .phase {
@@ -1138,4 +1182,39 @@ span[data-tippy-content] {
 
 .tippy-content a {
     color: lightblue;
+}
+
+article.contact,
+article.contributors {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.contributors h2 {
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: normal;
+    max-width: 30rem;
+}
+
+.contributors h1 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.contributors-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.individual{
+    flex-basis: auto;
+    margin: 1rem 10%;
+}
+
+.individual > img {
+    width: auto;
+    height: 6rem;
 }
