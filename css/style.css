@@ -632,6 +632,11 @@ a.introduction-download:hover {
     transition: .25s background-color ease;
 }
 
+.introduction .feedback {
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+}
+
 
 @media only screen and (max-width: 992px) {
     .introduction {
@@ -641,6 +646,10 @@ a.introduction-download:hover {
     .introduction .right-col {
         flex-direction: row;
         margin-left: 0;
+    }
+
+    .introduction .feedback {
+        margin-bottom: 0;
     }
 
     a.introduction-download {
@@ -654,6 +663,10 @@ a.introduction-download:hover {
 
     .introduction .right-col {
         flex-direction: column;
+    }
+
+    .introduction .feedback {
+        margin-bottom: 1rem;
     }
 
     a.introduction-download {
