@@ -27,7 +27,7 @@ jobs:
 
       - run:
           name: deploy
-          command: aws s3 sync build/ s3://covid-checklist --delete
+          command: aws s3 sync / s3://covid-checklist --delete
 
       - run:
           name: Notify Slack
@@ -58,7 +58,7 @@ jobs:
 
       - run:
           name: deploy
-          command: aws s3 sync build/ s3://covid-local-dev --delete
+          command: aws s3 sync / s3://covid-local-dev --delete
 
       - run:
           name: Notify Slack
@@ -74,9 +74,9 @@ workflows:
           filters:
             branches:
               only:
-                - production
+                - master
       - deploy-dev:
           filters:
             branches:
               only:
-                - master
+                - dev
