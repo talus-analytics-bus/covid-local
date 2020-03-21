@@ -1079,6 +1079,16 @@ a.page-anchor {
     margin-bottom: 1rem;
 }
 
+.expand-area > ol {
+    display: block;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px;
+    margin-top: 1rem;
+}
+
 .phase .read-more-content {
     padding-top: 1rem;
 }
@@ -1088,6 +1098,7 @@ a.page-anchor {
     padding: .5rem 0;
 }
 
+.phase .read-more-content > ol,
 .phase > ol {
     list-style-type: lower-alpha;
 }
@@ -1102,17 +1113,6 @@ a.page-anchor {
 
 .expand-area {
     border-top: 1px solid #999999;
-}
-
-.phase .read-more-content > ol,
-.expand-area > ol {
-    display: block;
-    margin-block-start: 0em;
-    margin-block-end: 0em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 0px;
-    margin-top: 1rem;
 }
 
 .expanding-boxes li {
@@ -1171,8 +1171,8 @@ a.page-anchor {
 } */
 
 .phase li.header:before,
-.phase > li:first-of-type:after,
 .phase .read-more-content > li:first-of-type:after,
+.phase > li:first-of-type:after,
 .phase .read-more-content > ol > li:first-of-type:after,
 .phase > ol > li:first-of-type:after {
     content: none;
