@@ -845,6 +845,10 @@ a.page-anchor {
     padding-right: 50px;
 }
 
+.first-section h2:nth-child(3) {
+    margin-top: .5rem;
+}
+
 .number {
     /* Use font-size only to change the size of this number, don't adjust height */
     font-size: 1.3rem;

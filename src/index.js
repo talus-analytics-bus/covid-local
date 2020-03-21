@@ -67,12 +67,12 @@ const updateDocumentNav = (number) => {
         documentNav.innerHTML = 
             `<div class="nav-squish">
                 <div class="number">${number}</div>
-                <h1>KEY ACTION #${number}</h1>
+                <h1>KEY OBJECTIVE #${number}</h1>
             </div>`
     } else {
         documentNav.innerHTML = 
             `<div class="nav-squish">
-                <h1>IMPLEMENTATION METRICS</h1>
+                <h1>INDICATORS</h1>
             </div>`
     };
 };
