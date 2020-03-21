@@ -20,6 +20,7 @@ const toggleExpandHider = (hider, button) => {
         hider.style.height = content.offsetHeight + 'px';
         setTimeout(() => {
             hider.style.height = 'auto';
+            hider.hidden = false;
         }, 250)
     } else {
         button.setAttribute('aria-label', 'Expand Details')
@@ -30,6 +31,7 @@ const toggleExpandHider = (hider, button) => {
         setTimeout(() => {
             // window.requestAnimationFrame(() => {
                 hider.style.height = '0px';
+                hider.hidden = true;
             // });
         }, 0)
     }
@@ -115,6 +117,7 @@ Array.from(document.querySelectorAll('.toc a'))
 
             // Not using the toggle handler so that we skip the animation
             hider.style.height = 'auto'
+            hider.hidden = false;
             button.setAttribute('aria-label', 'Collapse Details')
 
             // This is a horrible horrible hack to deal with 
@@ -139,6 +142,7 @@ if (window.location.hash.includes('action')) {
 
     // Not using the toggle handler so that we skip the animation
     hider.style.height = 'auto'
+    hider.hidden = false;
     button.setAttribute('aria-label', 'Collapse Details')
 
     // This is a horrible hack to deal with 
