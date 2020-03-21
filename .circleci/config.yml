@@ -26,9 +26,14 @@ jobs:
       - aws-cli/configure
 
       - run:
-          name: aws s3 sync build/ s3://covid-local --delete
-          command: rm yarn.lock; yarn install --network-timeout 1000000
+          name: deploy
+          command: aws s3 sync build/ s3://covid-checklist --delete
 
+      - run:
+          name: Notify Slack
+          command: |
+            curl -X POST -H 'Content-type: application/json' --data '{"text":"https://covid-local.org/"}' \
+            https://hooks.slack.com/services/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
 
   deploy-dev:
     working_directory: ~/repo
@@ -51,6 +56,15 @@ jobs:
       - aws-cli/install
       - aws-cli/configure
 
+      - run:
+          name: deploy
+          command: aws s3 sync build/ s3://covid-local-dev --delete
+
+      - run:
+          name: Notify Slack
+          command: |
+            curl -X POST -H 'Content-type: application/json' --data '{"text":"http://covid-local-dev.s3-website.us-east-2.amazonaws.com/"}' \
+            https://hooks.slack.com/services/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
 
 workflows:
   version: 2
@@ -66,4 +80,3 @@ workflows:
             branches:
               only:
                 - master
-
