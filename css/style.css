@@ -397,8 +397,8 @@ nav.main-nav:after {
         padding: 2rem 0;
     }
     nav.main-nav:after {
-        left: -2rem;
-        right: -2rem;
+        left: -1rem;
+        right: -1rem;
     }
 }
 
