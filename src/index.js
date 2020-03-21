@@ -13,15 +13,27 @@ Array.from(document.querySelectorAll('.expanding-boxes section'))
     })
 
 // Toggle expanding sections
+const animDuration = 500;
+document.querySelectorAll('.expand-hider, .read-more-hider').forEach(element => {
+    element.style.transition = `${animDuration}ms ease`
+})
+
+
+let animEnd = undefined;
 const toggleExpandHider = (hider, button) => {
     const content = hider.children[0]
+    clearTimeout(animEnd);
+
     if (button.getAttribute('aria-label') === "Expand Details") {
+
         button.setAttribute('aria-label', 'Collapse Details')
+        hider.hidden = false;
         hider.style.height = content.offsetHeight + 'px';
-        setTimeout(() => {
+
+        animEnd = setTimeout(() => {
             hider.style.height = 'auto';
-            hider.hidden = false;
-        }, 250)
+        }, animDuration)
+
     } else {
         button.setAttribute('aria-label', 'Expand Details')
         hider.style.height = content.offsetHeight + 'px';
@@ -31,9 +43,12 @@ const toggleExpandHider = (hider, button) => {
         setTimeout(() => {
             // window.requestAnimationFrame(() => {
                 hider.style.height = '0px';
-                hider.hidden = true;
             // });
         }, 0)
+
+        animEnd = setTimeout(() => {
+            hider.hidden = true;
+        }, animDuration)
     }
 }
 
@@ -155,8 +170,6 @@ if (window.location.hash.includes('action')) {
         // by refreshing a url with a has while scrolled to the top 
         // of the page.
         const expandBoxesRect = section.parentElement.parentElement.getBoundingClientRect()
-        console.log(section.parentElement.parentElement)
-        console.log(expandBoxesRect.top)
         if (expandBoxesRect.top < 0) {
         toggleDocumentNav();
     }

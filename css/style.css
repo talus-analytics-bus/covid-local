@@ -769,6 +769,10 @@ a.introduction-feedback:hover {
     align-items: flex-end;
 }
 
+.toc-title p {
+    margin-top: -.5rem;
+}
+
 .toc-title > div {
     max-width: 40rem;
 }
@@ -920,15 +924,17 @@ a.page-anchor {
 .expand-hider {
     height: 0px;
     overflow: hidden;
-    transition: .25s ease;
-    margin: 2rem -1rem 0 -1rem;
+    /* Transition set in JS */
+    /* transition: 2.25s ease; */
+    margin: 1rem -1rem 0 -1rem;
     padding: 0rem 1rem;
 }
 
 .read-more-hider {
     height: 0px;
     overflow: hidden;
-    transition: .25s ease;
+    /* Transition set in JS */
+    /* transition: 2.25s ease; */
 }
 
 .read-more-content svg {
@@ -1029,7 +1035,7 @@ a.page-anchor {
 
 .phase.zero {
     /* border-top: #CFE4E0 15px solid; */
-    background-color: rgb(248, 248, 248);
+    background-color: white;
 }
 
 .phase.zero > .phase-description > div {
@@ -1038,7 +1044,8 @@ a.page-anchor {
 
 .phase.one {
     /* border-top: #8CBEB6 15px solid; */
-    background-color: rgb(231, 231, 231);
+    /* background-color: rgb(231, 231, 231); */
+    background-color: rgb(248, 248, 248);
 }
 
 .phase.one > .phase-description > div {
@@ -1064,10 +1071,15 @@ a.page-anchor {
 
 .phase h3 {
     color: #273349;
-    font-size: .8rem;
-    margin-bottom: .25rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
 }
 
+.phase .read-more-content {
+    padding-top: 1rem;
+}
+
+.phase .read-more-content > li,
 .phase li {
     padding: .5rem 0;
 }
@@ -1076,6 +1088,8 @@ a.page-anchor {
     list-style-type: lower-alpha;
 }
 
+.phase .read-more-content > li,
+.phase .read-more-content > ol,
 .phase > li,
 .phase > ol {
     position: relative;
@@ -1086,6 +1100,7 @@ a.page-anchor {
     border-top: 1px solid #999999;
 }
 
+.phase .read-more-content > ol,
 .expand-area > ol {
     display: block;
     margin-block-start: 0em;
@@ -1104,6 +1119,8 @@ a.page-anchor {
     font-style: normal;
 }
 
+.phase .read-more-content > li:before,
+.phase .read-more-content > ol > li:before,
 .phase > li:before,
 .phase > ol > li:before {
     position: absolute;
@@ -1116,14 +1133,18 @@ a.page-anchor {
     border-radius: 5px;
 }
 
+.phase .read-more-content > li:before,
 .phase > li:before {
     left: -60px;
 }
 
+.phase .read-more-content > ol > li:before,
 .phase > ol > li:before {
     left: -100px;
 }
 
+.phase .read-more-content > li:after,
+.phase .read-more-content > ol > li:after,
 .phase > li:after,
 .phase > ol > li:after {
     position: absolute;
@@ -1134,6 +1155,7 @@ a.page-anchor {
     border-radius: 5px;
 }
 
+.phase .read-more-content > li:after,
 .phase > li:after {
     left: -60px;
     border: .5px solid darkgrey;
@@ -1146,6 +1168,8 @@ a.page-anchor {
 
 .phase li.header:before,
 .phase > li:first-of-type:after,
+.phase .read-more-content > li:first-of-type:after,
+.phase .read-more-content > ol > li:first-of-type:after,
 .phase > ol > li:first-of-type:after {
     content: none;
 }
@@ -1172,6 +1196,16 @@ a.page-anchor {
     margin: 0 0 1rem 1rem;
 }
 
+.primary-actions {
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+
+.expand-area .read-more-button {
+    font-weight: 700;
+    color: #26324a;
+}
+
 .first-section-resources,
 .resources {
     padding-bottom: 1rem;
@@ -1180,7 +1214,7 @@ a.page-anchor {
 
 .first-section-resources h4,
 .resources h4 {
-    font-size: .8rem;
+    font-size: 1rem;
     margin: .5rem 0;
 }
 
