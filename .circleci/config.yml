@@ -25,6 +25,10 @@ jobs:
       - aws-cli/install
       - aws-cli/configure
 
+      - run:
+          name: aws s3 sync build/ s3://covid-local --delete
+          command: rm yarn.lock; yarn install --network-timeout 1000000
+
 
   deploy-dev:
     working_directory: ~/repo

@@ -61,7 +61,7 @@
 } */
 
 
-/* 
+
 @font-face {
     font-family: 'rawline';
     src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300-.eot');
@@ -72,7 +72,7 @@
          url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300.svg') format('svg');
     font-weight: 300;
     font-style: normal;
-
+    font-display: swap;
 }
 
 
@@ -87,8 +87,8 @@
          url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300i.svg') format('svg');
     font-weight: 300;
     font-style: italic;
-
-} */
+    font-display: swap;
+}
 
 
 
@@ -1202,6 +1202,12 @@ article.contributors {
     margin-top: 3rem;
     display: flex;
     flex-direction: column;
+    border-bottom: 1px solid #999999;
+    padding-bottom: 2rem;
+}
+
+article.contributors:last-of-type{
+    border-bottom: none;
 }
 
 .contributors h2 {
@@ -1209,25 +1215,140 @@ article.contributors {
     font-style: italic;
     font-weight: normal;
     max-width: 30rem;
+    margin-bottom: 3rem;
 }
 
 .contributors h1 {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    /* margin-top: 2rem; */
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 800;
 }
 
 .contributors-container {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: center;
+    align-items: flex-start;
 }
 
 .individual{
-    flex-basis: auto;
-    margin: 1rem 10%;
+    width: 50%;
+    display: flex;
+    margin-bottom: 2rem;
 }
 
+
 .individual > img {
-    width: auto;
-    height: 6rem;
+    width: 12rem;
+    padding-left: 4rem;
+    height: auto;
+    margin-top: 0;
+    margin-right: 1rem;
+}
+
+@media only screen and (min-width: 65rem) {
+    .individual:first-of-type > img {
+        width: 8rem;
+        padding-left: 0;
+    }
+
+    .individual:first-of-type {
+        margin-right: 2rem;
+    }
+}
+
+.individual > img.georgetown {
+    padding-left: 0;
+}
+
+.bio p {
+    margin: 0;
+    font-style: italic;
+    font-weight: 300;
+    font-size: .9rem;
+}
+
+@media only screen and (max-width: 65rem) {
+    .contributors-container {
+        flex-wrap: wrap;
+    }
+    .individual {
+        min-width: 35rem;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .individual {
+        flex-wrap: wrap;
+        min-width: 100%;
+    }
+
+    .individual .bio {
+        width: 100%;
+    }
+
+    .bio p {
+        font-size: .8rem;
+    }
+
+    .individual > img {
+        width: auto;
+        height: 5rem;
+        padding-left: 0rem;
+        margin-top: 2rem;
+        margin-right: 1rem;
+        margin-bottom: 0;
+    }
+
+    .individual > img.georgetown {
+        height: 6.5rem;
+    }
+
+    .individual > img.nti {
+        margin-bottom: 1rem;
+    }
+}
+
+
+.contributors-column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 30rem;
+    /* width: 50%; */
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 10rem;
+    margin-left: -10rem;
+}
+
+.contributors-column .bio {
+    margin-left: 10rem;
+}
+
+@media only screen and (max-width: 65rem) {
+    .contributors-column {
+        margin-left: 0rem;
+    }
+    .contributors-column .bio {
+        margin-left: 0rem;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .contributors-column {
+        height: auto;
+        margin-left: 25%;
+    }
+    .contributors-column .bio {
+        margin-top: 1rem;
+    }
+}
+
+
+@media only screen and (max-width: 700px) {
+    .contributors-column {
+        margin-left: 0;
+    }
 }
