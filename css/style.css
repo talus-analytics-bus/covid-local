@@ -1345,6 +1345,10 @@ a.page-anchor {
     font-weight: 700;
 }
 
+.primary-actions > ul > li {
+    margin-left: 1.2rem;
+}
+
 .expand-area .read-more-button {
     font-weight: 700;
     color: #26324a;
