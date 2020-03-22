@@ -142,7 +142,12 @@ document.querySelectorAll('.toc a').forEach(link => {
         // the intersectionObserver only using the top of 
         // the window, not the top of the nav...
         setTimeout(() => {
-            updateDocumentNav(anchorID.split('-')[1]);
+            const sectionNumber = anchorID.split('-')[1]
+            if (sectionNumber > 0) {
+                updateDocumentNav(sectionNumber);
+            } else {
+                updateDocumentNav();
+            }
         }, 100);
     });
 });
@@ -167,7 +172,12 @@ if (window.location.hash.includes('action')) {
     // the intersectionObserver only using the top of 
     // the window, not the top of the nav
     setTimeout(() => {
-        updateDocumentNav(anchorID.split('-')[1]);
+        const sectionNumber = anchorID.split('-')[1]
+        if (sectionNumber > 0) {
+            updateDocumentNav(sectionNumber);
+        } else {
+            updateDocumentNav();
+        }
         
         // This fixes the bug where you can get the navbar inverted
         // by refreshing a url with a has while scrolled to the top 
