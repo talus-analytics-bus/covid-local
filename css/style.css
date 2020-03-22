@@ -738,6 +738,10 @@ a.introduction-feedback:hover {
     width: 1rem;
 }
 
+.expanding-boxes section:last-of-type {
+    margin-bottom: 8rem;
+}
+
 .expanding-boxes h1 {
     font-size: 1.5rem;
     margin-top: 1rem;
@@ -1345,6 +1349,14 @@ a.page-anchor {
     font-weight: 700;
 }
 
+.primary-actions > ul {
+    list-style-type: disc;
+}
+
+.primary-actions > ul > li {
+    margin-left: 1.2rem;
+}
+
 .expand-area .read-more-button {
     font-weight: 700;
     color: #26324a;
@@ -1369,6 +1381,12 @@ a.page-anchor {
     padding: .25rem 0;
     color: inherit;
     /* color: #409385; */
+}
+
+@media only screen and (min-width: 992px) {
+    .resources a {
+        margin-left: 2.25rem;
+    }
 }
 
 .resources a.emph {
