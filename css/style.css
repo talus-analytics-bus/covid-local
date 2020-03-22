@@ -1164,17 +1164,32 @@ a.page-anchor {
     content: '.';
 }
 
-.implementation-metrics .radio {
+.implementation-metrics .radio > div {
     align-items: baseline;
+    display: flex;
+    flex-grow: 1;
 }
 
 @media only screen and (max-width: 765px) {
-    .implementation-metrics > div {
-        /* flex-wrap: wrap; */
+    .implementation-metrics > .header {
+        flex-wrap: wrap;
+    }
+    .implementation-metrics > .header p {
+        padding: 0;
+        margin: 1rem 0;
     }
     .implementation-metrics p {
         margin: 1rem 0;
         width: 100%;
+    }
+    .implementation-metrics .radio {
+        flex-wrap: wrap;
+    }
+    .implementation-metrics .radio > div {
+        min-width: 100%;
+    }
+    .implementation-metrics .radio-li {
+        margin-left: 0;
     }
     .implementation-metrics > div > input:first-of-type {
         margin-left: auto;
