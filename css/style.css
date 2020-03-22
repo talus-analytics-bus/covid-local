@@ -682,6 +682,11 @@ a.introduction-feedback:hover {
         padding: 0rem 1rem; 
         padding-bottom: .5rem;
         max-width: 15rem;
+        margin-right: 1rem;
+    }
+
+    a.introduction-feedback:last-of-type {
+        margin-right: 0;
     }
 
     a.introduction-download {
@@ -709,9 +714,14 @@ a.introduction-feedback:hover {
         max-width: unset;
     }
 
-    a.introduction-download {
+    a.introduction-feedback {
         margin-bottom: 1rem;
     }
+
+    a.introduction-feedback:last-of-type {
+        margin-bottom: 0;
+    }
+    
 
     a.introduction-feedback svg,
     a.introduction-download svg {
