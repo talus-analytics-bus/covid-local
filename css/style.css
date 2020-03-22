@@ -738,6 +738,10 @@ a.introduction-feedback:hover {
     width: 1rem;
 }
 
+.expanding-boxes section:last-of-type {
+    margin-bottom: 8rem;
+}
+
 .expanding-boxes h1 {
     font-size: 1.5rem;
     margin-top: 1rem;
