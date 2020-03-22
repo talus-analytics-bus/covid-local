@@ -1450,6 +1450,11 @@ article.contributors:last-of-type{
     border-bottom: none;
 }
 
+article.contributors > p {
+    font-style: italic;
+    margin-bottom: 5rem;
+}
+
 .contributors h2 {
     font-size: 1rem;
     font-style: italic;
@@ -1560,7 +1565,7 @@ article.contributors:last-of-type{
     /* width: 50%; */
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 10rem;
+    margin-bottom: 4rem;
     margin-left: -10rem;
 }
 
