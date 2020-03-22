@@ -1522,7 +1522,7 @@ article.contributors:last-of-type{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 40rem;
+    height: 50rem;
     /* width: 50%; */
     justify-content: space-between;
     align-items: flex-start;
@@ -1550,7 +1550,6 @@ article.contributors:last-of-type{
         margin-left: 25%;
     }
     .contributors-column .bio {
-        margin-left: 10rem;
         margin-top: 1rem;
     }
 }
