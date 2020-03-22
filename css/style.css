@@ -1345,6 +1345,10 @@ a.page-anchor {
     font-weight: 700;
 }
 
+.primary-actions > ul {
+    list-style-type: disc;
+}
+
 .primary-actions > ul > li {
     margin-left: 1.2rem;
 }
@@ -1373,6 +1377,12 @@ a.page-anchor {
     padding: .25rem 0;
     color: inherit;
     /* color: #409385; */
+}
+
+@media only screen and (min-width: 992px) {
+    .resources a {
+        margin-left: 2.25rem;
+    }
 }
 
 .resources a.emph {
