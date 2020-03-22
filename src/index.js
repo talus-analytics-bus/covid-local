@@ -73,8 +73,8 @@ const updateDocumentNav = (number) => {
     } else {
         documentNav.innerHTML = 
             `<div class="nav-squish">
-                <div class="no-number">${number}</div>
-                <h1>INDICATORS</h1>
+                <div class="no-number"></div>
+                <h1>STATUS CHECK</h1>
             </div>`
     };
 };
