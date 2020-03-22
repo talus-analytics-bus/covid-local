@@ -74,7 +74,7 @@ const updateDocumentNav = (number) => {
         documentNav.innerHTML = 
             `<div class="nav-squish">
                 <div class="no-number"></div>
-                <h1>STATUS CHECK</h1>
+                <h1>INDICATORS OF PROGRESS</h1>
             </div>`
     };
 };
@@ -122,7 +122,7 @@ document.querySelectorAll('.read-more-button').forEach(button => {
 
 
 // Expand correct section when toc link is clicked
-document.querySelectorAll('.toc a').forEach(link => {
+document.querySelectorAll('a[href^="#action"]').forEach(link => {
     link.addEventListener('click', event => {
 
         const anchorID = event.target.getAttribute('href')
