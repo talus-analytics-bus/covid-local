@@ -1443,6 +1443,7 @@ article.contributors:last-of-type{
     width: 50%;
     display: flex;
     margin-bottom: 2rem;
+    align-items: flex-start;
 }
 
 
