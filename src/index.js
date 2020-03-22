@@ -73,6 +73,7 @@ const updateDocumentNav = (number) => {
     } else {
         documentNav.innerHTML = 
             `<div class="nav-squish">
+                <div class="no-number">${number}</div>
                 <h1>INDICATORS</h1>
             </div>`
     };
@@ -243,6 +244,19 @@ const headerObserver = new IntersectionObserver((entries, observer) => {
 
 headerObserver.observe(document.querySelector('.introduction-header'));
 
+
+// Build radio buttons 
+let radioCount = 0;
+document.querySelectorAll('.implementation-metrics .radio').forEach(div => {
+    radioCount += 1;
+    div.innerHTML += 
+        `<input type="radio" id="y${radioCount}" name="r${radioCount}">
+        <label for="y${radioCount}">yes</label>
+        <input type="radio" id="n${radioCount}" name="r${radioCount}">
+        <label for="n${radioCount}">no</label>`;
+});
+
+// radio button event listener
 document.querySelectorAll('.implementation-metrics input').forEach(input => {
     input.addEventListener('click', event => {
 
@@ -254,7 +268,6 @@ document.querySelectorAll('.implementation-metrics input').forEach(input => {
             .innerHTML = `Progress: ${percent.toFixed()}%`;
     });
 });
-
 
 // Activate tooltip library
 tippy('[data-tippy-content]', {
