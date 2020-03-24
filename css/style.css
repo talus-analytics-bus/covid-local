@@ -1502,7 +1502,7 @@ article.contributors > p {
 }
 
 
-.individual > img {
+.individual img {
     width: 12rem;
     padding-left: 4rem;
     height: auto;
@@ -1521,7 +1521,7 @@ article.contributors > p {
     }
 }
 
-.individual > img.georgetown {
+.individual img.georgetown {
     padding-left: 0;
 }
 
@@ -1555,7 +1555,7 @@ article.contributors > p {
         font-size: .8rem;
     }
 
-    .individual > img {
+    .individual img {
         width: auto;
         height: 5rem;
         padding-left: 0rem;
@@ -1564,11 +1564,11 @@ article.contributors > p {
         margin-bottom: 0;
     }
 
-    .individual > img.georgetown {
+    .individual img.georgetown {
         height: 6.5rem;
     }
 
-    .individual > img.nti {
+    .individual img.nti {
         margin-bottom: 1rem;
     }
 }
