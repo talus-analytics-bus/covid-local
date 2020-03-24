@@ -1379,6 +1379,23 @@ a.page-anchor {
 .primary-actions {
     margin-bottom: 2rem;
     font-weight: 700;
+    border-radius: 15px;
+    border: 2px solid #26324a;
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+    padding-right: 1rem;
+}
+
+h3.primary-actions-header {
+    color: white;
+    background-color: #26324a;
+    margin-bottom: -1rem;
+    padding: .5rem .5rem;
+    display: inline-block;
+    border-radius: 1.2rem;
+    position: relative;
+    top: -1.3rem;
+    left: 1.5rem;
 }
 
 .primary-actions > ul {
