@@ -62,7 +62,7 @@
 
 
 
-/* @font-face {
+@font-face {
     font-family: 'rawline';
     src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300-.eot');
     src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300-.eot?#iefix') format('embedded-opentype'),
@@ -70,19 +70,6 @@
          url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300.woff') format('woff'),
          url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300.ttf') format('truetype'),
          url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300.svg') format('svg');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-} */
-
-@font-face {
-    font-family: 'rawline';
-    src: url('/assets/fonts/rawline-300-.eot');
-    src: url('/assets/fonts/rawline-300-.eot?#iefix') format('embedded-opentype'),
-         url('/assets/fonts/rawline-300.woff2') format('woff2'),
-         url('/assets/fonts/rawline-300.woff') format('woff'),
-         url('/assets/fonts/rawline-300.ttf') format('truetype'),
-         url('/assets/fonts/rawline-300.svg') format('svg');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -137,12 +124,12 @@
 
 @font-face {
     font-family: 'rawline';
-    src: url('/assets/fonts/rawline-500.eot');
-    src: url('/assets/fonts/rawline-500.eot?#iefix') format('embedded-opentype'),
-         url('/assets/fonts/rawline-500.woff2') format('woff2'),
-         url('/assets/fonts/rawline-500.woff') format('woff'),
-         url('/assets/fonts/rawline-.ttf') format('truetype'),
-         url('/assets/fonts/rawline-500.svg') format('svg');
+    src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500.eot');
+    src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500.eot?#iefix') format('embedded-opentype'),
+         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500.woff2') format('woff2'),
+         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500.woff') format('woff'),
+         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-.ttf') format('truetype'),
+         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500.svg') format('svg');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -1392,14 +1379,11 @@ a.page-anchor {
 .primary-actions {
     margin-bottom: 2rem;
     font-weight: 700;
-    border-radius: 10px;
+    border-radius: 15px;
     border: 2px solid #26324a;
     margin-top: 2rem;
     padding-bottom: 1rem;
     padding-right: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-
 }
 
 h3.primary-actions-header {
