@@ -1379,11 +1379,14 @@ a.page-anchor {
 .primary-actions {
     margin-bottom: 2rem;
     font-weight: 700;
-    border-radius: 15px;
+    border-radius: 10px;
     border: 2px solid #26324a;
     margin-top: 2rem;
     padding-bottom: 1rem;
     padding-right: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
 }
 
 h3.primary-actions-header {
