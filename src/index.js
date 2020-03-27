@@ -1,4 +1,7 @@
 
+import "core-js";
+require('intersection-observer');
+// const tippy = require('tippy.js');
 import tippy from 'tippy.js';
 import 'tippy.js/dist/tippy.css';
 
