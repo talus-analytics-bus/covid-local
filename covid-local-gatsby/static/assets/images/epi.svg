@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" x="0px" y="0px" viewBox="0 0 2045.94 581" style="enable-background:new 0 0 2045.94 581;" xml:space="preserve">
+	<style type="text/css">
+		.epi-st0{fill:#FFFFFF;stroke:#4E4E4E;stroke-width:0.7703;stroke-miterlimit:10;}
+		.epi-st1{fill:#FFFFFF;stroke:#4E4E4E;stroke-width:0.7427;stroke-miterlimit:10;}
+		.epi-st2{fill:none;}
+		.epi-st3{fill:#010101;}
+		.epi-st4{font-family:'rawline', Arial, Helvetica, sans-serif;}
+		.epi-st5{font-size:22.7605px;}
+		.epi-st6{font-family:'rawline', Arial, Helvetica, sans-serif;}
+		.epi-st7{font-size:34px;}
+		.epi-st8{fill:#CFE4E0;}
+		.epi-st9{fill:#BCD9D4;}
+		.epi-st10{fill:#66A99D;}
+		.epi-st11{fill:#409385;}
+		.epi-st12{fill:#868D99;}
+		.epi-st13{fill:#666E7E;}
+		.epi-st14{fill:#273349;}
+	</style>
+	<line class="epi-st0" x1="291.58" y1="429.53" x2="291.58" y2="551.93"/>
+	<line class="epi-st0" x1="592.58" y1="429.53" x2="592.58" y2="552.08"/>
+	<line class="epi-st0" x1="892.58" y1="429.53" x2="892.58" y2="550.73"/>
+	<line class="epi-st1" x1="1436.56" y1="429.53" x2="1436.56" y2="551.57"/>
+	<line class="epi-st1" x1="1620.97" y1="429.53" x2="1620.97" y2="553.53"/>
+	<line class="epi-st0" x1="1804.97" y1="429.53" x2="1804.97" y2="550.51"/>
+	<line class="epi-st0" x1="1985.48" y1="429.53" x2="1985.48" y2="549.04"/>
+	<rect x="1848.57" y="463.96" class="epi-st2" width="113.51" height="55.56"/>
+	<text transform="matrix(1 0 0 1 1848.5667 480.1227)" class="epi-st3 st4 st5">Recovery</text>
+	<rect x="119.78" y="463.96" class="epi-st2" width="131.38" height="23.01"/>
+	<text transform="matrix(1 0 0 1 119.7773 480.1227)" class="epi-st3 st4 st5">No cases yet</text>
+	<rect x="370.31" y="463.96" class="epi-st2" width="182.56" height="50.18"/>
+	<text transform="matrix(1 0 0 1 376.0452 480.1227)"><tspan x="0" y="0" class="epi-st3 st4 st5">Limited individual </tspan><tspan x="60.25" y="26.95" class="epi-st3 st4 st5">cases</tspan></text>
+	<rect x="651.51" y="463.96" class="epi-st2" width="158.69" height="75.61"/>
+	<text transform="matrix(1 0 0 1 704.561 480.1227)"><tspan x="0" y="0" class="epi-st3 st4 st5">Initial </tspan><tspan x="-28.41" y="26.95" class="epi-st3 st4 st5">community </tspan><tspan x="-33.89" y="53.9" class="epi-st3 st4 st5">transmission</tspan></text>
+	<rect x="1099.4" y="463.96" class="epi-st2" width="154.07" height="75.61"/>
+	<text transform="matrix(1 0 0 1 1122.8252 480.1227)"><tspan x="0" y="0" class="epi-st3 st4 st5">Large-scale </tspan><tspan x="-1.09" y="26.95" class="epi-st3 st4 st5">community </tspan><tspan x="-6.58" y="53.9" class="epi-st3 st4 st5">transmission</tspan></text>
+	<rect x="60.46" y="6.53" class="epi-st2" width="123.56" height="420"/>
+	<text transform="matrix(0 -1 1 0 84.5976 305.3494)" class="epi-st3 st6 st7">Cases locally</text>
+	<rect x="1459.99" y="463.96" class="epi-st2" width="141.75" height="81.56"/>
+	<text transform="matrix(1 0 0 1 1489.1348 480.1227)"><tspan x="0" y="0" class="epi-st3 st4 st5">Reduced </tspan><tspan x="-12.97" y="26.95" class="epi-st3 st4 st5">community </tspan><tspan x="-18.46" y="53.9" class="epi-st3 st4 st5">transmission</tspan></text>
+	<rect x="1636.25" y="463.96" class="epi-st2" width="150.22" height="80.56"/>
+	<text transform="matrix(1 0 0 1 1636.71 480.1227)"><tspan x="0" y="0" class="epi-st3 st4 st5">Containment of </tspan><tspan x="-0.11" y="26.95" class="epi-st3 st4 st5">individual cases</tspan></text>
+	<path class="epi-st2" d="M107.41,418.7c-0.38-0.52-0.36,7.88-0.34,7.83l2.81,0.01v-7.83C108.28,418.73,107.44,418.73,107.41,418.7z"/>
+	<path class="epi-st8" d="M109.88,418.71v7.83l181.49,0.67v-14.06C198.91,416.09,124.17,418.49,109.88,418.71z"/>
+	<path class="epi-st9" d="M291.37,413.14v14.06l301.22,1.11v-22.47C505.8,408.3,388.76,410.03,291.37,413.14z"/>
+	<path class="epi-st10" d="M892.28,380.98c-58.48,14.27-118.56,18.82-178.52,20.2c-15.01,0.35-59.66,2.91-121.17,4.66v22.47l58.96,0.22h240.73V380.98z"/>
+	<path class="epi-st11" d="M1381.83,131.96c-43.74-13.13-90.02-21.3-134.5-11.48c-24.47,5.4-53.93,23.94-71.25,44.05c-21.69,28.9-45.24,70.06-69.53,101.36c-49.59,63.91-131.33,96.5-211.76,114.54c-0.68,0.15-1.37,0.29-2.06,0.45v47.65h543.58V150.95C1418.41,143.88,1400.27,137.49,1381.83,131.96z"/>
+	<path class="epi-st12" d="M1436.31,428.53h5.77h177.36V244.54c-59.59-35.02-119.85-68.6-183.13-93.59V428.53z"/>
+	<path class="epi-st13" d="M1620.21,244.99v183.53h183.13v-79.46c-33.17-16.62-65.73-34.86-97.7-53.55C1677.14,278.88,1648.75,261.77,1620.21,244.99z"/>
+	<path class="epi-st14" d="M1804.11,349.45v79.07h180.69l0.28-12.5c-4.79-0.88-9.76-2.28-14.91-4.09C1913.05,398.81,1857.77,376.28,1804.11,349.45z"/>
+</svg>

@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   module: {
     rules: [
@@ -19,5 +21,8 @@ module.exports = {
         }
       }
     ]
+  }, 
+  output: {
+    path: path.resolve(__dirname, '../covid-local-gatsby/static/dist')
   }
 };
