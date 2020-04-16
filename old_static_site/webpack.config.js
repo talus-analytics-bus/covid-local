@@ -22,6 +22,7 @@ module.exports = {
       }
     ]
   }, 
+  // Output gets saved to the static directory of the new gatsby site.
   output: {
     path: path.resolve(__dirname, '../covid-local-gatsby/static/dist')
   }

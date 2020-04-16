@@ -1,3 +1,30 @@
+## COVID-Local Full site build 
+
+COVID-Local started as a single static page, with a single basic JS file. 
+
+Now, the project is a Gatsby.js site, except the original guide page (currently the home page) is dropped straight into gatsby's `static` directory, along with the assets it depends on. 
+
+The webpack configuration of the original project (which now lives at `/old_static_site/`) has been updated so running `yarn build` in the `/old_static_site/` will properly build the dependencies for the homepage (guide page) and place them in the gatsby static directory. 
+
+
+# Changes to the homepage (guide page) javascript:
+
+1. Edit JS in `/old_static_site/src/index.js` 
+
+2. run `yarn build` in `/old_static_site/`
+
+3. run `gatsby build` in `/covid-local-gatsby/`
+
+
+Gatsby Development Server will not automatically reflect changes to the guide page or the guide page JS.
+
+
+
+
+
+
+
+
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
   <a href="https://www.gatsbyjs.org">
