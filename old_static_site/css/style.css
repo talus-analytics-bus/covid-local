@@ -559,7 +559,7 @@ header,
 article {
     margin: auto;
     width: 90%;
-    max-width: 65rem;
+    max-width: 64rem;
 }
 
 .introduction {
@@ -1440,8 +1440,18 @@ h3.primary-actions-header {
     /* color: #409385; */
 }
 
+.resources p {
+    font-style: italic;
+    margin: 0;
+    margin-top: -.5rem;
+    padding: 0;
+    padding-bottom: .5rem;
+    font-size: .9rem;
+}
+
 @media only screen and (min-width: 992px) {
-    .resources a {
+    .resources a,
+    .resources p {
         margin-left: 2.25rem;
     }
 }
