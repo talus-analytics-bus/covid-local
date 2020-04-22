@@ -12,9 +12,10 @@ const Nav = () => (
     </Link>
     <div className={styles.navbarRight}>
       <ul>
-        {/*<li><a target="_blank" href="#">Resources</a></li>*/}
-        <li><Link to="/contributors">contributors</Link></li>
-        <li><a href="mailto:COVIDLocal@nti.org?subject=COVID-Local%20Site%20Feedback">contact us</a></li>
+        <li><Link to="/">Guide</Link></li>
+        <li><Link to="/blog">Blog</Link></li>
+        <li><Link to="/contributors">Contributors</Link></li>
+        <li><a href="mailto:COVIDLocal@nti.org?subject=COVID-Local%20Site%20Feedback">Contact&nbsp;us</a></li>
       </ul>
     </div>
   </nav>
