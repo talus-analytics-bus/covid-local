@@ -100,11 +100,11 @@ jobs:
 
       - run:
           name: gatsby build
-          command: gatsby build
+          command: cd covid-local-gatsby; gatsby build
 
       - run:
           name: deploy
-          command: aws s3 sync public s3://covid-local-dev-gatsby --delete
+          command: aws s3 sync cd covid-local-gatsby/public s3://covid-local-dev-gatsby --delete
 
       - run:
           name: Notify Slack
