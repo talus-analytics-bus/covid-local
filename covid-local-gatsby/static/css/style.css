@@ -480,18 +480,19 @@ nav.main-nav:after {
     display: flex;
     justify-content: flex-end;
     list-style-type: none;
+    padding-left: 0;
 }
 
 .navbar-right li {
     position: relative;
 }
 
-.navbar-right li:last-of-type:before {
+/*.navbar-right li:last-of-type:before {
     position: relative;
     content: '';
     border-right: 1px solid rgba(38,50,74, .5);
     margin: 0 1rem;
-}
+}*/
 
 /* @media only print {
     .navbar-right {
@@ -504,7 +505,7 @@ nav a {
     font-style: normal;
     color: inherit;
     font-weight: 500;
-    padding: .4rem 1rem .5rem 1rem;
+    padding: .4rem .75rem .5rem .75rem;
     color: #26324a;
     border-radius: 3px;
     transition: .25s background-color ease;
