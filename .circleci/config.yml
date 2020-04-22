@@ -76,7 +76,7 @@ jobs:
     working_directory: ~/repo
 
     docker:
-      - image: circleci/node:10.12.0-stretch
+      - image: cimg/node:12.6
 
     steps:
       - checkout
@@ -98,7 +98,7 @@ jobs:
 
       - run:
           name: gatsby build
-          command: cd dash; gatsby build
+          command: gatsby build
 
       - run:
           name: deploy
