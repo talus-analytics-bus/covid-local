@@ -90,7 +90,7 @@ jobs:
             pip3 install --upgrade pip
             apt-get remove python-pip
             pip3 install --upgrade setuptools pytz
-            pip3 install awsebcli --upgrade
+            pip3 install awsebcli==3.10.0
       - aws-cli/install
       - aws-cli/configure
 
