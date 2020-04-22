@@ -104,7 +104,7 @@ jobs:
 
       - run:
           name: deploy
-          command: aws s3 sync cd covid-local-gatsby/public s3://covid-local-dev-gatsby --delete
+          command: cd covid-local-gatsby/public; aws s3 sync s3://covid-local-dev-gatsby --delete
 
       - run:
           name: Notify Slack
