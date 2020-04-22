@@ -33,6 +33,7 @@ jobs:
           command: |
             curl -X POST -H 'Content-type: application/json' --data '{"text":"https://covid-local.org/"}' \
             https://hooks.slack.com/services/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
+
   deploy-dev:
     working_directory: ~/repo
 
@@ -70,6 +71,48 @@ jobs:
           command: |
             curl -X POST -H 'Content-type: application/json' --data '{"text":"http://covid-local-dev.s3-website.us-east-2.amazonaws.com/"}' \
             https://hooks.slack.com/services/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
+
+  deploy-gatsby:
+    working_directory: ~/repo
+
+    docker:
+      - image: cimg/node:12.6
+
+    steps:
+      - checkout
+
+      - run:
+          name: Installing Deployment Dependencies
+          working_directory: /
+          command: |
+            apt-get -y -qq update
+            apt-get -y install python3-pip python3-dev g++ build-essential
+            pip3 install --upgrade pip
+            apt-get remove python-pip
+            pip3 install --upgrade setuptools pytz
+            pip3 install awsebcli==3.10.0
+      - aws-cli/install
+      - aws-cli/configure
+
+      - run:
+          name: yarn install
+          command: cd covid-local-gatsby; rm yarn.lock; yarn install --network-timeout 1000000
+
+      - run:
+          name: gatsby build
+          command: npm i -g gatsby-cli; cd covid-local-gatsby; gatsby build
+
+      - run:
+          name: deploy
+          command: cd covid-local-gatsby/public; aws s3 sync s3://covid-local-dev-gatsby --delete
+
+      - run:
+          name: Notify Slack
+          command: |
+            curl -X POST -H 'Content-type: application/json' --data '{"text":"http://covid-local-dev-gatsby.s3-website.us-east-2.amazonaws.com/"}' \
+            https://hooks.slack.com/services/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
+
+
 workflows:
   version: 2
   build:
@@ -84,3 +127,8 @@ workflows:
             branches:
               only:
                 - dev
+      - deploy-gatsby:
+          filters:
+            branches:
+              only:
+                - gatsby
