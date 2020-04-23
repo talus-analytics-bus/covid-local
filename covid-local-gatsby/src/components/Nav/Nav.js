@@ -41,6 +41,7 @@ const Nav = () => {
       <button 
         className={styles.menuButton} 
         onClick={toggleNav}
+        aria-label="Menu"
       ></button>
     </nav>
   )

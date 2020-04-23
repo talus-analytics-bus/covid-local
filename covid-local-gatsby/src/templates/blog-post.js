@@ -14,7 +14,12 @@ export default function Template({
   return (
     <Layout>
       <article className={styles.main}>
-        <Helmet title={`Notes From The Field - ${post.frontmatter.title}`} />
+        <Helmet 
+          title={`Notes From The Field - ${post.frontmatter.title}`}
+          meta={[
+            {name: 'description', content: `COVID Local blog: keeping local leaders up to date during the COVID-19 pandemic.`},
+          ]}
+        />
         <Link to="/blog">&lt; back to all posts</Link>
         <header>
           <h1>{post.frontmatter.title}</h1>

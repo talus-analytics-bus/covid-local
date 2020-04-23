@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Fuse from 'fuse.js';
 
-// import { Helmet } from "react-helmet"
+import { Helmet } from "react-helmet"
 
 import Layout from '../components/Layout/Layout';
 
@@ -81,14 +81,23 @@ const Blog = (props) => {
 
 
   return (
+
     <Layout>
+      <Helmet 
+        title={`Notes From The Field - The COVID Local Blog`} 
+        meta={[
+          {name: 'description', content: `COVID Local blog: keeping local leaders up to date during the COVID-19 pandemic.`},
+        ]}
+      />
 
       <header className={styles.header}>
         <h1>Notes From The Field</h1>
         <form>
           <label htmlFor="search">Search posts</label>
           <input 
+            id="search"
             type="text" 
+            name="search"
             value={searchString} 
             onChange={e => setSearchString(e.target.value)} 
             placeholder="search for..."
