@@ -282,6 +282,23 @@ document.querySelectorAll('.implementation-metrics input').forEach(input => {
     });
 });
 
+// This logic needs to match the functionality in the 
+// Nav.js component; what does DRY stand for again?
+document.querySelector('#menuButton')
+    .addEventListener('click', event => {
+        const navbarRight = document.querySelector('.navbarRight')
+        const navbarRightHider = document.querySelector('.navbarRightHider')
+
+        if (navbarRightHider.style.height === '0px') {
+            navbarRightHider.style.height = navbarRight.offsetHeight + 30 + 'px';
+            navbarRightHider.style.padding = '15px';
+        } else {
+            navbarRightHider.style.height = '0px';
+            navbarRightHider.style.padding = '0 15px';
+        }
+    })
+
+
 // Activate tooltip library
 tippy('[data-tippy-content]', {
     allowHTML: true,
