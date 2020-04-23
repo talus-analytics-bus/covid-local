@@ -1,5 +1,5 @@
 ---
-path: 		"/blog/mayors-act-now"
+path: 		"/blog/mayors-act-now/"
 date: 		2020-04-22T17:47:07Z
 title: 		"Inside the Global Parliament of Mayors’ #MayorsActNow Campaign"
 category: 	"NOTES FROM THE FIELD"

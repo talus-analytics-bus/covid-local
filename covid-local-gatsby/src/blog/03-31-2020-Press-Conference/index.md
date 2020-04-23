@@ -1,5 +1,5 @@
 ---
-path: 		"/blog/press-conference"
+path: 		"/blog/press-conference/"
 date: 		2020-03-31T20:24:21Z
 title: 		"Press Conference"
 category: 	"REPORTS FROM EXPERTS"

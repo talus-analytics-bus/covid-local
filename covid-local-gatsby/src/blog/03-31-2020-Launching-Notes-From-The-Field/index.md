@@ -1,5 +1,5 @@
 ---
-path: 		"/blog/launching-field-notes"
+path: 		"/blog/launching-field-notes/"
 date: 		2020-03-31T17:47:07Z
 title: 		"Launching COVID-Local “Notes from the Field”"
 category: 	"NOTES FROM THE FIELD"
