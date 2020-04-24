@@ -68,7 +68,7 @@ const ContributorsPage = () => (
 				</div>
 				<div className={styles.individual}>
 					<a target="_blank" rel="noopener noreferrer" href="https://ghss.georgetown.edu/">
-						<img src="/assets/images/logos/Georgetown.png" alt="Georgetown University" className="georgetown"/>>
+						<img src="/assets/images/logos/Georgetown.png" alt="Georgetown University" className="georgetown"/>
 					</a>
 					<div className={styles.bio}>
 						<h3>Rebecca Katz, PhD MPH</h3>
