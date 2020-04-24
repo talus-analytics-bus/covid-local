@@ -45,6 +45,22 @@ filterOptions.forEach(filter => {
   })
 })
 
+// https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+const shuffleArray = array => {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+// radndomize the first 5 resources on page load
+const keyResources = resourcesContents.slice(0, 5)
+shuffleArray(keyResources)
+const sortedResources = [
+  ...keyResources, 
+  ...resourcesContents.slice(5)
+];
+
 
 
 const Resources = props => {
@@ -63,9 +79,9 @@ const Resources = props => {
     ],
   };
 
-  const fuse = new Fuse(resourcesContents, searchOptions);
+  const fuse = new Fuse(sortedResources, searchOptions);
 
-  let searchedResources = resourcesContents;
+  let searchedResources = sortedResources;
   if (searchString !== '') {
     searchedResources = fuse.search(searchString).map(
       (result) => result.item)
