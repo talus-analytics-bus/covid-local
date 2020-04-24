@@ -22,6 +22,17 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/resources`,
+        name: "resources",
+      },
+    },
+    {
+      resolve: `gatsby-transformer-csv`,
+      options: {},
+    },
+    {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: "UA-161498398-1",

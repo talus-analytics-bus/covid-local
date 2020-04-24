@@ -1,0 +1,49 @@
+
+
+.closer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 1;
+}
+
+.dropDown {
+  position: relative;
+  background-color: #fff;
+  padding: 5px 10px;
+  // border: 1px solid #eeeeee;
+  margin: 2px;
+
+  .label {
+    border: none;
+    background: none;
+    text-transform: capitalize;
+    transition: 150ms ease;
+  }
+
+
+  .hider {
+    position: absolute;
+    top: 30px;
+    left: -15px;
+    overflow: hidden;
+    height: 0;
+    transition: 150ms ease;
+    padding: 15px;
+    padding-top: 0;
+    z-index: 2;
+
+    .content {
+      background-color: #fff;
+      padding: 10px;
+      box-shadow: 1px 5px 10px rgba(0,0,0,.25);
+      border-radius: 10px;
+      border-top-left-radius: 0;
+      // border: 1px solid #eeeeee;
+      border-top: none;
+    }
+  }
+}

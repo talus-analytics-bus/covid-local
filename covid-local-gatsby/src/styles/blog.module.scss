@@ -61,9 +61,12 @@
   margin-bottom: 5rem;
 
   .blogPosts {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+    // This breaks IE
+    // and isn't necessary as long
+    // as there are some blog posts 
+    // display: flex;
+    // flex-direction: column;
+    // flex-grow: 1;
 
     .filters {
       border-bottom: 2px solid #25695B;
