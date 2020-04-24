@@ -31,7 +31,7 @@ const CustomDropdown = props => {
   return (
     <div 
       className={styles.dropDown}
-      style={props.open === props.id ? {} : {backgroundColor: '#F1F1F1'}}
+      // style={props.open === props.id ? {} : {backgroundColor: '#F1F1F1'}}
     >
       <button
         className={styles.label} 

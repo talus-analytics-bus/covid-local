@@ -34,7 +34,6 @@ const filterOptions = filterColumns.map(
     ],
   }))
 
-
 // Create object for each column,
 // containing each filter
 const filterSetup = {}
@@ -47,44 +46,10 @@ filterOptions.forEach(filter => {
 })
 
 
+
 const Resources = props => {
   const [searchString, setSearchString] = React.useState('');
   const [filters, setFilters] = React.useState(filterSetup)
-
-  // when the user clicks a checkbox, 
-  // flip the boolean value for that checkbox
-  const onClickCheckbox = (column, option, e) => {
-    setFilters({
-      ...filters,
-      [column]: {
-        ...filters[column],
-        [option]: !filters[column][option],
-      },
-    })
-  }
-
-  // All the checkboxes are rendered based on the filters
-  const checkboxElements = Object.entries(filters)
-    .map(([column, options]) => (
-      <Dropdown key={column}>
-        <p><strong>{column}</strong> (all selected)</p>
-
-         {Object.entries(options)
-           .map(([option, active]) => (
-             <div className={styles.checkboxRow} key={option}>
-               <label>
-                 <input 
-                   type="checkbox" 
-                   name={option}
-                   checked={active}
-                   onChange={onClickCheckbox.bind(this, column, option)}
-                 />
-               {option}</label>
-             </div>
-           ))}
-      </Dropdown>
-    ))
-
 
 
   const searchOptions = {
@@ -102,11 +67,79 @@ const Resources = props => {
 
   let searchedResources = resourcesContents;
   if (searchString !== '') {
-    searchedResources = fuse.search(searchString).map((result) => result.item)
+    searchedResources = fuse.search(searchString).map(
+      (result) => result.item)
   }
 
-  // render all the resources
-  const resourcesElements = searchedResources.map(r => (
+  // find which columns have active filters 
+  // and build array of the filter strings
+  const activeFilters = {}
+  Object.entries(filters).forEach(
+    ([column, options]) => {
+      Object.entries(options).forEach(
+        ([option, active]) => {
+          if (active) {
+            if (!activeFilters[column]) {
+              activeFilters[column] = []
+            }
+            activeFilters[column].push(option)
+          }
+      })
+    })
+
+  let filteredResources = [];
+  let unselectedResources = searchedResources;
+  Object.entries(activeFilters).forEach((([column, strings]) => {
+    filteredResources.push(...unselectedResources.filter(
+      r => strings.some(v => r[column].includes(v))
+    ))
+    unselectedResources = unselectedResources.filter(
+      r => !strings.some(v => r[column].includes(v))
+    )
+  }))
+
+  if (filteredResources.length === 0) {
+    filteredResources = unselectedResources;
+  }
+
+
+  // when the user clicks a checkbox, 
+  // flip the boolean value for that checkbox
+  const onClickCheckbox = (column, option, e) => {
+    setFilters({
+      ...filters,
+      [column]: {
+        ...filters[column],
+        [option]: !filters[column][option],
+      },
+    })
+  }
+
+  
+  // Create dropdown and checkbox elements based on filters
+  const checkboxElements = Object.entries(filters)
+    .map(([column, options]) => (
+      <Dropdown key={column}>
+        <p><strong>{column}</strong> (all selected)</p>
+         {Object.entries(options)
+           .map(([option, active]) => (
+             <div className={styles.checkboxRow} key={option}>
+               <label>
+                 <input 
+                   type="checkbox" 
+                   name={option}
+                   checked={active}
+                   onChange={onClickCheckbox.bind(this, column, option)}
+                 />
+               {option}</label>
+             </div>
+           ))}
+      </Dropdown>
+    ))
+
+
+  // create the resources elements
+  const resourcesElements = filteredResources.map(r => (
       <div className={styles.resource} key={r.name}>
         <div className={styles.info}>
           <h2>{r.topic}</h2>
@@ -139,7 +172,9 @@ const Resources = props => {
           <div className={styles.filters}>
 
             <DropdownGroup>
+
               {checkboxElements}
+
             </DropdownGroup>
 
             <input
@@ -158,7 +193,6 @@ const Resources = props => {
         {resourcesElements}
         
       </section>
-
     </Layout>
   )
 }
