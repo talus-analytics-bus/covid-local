@@ -31,6 +31,7 @@ const Nav = () => {
         <div className={styles.navbarRight} ref={navbarRightContent}>
           <ul>
             <li><Link to="/">Guide</Link></li>
+            <li><Link to="/resources/">Resources</Link></li>
             <li><Link to="/blog/">Blog</Link></li>
             <li><Link to="/contributors/">Contributors</Link></li>
             <li><a href="mailto:COVIDLocal@nti.org?subject=COVID-Local%20Site%20Feedback">Contact&nbsp;Us</a></li>
