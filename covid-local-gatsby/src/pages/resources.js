@@ -10,62 +10,84 @@ import styles from '../styles/resources.module.scss';
 
 import resourcesContents from '../resources/resourcesContents';
 
+// https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+const shuffleArray = array => {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
 
 const imgpath = "/assets/images/resources/";
 
 // non-filterable columns
 const infoColumns = ['name', 'description', 'image', 'link', 'organization']
 
-// Identify all filterable columns
-const filterColumns = [...new Set(resourcesContents.map(
-  resource => Object.keys(resource)).flat()
-)].filter(column => !infoColumns.includes(column))
-
-// Identify unique values in each filterable column
-const filterOptions = filterColumns.map(
-  column => ({
-    column: column, 
-    options: [
-      ...new Set(resourcesContents.map(
-        resource => resource[column]
-          .split(';')
-          .map(s => s.trim())
-      ).flat())
-    ],
-  }))
-
-// Create object for each column,
-// containing each filter
-const filterSetup = {}
-filterOptions.forEach(filter => {
-  filterSetup[filter.column] = {};
-
-  filter.options.forEach(string => {
-    filterSetup[filter.column][string] = false;
-  })
-})
-
-// https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-const shuffleArray = array => {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
-
-// radndomize the first 5 resources on page load
-const keyResources = resourcesContents.slice(0, 5)
-shuffleArray(keyResources)
-const sortedResources = [
-  ...keyResources, 
-  ...resourcesContents.slice(5)
-];
-
+const filterSetup = {};
+let sortedResources = [];
+let noResourcesMessage = [{
+      name: "Loading Resources", 
+      description: '',
+      organization: '', topic: '', phase: '', image: '', link: '', focus: '',
+    }]
 
 
 const Resources = props => {
+
   const [searchString, setSearchString] = React.useState('');
-  const [filters, setFilters] = React.useState(filterSetup)
+  const [filters, setFilters] = React.useState([])
+
+  React.useEffect(() => {
+
+    // Identify all filterable columns
+    const filterColumns = [...new Set(resourcesContents.map(
+      resource => Object.keys(resource)).flat()
+    )].filter(column => !infoColumns.includes(column))
+
+    // Identify unique values in each filterable column
+    const filterOptions = filterColumns.map(
+      column => ({
+        column: column, 
+        options: [
+          ...new Set(resourcesContents.map(
+            resource => resource[column]
+              .split(';')
+              .map(s => s.trim())
+          ).flat())
+        ],
+      }))
+
+    // Create object for each column,
+    // containing each filter
+    filterOptions.forEach(filter => {
+      filterSetup[filter.column] = {};
+
+      filter.options.forEach(string => {
+        filterSetup[filter.column][string] = false;
+      })
+    })
+
+      // radndomize the first 5 resources on page load
+    const keyResources = resourcesContents.slice(0, 5)
+    shuffleArray(keyResources)
+
+    sortedResources = [
+      ...keyResources, 
+      ...resourcesContents.slice(5)
+    ];
+
+    // console.log(sortedResources)
+
+    setFilters(filterSetup)
+
+    noResourcesMessage = [{
+      name: "No resources matching those filters.", 
+      description: 'If you have a resource that could help, please consider submitting it through the Contact Us page.',
+      organization: '', topic: '', phase: '', image: '', link: '', focus: '',
+    }]
+
+  }, [])
 
 
   const searchOptions = {
@@ -114,11 +136,7 @@ const Resources = props => {
   }
 
   if (filteredResources.length === 0) {
-    filteredResources = [{
-      name: "No resources matching those filters.", 
-      description: 'If you have a resource that could help, please consider submitting it through the Contact Us page.',
-      organization: '', topic: '', phase: '', image: '', link: '', focus: '',
-    }]
+    filteredResources = noResourcesMessage
   }
 
 
