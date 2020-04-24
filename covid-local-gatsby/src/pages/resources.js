@@ -87,19 +87,22 @@ const Resources = props => {
       })
     })
 
-  let filteredResources = [];
-  let unselectedResources = searchedResources;
+  let filteredResources = searchedResources;
   Object.entries(activeFilters).forEach((([column, strings]) => {
-    filteredResources.push(...unselectedResources.filter(
+    filteredResources = filteredResources.filter(
       r => strings.some(v => r[column].includes(v))
-    ))
-    unselectedResources = unselectedResources.filter(
-      r => !strings.some(v => r[column].includes(v))
-    )
-  }))
+    )}))
+
+  if (Object.keys(activeFilters).length === 0) {
+    filteredResources = searchedResources;
+  }
 
   if (filteredResources.length === 0) {
-    filteredResources = unselectedResources;
+    filteredResources = [{
+      name: "No resources matching those filters.", 
+      description: 'If you have a resource that could help, please consider submitting it through the Contact Us page.',
+      organization: '', topic: '', phase: '', image: '', link: '', focus: '',
+    }]
   }
 
 
@@ -120,7 +123,7 @@ const Resources = props => {
   const checkboxElements = Object.entries(filters)
     .map(([column, options]) => (
       <Dropdown key={column}>
-        <p><strong>{column}</strong> (all selected)</p>
+        <p><strong>{column}</strong></p>
          {Object.entries(options)
            .map(([option, active]) => (
              <div className={styles.checkboxRow} key={option}>
@@ -138,6 +141,21 @@ const Resources = props => {
     ))
 
 
+  const activeFiltersElements = Object.entries(activeFilters).map(
+    ([column, filters]) => (
+      <div key={column} className={styles.column}>
+        <h4><strong>{column}</strong>{filters.length > 1 ? ' (all selected)' : ''}</h4>
+
+        {filters.map(filter => (
+          <button key={filter} onClick={onClickCheckbox.bind(this, column, filter)}>
+            {filter}
+          </button>
+          ))}
+
+      </div>
+    ))
+
+
   // create the resources elements
   const resourcesElements = filteredResources.map(r => (
       <div className={styles.resource} key={r.name}>
@@ -147,9 +165,10 @@ const Resources = props => {
           <a href={r.link}>{r.link.split('/').slice(0,3).join('/')}</a>
           <p>{r.description}</p>
         </div>
-        <div className={styles.image}>
-          <img src={imgpath + r.image} alt={r.name + " Image"}/>
-        </div>
+        {r.image && 
+          <div className={styles.image}>
+            <img src={imgpath + r.image} alt={r.name + " Image"}/>
+          </div>}
       </div>
     ))
 
@@ -166,15 +185,12 @@ const Resources = props => {
       </header>
 
       <section className={styles.main}>
-
+        <h3>Filter resources</h3>
         <section className={styles.filterSection}>
-          <h3>Filter resources</h3>
           <div className={styles.filters}>
 
             <DropdownGroup>
-
               {checkboxElements}
-
             </DropdownGroup>
 
             <input
@@ -188,10 +204,18 @@ const Resources = props => {
               placeholder="search for..."
             />
           </div>
+
+          {Object.keys(activeFilters).length !== 0 && 
+          <div className={styles.activeFiltersBackground}>
+            <h3 className={styles.activeFiltersTitle}>Selected Filters</h3>
+            <section className={styles.activeFilters}>
+              {activeFiltersElements}
+            </section>
+          </div>}
+
         </section>
 
         {resourcesElements}
-        
       </section>
     </Layout>
   )
