@@ -14,7 +14,7 @@ const Blog = (props) => {
   const { edges: posts } = props.data.allMarkdownRemark
 
   const [searchString, setSearchString] = React.useState('');
-  const [filter, setFilter] = React.useState('');
+  const [filter, setFilter] = React.useState('NOTES FROM THE FIELD');
 
 
   const createBlogPostElements = posts => (
@@ -92,17 +92,6 @@ const Blog = (props) => {
 
       <header className={styles.header}>
         <h1>Notes From The Field</h1>
-        <form>
-          <label htmlFor="search">Search posts</label>
-          <input 
-            id="search"
-            type="text" 
-            name="search"
-            value={searchString} 
-            onChange={e => setSearchString(e.target.value)} 
-            placeholder="search for..."
-          />
-        </form>
       </header>
 
       <section className={styles.main}>
@@ -128,6 +117,17 @@ const Blog = (props) => {
         </section>
 
         <section className={styles.recentPosts}>
+          <form>
+            <label htmlFor="search">Search posts</label>
+            <input 
+              id="search"
+              type="text" 
+              name="search"
+              value={searchString} 
+              onChange={e => setSearchString(e.target.value)} 
+              placeholder="search for..."
+            />
+          </form>
           <h1>Recent Posts</h1>
           {createRecentPostsElements(posts)}
         </section>
@@ -146,7 +146,7 @@ export const pageQuery = graphql`
           id
           frontmatter {
             title
-            date(formatString: "MMMM DD, YYYY")
+            date(formatString: "dddd, MMMM DD, YYYY")
             path
             category
             author

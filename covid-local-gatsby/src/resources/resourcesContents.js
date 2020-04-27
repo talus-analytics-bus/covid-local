@@ -2,7 +2,6 @@
 const resourcesContents = [
 	{
 		name: "Rapid Urban Health Security Assessment (RUHSA) Tool",
-		focus: 'Local',
 		description: 'This tool can help local leaders assess their current capacity for health security make good decisions as they help their communities prioritize and improve local capacity to respond to and prevent infectious disease threats. ',
 		organization: 'Georgetown University Center for Global Heath Science & Security',
 		topic: 'Urban Security',
@@ -12,7 +11,6 @@ const resourcesContents = [
 	},
 	{
 		name: "John's Hopkins COVID-19 Global Case Tracker",
-		focus: 'Global; US',
 		description: 'This tracking tool shows a map of the global case counts, deaths, and recoveries from COVID-19. In the United States, it also shows state level data. It is regularly updated. ',
 		organization: "John's Hopkins",
 		topic: 'Caseload Mapping',
@@ -22,7 +20,6 @@ const resourcesContents = [
 	},
 	{
 		name: "WHO Situational Reports",
-		focus: 'Global',
 		description: 'The World Health Organizaiton develops and posts daily situational reports outlining global developments, including spread and research and development.',
 		organization: 'WHO',
 		topic: 'Public Health Response',
@@ -32,7 +29,6 @@ const resourcesContents = [
 	},
 	{
 		name: "COVID Act Now: The U.S. Intervention Model",
-		focus: 'US; Local',
 		description: 'This data platform helps project infections, hospitalizations, and deaths across the United States, helping decision makers understand when and how COVID will affect their communities. It also helps model how public health interventions contain the spread of COVID-19. ',
 		organization: 'COVID Act Now',
 		topic: 'Modeling',
@@ -42,7 +38,6 @@ const resourcesContents = [
 	},
 	{
 		name: "COVID-19: What Mayors Need to Know",
-		focus: 'Local',
 		description: 'This resource, developed by the US Conference of Mayors, details city guidelines and operational best practices, contains resources for fiscal tracking, reimbursements, and supplies.',
 		organization: 'US Conference of Mayors',
 		topic: 'Public Health Response',
@@ -52,7 +47,6 @@ const resourcesContents = [
 	},
 	{
 		name: "Disaster Response Program",
-		focus: 'Local',
 		description: 'The ArcGIS Hub allows you to build a website to visualize and analyze the COVID-19 outbreak with your organization’s or community’s population and data. The tools is provided free of charge through a complimentary six-month subscription.',
 		organization: 'ESRI',
 		topic: 'Local Mapping ',
@@ -62,7 +56,6 @@ const resourcesContents = [
 	},
 	{
 		name: "Emergency Operations Center Assessment Checklist",
-		focus: 'Local',
 		description: 'This checklist outlines critical elements needed when state and local governments perform assessments of existing Emergency Operations Centers.',
 		organization: 'FEMA',
 		topic: 'Emergency Operations',
@@ -72,7 +65,6 @@ const resourcesContents = [
 	},
 	{
 		name: "Coronavirus Could Overwhelm U.S. Without Urgent Action, Estimates Say",
-		focus: 'US; Local',
 		description: 'Data visualization showing how social distancing measures impact the speed and severity of an outbreak at the county level. The tool also compares the healthcare capacity by county. ',
 		organization: 'New York Times ',
 		topic: 'Modeling',
@@ -82,7 +74,6 @@ const resourcesContents = [
 	},
 	{
 		name: "Project N95",
-		focus: 'US; Local',
 		description: 'This national resource helps connect healthcare providers with critical equipment, such as N95 masks.',
 		organization: 'Project N95',
 		topic: 'PPE',
@@ -92,7 +83,6 @@ const resourcesContents = [
 	},
 	{
 		name: "Get Us PPE",
-		focus: 'US; Local',
 		description: 'This national resouce helps connect healthcare providers with those who make or distribute critical Personal Protective Equipment.',
 		organization: 'Get Us PPE',
 		topic: 'PPE',
@@ -102,7 +92,6 @@ const resourcesContents = [
 	},
 	{
 		name: "Mask Match",
-		focus: 'US; Local',
 		description: 'This resource helps connect healthcare workers with spare masks and assists coordinating pickup and dropoff.  ',
 		organization: 'Mask Match',
 		topic: 'PPE',
@@ -112,7 +101,6 @@ const resourcesContents = [
 	},
 	{
 		name: "Microsoft Power Platform for Emergency Response",
-		focus: 'Global; US; Local',
 		description: 'The Microsoft Power Platform helps manage communications across an organization during an emergency response. ',
 		organization: 'Microsoft',
 		topic: 'Emergency Operations',
@@ -122,7 +110,6 @@ const resourcesContents = [
 	},
 	{
 		name: "Social distancing and mobility reductions have reduced COVID-19 transmission in King County, WA",
-		focus: 'US',
 		description: 'This report quantifies the impact of policies on reducing COVID-19 in King County, Washington.',
 		organization: 'Institute for Disease Modeling',
 		topic: 'Modeling',
@@ -132,7 +119,6 @@ const resourcesContents = [
 	},
 	{
 		name: "COVID-19 guidance and the latest research in the Americas",
-		focus: 'Global',
 		description: 'This database provides access to technical guidance, scientific publications, and ongoing research protocols. It is developed by the Pan American Health Organization and is Focused on the Americas region of the world. Information obtained here may not necessarily align with U.S. guidance or information, but may be helpful regardless.',
 		organization: 'PAHO',
 		topic: 'Public Health Response',
@@ -142,7 +128,6 @@ const resourcesContents = [
 	},
 	{
 		name: "Fiscal First Aid: Recovering from Financial Distress",
-		focus: 'Local',
 		description: 'Disasters can cause significant financial distress for even the best-prepared local governments – resulting in a situation in which governments do not have sufficient resources to finance all of their responsibilities. This resource details 12 actions to help local-governments navigate the financial recovery process.',
 		organization: 'Government Finance Officers Association',
 		topic: 'Financing',
