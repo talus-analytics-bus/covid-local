@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require("cors");
 const nodemailer = require('nodemailer');
 const multer = require('multer');
 const upload = multer()
@@ -9,6 +10,7 @@ const HOST = '0.0.0.0';
 
 // App
 const app = express();
+app.use(cors());
 app.get('/', (req, res) => {
   res.send('Email Sender');
 });
@@ -54,6 +56,7 @@ app.post('/submit',  upload.none(), async (req, res) => {
         console.log(error);
       } else {
         console.log('Sent: ' + info.response);
+        res.sendStatus(200);
       }
     }
   )
