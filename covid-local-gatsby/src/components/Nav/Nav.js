@@ -34,8 +34,8 @@ const Nav = () => {
             <li><Link to="/resources/">Resources</Link></li>
             <li><Link to="/blog/">Blog</Link></li>
             <li><Link to="/about/">About</Link></li>
-            <li><a href="/contact/">Contact&nbsp;Us</a></li>
-            {/* <li><a href="mailto:COVIDLocal@nti.org?subject=COVID-Local%20Site%20Feedback">Contact&nbsp;Us</a></li> */}
+            {/* <li><a href="/contact/">Contact&nbsp;Us</a></li> */}
+            <li><a href="mailto:COVIDLocal@nti.org?subject=COVID-Local%20Site%20Feedback">Contact&nbsp;Us</a></li>
           </ul>
         </div>
       </div>
