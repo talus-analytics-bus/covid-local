@@ -66,7 +66,7 @@ const Contact = props => {
 
         <div className={styles.formRow}>
           <label className={styles.body} htmlFor="body">
-            Body
+            Comment or question
             <textarea type="text" id="body" name="body" />
             <p>500 Characters</p>
           </label>
