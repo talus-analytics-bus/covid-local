@@ -11,7 +11,8 @@ const Contact = props => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    const data = new FormData(event.target);
+    //const data = new FormData(event.target);
+    const data = event.target;
 
     axios.post('https://jcvp6imvv9.execute-api.us-east-1.amazonaws.com/submit', data)
       .then(() => setMessage('Feedback Submitted'))
