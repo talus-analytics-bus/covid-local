@@ -13,10 +13,10 @@ const Contact = props => {
     event.preventDefault();
     const data = new FormData(event.target);
 
-    axios.post('http://0.0.0.0:8080/submit', data)
+    axios.post('https://jcvp6imvv9.execute-api.us-east-1.amazonaws.com/submit', data)
       .then(() => setMessage('Feedback Submitted'))
       .catch((error) => console.log(error))
-  } 
+  }
 
 
   return (
