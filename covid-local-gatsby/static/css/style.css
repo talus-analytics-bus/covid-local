@@ -709,7 +709,7 @@ a.introduction-download {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     text-align: left;
     font-style: normal;
     font-weight: 700;
@@ -721,6 +721,12 @@ a.introduction-download {
     border-radius: 15px;
     transition: .75s background-color ease;
     margin-bottom: 1rem;
+}
+
+a.introduction-feedback > span,
+a.introduction-download > span {
+    flex-grow: 1;
+    min-width: 8.25rem;
 }
 
 a.introduction-download {
@@ -740,9 +746,10 @@ a.introduction-feedback {
 
 a.introduction-feedback svg,
 a.introduction-download svg {
-    height: 5rem;
-    margin-left: 1.5rem;
-    margin-bottom: -.5rem;
+    flex-shrink: 0;
+    height: 3rem;
+    margin-left: 1rem;
+    /*margin-bottom: -.5rem;*/
 }
 
 a.introduction-download:hover {
@@ -776,8 +783,8 @@ a.introduction-feedback:hover {
     a.introduction-download {
         /* margin: -1rem -1rem -1rem 2rem; */
         margin-bottom: 1rem;
-        padding: 0rem 1rem; 
-        padding-bottom: .5rem;
+        /*padding: 0rem 1rem; */
+        /*padding-bottom: .5rem;*/
         max-width: 15rem;
         margin-right: 1rem;
     }

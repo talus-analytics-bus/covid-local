@@ -34,6 +34,7 @@ const CustomDropdown = props => {
       style={props.open === props.id ? {} : {backgroundColor: '#F5F5F5'}}
     >
       <button
+        tabindex="0"
         className={styles.label} 
         onClick={() => {
           props.open === props.id
