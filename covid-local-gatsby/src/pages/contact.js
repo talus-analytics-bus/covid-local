@@ -1,34 +1,45 @@
-import React from 'react';
-import axios from 'axios';
+import React from 'react'
+import axios from 'axios'
 
-import Layout from '../components/Layout/Layout';
+import Layout from '../components/Layout/Layout'
 
-import styles from '../styles/contact.module.scss';
+import styles from '../styles/contact.module.scss'
 
-const Contact = props => {
-
-  const [message, setMessage] = React.useState('');
+const Contact = () => {
+  const [message, setMessage] = React.useState('')
 
   const handleSubmit = event => {
-    event.preventDefault();
-    const data = new FormData(event.target);
+    event.preventDefault()
+    const data = new FormData(event.target)
 
-    axios.post('https://jcvp6imvv9.execute-api.us-east-1.amazonaws.com/submit', JSON.stringify(Object.fromEntries(data)), {headers: {'Content-Type': 'application/json'}})
+    axios
+      .post(
+        'https://jcvp6imvv9.execute-api.us-east-1.amazonaws.com/submit',
+        JSON.stringify(Object.fromEntries(data)),
+        { headers: { 'Content-Type': 'application/json' } }
+      )
       .then(() => setMessage('Feedback Submitted'))
-      .catch((error) => console.log(error))
+      .catch(error => console.log(error))
   }
 
   return (
     <Layout>
-
       <header className={styles.header}>
         <h1>Contact us</h1>
       </header>
 
       <form className={styles.main} onSubmit={handleSubmit}>
         <div className={styles.formRow}>
-          <p>We welcome questions about the Frontline Guide, feedback on its contents, input on how COVID-Local efforts can support your community, or other questions or comments, using the form below.</p>
-          <p>Your personal and contact information will only be used to respond to your input. Do not submit any proprietary or protected information via this form.</p>
+          <p>
+            We welcome questions about the Frontline Guide, feedback on its
+            contents, input on how COVID-Local efforts can support your
+            community, or other questions or comments, using the form below.
+          </p>
+          <p>
+            Your personal and contact information will only be used to respond
+            to your input. Do not submit any proprietary or protected
+            information via this form.
+          </p>
         </div>
         <div className={styles.formRow}>
           <label className={styles.firstName} htmlFor="firstName">
@@ -58,7 +69,7 @@ const Contact = props => {
             <select name="type">
               <option value="contact">Contact us</option>
               <option value="feedback">Feedback on the guide</option>
-              <option value="question">Submit question for reachback</option>
+              <option value="question">Submit comment</option>
             </select>
           </label>
         </div>
@@ -81,5 +92,4 @@ const Contact = props => {
   )
 }
 
-
-export default Contact;
+export default Contact

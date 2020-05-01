@@ -196,13 +196,13 @@ const Resources = props => {
         <div className={styles.info}>
           <h2>{r.topic}</h2>
           <h1>{r.name}</h1>
-          <a href={r.link}>{r.link.split('/').slice(0,3).join('/')}</a>
+          <a target='_blank' rel='noopener noreferrer' href={r.link}>{r.link.split('/').slice(0,3).join('/')}</a>
           <p>{r.description}</p>
         </div>
         {r.image && 
-          <div className={styles.image}>
+          <a target='_blank' rel='noopener noreferrer' href={r.link} className={styles.image}>
             <img src={imgpath + r.image} alt={r.name + " Image"}/>
-          </div>}
+          </a>}
       </div>
     ))
 
