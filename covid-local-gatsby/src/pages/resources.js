@@ -241,6 +241,13 @@ const Resources = props => {
       </header>
 
       <section className={styles.main}>
+        <p>
+          Below please find a curated list of additional resources that can be
+          useful in responding to the outbreak in your community. Resources can
+          be filtered by topic or phase of the outbreak using the drop downs.
+          Disclaimer: The Covid-Local Team is not responsible for the content on
+          these external pages.
+        </p>
         <h3>Filter resources</h3>
         <section className={styles.filterSection}>
           <div className={styles.filters}>
