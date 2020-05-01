@@ -33,7 +33,7 @@
     display: none;
   }
 
-  @media (min-width: 565px) {
+  @media (min-width: 600px) {
     a {
       display: block;
       text-decoration: none;
@@ -94,15 +94,17 @@
           font-weight: 900;
         }
       }
-      @media (max-width: 575px) {
+
+      @media (max-width: 670px) {
         button {
           margin-left: 0;
+          width: 100%;
         }
       }
     }
 
     .post {
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
 
       h1 {
         font-size: 24px;
@@ -126,6 +128,7 @@
 
       h3 {
         font-weight: 500;
+        margin-bottom: 0.5rem;
       }
 
       p {

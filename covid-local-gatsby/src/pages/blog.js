@@ -12,7 +12,7 @@ const Blog = props => {
   const { edges: posts } = props.data.allMarkdownRemark
 
   const [searchString, setSearchString] = React.useState('')
-  const [filter, setFilter] = React.useState('NOTES FROM THE FIELD')
+  const [filter, setFilter] = React.useState('ALL')
 
   const createBlogPostElements = posts =>
     posts
@@ -45,14 +45,14 @@ const Blog = props => {
     if (filter !== e.target.innerHTML) {
       setFilter(e.target.innerHTML)
     } else {
-      setFilter('')
+      setFilter('ALL')
     }
   }
 
   let filteredPosts = posts
   if (filter !== '') {
-    filteredPosts = posts.filter(
-      post => post.node.frontmatter.category === filter
+    filteredPosts = posts.filter(post =>
+      post.node.frontmatter.category.includes(filter)
     )
   }
 
@@ -101,6 +101,9 @@ const Blog = props => {
               aria-pressed={filter === 'REPORTS FROM EXPERTS'}
             >
               REPORTS FROM EXPERTS
+            </button>
+            <button onClick={onClickFilter} aria-pressed={filter === 'ALL'}>
+              ALL
             </button>
           </div>
 
