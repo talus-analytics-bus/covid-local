@@ -1,17 +1,40 @@
-import React from 'react'; 
+import React from 'react'
 
-import Layout from '../components/Layout/Layout';
+import Layout from '../components/Layout/Layout'
 
-import styles from '../styles/contributors.module.scss';
+import styles from '../styles/about.module.scss'
 
 const ContributorsPage = () => (
 	<Layout>
-		<article className={styles.contributors}>
+		<section className={styles.header}>
+			<h1>About us</h1>
+		</section>
+		<section className={styles.main}>
+			<p>
+				COVID-Local and the Frontline Guide are a joint project of the Global
+				Biological Policy Program at the Nuclear Threat Initiative (NTI), the
+				Center for Global Development, and the Georgetown University Center for
+				Global Health Science and Security, in collaboration with Talus
+				Analytics. The team is comprised of experienced experts in disease
+				outbreak as well as former public health officials, and the tools were
+				developed in response to calls from local governments for more
+				information on how to protect their communities.
+			</p>
+		</section>
+		<section className={styles.contributors}>
 			<h1>Authors</h1>
 			<div className={styles.contributorsContainer}>
 				<div className={styles.individual}>
-					<a target="_blank" rel="noopener noreferrer" href="https://www.nti.org/about/biosecurity/">
-						<img src="/assets/images/logos/Nuclear_Threat_Initiative_logo.svg" alt="Nuclear Threat Initiative" className="nti" />
+					<a
+						target="_blank"
+						rel="noopener noreferrer"
+						href="https://www.nti.org/about/biosecurity/"
+					>
+						<img
+							src="/assets/images/logos/Nuclear_Threat_Initiative_logo.svg"
+							alt="Nuclear Threat Initiative"
+							className="nti"
+						/>
 					</a>
 					<div className={styles.bio}>
 						<h3>Jessica Bell, MS</h3>
@@ -20,8 +43,16 @@ const ContributorsPage = () => (
 					</div>
 				</div>
 				<div className={styles.individual}>
-					<a target="_blank" rel="noopener noreferrer" href="https://ghss.georgetown.edu/">
-						<img src="/assets/images/logos/Georgetown.png" alt="Georgetown University" className="georgetown" />
+					<a
+						target="_blank"
+						rel="noopener noreferrer"
+						href="https://ghss.georgetown.edu/"
+					>
+						<img
+							src="/assets/images/logos/Georgetown.png"
+							alt="Georgetown University"
+							className="georgetown"
+						/>
 					</a>
 					<div className={styles.bio}>
 						<h3>Matthew Boyce, MS</h3>
@@ -33,8 +64,16 @@ const ContributorsPage = () => (
 			</div>
 			<div className={styles.contributorsContainer}>
 				<div className={styles.individual}>
-					<a target="_blank" rel="noopener noreferrer" href="https://www.nti.org/about/biosecurity/">
-						<img src="/assets/images/logos/Nuclear_Threat_Initiative_logo.svg" alt="Nuclear Threat Initiative" className="nti" />
+					<a
+						target="_blank"
+						rel="noopener noreferrer"
+						href="https://www.nti.org/about/biosecurity/"
+					>
+						<img
+							src="/assets/images/logos/Nuclear_Threat_Initiative_logo.svg"
+							alt="Nuclear Threat Initiative"
+							className="nti"
+						/>
 					</a>
 					<div className={styles.bio}>
 						<h3>Beth Cameron, PhD</h3>
@@ -45,8 +84,16 @@ const ContributorsPage = () => (
 					</div>
 				</div>
 				<div className={styles.individual}>
-					<a target="_blank" rel="noopener noreferrer" href="https://www.nti.org/about/biosecurity/">
-						<img src="/assets/images/logos/Nuclear_Threat_Initiative_logo.svg" alt="Nuclear Threat Initiative" className="nti" />
+					<a
+						target="_blank"
+						rel="noopener noreferrer"
+						href="https://www.nti.org/about/biosecurity/"
+					>
+						<img
+							src="/assets/images/logos/Nuclear_Threat_Initiative_logo.svg"
+							alt="Nuclear Threat Initiative"
+							className="nti"
+						/>
 					</a>
 					<div className={styles.bio}>
 						<h3>Jacob Eckles, MPH</h3>
@@ -58,7 +105,10 @@ const ContributorsPage = () => (
 			<div className={styles.contributorsContainer}>
 				<div className={styles.individual}>
 					<a href="http://talusanalytics.com/">
-						<img src="/assets/images/logos/talus-logo-01.png" alt="Talus Analytics" />
+						<img
+							src="/assets/images/logos/talus-logo-01.png"
+							alt="Talus Analytics"
+						/>
 					</a>
 					<div className={styles.bio}>
 						<h3>Ellie Graeden, PhD</h3>
@@ -67,8 +117,16 @@ const ContributorsPage = () => (
 					</div>
 				</div>
 				<div className={styles.individual}>
-					<a target="_blank" rel="noopener noreferrer" href="https://ghss.georgetown.edu/">
-						<img src="/assets/images/logos/Georgetown.png" alt="Georgetown University" className="georgetown"/>
+					<a
+						target="_blank"
+						rel="noopener noreferrer"
+						href="https://ghss.georgetown.edu/"
+					>
+						<img
+							src="/assets/images/logos/Georgetown.png"
+							alt="Georgetown University"
+							className="georgetown"
+						/>
 					</a>
 					<div className={styles.bio}>
 						<h3>Rebecca Katz, PhD MPH</h3>
@@ -80,8 +138,15 @@ const ContributorsPage = () => (
 			</div>
 			<div className={styles.contributorsContainer}>
 				<div className={styles.individual}>
-					<a target="_blank" rel="noopener noreferrer" href="https://www.cgdev.org/">
-						<img src="/assets/images/logos/center-for-global-development.png" alt="Center for Global Development" />
+					<a
+						target="_blank"
+						rel="noopener noreferrer"
+						href="https://www.cgdev.org/"
+					>
+						<img
+							src="/assets/images/logos/center-for-global-development.png"
+							alt="Center for Global Development"
+						/>
 					</a>
 					<div className={styles.bio}>
 						<h3>Jeremy Konyndyk, MSFS</h3>
@@ -91,8 +156,16 @@ const ContributorsPage = () => (
 					</div>
 				</div>
 				<div className={styles.individual}>
-					<a target="_blank" rel="noopener noreferrer" href="https://www.nti.org/about/biosecurity/">
-						<img src="/assets/images/logos/Nuclear_Threat_Initiative_logo.svg" alt="Nuclear Threat Initiative" className="nti" />
+					<a
+						target="_blank"
+						rel="noopener noreferrer"
+						href="https://www.nti.org/about/biosecurity/"
+					>
+						<img
+							src="/assets/images/logos/Nuclear_Threat_Initiative_logo.svg"
+							alt="Nuclear Threat Initiative"
+							className="nti"
+						/>
 					</a>
 					<div className={styles.bio}>
 						<h3>Hayley Severance, MPH</h3>
@@ -101,8 +174,8 @@ const ContributorsPage = () => (
 					</div>
 				</div>
 			</div>
-		</article>
-		<article className={styles.contributors}>
+		</section>
+		<section className={styles.contributors}>
 			<h1>Contributors</h1>
 			<div className={styles.contributorsColumn}>
 				<div className={styles.bio}>
@@ -117,11 +190,14 @@ const ContributorsPage = () => (
 					<p>Practice (EPREP) Program</p>
 				</div>
 				<div className={styles.bio}>
-					<h3>James Lawler, MD</h3>
-					<p>Executive Director, International Programs & Innovation,</p>
-					<p>Global Center for Health Security, and Associate</p>
-					<p>Professor of Medicine, Division of Infectious Diseases,</p>
-					<p>University of Nebraska Medical Center</p>
+					<h3>Gabrielle Fitzgerald, MPA</h3>
+					<p>Founder and CEO</p>
+					<p>Panorama</p>
+				</div>
+				<div className={styles.bio}>
+					<h3>Dylan George, PhD</h3>
+					<p>Vice President Technical Staff,</p>
+					<p>In-Q-Tel</p>
 				</div>
 				<div className={styles.bio}>
 					<h3>Margaret Hamburg, MD</h3>
@@ -131,6 +207,11 @@ const ContributorsPage = () => (
 					<p>Administration</p>
 				</div>
 				<div className={styles.bio}>
+					<h3>Dan Hanfling, MD</h3>
+					<p>Vice President Technical Staff</p>
+					<p>In-Q-Tel</p>
+				</div>
+				<div className={styles.bio}>
 					<h3>Ashish K. Jha, MD, MPH</h3>
 					<p>Director, Harvard Global Health Institute,</p>
 					<p>K. T. Li Professor of Global Health,</p>
@@ -138,14 +219,22 @@ const ContributorsPage = () => (
 					<p>Professor of Medicine, Harvard Medical School</p>
 				</div>
 				<div className={styles.bio}>
-					<h3>Dan Hanfling, MD</h3>
-					<p>Vice President Technical Staff</p>
-					<p>In-Q-Tel</p>
+					<h3>Juliette Kayyem, JD</h3>
+					<p>Faculty Chair,</p>
+					<p>Security and Global Health Project,</p>
+					<p>Harvard’s Kennedy School of Government</p>
 				</div>
 				<div className={styles.bio}>
-					<h3>Dylan George, PhD</h3>
-					<p>Vice President Technical Staff,</p>
-					<p>In-Q-Tel</p>
+					<h3>James Lawler, MD</h3>
+					<p>Executive Director, International Programs & Innovation,</p>
+					<p>Global Center for Health Security, and Associate</p>
+					<p>Professor of Medicine, Division of Infectious Diseases,</p>
+					<p>University of Nebraska Medical Center</p>
+				</div>
+				<div className={styles.bio}>
+					<h3>Timothy Manning,</h3>
+					<p>Director, Washington DC Operations,</p>
+					<p>PDC Global; former Deputy Administrator, FEMA</p>
 				</div>
 				<div className={styles.bio}>
 					<h3>Jennifer Nuzzo, DrPH, SM</h3>
@@ -169,22 +258,21 @@ const ContributorsPage = () => (
 					<p>Johns Hopkins Center for Health Security</p>
 				</div>
 				<div className={styles.bio}>
-					<h3>Juliette Kayyem, JD</h3>
-					<p>Faculty Chair,</p>
-					<p>Security and Global Health Project,</p> 
-					<p>Harvard’s Kennedy School of Government</p>
-				</div>
-				<div className={styles.bio}>
-					<h3>Timothy Manning,</h3>
-					<p>Director, Washington DC Operations,</p>
-					<p>PDC Global; former Deputy Administrator, FEMA</p>
+					<h3>Crystal Watson DrPH</h3>
+					<p>Senior Scholar</p>
+					<p>Johns Hopkins Center for Health Security</p>
+					<p>
+						Assistant Professor, Department of Environmental Health and
+						Engineering
+					</p>
 				</div>
 			</div>
-			<p>*Note that institutional affiliations are listed for identification only and do not imply institutional endorsement.</p>
-		</article>
+			<p>
+				*Note that institutional affiliations are listed for identification only
+				and do not imply institutional endorsement.
+			</p>
+		</section>
 	</Layout>
+)
 
-);
-
-export default ContributorsPage;
-
+export default ContributorsPage
