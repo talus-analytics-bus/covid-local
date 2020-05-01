@@ -1,11 +1,7 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 
 import styles from './DropdownGroup.module.scss'
-
-const foo 
-
-eslint hello... 
-
 
 const DropdownGroup = props => {
   // Shared state so that each dropdown
@@ -38,5 +34,7 @@ const DropdownGroup = props => {
     </>
   )
 }
+
+DropdownGroup.propTypes = { children: PropTypes.node.isRequired }
 
 export default DropdownGroup
