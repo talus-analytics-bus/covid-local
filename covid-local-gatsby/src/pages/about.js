@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import { Helmet } from 'react-helmet'
 
 import Layout from '../components/Layout/Layout'
 
@@ -7,6 +8,16 @@ import styles from '../styles/about.module.scss'
 
 const ContributorsPage = () => (
 	<Layout>
+		<Helmet
+			title={`About The COVID Local Project, Authors, and Contributors`}
+			meta={[
+				{
+					name: 'description',
+					content: `The authors and contributors to the COVID Local guide and resource website helping local leaders handle the COVID-19 pandemic.`,
+				},
+			]}
+		/>
+
 		<section className={styles.header}>
 			<h1>About us</h1>
 			<Link to="/contact/">Contact us</Link>
