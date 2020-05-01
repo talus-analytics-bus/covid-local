@@ -101,11 +101,11 @@ const Contact = () => {
                 console.log(e.target.value)
               }}
             >
-              <option value="General comment">General comment</option>
+              <option value="Comment">General comment</option>
               <option value="Feedback on the Guide">
                 Feedback on the Guide
               </option>
-              <option value="Submit question">Submit question</option>
+              <option value="Question">Submit question</option>
             </select>
           </label>
 
@@ -113,7 +113,7 @@ const Contact = () => {
             className={styles.type}
             htmlFor="type"
             style={
-              type === 'comment'
+              type === 'Question'
                 ? { visibility: 'visible' }
                 : { visibility: 'hidden' }
             }
