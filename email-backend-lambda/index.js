@@ -11,47 +11,56 @@ exports.handler = async (event, context, callback) => {
   }));
 
   if (event.body !== null && event.body !== undefined) {
-      let body = JSON.parse(event.body);
+      console.log(event.body)
+      console.log(event.isBase64Encoded)
+
+      if (event.isBase64Encoded === true) {
+        let buff = Buffer.from(event.body, 'base64');
+        let text = buff.toString('ascii');
+        var body = JSON.parse(text);
+      } else {
+        var body = JSON.parse(event.body);
+      }
 
       if (body.firstName) {
-          global.firstName = body.firstName;
+          var firstName = body.firstName;
       }
       if (body.lastName) {
-          global.lastName = body.lastName;
+          var lastName = body.lastName;
       }
       if (body.email) {
-          global.email = body.email;
+          var email = body.email;
       }
       if (body.org) {
-          global.org = body.org;
+          var org = body.org;
       }
       if (body.type) {
-          global.type = body.type;
+          var type = body.type;
       }
       if (body.body) {
-          global.email_body = body.body;
+          var email_body = body.body;
       }
 
       global.html = `<h1>New Submission from COVID-Local:</h1>
         <table>
           <tr>
-            <td>First Name</td><td>&nbsp;&nbsp;${global.firstName}</td>
+            <td>First Name</td><td>&nbsp;&nbsp;${firstName}</td>
           </tr>
           <tr>
-            <td>Last Name</td><td>&nbsp;&nbsp;${global.lastName}</td>
+            <td>Last Name</td><td>&nbsp;&nbsp;${lastName}</td>
           </tr>
           <tr>
-            <td>Email</td><td>&nbsp;&nbsp;${global.email}</td>
+            <td>Email</td><td>&nbsp;&nbsp;${email}</td>
           </tr>
           <tr>
-            <td>Organization</td><td>&nbsp;&nbsp;${global.org}</td>
+            <td>Organization</td><td>&nbsp;&nbsp;${org}</td>
           </tr>
           <tr>
-            <td>Type</td><td>&nbsp;&nbsp;${global.type}</td>
+            <td>Type</td><td>&nbsp;&nbsp;${type}</td>
           </tr>
         </table>
         <h2>Message</h2>
-        <p>${global.email_body}</p>`;
+        <p>${email_body}</p>`;
   }
 
   var mailOptions = {
@@ -63,5 +72,14 @@ exports.handler = async (event, context, callback) => {
 
   const response = await transporter.sendMail(mailOptions);
 
-  return response;
+  return {
+    statusCode: 200,
+    body: JSON.stringify(response),
+    headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Methods': '*',
+        'Access-Control-Allow-Origin': '*'
+    },
+    isBase64Encoded: false
+  };
 };
