@@ -19,6 +19,11 @@ The webpack configuration of the original project (which now lives at `/old_stat
 Gatsby Development Server will not automatically reflect changes to the guide page or the guide page JS.
 
 
+# Homepage quirk
+`gatsby develop` is a useful super quick dev server, but it will not work if there is an `index.html` file in the `/static/` folder like there is here. I usually rename it to `index_.html` while I'm working on other pages. 
+
+Alternately, you can use `gatsby develop` in conjunction with `python3 -m http.server` or `live-server` so that you know what you're seeing is the same as what will be deployed.
+
 
 
 

@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "COVID-Local",
   "private": true,
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Talus Analytics",
   "dependencies": {
     "fuse.js": "^5.2.3",
     "gatsby": "^2.20.12",
@@ -27,6 +27,8 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.19.0",
     "prettier": "^1.19.1"
   },
   "keywords": [
@@ -44,9 +46,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/talus-analytics-bus/covid-local"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/talus-analytics-bus/covid-local/issues"
   }
 }

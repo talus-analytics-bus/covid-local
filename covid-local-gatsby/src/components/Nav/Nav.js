@@ -1,23 +1,26 @@
-import React from 'react';
-import { Link } from 'gatsby';
+import React from 'react'
+import { Link } from 'gatsby'
 
-import styles from './Nav.module.scss';
+import styles from './Nav.module.scss'
 
 const Nav = () => {
+  const navbarRightContent = React.useRef()
 
-  const navbarRightContent = React.useRef();
-  const [dropHiderStyle, setDropHiderStyle] = React.useState({ height: 0, padding: '0 15px' });
+  const [dropHiderStyle, setDropHiderStyle] = React.useState({
+    height: 0,
+    padding: '0 15px',
+  })
 
   const toggleNav = () => {
     if (dropHiderStyle.height === 0) {
       setDropHiderStyle({
         height: navbarRightContent.current.offsetHeight + 30,
         padding: 15,
-      });
+      })
     } else {
-      setDropHiderStyle({ height: 0, padding: '0 15px' });
+      setDropHiderStyle({ height: 0, padding: '0 15px' })
     }
-  };
+  }
 
   return (
     <nav className={styles.mainNav}>
@@ -30,11 +33,21 @@ const Nav = () => {
       <div className={styles.navbarRightHider} style={dropHiderStyle}>
         <div className={styles.navbarRight} ref={navbarRightContent}>
           <ul>
-            <li><Link to="/">Guide</Link></li>
-            <li><Link to="/resources/">Resources</Link></li>
-            <li><Link to="/blog/">Blog</Link></li>
-            <li><Link to="/about/">About</Link></li>
-            <li><Link to="/contact/">Contact&nbsp;Us</Link></li>
+            <li>
+              <Link to="/">Guide</Link>
+            </li>
+            <li>
+              <Link to="/resources/">Resources</Link>
+            </li>
+            <li>
+              <Link to="/blog/">Blog</Link>
+            </li>
+            <li>
+              <Link to="/about/">About</Link>
+            </li>
+            <li>
+              <Link to="/contact/">Contact&nbsp;Us</Link>
+            </li>
           </ul>
         </div>
       </div>
@@ -48,4 +61,4 @@ const Nav = () => {
   )
 }
 
-export default Nav;
+export default Nav
