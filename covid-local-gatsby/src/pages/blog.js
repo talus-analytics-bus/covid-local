@@ -90,6 +90,9 @@ const Blog = props => {
       <section className={styles.main}>
         <section className={styles.blogPosts}>
           <div className={styles.filters}>
+            <button onClick={onClickFilter} aria-pressed={filter === 'ALL'}>
+              ALL
+            </button>
             <button
               onClick={onClickFilter}
               aria-pressed={filter === 'NOTES FROM THE FIELD'}
@@ -101,9 +104,6 @@ const Blog = props => {
               aria-pressed={filter === 'REPORTS FROM EXPERTS'}
             >
               REPORTS FROM EXPERTS
-            </button>
-            <button onClick={onClickFilter} aria-pressed={filter === 'ALL'}>
-              ALL
             </button>
           </div>
 
