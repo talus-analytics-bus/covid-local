@@ -108,7 +108,17 @@ jobs:
 
       - run:
         name: invalidate index.html
-        command: aws cloudfront create-invalidation --distribution-id E14XXUI2OGXVF3 --paths "index.html" "resources/index.html" "blog/index.html" "blog/mayors-act-now/index.html" "blog/webinar-launch/index.html" "blog/launching-field-notes/index.html" "about/index.html" "contact/index.html"
+        command: |
+          aws cloudfront create-invalidation \
+          --distribution-id E14XXUI2OGXVF3 \
+          --paths "index.html" \
+          "resources/index.html" \
+          "blog/index.html" \
+          "blog/mayors-act-now/index.html" \
+          "blog/webinar-launch/index.html" \
+          "blog/launching-field-notes/index.html" \
+          "about/index.html" \
+          "contact/index.html"
 
       - run:
           name: Notify Slack
