@@ -9,7 +9,7 @@
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: baseline;
   margin-bottom: 1.5rem;
   margin-top: 0.5rem;
   flex-wrap: wrap;
@@ -26,6 +26,26 @@
     padding-bottom: 2rem;
     color: #28334b;
     line-height: 1.1em;
+  }
+
+  a {
+    display: none;
+  }
+
+  @media (min-width: 565px) {
+    a {
+      display: block;
+      text-decoration: none;
+      color: white;
+      background-color: #409385;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 76.5 76.5' style='enable-background:new 0 0 76.5 76.5;' xml:space='preserve'%3E%3Ccircle style='fill:%23FFFFFF;' cx='38.2' cy='38.2' r='38.2'/%3E%3Cpath style='fill:%23273349;' d='M52.1,20H25c-1.9,0-3.4,1.5-3.4,3.4v29.2c0,1.9,1.5,3.4,3.4,3.4h27.2c1.9,0,3.4-1.5,3.4-3.4V23.3 C55.5,21.5,54,20,52.1,20z M43.6,45.4H28.4V42h15.3V45.4z M48.7,38.6H28.4v-3.4h20.4V38.6z M48.7,31.8H28.4v-3.4h20.4V31.8z'/%3E%3C/svg%3E%0A");
+      background-size: 2em 2em;
+      background-repeat: no-repeat;
+      background-position: calc(100% - 0.75em) 0.75em;
+      padding: 1em;
+      padding-right: 4em;
+      border-radius: 5px;
+    }
   }
 
   @media (max-width: 450px) {

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 import Layout from '../components/Layout/Layout'
 
@@ -8,6 +9,7 @@ const ContributorsPage = () => (
 	<Layout>
 		<section className={styles.header}>
 			<h1>About us</h1>
+			<Link to="/contact/">Contact us</Link>
 		</section>
 		<section className={styles.main}>
 			<p>
