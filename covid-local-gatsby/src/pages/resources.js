@@ -244,11 +244,19 @@ const Resources = props => {
 
       <section className={styles.main}>
         <p>
-          Below please find a curated list of additional resources that can be
-          useful in responding to the outbreak in your community. Resources can
-          be filtered by topic or phase of the outbreak using the drop downs.
-          Disclaimer: The Covid-Local Team is not responsible for the content on
-          these external pages.
+          These resources are a curated set of information sources and tools
+          designed to support and inform operational decisions during the
+          COVID-19 response effort. All are publicly-accessible and free to
+          access.
+        </p>
+        <p>
+          Resources are tagged by topic and phase of response. Use the filters
+          below to find relevant resources. Use the Contact Us button on the
+          upper right to share additional resources of interest.
+        </p>
+        <p style={{ fontStyle: 'italic' }}>
+          The COVID-Local Team is not responsible for the content on these
+          external pages.
         </p>
         <h3>Filter resources</h3>
         <section className={styles.filterSection}>
