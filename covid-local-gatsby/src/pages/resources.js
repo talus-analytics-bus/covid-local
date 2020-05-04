@@ -76,8 +76,10 @@ const Resources = props => {
     // radndomize the first 5 resources on page load
     const keyResources = resourcesContents.slice(0, 5)
     shuffleArray(keyResources)
+    const otherResources = resourcesContents.slice(5)
+    shuffleArray(otherResources)
 
-    sortedResources = [...keyResources, ...resourcesContents.slice(5)]
+    sortedResources = [...keyResources, ...otherResources]
 
     // console.log(sortedResources)
 

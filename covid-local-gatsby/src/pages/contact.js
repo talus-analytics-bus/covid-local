@@ -38,7 +38,7 @@ const Contact = () => {
           setSuccessMessage(
             <h2 className={styles.success}>Feedback Submitted</h2>
           )
-          setSubmitButtonText('Submitting...')
+          setSubmitButtonText('Submit')
         })
         .catch(error =>
           setErrorMessage(
