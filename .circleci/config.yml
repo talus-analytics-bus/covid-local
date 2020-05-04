@@ -119,7 +119,15 @@ jobs:
             "/blog/webinar-launch/index.html" \
             "/blog/launching-field-notes/index.html" \
             "/about/index.html" \
-            "/contact/index.html"
+            "/contact/index.html"\
+            "/" \
+            "/resources/" \
+            "/blog/" \
+            "/blog/mayors-act-now/" \
+            "/blog/webinar-launch/" \
+            "/blog/launching-field-notes/" \
+            "/about/" \
+            "/contact/"
 
       - run:
           name: Notify Slack
