@@ -1,5 +1,6 @@
 .header,
-.main {
+.main,
+.authorsSection {
   margin: auto;
   width: 90%;
   max-width: 64rem;
@@ -153,7 +154,7 @@
     width: 100%;
   }
 
-  .bio p {
+  .contributorsColumn .bio p {
     font-size: 0.8rem;
   }
 
@@ -214,5 +215,94 @@
 @media only screen and (max-width: 700px) {
   .contributorsColumn {
     margin-left: 0;
+  }
+}
+
+.authorsSection {
+  margin-top: 3rem;
+
+  h1 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 800;
+  }
+  .authors {
+    display: flex;
+
+    .col {
+      flex-basis: 50%;
+      border-left: 2px solid #dddddd;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      margin-left: -2px;
+
+      &:first-of-type {
+        border: none;
+        margin-left: 0;
+      }
+
+      .logo {
+        flex-basis: 100%;
+        height: 5.5rem;
+        margin-left: 1rem;
+        padding-top: 1rem;
+        margin-top: 1rem;
+        border-top: 2px solid #dddddd;
+
+        @media (max-width: 1087px) {
+          margin-top: 0;
+          border: none;
+        }
+
+        img {
+          height: 100%;
+          width: auto;
+        }
+      }
+
+      .authorCol {
+        flex-basis: 50%;
+      }
+
+      .bio {
+        padding: 1rem;
+        min-width: 15rem;
+        flex-shrink: 0;
+        padding-top: 0.5rem;
+      }
+    }
+
+    > .col:first-of-type {
+      margin-left: -1rem;
+    }
+
+    > .col {
+      .logo:first-of-type {
+        border: none;
+        padding-top: 0;
+        height: 4.5rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      flex-wrap: wrap;
+
+      .col {
+        border: none;
+        flex-basis: 100%;
+      }
+
+      > .col {
+        margin-left: -1rem;
+
+        .authorCol {
+          flex-basis: 100%;
+        }
+      }
+      .logo {
+        margin-top: 2rem;
+      }
+    }
   }
 }

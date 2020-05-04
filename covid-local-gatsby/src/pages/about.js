@@ -34,160 +34,287 @@ const ContributorsPage = () => (
 				information on how to protect their communities.
 			</p>
 		</section>
-		<section className={styles.contributors}>
+		<section className={styles.authorsSection}>
 			<h1>Authors</h1>
-			<div className={styles.contributorsContainer}>
-				<div className={styles.individual}>
-					<a
-						target="_blank"
-						rel="noopener noreferrer"
-						href="https://www.nti.org/about/biosecurity/"
-					>
-						<img
-							src="/assets/images/logos/Nuclear_Threat_Initiative_logo.svg"
-							alt="Nuclear Threat Initiative"
-							className="nti"
-						/>
-					</a>
-					<div className={styles.bio}>
-						<h3>Jessica Bell, MS</h3>
-						<p>Senior Program Officer,</p>
-						<p>Global Biological Policy and Programs, NTI</p>
+			<div className={styles.authors}>
+				<div className={styles.col}>
+					<div className={styles.logo}>
+						<a
+							target="_blank"
+							rel="noopener noreferrer"
+							href="https://www.nti.org/about/biosecurity/"
+						>
+							<img
+								src="/assets/images/logos/Nuclear_Threat_Initiative_logo.svg"
+								alt="Nuclear Threat Initiative"
+								className="nti"
+							/>
+						</a>
+					</div>
+					<div className={styles.authorCol}>
+						<div className={styles.bio}>
+							<h3>Beth Cameron, PhD</h3>
+							<p>Vice President,</p>
+							<p>Global Biological Policy and Programs, NTI</p>
+							<p>&nbsp;</p>
+							<p>Vice President, Global</p>
+							<p>Biological Policy and</p>
+							<p>Programs, NTI, Former Senior</p>
+							<p>Director for Global Health</p>
+							<p>Security and Biodefense,</p>
+							<p>National Security Council</p>
+							<p>staff Directorate on Global</p>
+							<p>Health Security and</p>
+							<p>Biodefense</p>
+						</div>
+					</div>
+					<div className={styles.authorCol}>
+						<div className={styles.bio}>
+							<h3>Jessica Bell, MS</h3>
+							<p>Senior Program Officer,</p>
+							<p>Global Biological Policy and Programs, NTI</p>
+						</div>
+						<div className={styles.bio}>
+							<h3>Jacob Eckles, MPH</h3>
+							<p>Program Officer,</p>
+							<p>Global Biological Policy and Programs, NTI</p>
+						</div>
+						<div className={styles.bio}>
+							<h3>Hayley Severance, MPH</h3>
+							<p>Senior Program Officer,</p>
+							<p>Global Biological Policy and Programs, NTI</p>
+						</div>
 					</div>
 				</div>
-				<div className={styles.individual}>
-					<a
-						target="_blank"
-						rel="noopener noreferrer"
-						href="https://ghss.georgetown.edu/"
-					>
-						<img
-							src="/assets/images/logos/Georgetown.png"
-							alt="Georgetown University"
-							className="georgetown"
-						/>
-					</a>
-					<div className={styles.bio}>
-						<h3>Matthew Boyce, MS</h3>
-						<p>Senior Research Associate,</p>
-						<p> Georgetown University</p>
-						<p>Center for Global Health Science and Security</p>
+				<div className={styles.col}>
+					<div className={styles.col}>
+						<div className={styles.logo}>
+							<a
+								target="_blank"
+								rel="noopener noreferrer"
+								href="http://talusanalytics.com/"
+							>
+								<img
+									src="/assets/images/logos/talus-logo-01.png"
+									alt="Talus Analytics"
+								/>
+							</a>
+						</div>
+						<div className={styles.bio}>
+							<h3>Ellie Graeden, PhD</h3>
+							<p>Chief Executive Officer,</p>
+							<p>Talus Analytics</p>
+						</div>
 					</div>
-				</div>
-			</div>
-			<div className={styles.contributorsContainer}>
-				<div className={styles.individual}>
-					<a
-						target="_blank"
-						rel="noopener noreferrer"
-						href="https://www.nti.org/about/biosecurity/"
-					>
-						<img
-							src="/assets/images/logos/Nuclear_Threat_Initiative_logo.svg"
-							alt="Nuclear Threat Initiative"
-							className="nti"
-						/>
-					</a>
-					<div className={styles.bio}>
-						<h3>Beth Cameron, PhD</h3>
-						<p>Vice President,</p>
-						<p>Global Biological Policy and Programs, NTI</p>
-						<p>Former Senior Director, National Security Council staff</p>
-						<p>Directorate on Global Health Security and Biodefense</p>
+					<div className={styles.col}>
+						<div className={styles.logo}>
+							<a
+								target="_blank"
+								rel="noopener noreferrer"
+								href="https://www.cgdev.org/"
+							>
+								<img
+									src="/assets/images/logos/center-for-global-development.png"
+									alt="Center for Global Development"
+								/>
+							</a>
+						</div>
+						<div className={styles.bio}>
+							<h3>Jeremy Konyndyk, MSFS</h3>
+							<p>Senior Policy Fellow,</p>
+							<p>Center for Global Development;</p>
+							<p>Former Director of Foreign </p>
+							<p>Disaster Assistance, USAID</p>
+						</div>
 					</div>
-				</div>
-				<div className={styles.individual}>
-					<a
-						target="_blank"
-						rel="noopener noreferrer"
-						href="https://www.nti.org/about/biosecurity/"
-					>
-						<img
-							src="/assets/images/logos/Nuclear_Threat_Initiative_logo.svg"
-							alt="Nuclear Threat Initiative"
-							className="nti"
-						/>
-					</a>
-					<div className={styles.bio}>
-						<h3>Jacob Eckles, MPH</h3>
-						<p>Program Officer,</p>
-						<p>Global Biological Policy and Programs, NTI</p>
+					<div className={styles.logo}>
+						<a
+							target="_blank"
+							rel="noopener noreferrer"
+							href="https://ghss.georgetown.edu/"
+						>
+							<img
+								src="/assets/images/logos/Georgetown.png"
+								alt="Georgetown University"
+								className="georgetown"
+							/>
+						</a>
 					</div>
-				</div>
-			</div>
-			<div className={styles.contributorsContainer}>
-				<div className={styles.individual}>
-					<a href="http://talusanalytics.com/">
-						<img
-							src="/assets/images/logos/talus-logo-01.png"
-							alt="Talus Analytics"
-						/>
-					</a>
-					<div className={styles.bio}>
-						<h3>Ellie Graeden, PhD</h3>
-						<p>Chief Executive Officer,</p>
-						<p>Talus Analytics</p>
+					<div className={styles.authorCol}>
+						<div className={styles.bio}>
+							<h3>Rebecca Katz, PhD MPH</h3>
+							<p>Professor and Director,</p>
+							<p>Center for Global Health Science and Security</p>
+							<p>Georgetown University</p>
+						</div>
 					</div>
-				</div>
-				<div className={styles.individual}>
-					<a
-						target="_blank"
-						rel="noopener noreferrer"
-						href="https://ghss.georgetown.edu/"
-					>
-						<img
-							src="/assets/images/logos/Georgetown.png"
-							alt="Georgetown University"
-							className="georgetown"
-						/>
-					</a>
-					<div className={styles.bio}>
-						<h3>Rebecca Katz, PhD MPH</h3>
-						<p>Professor and Director,</p>
-						<p>Center for Global Health Science and Security</p>
-						<p>Georgetown University</p>
-					</div>
-				</div>
-			</div>
-			<div className={styles.contributorsContainer}>
-				<div className={styles.individual}>
-					<a
-						target="_blank"
-						rel="noopener noreferrer"
-						href="https://www.cgdev.org/"
-					>
-						<img
-							src="/assets/images/logos/center-for-global-development.png"
-							alt="Center for Global Development"
-						/>
-					</a>
-					<div className={styles.bio}>
-						<h3>Jeremy Konyndyk, MSFS</h3>
-						<p>Senior Policy Fellow,</p>
-						<p>Center for Global Development;</p>
-						<p>Former Director of Foreign Disaster Assistance, USAID</p>
-					</div>
-				</div>
-				<div className={styles.individual}>
-					<a
-						target="_blank"
-						rel="noopener noreferrer"
-						href="https://www.nti.org/about/biosecurity/"
-					>
-						<img
-							src="/assets/images/logos/Nuclear_Threat_Initiative_logo.svg"
-							alt="Nuclear Threat Initiative"
-							className="nti"
-						/>
-					</a>
-					<div className={styles.bio}>
-						<h3>Hayley Severance, MPH</h3>
-						<p>Senior Program Officer,</p>
-						<p>Global Biological Policy and Programs, NTI</p>
+					<div className={styles.authorCol}>
+						<div className={styles.bio}>
+							<h3>Matthew Boyce, MS</h3>
+							<p>Senior Research Associate,</p>
+							<p> Georgetown University</p>
+							<p>Center for Global Health Science and Security</p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
+		{/*  */}
+		{/* 		<section className={styles.contributors}> */}
+		{/* 			<h1>Authors</h1> */}
+		{/* 			<div className={styles.contributorsContainer}> */}
+		{/* 				<div className={styles.individual}> */}
+		{/* 					<a */}
+		{/* 						target="_blank" */}
+		{/* 						rel="noopener noreferrer" */}
+		{/* 						href="https://www.nti.org/about/biosecurity/" */}
+		{/* 					> */}
+		{/* 						<img */}
+		{/* 							src="/assets/images/logos/Nuclear_Threat_Initiative_logo.svg" */}
+		{/* 							alt="Nuclear Threat Initiative" */}
+		{/* 							className="nti" */}
+		{/* 						/> */}
+		{/* 					</a> */}
+		{/* 					<div className={styles.bio}> */}
+		{/* 						<h3>Jessica Bell, MS</h3> */}
+		{/* 						<p>Senior Program Officer,</p> */}
+		{/* 						<p>Global Biological Policy and Programs, NTI</p> */}
+		{/* 					</div> */}
+		{/* 				</div> */}
+		{/* 				<div className={styles.individual}> */}
+		{/* 					<a */}
+		{/* 						target="_blank" */}
+		{/* 						rel="noopener noreferrer" */}
+		{/* 						href="https://ghss.georgetown.edu/" */}
+		{/* 					> */}
+		{/* 						<img */}
+		{/* 							src="/assets/images/logos/Georgetown.png" */}
+		{/* 							alt="Georgetown University" */}
+		{/* 							className="georgetown" */}
+		{/* 						/> */}
+		{/* 					</a> */}
+		{/* 					<div className={styles.bio}> */}
+		{/* 						<h3>Matthew Boyce, MS</h3> */}
+		{/* 						<p>Senior Research Associate,</p> */}
+		{/* 						<p> Georgetown University</p> */}
+		{/* 						<p>Center for Global Health Science and Security</p> */}
+		{/* 					</div> */}
+		{/* 				</div> */}
+		{/* 			</div> */}
+		{/* 			<div className={styles.contributorsContainer}> */}
+		{/* 				<div className={styles.individual}> */}
+		{/* 					<a */}
+		{/* 						target="_blank" */}
+		{/* 						rel="noopener noreferrer" */}
+		{/* 						href="https://www.nti.org/about/biosecurity/" */}
+		{/* 					> */}
+		{/* 						<img */}
+		{/* 							src="/assets/images/logos/Nuclear_Threat_Initiative_logo.svg" */}
+		{/* 							alt="Nuclear Threat Initiative" */}
+		{/* 							className="nti" */}
+		{/* 						/> */}
+		{/* 					</a> */}
+		{/* 					<div className={styles.bio}> */}
+		{/* 						<h3>Beth Cameron, PhD</h3> */}
+		{/* 						<p>Vice President,</p> */}
+		{/* 						<p>Global Biological Policy and Programs, NTI</p> */}
+		{/* 						<p>Former Senior Director, National Security Council staff</p> */}
+		{/* 						<p>Directorate on Global Health Security and Biodefense</p> */}
+		{/* 					</div> */}
+		{/* 				</div> */}
+		{/* 				<div className={styles.individual}> */}
+		{/* 					<a */}
+		{/* 						target="_blank" */}
+		{/* 						rel="noopener noreferrer" */}
+		{/* 						href="https://www.nti.org/about/biosecurity/" */}
+		{/* 					> */}
+		{/* 						<img */}
+		{/* 							src="/assets/images/logos/Nuclear_Threat_Initiative_logo.svg" */}
+		{/* 							alt="Nuclear Threat Initiative" */}
+		{/* 							className="nti" */}
+		{/* 						/> */}
+		{/* 					</a> */}
+		{/* 					<div className={styles.bio}> */}
+		{/* 						<h3>Jacob Eckles, MPH</h3> */}
+		{/* 						<p>Program Officer,</p> */}
+		{/* 						<p>Global Biological Policy and Programs, NTI</p> */}
+		{/* 					</div> */}
+		{/* 				</div> */}
+		{/* 			</div> */}
+		{/* 			<div className={styles.contributorsContainer}> */}
+		{/* 				<div className={styles.individual}> */}
+		{/* 					<a href="http://talusanalytics.com/"> */}
+		{/* 						<img */}
+		{/* 							src="/assets/images/logos/talus-logo-01.png" */}
+		{/* 							alt="Talus Analytics" */}
+		{/* 						/> */}
+		{/* 					</a> */}
+		{/* 					<div className={styles.bio}> */}
+		{/* 						<h3>Ellie Graeden, PhD</h3> */}
+		{/* 						<p>Chief Executive Officer,</p> */}
+		{/* 						<p>Talus Analytics</p> */}
+		{/* 					</div> */}
+		{/* 				</div> */}
+		{/* 				<div className={styles.individual}> */}
+		{/* 					<a */}
+		{/* 						target="_blank" */}
+		{/* 						rel="noopener noreferrer" */}
+		{/* 						href="https://ghss.georgetown.edu/" */}
+		{/* 					> */}
+		{/* 						<img */}
+		{/* 							src="/assets/images/logos/Georgetown.png" */}
+		{/* 							alt="Georgetown University" */}
+		{/* 							className="georgetown" */}
+		{/* 						/> */}
+		{/* 					</a> */}
+		{/* 					<div className={styles.bio}> */}
+		{/* 						<h3>Rebecca Katz, PhD MPH</h3> */}
+		{/* 						<p>Professor and Director,</p> */}
+		{/* 						<p>Center for Global Health Science and Security</p> */}
+		{/* 						<p>Georgetown University</p> */}
+		{/* 					</div> */}
+		{/* 				</div> */}
+		{/* 			</div> */}
+		{/* 			<div className={styles.contributorsContainer}> */}
+		{/* 				<div className={styles.individual}> */}
+		{/* 					<a */}
+		{/* 						target="_blank" */}
+		{/* 						rel="noopener noreferrer" */}
+		{/* 						href="https://www.cgdev.org/" */}
+		{/* 					> */}
+		{/* 						<img */}
+		{/* 							src="/assets/images/logos/center-for-global-development.png" */}
+		{/* 							alt="Center for Global Development" */}
+		{/* 						/> */}
+		{/* 					</a> */}
+		{/* 					<div className={styles.bio}> */}
+		{/* 						<h3>Jeremy Konyndyk, MSFS</h3> */}
+		{/* 						<p>Senior Policy Fellow,</p> */}
+		{/* 						<p>Center for Global Development;</p> */}
+		{/* 						<p>Former Director of Foreign Disaster Assistance, USAID</p> */}
+		{/* 					</div> */}
+		{/* 				</div> */}
+		{/* 				<div className={styles.individual}> */}
+		{/* 					<a */}
+		{/* 						target="_blank" */}
+		{/* 						rel="noopener noreferrer" */}
+		{/* 						href="https://www.nti.org/about/biosecurity/" */}
+		{/* 					> */}
+		{/* 						<img */}
+		{/* 							src="/assets/images/logos/Nuclear_Threat_Initiative_logo.svg" */}
+		{/* 							alt="Nuclear Threat Initiative" */}
+		{/* 							className="nti" */}
+		{/* 						/> */}
+		{/* 					</a> */}
+		{/* 					<div className={styles.bio}> */}
+		{/* 						<h3>Hayley Severance, MPH</h3> */}
+		{/* 						<p>Senior Program Officer,</p> */}
+		{/* 						<p>Global Biological Policy and Programs, NTI</p> */}
+		{/* 					</div> */}
+		{/* 				</div> */}
+		{/* 			</div> */}
+		{/* 		</section> */}
+
 		<section className={styles.contributors}>
 			<h1>Contributors</h1>
 			<div className={styles.contributorsColumn}>
