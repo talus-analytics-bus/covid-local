@@ -119,7 +119,8 @@ jobs:
             "/blog/webinar-launch/index.html" \
             "/blog/launching-field-notes/index.html" \
             "/about/index.html" \
-            "/contact/index.html"\
+            "/contact/index.html" \
+            "/reachback/index.html" \
             "/" \
             "/resources/" \
             "/blog/" \
@@ -127,7 +128,8 @@ jobs:
             "/blog/webinar-launch/" \
             "/blog/launching-field-notes/" \
             "/about/" \
-            "/contact/"
+            "/contact/" \
+            "/reachback/"
 
       - run:
           name: Notify Slack
