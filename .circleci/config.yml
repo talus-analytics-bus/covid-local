@@ -125,6 +125,7 @@ jobs:
             "/blog/launching-field-notes/" \
             "/about/" \
             "/contact/"
+
       - run:
           name: Notify Slack
           command: |

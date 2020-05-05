@@ -212,6 +212,18 @@ const resourcesContents = [
     image: 'Re_Public_COVID_Log.png',
     link: 'https://covid.re-public.app/',
   },
+  {
+    name:
+      'Strengthening Preparedness for COVID-19 in Cities and Urban Settings: Interim Guidance for Local Authorities',
+    description:
+      'Cities and other urban settlements are at risk of COVID-19. Many densely populated areas have experienced high case numbers and deaths, which reflects the ease of introduction and spread of the virus in such places. Urban settings face unique dynamics that have a direct impact on the achievement of preparedness for all types of health emergencies, including COVID-19. These dynamics shape the capacity of authorities to mount an effective response, which further underscores the need to learn from the experiences and best practices of others, implement appropriate measures for preparedness before a public health emergency occurs and to adjust them as necessary.',
+    organization: 'WHO',
+    topic: 'Local Guidance',
+    phase: 'Planning; Response; Recovery',
+    image: 'WHO Local Guidance.png',
+    link:
+      'https://apps.who.int/iris/bitstream/handle/10665/331896/WHO-2019-nCoV-Urban_preparedness-2020.1-eng.pdf',
+  },
 ]
 
 export default resourcesContents
