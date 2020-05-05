@@ -43,7 +43,7 @@ jobs:
           name: invalidate index.html
           command: |
             aws cloudfront create-invalidation \
-            --distribution-id E14XXUI2OGXVF3 \
+            --distribution-id E268NLA9SJTWCC \
             --paths \
             "/index.html" \
             "/resources/index.html" \
