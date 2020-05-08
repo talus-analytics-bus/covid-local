@@ -657,8 +657,9 @@ article {
   border: 3px solid #409385;
   padding: 30px;
   margin-left: 3rem;
+  margin-top: 3rem;
   /*margin-top: 20px;*/
-  margin-top: 11rem;
+  /*margin-top: 11rem;*/
   display: flex;
   flex-direction: column;
   justify-content: space-between;
