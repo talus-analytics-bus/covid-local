@@ -55,14 +55,26 @@
   }
 }
 
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .question {
   background-color: #d4eef9;
   margin-bottom: 2rem;
   padding: 1rem;
+}
 
-  h1 {
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #7197aa;
-  }
+.questionHeader {
+  // margin-bottom: 1rem;
+  // padding-bottom: 1rem;
+  // border-bottom: 1px solid #7197aa;
+  text-align: left;
+}
+
+.answerArea {
+  background-color: #d4eef9;
+  padding: 1rem;
 }

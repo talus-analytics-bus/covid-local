@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
 import Layout from '../components/Layout/Layout'
+import BlueExpandBox from '../components/BlueExpandBox/BlueExpandBox'
 
 import styles from '../styles/quickfacts.module.scss'
 
@@ -21,11 +22,13 @@ const Quickfacts = () => {
 	)
 
 	const questionsElements = quickfactsContents.map((question, index) => (
-		<section key={index} className={styles.question}>
-			<h1>{question.question}</h1>
-			{createQuestionElements(question, index)}
-			{question.subquestions.map(createQuestionElements)}
-		</section>
+		<BlueExpandBox key={index} className={styles.question}>
+			<h1 className={styles.questionHeader}>{question.question}</h1>
+			<div className={styles.answerArea}>
+				{createQuestionElements(question, index)}
+				{question.subquestions.map(createQuestionElements)}
+			</div>
+		</BlueExpandBox>
 	))
 
 	return (
