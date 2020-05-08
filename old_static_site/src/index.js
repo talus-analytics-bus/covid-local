@@ -143,8 +143,12 @@ document.querySelectorAll('a[href^="#action"]').forEach((link) => {
         // the intersectionObserver only using the top of
         // the window, not the top of the nav...
         setTimeout(() => {
+            console.log('anchor click timeout');
             const sectionNumber = anchorID.split('-')[1];
-            if (sectionNumber > 0) {
+            if (sectionNumber === '91') {
+                console.log("updateDocumentNav('-1');");
+                updateDocumentNav('-1');
+            } else if (sectionNumber > 0) {
                 updateDocumentNav(sectionNumber);
             } else {
                 updateDocumentNav();
@@ -171,8 +175,12 @@ if (window.location.hash.includes('action')) {
     // the intersectionObserver only using the top of
     // the window, not the top of the nav
     setTimeout(() => {
+        console.log('hash url timeout');
         const sectionNumber = anchorID.split('-')[1];
-        if (sectionNumber > 0) {
+        if (sectionNumber === '91') {
+            console.log("updateDocumentNav('-1');");
+            updateDocumentNav('-1');
+        } else if (sectionNumber > 0) {
             updateDocumentNav(sectionNumber);
         } else {
             updateDocumentNav();

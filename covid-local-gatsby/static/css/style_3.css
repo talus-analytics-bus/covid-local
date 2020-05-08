@@ -696,7 +696,7 @@ a.introduction-download {
   color: white;
   text-decoration: none;
   /* margin: 2rem -1rem -1rem -1rem; */
-  padding: 0.5rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 15px;
   transition: 0.75s background-color ease;
   margin-bottom: 1rem;
@@ -711,7 +711,7 @@ a.introduction-download > span {
 
 a.introduction-criteria {
   /*background-color: #c1272d;*/
-  background-color: #94292b;
+  background-color: #ffae42;
   margin-bottom: 1.25rem;
 }
 
@@ -836,7 +836,7 @@ a.introduction-feedback:hover {
 }
 
 .expanding-boxes section.criteria {
-  background-color: #94292b2f;
+  background-color: #ffd7a6;
 }
 
 .expanding-boxes section.criteria:before,
@@ -852,7 +852,7 @@ a.introduction-feedback:hover {
 }
 
 .expanding-boxes section.criteria:before {
-  background-color: #94292b;
+  background-color: #ffae42;
 }
 
 .expanding-boxes section:last-of-type {
