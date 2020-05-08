@@ -69,7 +69,7 @@ const updateDocumentNav = (number) => {
     if (number === '-1') {
         documentNav.innerHTML = `<div class="nav-squish">
                 <div class="no-number"></div>
-                <h1>CRITERIA FOR REOPENING</h1>
+                <h1>CRITERIA FOR RELAXING DISTANCING MEASURES</h1>
             </div>`;
     } else if (number === '0') {
         documentNav.innerHTML = `<div class="nav-squish">
