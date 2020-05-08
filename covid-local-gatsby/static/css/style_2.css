@@ -679,6 +679,7 @@ article {
   background-repeat: no-repeat;
 }
 
+a.introduction-criteria,
 a.introduction-feedback,
 a.introduction-download {
   position: relative;
@@ -700,10 +701,17 @@ a.introduction-download {
   margin-bottom: 1rem;
 }
 
+a.introduction-criteria > span,
 a.introduction-feedback > span,
 a.introduction-download > span {
   flex-grow: 1;
   min-width: 8.25rem;
+}
+
+a.introduction-criteria {
+  /*background-color: #c1272d;*/
+  background-color: #94292b;
+  margin-bottom: 1.25rem;
 }
 
 a.introduction-download {
@@ -720,6 +728,7 @@ a.introduction-feedback {
   /* background-color: rgb(51, 119, 107); */
 }
 
+a.introduction-criteria svg,
 a.introduction-feedback svg,
 a.introduction-download svg {
   flex-shrink: 0;
@@ -753,6 +762,7 @@ a.introduction-feedback:hover {
     /* margin-right: 2rem; */
   }
 
+  a.introduction-criteria,
   a.introduction-feedback,
   a.introduction-download {
     /* margin: -1rem -1rem -1rem 2rem; */
@@ -763,6 +773,7 @@ a.introduction-feedback:hover {
     margin-right: 1rem;
   }
 
+  a.introduction-criteria:last-of-type,
   a.introduction-download:last-of-type,
   a.introduction-feedback:last-of-type {
     margin-right: 0;
@@ -784,6 +795,7 @@ a.introduction-feedback:hover {
     margin-bottom: 1rem;
   }
 
+  a.introduction-criteria,
   a.introduction-feedback,
   a.introduction-download {
     /* margin: 2rem -1rem -1rem -1rem; */
@@ -801,6 +813,7 @@ a.introduction-feedback:hover {
     margin-bottom: 0;
   }
 
+  a.introduction-criteria svg,
   a.introduction-feedback svg,
   a.introduction-download svg {
     margin-bottom: 0rem;
@@ -813,6 +826,7 @@ a.introduction-feedback:hover {
   margin-top: 30px;
 }
 
+.expanding-boxes section.criteria,
 .expanding-boxes section {
   position: relative;
   background-color: #d4eef9;
@@ -820,6 +834,11 @@ a.introduction-feedback:hover {
   padding: 15px 30px;
 }
 
+.expanding-boxes section.criteria {
+  background-color: #94292b2f;
+}
+
+.expanding-boxes section.criteria:before,
 .expanding-boxes section:before {
   display: block;
   background-color: #469383;
@@ -829,6 +848,10 @@ a.introduction-feedback:hover {
   top: 0;
   height: 5.5rem;
   width: 1rem;
+}
+
+.expanding-boxes section.criteria:before {
+  background-color: #94292b;
 }
 
 .expanding-boxes section:last-of-type {
@@ -1248,6 +1271,10 @@ a.page-anchor {
 .implementation-metrics .radio-li {
   margin-left: 4rem;
   margin-right: 0.5rem;
+}
+
+.implementation-metrics .radio ol {
+  list-style-type: lower-roman;
 }
 
 .implementation-metrics .radio-li:after {
