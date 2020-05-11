@@ -827,7 +827,7 @@ a.introduction-feedback:hover {
   margin-top: 30px;
 }
 
-.expanding-boxes section.criteria,
+.expanding-boxes section.criteria-section,
 .expanding-boxes section {
   position: relative;
   background-color: #d4eef9;
@@ -835,11 +835,11 @@ a.introduction-feedback:hover {
   padding: 15px 30px;
 }
 
-.expanding-boxes section.criteria {
+.expanding-boxes section.criteria-section {
   background-color: #ffd7a6;
 }
 
-.expanding-boxes section.criteria:before,
+.expanding-boxes section.criteria-section:before,
 .expanding-boxes section:before {
   display: block;
   background-color: #469383;
@@ -851,7 +851,7 @@ a.introduction-feedback:hover {
   width: 1rem;
 }
 
-.expanding-boxes section.criteria:before {
+.expanding-boxes section.criteria-section:before {
   background-color: #ffae42;
 }
 
@@ -1187,6 +1187,7 @@ a.page-anchor {
   }
 }
 
+.criteria,
 .implementation-metrics,
 .resources,
 .phase {
@@ -1196,11 +1197,13 @@ a.page-anchor {
   /* box-shadow: 0px 0px 15px -2px rgba(0,0,0,0.7); */
 }
 
+.criteria,
 .implementation-metrics {
   padding-top: 1rem;
   background-color: white;
 }
 
+.criteria > div,
 .implementation-metrics > div {
   display: flex;
   /* align-items: flex-start; */
@@ -1208,15 +1211,19 @@ a.page-anchor {
   padding-top: 0.5rem;
 }
 
+.criteria > div:first-of-type,
 .implementation-metrics > div:first-of-type {
   padding-top: 0;
   border: none;
 }
 
+/*.criteria .radio > *,*/
 .implementation-metrics > div > * {
   flex-basis: auto;
 }
 
+.criteria p,
+.criteria li > span > span,
 .implementation-metrics p {
   font-size: 1rem;
   font-weight: 400;
@@ -1224,32 +1231,58 @@ a.page-anchor {
   flex-grow: 2;
 }
 
+.criteria li > span > span {
+  flex-grow: 1;
+}
+
+.criteria p {
+  margin-left: 0.25rem;
+}
+
+.criteria ol {
+  flex-grow: 1;
+}
+
+.criteria .question div:nth-of-type(2) {
+  flex-basis: 100%;
+  flex-grow: 1;
+}
+
+.criteria label,
 .implementation-metrics > div > label {
   padding: 0 1rem 0 0.25rem;
   font-style: italic;
   color: #888888;
 }
 
+.criteria label:last-of-type,
 .implementation-metrics > div > label:last-of-type {
   padding-right: 0.5rem;
 }
 
+.criteria input,
 .implementation-metrics > div > input {
   flex-shrink: 0;
   margin-top: 5px;
   filter: grayscale(1);
 }
 
+.criteria > h3,
+.criteria > h4,
 .implementation-metrics > h3 {
   margin: 1rem 0 0 auto;
   text-align: right;
 }
 
+.criteria .number,
 .implementation-metrics .number {
   font-size: 0.8rem;
   margin-top: 0.25em;
 }
 
+.criteria h3,
+.criteria h4:first-of-type,
+.criteria .header,
 .implementation-metrics h3,
 .implementation-metrics .header {
   border-top: 1px solid #999999;
@@ -1257,6 +1290,7 @@ a.page-anchor {
   margin-top: 0.75rem;
 }
 
+.criteria .header > p,
 .implementation-metrics .header > p {
   font-size: 1.2rem;
   font-weight: 500;
@@ -1269,19 +1303,32 @@ a.page-anchor {
   padding-right: 0rem;
 }
 
+.criteria .radio-li,
 .implementation-metrics .radio-li {
   margin-left: 4rem;
   margin-right: 0.5rem;
 }
 
+.criteria .radio {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.criteria .radio-li {
+  display: flex;
+}
+
+.criteria ol,
 .implementation-metrics .radio ol {
   list-style-type: lower-roman;
 }
 
+.criteria .radio-li:after,
 .implementation-metrics .radio-li:after {
   content: '.';
 }
 
+.criteria .question > div,
 .implementation-metrics .radio > div {
   align-items: baseline;
   display: flex;
@@ -1289,26 +1336,33 @@ a.page-anchor {
 }
 
 @media only screen and (max-width: 765px) {
+  .criteria > .header,
   .implementation-metrics > .header {
     flex-wrap: wrap;
   }
+  .criteria > .header p,
   .implementation-metrics > .header p {
     padding: 0;
     margin: 1rem 0;
   }
+  .criteria p,
   .implementation-metrics p {
     margin: 1rem 0;
     width: 100%;
   }
+  .criteria .radio,
   .implementation-metrics .radio {
     flex-wrap: wrap;
   }
+  .criteria .question > div,
   .implementation-metrics .radio > div {
     min-width: 100%;
   }
+  .criteria .radio-li,
   .implementation-metrics .radio-li {
     margin-left: 0;
   }
+  .criteria input:first-of-type,
   .implementation-metrics > div > input:first-of-type {
     margin-left: auto;
   }

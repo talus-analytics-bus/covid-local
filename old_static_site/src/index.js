@@ -64,7 +64,6 @@ const toggleDocumentNav = () => {
 // Update sticky navbar
 const updateDocumentNav = (number) => {
     const documentNav = document.querySelector('.document-nav');
-    console.log(number);
 
     if (number === '-1') {
         documentNav.innerHTML = `<div class="nav-squish">
@@ -143,10 +142,8 @@ document.querySelectorAll('a[href^="#action"]').forEach((link) => {
         // the intersectionObserver only using the top of
         // the window, not the top of the nav...
         setTimeout(() => {
-            console.log('anchor click timeout');
             const sectionNumber = anchorID.split('-')[1];
             if (sectionNumber === '91') {
-                console.log("updateDocumentNav('-1');");
                 updateDocumentNav('-1');
             } else if (sectionNumber > 0) {
                 updateDocumentNav(sectionNumber);
@@ -175,10 +172,8 @@ if (window.location.hash.includes('action')) {
     // the intersectionObserver only using the top of
     // the window, not the top of the nav
     setTimeout(() => {
-        console.log('hash url timeout');
         const sectionNumber = anchorID.split('-')[1];
         if (sectionNumber === '91') {
-            console.log("updateDocumentNav('-1');");
             updateDocumentNav('-1');
         } else if (sectionNumber > 0) {
             updateDocumentNav(sectionNumber);
@@ -269,13 +264,15 @@ headerObserver.observe(document.querySelector('.introduction-header'));
 
 // Build radio buttons
 let radioCount = 0;
-document.querySelectorAll('.implementation-metrics .radio').forEach((div) => {
-    radioCount += 1;
-    div.innerHTML += `<input type="radio" id="y${radioCount}" name="r${radioCount}">
+document
+    .querySelectorAll('.implementation-metrics .radio, .criteria .radio')
+    .forEach((div) => {
+        radioCount += 1;
+        div.innerHTML += `<input type="radio" id="y${radioCount}" name="r${radioCount}">
         <label for="y${radioCount}">yes</label>
         <input type="radio" id="n${radioCount}" name="r${radioCount}">
         <label for="n${radioCount}">no</label>`;
-});
+    });
 
 // radio button event listener
 document.querySelectorAll('.implementation-metrics input').forEach((input) => {
@@ -293,6 +290,47 @@ document.querySelectorAll('.implementation-metrics input').forEach((input) => {
         document.querySelector(
             '.implementation-metrics h3'
         ).innerHTML = `Progress: ${percent.toFixed()}%`;
+    });
+});
+
+// criteria radio button event listener
+document.querySelectorAll('.criteria input').forEach((input) => {
+    input.addEventListener('click', (event) => {
+        const phaseTwo = Array.from(
+            document.querySelectorAll(
+                '.criteria [data-phase*="2"] input:first-of-type'
+            )
+        );
+        const phaseThree = Array.from(
+            document.querySelectorAll(
+                '.criteria [data-phase*="3"] input:first-of-type'
+            )
+        );
+        const phaseFour = Array.from(
+            document.querySelectorAll(
+                '.criteria [data-phase*="4"] input:first-of-type'
+            )
+        );
+
+        const phaseTwoSum = phaseTwo
+            .map((input) => (input.checked ? 1 : 0))
+            .reduce((a, b) => a + b);
+        const phaseTwoPercent = (phaseTwoSum / phaseTwo.length) * 100;
+
+        const phaseThreeSum = phaseThree
+            .map((input) => (input.checked ? 1 : 0))
+            .reduce((a, b) => a + b);
+        const phaseThreePercent = (phaseThreeSum / phaseThree.length) * 100;
+
+        const phaseFourSum = phaseFour
+            .map((input) => (input.checked ? 1 : 0))
+            .reduce((a, b) => a + b);
+        const phaseFourPercent = (phaseFourSum / phaseFour.length) * 100;
+
+        const output = document.querySelectorAll('.criteria > h4');
+        output[0].innerHTML = `Progress: &nbsp;&nbsp;&nbsp; <span style="font-weight: 400;">Phase 2:</span> ${phaseTwoPercent.toFixed()}%`;
+        output[1].innerHTML = `<span style="font-weight: 400;">Phase 3:</span> ${phaseThreePercent.toFixed()}%`;
+        output[2].innerHTML = `<span style="font-weight: 400;">Phase 4:</span> ${phaseFourPercent.toFixed()}%`;
     });
 });
 
