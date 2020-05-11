@@ -362,7 +362,7 @@ const ContributorsPage = () => (
 					<h3>Juliette Kayyem, JD</h3>
 					<p>Faculty Chair,</p>
 					<p>Security and Global Health Project,</p>
-					<p>Harvard’s Kennedy School of Government</p>
+					<p>Kennedy School of Government, Harvard University</p>
 				</div>
 				<div className={styles.bio}>
 					<h3>James Lawler, MD</h3>
@@ -403,8 +403,9 @@ const ContributorsPage = () => (
 					<p>Johns Hopkins Center for Health Security</p>
 					<p>
 						Assistant Professor, Department of Environmental Health and
-						Engineering
+						Engineering,
 					</p>
+					<p>Johns Hopkins Bloomberg School of Public Health</p>
 				</div>
 			</div>
 			<p>
