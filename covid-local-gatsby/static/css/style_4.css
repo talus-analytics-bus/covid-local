@@ -652,7 +652,7 @@ article {
 
 .introduction .right-col {
   position: relative;
-  width: 40em;
+  width: 110em;
   border-radius: 30px;
   border: 3px solid #409385;
   padding: 30px;
@@ -770,7 +770,7 @@ a.introduction-feedback:hover {
     margin-bottom: 1rem;
     /*padding: 0rem 1rem; */
     /*padding-bottom: .5rem;*/
-    max-width: 15rem;
+    max-width: 18rem;
     margin-right: 1rem;
   }
 
@@ -786,7 +786,7 @@ a.introduction-feedback:hover {
   }
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 775px) {
   .introduction .right-col {
     flex-direction: column;
     width: 100%;
