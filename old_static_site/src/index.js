@@ -65,20 +65,26 @@ const toggleDocumentNav = () => {
 const updateDocumentNav = (number) => {
     const documentNav = document.querySelector('.document-nav');
 
-    if (number === '-1') {
+    // console.log('updateDocumentNav: ' + number);
+
+    if (number === '91') {
         documentNav.innerHTML = `<div class="nav-squish">
                 <div class="no-number"></div>
-                <h1>CRITERIA FOR RELAXING DISTANCING MEASURES</h1>
+                <h1>METRICS FOR PHASED RE‑OPENING</h1>
             </div>`;
     } else if (number === '0') {
         documentNav.innerHTML = `<div class="nav-squish">
                 <div class="no-number"></div>
                 <h1>INDICATORS OF PROGRESS</h1>
             </div>`;
-    } else {
+    } else if (number) {
         documentNav.innerHTML = `<div class="nav-squish">
                 <div class="number">${number}</div>
                 <h1>KEY OBJECTIVE #${number}</h1>
+            </div>`;
+    } else {
+        documentNav.innerHTML = `<div class="nav-squish">
+                <div class="no-number"></div>
             </div>`;
     }
 };
@@ -143,9 +149,7 @@ document.querySelectorAll('a[href^="#action"]').forEach((link) => {
         // the window, not the top of the nav...
         setTimeout(() => {
             const sectionNumber = anchorID.split('-')[1];
-            if (sectionNumber === '91') {
-                updateDocumentNav('-1');
-            } else if (sectionNumber > 0) {
+            if (sectionNumber) {
                 updateDocumentNav(sectionNumber);
             } else {
                 updateDocumentNav();
