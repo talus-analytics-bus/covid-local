@@ -34,19 +34,29 @@ const Nav = () => {
         <div className={styles.navbarRight} ref={navbarRightContent}>
           <ul>
             <li>
-              <Link to="/">Guide</Link>
+              <Link activeClassName={styles.active} to="/">
+                Guide
+              </Link>
             </li>
             <li>
-              <Link to="/resources/">Resources</Link>
+              <Link activeClassName={styles.active} to="/resources/">
+                Resources
+              </Link>
             </li>
             <li>
-              <Link to="/blog/">Blog</Link>
+              <Link activeClassName={styles.active} to="/blog/">
+                Blog
+              </Link>
             </li>
             <li>
-              <Link to="/about/">About</Link>
+              <Link activeClassName={styles.active} to="/about/">
+                About
+              </Link>
             </li>
             <li>
-              <Link to="/contact/">Contact&nbsp;Us</Link>
+              <Link activeClassName={styles.active} to="/contact/">
+                Contact&nbsp;Us
+              </Link>
             </li>
           </ul>
         </div>
