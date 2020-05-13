@@ -1318,6 +1318,22 @@ a.page-anchor {
   display: flex;
 }
 
+.criteria .tippy-phases {
+  position: relative;
+  cursor: pointer;
+}
+
+.criteria .tippy-phases:after {
+  position: absolute;
+  content: '';
+  display: block;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffd7a6;
+}
+
 .criteria ol,
 .implementation-metrics .radio ol {
   list-style-type: lower-roman;
