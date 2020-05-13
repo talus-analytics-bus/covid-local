@@ -13,7 +13,7 @@
 	<meta property='og:url' content="covid-local.org"/>
 
 	<title>COVID-19 Preparedness Dashboard</title>
-	<link rel="stylesheet" href="/css/style_5.css">
+	<link rel="stylesheet" href="/css/style_6.css">
 	<!-- pre connect -->
 	<link rel="preconnect" href="https://www.googletagmanager.com">
 	<link rel="preconnect" href="https://cdn.rawgit.com/">
@@ -177,19 +177,7 @@
 				<a href="#action-7"><div class="number">7</div><p>Mitigate economic and social consequences of the COVID-19 pandemic</p></a>
 			</div>
 		</div> -->
-		<div>
-			<button aria-label="Expand Details" class="read-more-button">Expand to view phase definitions</button>
-			<div class="read-more-hider" hidden>
-				<div class="read-more-content overview">
-					<p><strong>Phase Definitions for Incremental Implementation (and Relaxation) of Social Distancing Measures</strong></p>
-					<p><strong>Phase 1: Maximum social-distancing measures are in place</strong> and tailored to the needs of the community to reduce widespread community transmission.  Focus is on reducing person-to-person transmission and decreasing the burden on the healthcare system while bolstering preparedness capabilities in anticipation of potential future increases in transmission. </p>
-					<p><strong>Phase 2: Initial re-opening phase</strong> should focus on safely re-opening a limited number of critically important activities that are either low risk, or for which the criticality of the activity merits accepting a moderate degree of transmission risk (with appropriate mitigation).  In general, this phase should continue to prohibit gatherings, activities than entail prolonged close contact, and/or prolonged presence in enclosed spaces. Outdoor activities are potentially feasible with appropriate distancing. Telework should continue wherever feasible.</p>
-					<p><strong>Phase 3: Economic recovery phase</strong> should focus on widely re-opening economic and social functions once ambient transmission has declined and is being effectively suppressed. Low levels of community transmission means that functions involving moderate gatherings are possible with appropriate mitigation. Large gatherings continue to pose an excessive risk. However, activities that entail prolonged contact or presence in enclosed spaces are feasible with appropriate mitigation.</p>
-					<p><strong>Phase 4: New normal phase</strong> represents the maximal return to normalcy that is viable prior to herd immunity via widespread vaccination. Community transmission is well monitored and negligible; virus flare-ups are contained rapidly. Most high-risk/low criticality functions can resume.</p>
-					<p><strong>Decision makers must be willing to go backwards in phases, if the data and evidence demand.</strong></p>
-				</div>
-			</div>
-		</div>
+		
 	</header>
 	<article class="expanding-boxes">
 		<section class="criteria-section">
@@ -205,22 +193,23 @@
 			<div class="expand-hider" hidden>
 				<div class="expand-area" style="border:none;">
 					<div class="criteria">
+						<div><h2 class="tippy-phases" style="flex-basis: auto;">View Phases</h2></div>
 						<h2>Criteria to be in place before relaxing social distancing orders within the community.<br />&nbsp;</h2>
 						<div class="header"><div class="number">1</div><p>Infection Rate: Infection rates should be declining, with each case infecting less than 1.00 person (R0 < 1 and approaching 0). Percent positive of tests conducted should be consistently low.</p></div>
 						<div class="question"><div><div class="radio-li">a</div><div>
 							<p>Diagnostic test positivity rate [without testing restrictions]</p>
 							<ol>
-								<li data-phase="2"><span class="radio"><span>Phase 2: Less than 10% of tests conducted are positive for COVID-19</span></span></li>
-								<li data-phase="3 4"><span class="radio"><span>Phases 3 and 4: Less than 3% of tests conducted are positive for COVID-19</span></span></li>
+								<li data-phase="2"><span class="radio"><span><span class="tippy-phases">Phase 2:</span> Less than 10% of tests conducted are positive for COVID-19</span></span></li>
+								<li data-phase="3 4"><span class="radio"><span><span class="tippy-phases">Phase 3 and 4:</span> Less than 3% of tests conducted are positive for COVID-19</span></span></li>
 							</ol>
 						</div></div></div>
 						<div class="question"><div><div class="radio-li">b</div><div>
 							<p>Overall case count</p>
 							<ol>
-								<li data-phase="2 3 4"><span class="radio"><span>All Phases: Sustained decline in daily case counts for 21 consecutive days, as reflected in the 5-day rolling average.</span></span></li>
-								<li data-phase="2"><span class="radio"><span>Phase 2: &lt;1 new cases/100,000 population per day, with widespread testing</span></span></li>
-								<li data-phase="3"><span class="radio"><span>Phase 3: &lt;0.5 new cases/100,000 population per day, with widespread testing</span></span></li>
-								<li data-phase="4"><span class="radio"><span>Phase 4: &lt;0.5 new cases/100,000 population per week, with widespread testing</span></span></li>
+								<li data-phase="2 3 4"><span class="radio"><span><span class="tippy-phases">All Phases:</span> Sustained decline in daily case counts for 21 consecutive days, as reflected in the 5-day rolling average.</span></span></li>
+								<li data-phase="2"><span class="radio"><span><span class="tippy-phases">Phase 2:</span> &lt;1 new cases/100,000 population per day, with widespread testing</span></span></li>
+								<li data-phase="3"><span class="radio"><span><span class="tippy-phases">Phase 3:</span> &lt;0.5 new cases/100,000 population per day, with widespread testing</span></span></li>
+								<li data-phase="4"><span class="radio"><span><span class="tippy-phases">Phase 4:</span> &lt;0.5 new cases/100,000 population per week, with widespread testing</span></span></li>
 							</ol>
 						</div></div></div>
 
@@ -228,38 +217,38 @@
 						<div class="question"><div><div class="radio-li">a</div><div>
 							<p>Testing Rate</p>
 							<ol>
-								<li data-phase="2 3 4"><span class="radio"><span>All Phases: Number of tests per day is per 100,000 population, using <a href="https://preventepidemics.org/wp-content/uploads/2020/04/TestingPrioritization.pdf">this tool</a> or similar.</span></span></li>
+								<li data-phase="2 3 4"><span class="radio"><span><span class="tippy-phases">All Phases:</span> Number of tests per day is per 100,000 population, using <a href="https://preventepidemics.org/wp-content/uploads/2020/04/TestingPrioritization.pdf">this tool</a> or similar.</span></span></li>
 							</ol>
 						</div></div></div>
 						<div class="question"><div><div class="radio-li">b</div><div>
 							<p>Availability of Testing</p>
 							<ol>
-								<li data-phase="2"><span class="radio"><span>Phase 2: All symptomatic people regardless of severity, and all asymptomatic high-risk individuals or contacts, regardless of severity, can access testing and obtain a result within 48 hours of request.</span></span></li>
-								<li data-phase="3"><span class="radio"><span>Phase 3: All symptomatic people regardless of severity, and all asymptomatic high-risk individuals or contacts, can access testing and obtain a result within 24 hours of request.</span></span></li>
-								<li data-phase="4"><span class="radio"><span>Phase 4: All symptomatic people regardless of severity, all asymptomatic high-risk individuals or contacts, and anyone who requests a test/any physician who orders a test can access testing and obtain a result within 24 hours of request.</span></span></li>
+								<li data-phase="2"><span class="radio"><span><span class="tippy-phases">Phase 2:</span> All symptomatic people regardless of severity, and all asymptomatic high-risk individuals or contacts, regardless of severity, can access testing and obtain a result within 48 hours of request.</span></span></li>
+								<li data-phase="3"><span class="radio"><span><span class="tippy-phases">Phase 3:</span> All symptomatic people regardless of severity, and all asymptomatic high-risk individuals or contacts, can access testing and obtain a result within 24 hours of request.</span></span></li>
+								<li data-phase="4"><span class="radio"><span><span class="tippy-phases">Phase 4:</span> All symptomatic people regardless of severity, all asymptomatic high-risk individuals or contacts, and anyone who requests a test/any physician who orders a test can access testing and obtain a result within 24 hours of request.</span></span></li>
 							</ol>
 						</div></div></div>
 						<div class="question"><div><div class="radio-li">c</div><div>
 							<p>Timeliness of Testing</p>
 							<ol>
-								<li data-phase="2"><span class="radio"><span>Phase 2: Majority of tests results are returned within 48 hours</span></span></li>
-								<li data-phase="3 4"><span class="radio"><span>Phase 3 and 4: Majority of tests results are returned within 24 hours.</span></span></li>
+								<li data-phase="2"><span class="radio"><span><span class="tippy-phases">Phase 2:</span> Majority of tests results are returned within 48 hours</span></span></li>
+								<li data-phase="3 4"><span class="radio"><span><span class="tippy-phases">Phase 3 and 4:</span> Majority of tests results are returned within 24 hours.</span></span></li>
 							</ol>
 						</div></div></div>
 						<div class="question"><div><div class="radio-li">d</div><div>
 							<p>Availability of Testing for Healthcare Workers and Others at Greater Risk</p>
 							<ol>
-								<li data-phase="2"><span class="radio"><span>Phase 2: Majority of healthcare workers, first responders, <a target="_blank" rel="noopener noreferrer" href="https://www.cisa.gov/sites/default/files/publications/Version_3.0_CISA_Guidance_on_Essential_Critical_Infrastructure_Workers_4.pdf">critical infrastructure</a> employees, and others at greater risk can access testing once per week, whether or not they are experiencing symptoms.</span></span></li>
-								<li data-phase="3"><span class="radio"><span>Phase 3: Majority of healthcare workers, first responders, <a target="_blank" rel="noopener noreferrer" href="https://www.cisa.gov/sites/default/files/publications/Version_3.0_CISA_Guidance_on_Essential_Critical_Infrastructure_Workers_4.pdf">critical infrastructure</a> employees, and others at greater risk can be tested at least once per week, whether or not they are experiencing symptoms.</span></span></li>
-								<li data-phase="4"><span class="radio"><span>Phase 4: Majority of healthcare workers, first responders, <a target="_blank" rel="noopener noreferrer" href="https://www.cisa.gov/sites/default/files/publications/Version_3.0_CISA_Guidance_on_Essential_Critical_Infrastructure_Workers_4.pdf">critical infrastructure</a> employees, and others at greater risk can be tested every 2-3 days, whether or not they are experiencing symptoms.  <br/>*Antibody tests can be instituted when more is known regarding accuracy.</span></span></li>
+								<li data-phase="2"><span class="radio"><span><span class="tippy-phases">Phase 2:</span> Majority of healthcare workers, first responders, <a target="_blank" rel="noopener noreferrer" href="https://www.cisa.gov/sites/default/files/publications/Version_3.0_CISA_Guidance_on_Essential_Critical_Infrastructure_Workers_4.pdf">critical infrastructure</a> employees, and others at greater risk can access testing once per week, whether or not they are experiencing symptoms.</span></span></li>
+								<li data-phase="3"><span class="radio"><span><span class="tippy-phases">Phase 3:</span> Majority of healthcare workers, first responders, <a target="_blank" rel="noopener noreferrer" href="https://www.cisa.gov/sites/default/files/publications/Version_3.0_CISA_Guidance_on_Essential_Critical_Infrastructure_Workers_4.pdf">critical infrastructure</a> employees, and others at greater risk can be tested at least once per week, whether or not they are experiencing symptoms.</span></span></li>
+								<li data-phase="4"><span class="radio"><span><span class="tippy-phases">Phase 4:</span> Majority of healthcare workers, first responders, <a target="_blank" rel="noopener noreferrer" href="https://www.cisa.gov/sites/default/files/publications/Version_3.0_CISA_Guidance_on_Essential_Critical_Infrastructure_Workers_4.pdf">critical infrastructure</a> employees, and others at greater risk can be tested every 2-3 days, whether or not they are experiencing symptoms.  <br/>*Antibody tests can be instituted when more is known regarding accuracy.</span></span></li>
 							</ol>
 						</div></div></div>
 						<div class="question"><div><div class="radio-li">e</div><div>
 							<p>Community Syndromic Surveillance and Testing</p>
 							<ol>
-								<li data-phase="2 3 4"><span class="radio"><span>All Phases: The community is conducting syndromic surveillance for increases in influenza-like illness ILI-like or COVID-19- like illness.</span></span></li>
-								<li data-phase="2 3 4"><span class="radio"><span>All Phases: Sentinel surveillance through widespread testing is underway in long-term care facilities, prisons, detention centers, shelters, high-risk workplaces, and other high-risk settings.</span></span></li>
-								<li data-phase="2 3 4"><span class="radio"><span>All Phases: Testing supplies (swabs, viral transport media), reagents, equipment, staffing, and laboratory processing capacity are sufficient to meet the above metrics - without rationing.</span></span></li>
+								<li data-phase="2 3 4"><span class="radio"><span><span class="tippy-phases">All Phases:</span> The community is conducting syndromic surveillance for increases in influenza-like illness ILI-like or COVID-19- like illness.</span></span></li>
+								<li data-phase="2 3 4"><span class="radio"><span><span class="tippy-phases">All Phases:</span> Sentinel surveillance through widespread testing is underway in long-term care facilities, prisons, detention centers, shelters, high-risk workplaces, and other high-risk settings.</span></span></li>
+								<li data-phase="2 3 4"><span class="radio"><span><span class="tippy-phases">All Phases:</span> Testing supplies (swabs, viral transport media), reagents, equipment, staffing, and laboratory processing capacity are sufficient to meet the above metrics - without rationing.</span></span></li>
 							</ol>
 						</div></div></div>
 
@@ -267,39 +256,39 @@
 						<div class="question"><div><div class="radio-li">a</div><div>
 							<p>Workforce Availability</p>
 							<ol>
-								<li data-phase="2"><span class="radio"><span>All phases: At least 30 trained contact tracers are available for case management and health education per 100,000 population* <br/> *Programs may need to adjust recruitment depending on caseload and contact load per tracer.</span></span></li>
-								<li data-phase="2 3 4"><span class="radio"><span>All phases: Sufficient community health workers, case management, care resource coordinators, and health education is available.</span></span></li>
-								<li data-phase="2 3 4"><span class="radio"><span>All phases: Percentage of contacts reached relative to number of contacts elicited.</span></span></li>
+								<li data-phase="2"><span class="radio"><span><span class="tippy-phases">All phases:</span> At least 30 trained contact tracers are available for case management and health education per 100,000 population* <br/> *Programs may need to adjust recruitment depending on caseload and contact load per tracer.</span></span></li>
+								<li data-phase="2 3 4"><span class="radio"><span><span class="tippy-phases">All phases:</span> Sufficient community health workers, case management, care resource coordinators, and health education is available.</span></span></li>
+								<li data-phase="2 3 4"><span class="radio"><span><span class="tippy-phases">All phases:</span> Percentage of contacts reached relative to number of contacts elicited.</span></span></li>
 							</ol>
 						</div></div></div>
 						<div class="question"><div><div class="radio-li">b</div><div>
 							<p>Effectiveness of Contact Tracing</p>
 							<ol>
-								<li data-phase="2"><span class="radio"><span>Phase 2: At least 60% of new cases are coming from among identified contacts, with a steady or increasing percentage of cases captured over time.</span></span></li>
-								<li data-phase="3"><span class="radio"><span>Phase 3: At least 80% of new cases are coming from among identified contacts, with a steady or increasing percentage of cases captured over time.</span></span></li>
-								<li data-phase="4"><span class="radio"><span>Phase 4: At least 90% of new cases are coming from among identified contacts.</span></span></li>
+								<li data-phase="2"><span class="radio"><span><span class="tippy-phases">Phase 2:</span> At least 60% of new cases are coming from among identified contacts, with a steady or increasing percentage of cases captured over time.</span></span></li>
+								<li data-phase="3"><span class="radio"><span><span class="tippy-phases">Phase 3:</span> At least 80% of new cases are coming from among identified contacts, with a steady or increasing percentage of cases captured over time.</span></span></li>
+								<li data-phase="4"><span class="radio"><span><span class="tippy-phases">Phase 4:</span> At least 90% of new cases are coming from among identified contacts.</span></span></li>
 							</ol>
 						</div></div></div>
 						<div class="question"><div><div class="radio-li">c</div><div>
 							<p>Rapidity of testing contacts for people with positive test results and people experiencing ILI or COVID-19-like illness</p>
 							<ol>
-								<li data-phase="2"><span class="radio"><span>Phase 2: At least 75% of contacts are elicited, located, and placed under quarantine within 48 hours of case identification.</span></span></li>
-								<li data-phase="3"><span class="radio"><span>Phase 3: At least 90% of contacts are elicited, located,  quarantined, and tested within 24 hours of case identification.</span></span></li>
-								<li data-phase="4"><span class="radio"><span>Phase 4: At least 95% of contacts are elicited, located, quarantined, and tested within 24 hours of case identification.</span></span></li>
+								<li data-phase="2"><span class="radio"><span><span class="tippy-phases">Phase 2:</span> At least 75% of contacts are elicited, located, and placed under quarantine within 48 hours of case identification.</span></span></li>
+								<li data-phase="3"><span class="radio"><span><span class="tippy-phases">Phase 3:</span> At least 90% of contacts are elicited, located,  quarantined, and tested within 24 hours of case identification.</span></span></li>
+								<li data-phase="4"><span class="radio"><span><span class="tippy-phases">Phase 4:</span> At least 95% of contacts are elicited, located, quarantined, and tested within 24 hours of case identification.</span></span></li>
 							</ol>
 						</div></div></div>
 						<div class="question"><div><div class="radio-li">d</div><div>
 							<p>Availability of safe isolation and quarantine facilities</p>
 							<ol>
-								<li data-phase="2 3 4"><span class="radio"><span>All Phases: Safe isolation and quarantine facilities, as well as support services, are available for those in need, especially for all testing positive and their close contacts.</span></span></li>
-								<li data-phase="3"><span class="radio"><span>Phase 3: 25-33% of isolation and quarantine stays are successfully completed.</span></span></li>
-								<li data-phase="4"><span class="radio"><span>Phase 4: 50-60% of isolation and quarantine stays are successfully completed.</span></span></li>
+								<li data-phase="2 3 4"><span class="radio"><span><span class="tippy-phases">All Phases:</span> Safe isolation and quarantine facilities, as well as support services, are available for those in need, especially for all testing positive and their close contacts.</span></span></li>
+								<li data-phase="3"><span class="radio"><span><span class="tippy-phases">Phase 3:</span> 25-33% of isolation and quarantine stays are successfully completed.</span></span></li>
+								<li data-phase="4"><span class="radio"><span><span class="tippy-phases">Phase 4:</span> 50-60% of isolation and quarantine stays are successfully completed.</span></span></li>
 							</ol>
 						</div></div></div>
 						<div class="question"><div><div class="radio-li">e</div><div>
 							<p>Case Management</p>
 							<ol>
-								<li data-phase="2 3 4"><span class="radio"><span>All Phases: 100% of contact tracers within the community are using a unified system for case management, which securely logs and reports contacts to the health department in real time.</span></span></li>
+								<li data-phase="2 3 4"><span class="radio"><span><span class="tippy-phases">All Phases:</span> 100% of contact tracers within the community are using a unified system for case management, which securely logs and reports contacts to the health department in real time.</span></span></li>
 							</ol>
 						</div></div></div>
 
@@ -307,15 +296,15 @@
 						<div class="question"><div><div class="radio-li">a</div><div>
 							<p>Availability of ICU Capacity and Staffing for Surge of COVID-19 Patients</p>
 							<ol>
-								<li data-phase="2"><span class="radio"><span>Phase 2: At least 15% of existing ICU capacity is available to accommodate a surge in COVID-19 patients.</span></span></li>
-								<li data-phase="3 4"><span class="radio"><span>Phase 3 and 4: At least 30% of existing ICU or other surge capacity is available to accommodate a surge in COVID-19 patients.</span></span></li>
-								<li data-phase="2 3 4"><span class="radio"><span>All Phases: Surge capacity - either a designated site or within each hospital system - exists to handle a 20% surge in COVID-19 cases without resorting to crisis standards of care.</span></span></li>
+								<li data-phase="2"><span class="radio"><span><span class="tippy-phases">Phase 2:</span> At least 15% of existing ICU capacity is available to accommodate a surge in COVID-19 patients.</span></span></li>
+								<li data-phase="3 4"><span class="radio"><span><span class="tippy-phases">Phase 3 and 4:</span> At least 30% of existing ICU or other surge capacity is available to accommodate a surge in COVID-19 patients.</span></span></li>
+								<li data-phase="2 3 4"><span class="radio"><span><span class="tippy-phases">All Phases:</span> Surge capacity - either a designated site or within each hospital system - exists to handle a 20% surge in COVID-19 cases without resorting to crisis standards of care.</span></span></li>
 							</ol>
 						</div></div></div>
 						<div class="question"><div><div class="radio-li">b</div><div>
 							<p>Ability of Hospitals to Coordinate the Movement of Patients to Support a Surge of COVID-19 Cases Without Using Crisis Standards of Care</p>
 							<ol>
-								<li data-phase="2 3 4"><span class="radio"><span>All Phases: Hospitals are able to surge and coordinate the movement of patients to support a surge of COVID-19 cases without using crisis standards of care.</span></span></li>
+								<li data-phase="2 3 4"><span class="radio"><span><span class="tippy-phases">All Phases:</span> Hospitals are able to surge and coordinate the movement of patients to support a surge of COVID-19 cases without using crisis standards of care.</span></span></li>
 							</ol>
 						</div></div></div>
 
@@ -323,25 +312,25 @@
 						<div class="question"><div><div class="radio-li">a</div><div>
 							<p>Availability of PPE in Healthcare Settings</p>
 							<ol>
-								<li data-phase="2 3 4"><span class="radio"><span>All Phases: PPE is available for all essential personnel, critical infrastructure employees, and staff of high-risk facilities.</span></span></li>
-								<li data-phase="2"><span class="radio"><span>Phase 2: The majority of hospitals, long-term care facilities, homeless shelters, and other healthcare settings report sufficient PPE to treat COVID-19 patients and protect healthcare workers.</span></span></li>
-								<li data-phase="3"><span class="radio"><span>Phase 3: 100% of hospitals, long-term care facilities, homeless shelters, and other healthcare settings report sufficient PPE to treat COVID-19 patients, conduct daily operations, and protect and protect healthcare workers. Reserve of PPE stockpiled for at least 2-4 weeks.</span></span></li>
-								<li data-phase="4"><span class="radio"><span>Phase 4: 100% of hospitals, long-term care facilities, homeless shelters, and other healthcare settings report sufficient PPE to treat COVID-19 patients, conduct daily operations, and protect and protect healthcare workers. Reserve of PPE stockpiled for at least 90 days.</span></span></li>
+								<li data-phase="2 3 4"><span class="radio"><span><span class="tippy-phases">All Phases:</span> PPE is available for all essential personnel, critical infrastructure employees, and staff of high-risk facilities.</span></span></li>
+								<li data-phase="2"><span class="radio"><span><span class="tippy-phases">Phase 2:</span> The majority of hospitals, long-term care facilities, homeless shelters, and other healthcare settings report sufficient PPE to treat COVID-19 patients and protect healthcare workers.</span></span></li>
+								<li data-phase="3"><span class="radio"><span><span class="tippy-phases">Phase 3:</span> 100% of hospitals, long-term care facilities, homeless shelters, and other healthcare settings report sufficient PPE to treat COVID-19 patients, conduct daily operations, and protect and protect healthcare workers. Reserve of PPE stockpiled for at least 2-4 weeks.</span></span></li>
+								<li data-phase="4"><span class="radio"><span><span class="tippy-phases">Phase 4:</span> 100% of hospitals, long-term care facilities, homeless shelters, and other healthcare settings report sufficient PPE to treat COVID-19 patients, conduct daily operations, and protect and protect healthcare workers. Reserve of PPE stockpiled for at least 90 days.</span></span></li>
 							</ol>
 						</div></div></div>
 						<div class="question"><div><div class="radio-li">b</div><div>
 							<p>Availability of PPE for Emergency Management Agencies and Essential Services Providers</p>
 							<ol>
-								<li data-phase="2 3 4"><span class="radio"><span>All Phases: High priority PPE requests are always fulfilled for local emergency management agencies.</span></span></li>
-								<li data-phase="2"><span class="radio"><span>Phase 2: PPE is available for all essential personnel and critical infrastructure employees, and staff of high-risk facilities.</span></span></li>
-								<li data-phase="3 4"><span class="radio"><span>Phases 3 and 4: PPE is available for all essential personnel, critical infrastructure employees, staff of high-risk facilities, and additional employees who require PPE to be safe in a work environment.</span></span></li>
+								<li data-phase="2 3 4"><span class="radio"><span><span class="tippy-phases">All Phases:</span> High priority PPE requests are always fulfilled for local emergency management agencies.</span></span></li>
+								<li data-phase="2"><span class="radio"><span><span class="tippy-phases">Phase 2:</span> PPE is available for all essential personnel and critical infrastructure employees, and staff of high-risk facilities.</span></span></li>
+								<li data-phase="3 4"><span class="radio"><span><span class="tippy-phases">Phase 3 and 4:</span> PPE is available for all essential personnel, critical infrastructure employees, staff of high-risk facilities, and additional employees who require PPE to be safe in a work environment.</span></span></li>
 							</ol>
 						</div></div></div>
 						<div class="question"><div><div class="radio-li">c</div><div>
 							<p>Availability of Lifesaving Medical Equipment in Healthcare Settings</p>
 							<ol>
-								<li data-phase="2"><span class="radio"><span>Phase 2: Majority of hospitals treating COVID-19 patients report sufficient ventilators, oxygen, supplies, and healthcare workers required to support intubation of all COVID-19 patients as needed.</span></span></li>
-								<li data-phase="3 4"><span class="radio"><span>Phase 3 and 4: 100% of hospitals treating COVID-19 patients report sufficient ventilators, oxygen, supplies, and healthcare workers required to support intubation of all COVID-19 patients as needed.</span></span></li>
+								<li data-phase="2"><span class="radio"><span><span class="tippy-phases">Phase 2:</span> Majority of hospitals treating COVID-19 patients report sufficient ventilators, oxygen, supplies, and healthcare workers required to support intubation of all COVID-19 patients as needed.</span></span></li>
+								<li data-phase="3 4"><span class="radio"><span><span class="tippy-phases">Phase 3 and 4:</span> 100% of hospitals treating COVID-19 patients report sufficient ventilators, oxygen, supplies, and healthcare workers required to support intubation of all COVID-19 patients as needed.</span></span></li>
 							</ol>
 						</div></div></div>
 
@@ -349,43 +338,43 @@
 						<div class="question"><div><div class="radio-li">a</div><div>
 							<p>Cases in At-Risk Facilities</p>
 							<ol>
-								<li data-phase="2 3 4"><span class="radio"><span>All Phases: Sufficient testing and quarantine/isolation capacity is available in long-term care facilities.</span></span></li>
-								<li data-phase="2"><span class="radio"><span>Phase 2: Percentage of cases reported from long-term care facilities is less than 20% over the last 28 days.</span></span></li>
-								<li data-phase="3"><span class="radio"><span>Phase 3: Percentage of cases reported from long-term care facilities is less than 10% over the last 28 days.</span></span></li>
-								<li data-phase="4"><span class="radio"><span>Phase 4: Percentage of cases reported from long-term care facilities is less than 5% over the last 28 days.</span></span></li>
+								<li data-phase="2 3 4"><span class="radio"><span><span class="tippy-phases">All Phases:</span> Sufficient testing and quarantine/isolation capacity is available in long-term care facilities.</span></span></li>
+								<li data-phase="2"><span class="radio"><span><span class="tippy-phases">Phase 2:</span> Percentage of cases reported from long-term care facilities is less than 20% over the last 28 days.</span></span></li>
+								<li data-phase="3"><span class="radio"><span><span class="tippy-phases">Phase 3:</span> Percentage of cases reported from long-term care facilities is less than 10% over the last 28 days.</span></span></li>
+								<li data-phase="4"><span class="radio"><span><span class="tippy-phases">Phase 4:</span> Percentage of cases reported from long-term care facilities is less than 5% over the last 28 days.</span></span></li>
 							</ol>
 						</div></div></div>
 						<div class="question"><div><div class="radio-li">b</div><div>
 							<p>Rapid Response Teams</p>
 							<ol>
-								<li data-phase="2 3 4"><span class="radio"><span>All Phases: Local rapid response teams are available to respond to outbreak hotpots within 24 hours and have sufficient PPE for localized outbreak response.</span></span></li>
+								<li data-phase="2 3 4"><span class="radio"><span><span class="tippy-phases">All Phases:</span> Local rapid response teams are available to respond to outbreak hotpots within 24 hours and have sufficient PPE for localized outbreak response.</span></span></li>
 							</ol>
 						</div></div></div>
 						<div class="question"><div><div class="radio-li">c</div><div>
 							<p>Sentinel Surveillance</p>
 							<ol>
-								<li data-phase="2 3 4"><span class="radio"><span>All Phases: Sentinel surveillance and testing sites are operating in long-term care facilities and other locations serving older individuals, lower-income individuals, and racial and ethnic minorities including Native Americans.</span></span></li>
+								<li data-phase="2 3 4"><span class="radio"><span><span class="tippy-phases">All Phases:</span> Sentinel surveillance and testing sites are operating in long-term care facilities and other locations serving older individuals, lower-income individuals, and racial and ethnic minorities including Native Americans.</span></span></li>
 							</ol>
 						</div></div></div>
 						<div class="question"><div><div class="radio-li">d</div><div>
 							<p>Availability of PPE</p>
 							<ol>
-								<li data-phase="2 3 4"><span class="radio"><span>All Phases: The majority of long-term care facilities and homeless shelters have sufficient PPE available.</span></span></li>
-								<li data-phase="2 3 4"><span class="radio"><span>All Phases: State and local rapid response teams have sufficient PPE for localized outbreak response.</span></span></li>
+								<li data-phase="2 3 4"><span class="radio"><span><span class="tippy-phases">All Phases:</span> The majority of long-term care facilities and homeless shelters have sufficient PPE available.</span></span></li>
+								<li data-phase="2 3 4"><span class="radio"><span><span class="tippy-phases">All Phases:</span> State and local rapid response teams have sufficient PPE for localized outbreak response.</span></span></li>
 							</ol>
 						</div></div></div>
 						<div class="header"><div class="number">7</div><p>Communication and Adherence to Social Distancing</p></div>
 						<div class="question"><div><div class="radio-li">a</div><div>
 							<p>Communication surrounding social distancing</p>
 							<ol>
-								<li data-phase="2 3 4"><span class="radio"><span>All Phases: Adequate communications methods are in place to deliver information, including in at-risk communities (e.g. homeless, immigrant, low-income populations.)</span></span></li>
-								<li data-phase="2 3 4"><span class="radio"><span>All Phases: The majority of residents are knowledgeable about restrictions.</span></span></li>
+								<li data-phase="2 3 4"><span class="radio"><span><span class="tippy-phases">All Phases:</span> Adequate communications methods are in place to deliver information, including in at-risk communities (e.g. homeless, immigrant, low-income populations.)</span></span></li>
+								<li data-phase="2 3 4"><span class="radio"><span><span class="tippy-phases">All Phases:</span> The majority of residents are knowledgeable about restrictions.</span></span></li>
 							</ol>
 						</div></div></div>
 						<div class="question"><div><div class="radio-li">b</div><div>
 							<p>Adherence to social distancing</p>
 							<ol>
-								<li data-phase="2 3 4"><span class="radio"><span>All Phases: The majority of the community is adhering to social distancing requirements.</span></span></li>
+								<li data-phase="2 3 4"><span class="radio"><span><span class="tippy-phases">All Phases:</span> The majority of the community is adhering to social distancing requirements.</span></span></li>
 							</ol>
 						</div></div></div>
 
@@ -1395,7 +1384,7 @@
 		</section5>
 	</article>
 
-	<script src="/dist/main_6.js"></script>
+	<script src="/dist/main_7.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
 	<script>
 		window.cookieconsent.initialise({
