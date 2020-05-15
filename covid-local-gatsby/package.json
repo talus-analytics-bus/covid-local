@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Talus Analytics",
   "dependencies": {
+    "@tippyjs/react": "^4.0.2",
+    "classnames": "^2.2.6",
     "fuse.js": "^5.2.3",
     "gatsby": "^2.20.12",
     "gatsby-cli": "^2.12.15",

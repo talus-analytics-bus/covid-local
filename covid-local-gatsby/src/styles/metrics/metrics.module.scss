@@ -1,0 +1,42 @@
+.main {
+  padding-top: 5rem;
+  margin: auto;
+  width: 90%;
+  max-width: 64rem;
+  color: #333333;
+}
+
+.svgSwitcher {
+  position: relative;
+  width: 100%;
+
+  svg {
+    position: absolute;
+    top: 10.5vw;
+    left: 0;
+    height: calc(100% - 10.5vw);
+
+    @media (min-width: 1140px) {
+      top: 122px;
+      height: calc(100% - 122px);
+    }
+  }
+
+  svg:first-of-type {
+    position: relative;
+    top: 0;
+    width: 100%;
+  }
+
+  .visible {
+    visibility: visible;
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+
+  .hoverable {
+    cursor: pointer;
+  }
+}
