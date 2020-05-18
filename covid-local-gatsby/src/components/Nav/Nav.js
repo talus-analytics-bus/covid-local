@@ -5,20 +5,77 @@ import styles from './Nav.module.scss'
 
 const Nav = () => {
   const navbarRightContent = React.useRef()
+  const subMenuContent = React.useRef()
+
+  const [mobileNavOpen, setMobileNavOpen] = React.useState(false)
+  const [subMenuOpen, setSubMenuOpen] = React.useState(false)
 
   const [dropHiderStyle, setDropHiderStyle] = React.useState({
     height: 0,
     padding: '0 15px',
   })
 
+  const [subMenuHiderStyle, setSubMenuHiderStyle] = React.useState({
+    height: 0,
+    padding: '0 15px',
+  })
+
+  const [subMenuButtonStyle, setSubMenuButtonStyle] = React.useState({
+    display: 'block',
+  })
+
+  React.useEffect(() => {
+    // Mobile menu or desktop menu
+    if (window.innerWidth < 1170) {
+      setSubMenuHiderStyle({ height: 'auto', padding: 0, marginBottom: 0 })
+      setSubMenuButtonStyle({ display: 'none' })
+    }
+
+    // Switch between mobile and desktop menus
+    window.addEventListener('resize', () => {
+      if ((window.innerWidth < 1170) & (subMenuHiderStyle.height !== 'auto')) {
+        setSubMenuHiderStyle({ height: 'auto', padding: 0, marginBottom: 0 })
+        setSubMenuButtonStyle({ display: 'none' })
+      } else if (subMenuHiderStyle.height !== 'block') {
+        setDropHiderStyle({ height: 0, padding: '0 15px' })
+        setSubMenuButtonStyle({ display: 'block' })
+        if (subMenuOpen) {
+          setSubMenuHiderStyle({
+            height: subMenuContent.current.offsetHeight + 30,
+            padding: 15,
+          })
+        } else {
+          setSubMenuHiderStyle({ height: 0, padding: '0 15px' })
+        }
+      }
+    })
+  }, [])
+
   const toggleNav = () => {
-    if (dropHiderStyle.height === 0) {
+    if (mobileNavOpen) {
+      setMobileNavOpen(false)
+      setDropHiderStyle({ height: 0, padding: '0 15px' })
+    } else {
+      setMobileNavOpen(true)
       setDropHiderStyle({
         height: navbarRightContent.current.offsetHeight + 30,
         padding: 15,
       })
-    } else {
-      setDropHiderStyle({ height: 0, padding: '0 15px' })
+    }
+  }
+
+  const toggleSubmenu = () => {
+    if (window.innerWidth > 1170) {
+      if (subMenuOpen) {
+        setSubMenuOpen(false)
+        setSubMenuHiderStyle({ height: 0, padding: '0 15px' })
+      } else {
+        setSubMenuOpen(true)
+        setSubMenuHiderStyle({
+          height: subMenuContent.current.offsetHeight + 30,
+          padding: 15,
+        })
+      }
     }
   }
 
@@ -38,21 +95,47 @@ const Nav = () => {
                 Guide
               </Link>
             </li>
-            <li>
-              <Link activeClassName={styles.active} to="/resources/">
-                Resources
-              </Link>
-            </li>
-            <li>
-              <Link activeClassName={styles.active} to="/blog/">
-                Blog
-              </Link>
-            </li>
-            <li>
-              <Link activeClassName={styles.active} to="/about/">
-                About
-              </Link>
-            </li>
+            <div
+              className={styles.subMenu}
+              onMouseEnter={toggleSubmenu}
+              onMouseLeave={toggleSubmenu}
+            >
+              <li style={subMenuButtonStyle}>
+                <button
+                  onClick={e => {
+                    e.preventDefault()
+                  }}
+                  className={styles.subMenuButton}
+                >
+                  Resources &amp; Support
+                </button>
+              </li>
+              <div className={styles.subMenuHider} style={subMenuHiderStyle}>
+                <div className={styles.subMenuContent} ref={subMenuContent}>
+                  <li>
+                    <Link activeClassName={styles.active} to="/resources/">
+                      Resources
+                    </Link>
+                  </li>
+                  <li>
+                    <Link activeClassName={styles.active} to="/blog/">
+                      Blog
+                    </Link>
+                  </li>
+                  <li>
+                    <Link activeClassName={styles.active} to="/about/">
+                      About
+                    </Link>
+                  </li>
+                  <li>
+                    <Link activeClassName={styles.active} to="/metrics/">
+                      Metrics
+                    </Link>
+                  </li>
+                </div>
+              </div>
+            </div>
+
             <li>
               <Link activeClassName={styles.active} to="/contact/">
                 Contact&nbsp;Us
