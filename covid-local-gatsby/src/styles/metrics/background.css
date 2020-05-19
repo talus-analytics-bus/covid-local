@@ -1,22 +1,18 @@
 #background .st0 {
   opacity: 0.4;
   fill: url(#SVGID_1_);
-  enable-background: new;
 }
 #background .st1 {
   opacity: 0.35;
   fill: url(#SVGID_2_);
-  enable-background: new;
 }
 #background .st2 {
   opacity: 0.3;
   fill: url(#SVGID_3_);
-  enable-background: new;
 }
 #background .st3 {
   opacity: 0.35;
   fill: url(#SVGID_4_);
-  enable-background: new;
 }
 #background .st4 {
   fill: none;
@@ -39,10 +35,10 @@
   stroke-miterlimit: 10;
 }
 #background .st8 {
-  fill: #ff7224;
+  fill: #fcca3a;
 }
 #background .st9 {
-  fill: #fcca3a;
+  fill: #ff7224;
 }
 #background .st10 {
   fill: #b51a34;
@@ -67,74 +63,68 @@
   fill: none;
 }
 #background .st17 {
-  fill: #ffffff;
+  fill: #666666;
 }
 #background .st18 {
-  font-family: 'Rawline', sans-serif;
+  font-family: 'Rawline';
   font-weight: 600;
+  font-size: 8px;
 }
 #background .st19 {
-  font-size: 22px;
+  font-size: 15px;
 }
 #background .st20 {
-  font-size: 26px;
+  fill: #ffffff;
 }
 #background .st21 {
-  font-size: 29px;
+  font-size: 22px;
 }
 #background .st22 {
   font-size: 33px;
 }
 #background .st23 {
-  fill: #666666;
+  font-size: 29px;
 }
 #background .st24 {
-  font-size: 15px;
+  font-size: 26px;
 }
 #background .st25 {
   fill: #1e7d87;
 }
 #background .st26 {
-  fill: none;
-  stroke: #1e7d87;
-  stroke-miterlimit: 10;
+  fill: #409385;
 }
 #background .st27 {
-  fill: #c1c1c1;
-}
-/*#background .st27:hover {
-  fill: #eaeaea;
-}*/
-#background .st28 {
-  font-family: 'Rawline';
-  font-weight: 800;
-}
-#background .st29 {
-  font-size: 17px;
-}
-#background .st30 {
-  fill: #1e7d87;
-  stroke: #1e7d87;
-  stroke-miterlimit: 10;
-}
-#background .st31 {
   fill: #263349;
 }
-#background .st32 {
+#background .st28 {
   font-size: 13px;
 }
-#background .st33 {
+#background .st29 {
   font-family: 'Rawline';
   font-weight: 400;
 }
-#background .st34 {
+#background .st30 {
   font-size: 12px;
 }
-#background .st35 {
+#background .st31 {
   letter-spacing: 43;
 }
-#background .st36 {
+#background .st32 {
   font-size: 8px;
+}
+#background .st33 {
+  fill: #d4eef9;
+}
+#background .st34 {
+  fill: #273349;
+}
+#background .st35 {
+  font-family: 'Rawline';
+  font-weight: 800;
+}
+#background .st36 {
+  font-size: 14.6568px;
 }
 
 #infection,
@@ -142,6 +132,5 @@
 #case,
 #healthcare,
 #protecting {
-  pointer-events: bounding-box;
   cursor: pointer;
 }

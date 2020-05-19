@@ -1,43 +1,39 @@
 #infectionText .st0 {
 	fill: none;
+	stroke: #b51a34;
+	stroke-width: 0.5;
+	stroke-miterlimit: 10;
 }
 #infectionText .st1 {
-	fill: #263349;
-}
-#infectionText .st2 {
-	font-family: 'Rawline', sans-serif;
-}
-#infectionText .st3 {
-	font-size: 12px;
-}
-#infectionText .st4 {
 	fill: none;
 	stroke: #ff7224;
 	stroke-width: 0.5;
 	stroke-miterlimit: 10;
 }
-#infectionText .st5 {
+#infectionText .st8 {
 	fill: none;
-	stroke: #b51a34;
+	stroke: #fcca3a;
 	stroke-width: 0.5;
 	stroke-miterlimit: 10;
 }
+#infectionText .st2 {
+	fill: none;
+}
+#infectionText .st3 {
+	fill: #263349;
+}
+#infectionText .st4 {
+	font-family: 'Rawline';
+}
+#infectionText .st5 {
+	font-size: 12px;
+}
 #infectionText .st6 {
-	font-family: 'Rawline', sans-serif;
+	fill: #1e7d87;
 }
 #infectionText .st7 {
-	fill: #1e7d87;
-	font-size: 13px;
-}
-#infectionText .st8 {
-	letter-spacing: 43;
-}
-#infectionText .st9 {
-	fill: #1e7d87;
-}
-#infectionText .st10 {
-	font-family: 'Rawline', sans-serif;
-	font-weight: 800;
+	font-family: 'Rawline';
+	font-weight: 600;
 }
 
 /*
@@ -47,39 +43,40 @@
 
 #testingText .st0 {
 	fill: none;
-	stroke: #fcca3a;
+	stroke: #b51a34;
 	stroke-width: 0.5;
 	stroke-miterlimit: 10;
 }
 #testingText .st1 {
 	fill: none;
-}
-#testingText .st2 {
-	fill: #263349;
-}
-#testingText .st3 {
-	font-family: 'Rawline';
-}
-#testingText .st4 {
-	font-size: 12px;
-}
-#testingText .st5 {
-	fill: none;
 	stroke: #ff7224;
 	stroke-width: 0.5;
 	stroke-miterlimit: 10;
 }
-#testingText .st6 {
+#testingText .st2 {
 	fill: none;
-	stroke: #b51a34;
+	stroke: #fcca3a;
 	stroke-width: 0.5;
 	stroke-miterlimit: 10;
+}
+#testingText .st3 {
+	fill: none;
+}
+#testingText .st4 {
+	fill: #263349;
+}
+#testingText .st5 {
+	font-family: 'Rawline';
+}
+#testingText .st6 {
+	font-size: 12px;
 }
 #testingText .st7 {
 	fill: #1e7d87;
 }
 #testingText .st8 {
 	font-family: 'Rawline';
+	font-weight: 600;
 }
 
 /*
@@ -107,29 +104,28 @@
 }
 #caseText .st5 {
 	fill: none;
-	stroke: #ff7224;
+	stroke: #fcca3a;
 	stroke-width: 0.5;
 	stroke-miterlimit: 10;
 }
 #caseText .st6 {
 	fill: none;
-	stroke: #fcca3a;
+	stroke: #ff7224;
 	stroke-width: 0.5;
 	stroke-miterlimit: 10;
 }
 #caseText .st7 {
 	fill: #1e7d87;
 }
-#caseText #testingText .st8 {
+#caseText .st8 {
 	font-family: 'Rawline';
-	font-weight: 700;
+	font-weight: 600;
 }
 
 /*
 */
 /*
 */
-
 #healthcareText .st0 {
 	fill: none;
 	stroke: #ff7224;
@@ -146,8 +142,8 @@
 	font-family: 'Rawline';
 }
 #healthcareText .st4 {
-	font-size: 11px;
-	letter-spacing: -0.1px;
+	font-size: 11.25px;
+	letter-spacing: -0.25px;
 }
 #healthcareText .st5 {
 	fill: none;
@@ -160,8 +156,7 @@
 }
 #healthcareText .st7 {
 	font-family: 'Rawline';
-	/*font-weight: 700;*/
-	font-size: 12px;
+	font-weight: 600;
 }
 #healthcareText .st8 {
 	fill: none;
@@ -210,4 +205,5 @@
 }
 #protectingText .st8 {
 	font-family: 'Rawline';
+	font-weight: 600;
 }

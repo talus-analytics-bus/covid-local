@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-// import { Link } from 'gatsby'
+import { Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
-import classNames from 'classnames'
-import Tippy from '@tippyjs/react'
 import 'tippy.js/dist/tippy.css'
 import 'tippy.js/themes/light.css'
 
@@ -16,6 +14,12 @@ import '../styles/metrics/text.css'
 import TabSection from '../components/Metrics/TabSection'
 
 const MetricsPage = () => {
+  const [tab, setTab] = useState('METRICS OVERVIEW')
+  const onClickTab = e => {
+    e.preventDefault()
+    setTab(e.target.innerHTML)
+  }
+
   return (
     <Layout>
       <Helmet
@@ -28,8 +32,34 @@ const MetricsPage = () => {
         ]}
       />
 
+      <header className={styles.header}>
+        <h1>Metrics</h1>
+        <Link to="/contact/">Contact us</Link>
+      </header>
+
       <article className={styles.main}>
-        <TabSection />
+        <div className={styles.filters}>
+          <button
+            onClick={onClickTab}
+            aria-pressed={tab === 'METRICS OVERVIEW'}
+          >
+            METRICS OVERVIEW
+          </button>
+          <button
+            onClick={onClickTab}
+            aria-pressed={tab === 'METRICS SCORECARD'}
+          >
+            METRICS SCORECARD
+          </button>
+          <button
+            onClick={onClickTab}
+            aria-pressed={tab === 'ASSESS YOUR PROGRESS'}
+          >
+            ASSESS YOUR PROGRESS
+          </button>
+        </div>
+
+        {tab === 'METRICS SCORECARD' && <TabSection />}
       </article>
     </Layout>
   )

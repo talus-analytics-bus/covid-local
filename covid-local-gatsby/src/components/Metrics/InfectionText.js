@@ -4,69 +4,88 @@ import '../../styles/metrics/text.css'
 
 const InfectionText = () => (
   <svg id="infectionText" x="0px" y="0px" viewBox="0 0 509.5 704.3">
+    <line className="st0" x1="99.3" y1="450.3" x2="509.5" y2="450.3" />
+    <line className="st0" x1="99.3" y1="487.5" x2="509.5" y2="487.5" />
+    <line className="st1" x1="99.3" y1="326.3" x2="484" y2="326.3" />
+    <line className="st8" x1="99.3" y1="144.5" x2="484" y2="144.5" />
     <g>
-      <rect x="99.3" y="147.4" className="st0" width="296.9" height="20.6" />
-      <text
-        transform="matrix(1 0 0 1 99.3093 155.9578)"
-        className="st1 st2 st3"
-      >
-        New cases &lt;3% of total tests
-      </text>
-    </g>
-    <g>
-      <line className="st4" x1="99.3" y1="310.8" x2="484" y2="310.8" />
-      <rect x="99.3" y="270.2" className="st0" width="301.7" height="15.6" />
-      <text
-        transform="matrix(1 0 0 1 99.3101 278.7234)"
-        className="st1 st2 st3"
-      >
-        Continued decline in daily cases
-      </text>
-      <rect x="99.3" y="340.8" className="st0" width="296.9" height="17.5" />
-      <text
-        transform="matrix(1 0 0 1 99.3093 349.3279)"
-        className="st1 st2 st3"
-      >
-        New cases &lt;3% of total tests
-      </text>
-    </g>
-    <g>
-      <line className="st5" x1="99.3" y1="477" x2="509.5" y2="477" />
-      <rect x="99.3" y="429.5" className="st0" width="301.7" height="27.1" />
-      <text transform="matrix(1 0 0 1 99.3101 438.0174)">
-        <tspan x="0" y="0" className="st1 st2 st3">
-          Sustained decline in daily cases for 21 consecutive days, as{' '}
+      <rect x="99.3" y="168.2" className="st2" width="296.9" height="31" />
+      <text transform="matrix(1 0 0 1 99.3103 176.7517)">
+        <tspan x="0" y="0" className="st3 st4 st5">
+          Current estimate of less than 1 case
         </tspan>
-        <tspan x="0" y="14" className="st1 st2 st3">
-          reflected in the 5-day rolling average
+        <tspan x="0" y="14" className="st3 st4 st5">
+          per 100,000 population per week
         </tspan>
       </text>
-      <rect x="99.3" y="496.3" className="st0" width="296.9" height="17.5" />
-      <text
-        transform="matrix(1 0 0 1 99.3093 504.8279)"
-        className="st1 st2 st3"
-      >
-        New cases &lt;10% of total tests
-      </text>
     </g>
     <g>
-      <rect x="20.9" y="18" className="st0" width="113.8" height="37.2" />
-      <text transform="matrix(1 0 0 1 41.6768 26.7989)">
-        <tspan x="0" y="0" className="st6 st7 st3">
+      <rect x="99.3" y="108.9" className="st2" width="296.9" height="20.6" />
+      <text
+        transform="matrix(1 0 0 1 99.3093 117.3874)"
+        className="st3 st4 st5"
+      >
+        &gt;3% of tests conducted are positive
+      </text>
+    </g>
+    <line className="st1" x1="99.3" y1="285.4" x2="484" y2="285.4" />
+    <rect x="99.3" y="257" className="st2" width="301.7" height="15.6" />
+    <text transform="matrix(1 0 0 1 99.3101 265.4858)" className="st3 st4 st5">
+      Continued decline in daily cases
+    </text>
+    <rect x="99.3" y="301.5" className="st2" width="296.9" height="17.5" />
+    <text transform="matrix(1 0 0 1 99.3093 309.9919)" className="st3 st4 st5">
+      &gt;3% of tests conducted are positive
+    </text>
+    <rect x="99.3" y="341" className="st2" width="296.9" height="30.1" />
+    <text transform="matrix(1 0 0 1 99.3103 349.5114)">
+      <tspan x="0" y="0" className="st3 st4 st5">
+        Current estimate of less than 1 case
+      </tspan>
+      <tspan x="0" y="14" className="st3 st4 st5">
+        per 100,000 population per day
+      </tspan>
+    </text>
+    <rect x="99.3" y="411.7" className="st2" width="301.7" height="27.1" />
+    <text transform="matrix(1 0 0 1 99.3101 420.1881)">
+      <tspan x="0" y="0" className="st3 st4 st5">
+        Sustained decline in daily cases for 21 consecutive days, as{' '}
+      </tspan>
+      <tspan x="0" y="14" className="st3 st4 st5">
+        reflected in the 5-day rolling average
+      </tspan>
+    </text>
+    <rect x="99.3" y="464.4" className="st2" width="296.9" height="17.5" />
+    <text transform="matrix(1 0 0 1 99.3093 472.9456)" className="st3 st4 st5">
+      &gt;10% of tests conducted are positive
+    </text>
+    <rect x="99.3" y="496.8" className="st2" width="296.9" height="30.8" />
+    <text transform="matrix(1 0 0 1 99.3103 505.2734)">
+      <tspan x="0" y="0" className="st3 st4 st5">
+        Current estimate of less than 5 cases
+      </tspan>
+      <tspan x="0" y="14" className="st3 st4 st5">
+        per 100,000 population per day
+      </tspan>
+    </text>
+    <g>
+      <rect x="20.9" y="18.1" className="st2" width="113.8" height="37.2" />
+      <text transform="matrix(1 0 0 1 41.6768 26.9053)">
+        <tspan x="0" y="0" className="st6 st7 st5">
           Rates &amp; New{' '}
         </tspan>
-        <tspan x="-8.8" y="14" className="st6 st7 st3">
-          Cases Declining
+        <tspan x="-14.1" y="14" className="st6 st7 st5">
+          Cases Decreasing
         </tspan>
       </text>
     </g>
     <g>
-      <rect x="20.9" y="576.5" className="st0" width="113.8" height="37.2" />
-      <text transform="matrix(1 0 0 1 41.6768 585.2735)">
-        <tspan x="0" y="0" className="st6 st7 st3">
+      <rect x="20.9" y="576.6" className="st2" width="113.8" height="37.2" />
+      <text transform="matrix(1 0 0 1 41.6768 585.3799)">
+        <tspan x="0" y="0" className="st6 st7 st5">
           Rates &amp; New{' '}
         </tspan>
-        <tspan x="-11.4" y="14" className="st6 st7 st3">
+        <tspan x="-11.4" y="14" className="st6 st7 st5">
           Cases Increasing
         </tspan>
       </text>
