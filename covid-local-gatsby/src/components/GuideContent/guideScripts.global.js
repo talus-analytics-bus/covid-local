@@ -56,11 +56,13 @@ const initGuideScripts = () => {
 
   // Hide / show the sticky nav... this needs to be improved
   const toggleDocumentNav = () => {
-    const documentNav = document.querySelector('.document-nav')
+    if (window.location.pathname === '/') {
+      const documentNav = document.querySelector('.document-nav')
 
-    documentNav.style.height === '0px'
-      ? (documentNav.style.height = '5rem')
-      : (documentNav.style.height = '0px')
+      documentNav.style.height === '0px'
+        ? (documentNav.style.height = '5rem')
+        : (documentNav.style.height = '0px')
+    }
   }
 
   // Update sticky navbar
@@ -225,28 +227,30 @@ const initGuideScripts = () => {
   // the document nav when there are open sections on-screen
   let onScreen = []
   const sectionObserver = new IntersectionObserver((entries, observer) => {
-    const newOnScreen = entries
-      .filter(entry => entry.isIntersecting)
-      .map(entry =>
-        entry.target
-          .querySelector('.number, .no-number')
-          .getAttribute('data-number')
-      )
+    if (window.location.pathname === '/') {
+      const newOnScreen = entries
+        .filter(entry => entry.isIntersecting)
+        .map(entry =>
+          entry.target
+            .querySelector('.number, .no-number')
+            .getAttribute('data-number')
+        )
 
-    const newOffScreen = entries
-      .filter(entry => !entry.isIntersecting)
-      .map(entry =>
-        entry.target
-          .querySelector('.number, .no-number')
-          .getAttribute('data-number')
-      )
+      const newOffScreen = entries
+        .filter(entry => !entry.isIntersecting)
+        .map(entry =>
+          entry.target
+            .querySelector('.number, .no-number')
+            .getAttribute('data-number')
+        )
 
-    onScreen = onScreen
-      .concat(newOnScreen)
-      .filter(section => !newOffScreen.includes(section))
-      .sort()
+      onScreen = onScreen
+        .concat(newOnScreen)
+        .filter(section => !newOffScreen.includes(section))
+        .sort()
 
-    updateDocumentNav(onScreen[0])
+      updateDocumentNav(onScreen[0])
+    }
   })
 
   document.querySelectorAll('.expanding-boxes section').forEach(section => {
