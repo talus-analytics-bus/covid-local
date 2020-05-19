@@ -95,6 +95,11 @@ const Nav = () => {
                 Guide
               </Link>
             </li>
+            <li>
+              <Link activeClassName={styles.active} to="/metrics/">
+                Metrics
+              </Link>
+            </li>
             <div
               className={styles.subMenu}
               onMouseEnter={toggleSubmenu}
@@ -107,11 +112,16 @@ const Nav = () => {
                   }}
                   className={styles.subMenuButton}
                 >
-                  Resources &amp; Support
+                  More &#9660;
                 </button>
               </li>
               <div className={styles.subMenuHider} style={subMenuHiderStyle}>
                 <div className={styles.subMenuContent} ref={subMenuContent}>
+                  <li>
+                    <Link activeClassName={styles.active} to="/about/">
+                      About
+                    </Link>
+                  </li>
                   <li>
                     <Link activeClassName={styles.active} to="/resources/">
                       Resources
@@ -120,16 +130,6 @@ const Nav = () => {
                   <li>
                     <Link activeClassName={styles.active} to="/blog/">
                       Blog
-                    </Link>
-                  </li>
-                  <li>
-                    <Link activeClassName={styles.active} to="/about/">
-                      About
-                    </Link>
-                  </li>
-                  <li>
-                    <Link activeClassName={styles.active} to="/metrics/">
-                      Metrics
                     </Link>
                   </li>
                 </div>
