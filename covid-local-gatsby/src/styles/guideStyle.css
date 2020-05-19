@@ -277,8 +277,6 @@
 
 } */
 
-/* Light Reset */
-
 .guide nav.document-nav {
   position: fixed;
   top: 0;
@@ -357,7 +355,7 @@
 }
 
 @media only screen and (max-width: 765px) {
-  figcaption {
+  .guide figcaption {
     margin: 0 1rem;
     margin-bottom: 2rem;
     padding-left: 1rem;

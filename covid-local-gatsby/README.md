@@ -2,29 +2,9 @@
 
 COVID-Local started as a single static page, with a single basic JS file. 
 
-Now, the project is a Gatsby.js site, except the original guide page (currently the home page) is dropped straight into gatsby's `static` directory, along with the assets it depends on. 
+The original HTML, CSS, and JS are now imported and bundled by the `pages/index.js` component, meaning that commands such as `gatsby develop` work properly again and deployment is simplified because all files in the `/public/` directory except for each default object contain correct version-controlled hash names (it is still necessary to invalidate all `index.html` files during deployment).
 
-The webpack configuration of the original project (which now lives at `/old_static_site/`) has been updated so running `yarn build` in the `/old_static_site/` will properly build the dependencies for the homepage (guide page) and place them in the gatsby static directory. 
-
-
-# Changes to the homepage (guide page) javascript:
-
-1. Edit JS in `/old_static_site/src/index.js` 
-
-2. run `yarn build` in `/old_static_site/`
-
-3. run `gatsby build` in `/covid-local-gatsby/`
-
-
-Gatsby Development Server will not automatically reflect changes to the guide page or the guide page JS.
-
-
-# Homepage quirk
-`gatsby develop` is a useful super quick dev server, but it will not work if there is an `index.html` file in the `/static/` folder like there is here. I usually rename it to `index_.html` while I'm working on other pages. 
-
-Alternately, you can use `gatsby develop` in conjunction with `python3 -m http.server` or `live-server` so that you know what you're seeing is the same as what will be deployed.
-
-
+All code, including the JS for the guide page, is now built during the `gatsby build` command, eliminating the previous two-step process for modifying that code.
 
 
 
@@ -113,19 +93,5 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
 
 12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
 
 <!-- AUTO-GENERATED-CONTENT:END -->
