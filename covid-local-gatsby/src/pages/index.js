@@ -63,7 +63,8 @@ const HomePage = () => {
           },
         ]}
       />
-      <main dangerouslySetInnerHTML={guideObject}></main>
+      {/* The guide classname is used to scope the global CSS */}
+      <main className="guide" dangerouslySetInnerHTML={guideObject}></main>
     </Layout>
   )
 }
