@@ -18,7 +18,7 @@ const scorecardContent = [
       ],
       [
         { text: 'Continued decline in daily cases', checked: false },
-        { text: '>3% of tests conducted are positive', checked: false },
+        { text: '<3% of tests conducted are positive', checked: false },
         {
           text:
             'Current estimate of less than 1 case per 100,000 population per day',
@@ -26,7 +26,7 @@ const scorecardContent = [
         },
       ],
       [
-        { text: '>3% of tests conducted are positive', checked: false },
+        { text: '<3% of tests conducted are positive', checked: false },
         {
           text:
             'Current estimate of less than 1 case per 100,000 population per week',

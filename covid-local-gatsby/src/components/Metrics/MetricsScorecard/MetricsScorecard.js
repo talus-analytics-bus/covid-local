@@ -112,6 +112,13 @@ const MetricsScorecard = props => {
     <>
       {props.layout === 'grid' && (
         <article className={styles.scorecard}>
+          <div className={styles.metricArrows}>
+            <header></header>
+            <div className={styles.phaseOne}></div>
+            <div className={styles.phase}></div>
+            <div className={styles.phase}></div>
+            <div className={styles.phase}></div>
+          </div>
           <div className={styles.metricHeader}>
             <header>
               <span>KEY METRICS</span>
@@ -137,6 +144,13 @@ const MetricsScorecard = props => {
             </div>
           </div>
           {scorecardMetricsElements(scorecardContent)}
+          <div className={styles.metricArrows}>
+            <header></header>
+            <div className={styles.phaseOne}></div>
+            <div className={styles.phase}></div>
+            <div className={styles.phase}></div>
+            <div className={styles.phase}></div>
+          </div>
         </article>
       )}
       {props.layout === 'breakout' && <>{breakoutMetricsElements}</>}
