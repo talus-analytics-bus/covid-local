@@ -21,6 +21,24 @@ const MetricsPage = () => {
     setTab(e.target.innerHTML)
   }
 
+  const [downloadHiderStyle, setDownloadHiderSyle] = useState({
+    height: 0,
+    padding: '0 15px',
+  })
+
+  const downloadDetailContent = React.useRef()
+
+  const toggleDownloadDetail = () => {
+    if (downloadHiderStyle.height !== 0) {
+      setDownloadHiderSyle({ height: 0, padding: '0 15px' })
+    } else {
+      setDownloadHiderSyle({
+        height: downloadDetailContent.current.offsetHeight + 30,
+        padding: 15,
+      })
+    }
+  }
+
   return (
     <Layout>
       <Helmet
@@ -39,6 +57,33 @@ const MetricsPage = () => {
       </header>
 
       <article className={styles.main}>
+        <div className={styles.downloadRow}>
+          <button
+            className={styles.downloadButton}
+            onClick={toggleDownloadDetail}
+          >
+            Download
+          </button>
+          <div
+            className={styles.downloadDetailHider}
+            style={downloadHiderStyle}
+          >
+            <div className={styles.downloadDetail} ref={downloadDetailContent}>
+              <a href="#" className={styles.row} onClick={toggleDownloadDetail}>
+                <span>Download All</span> <span>.zip, 2mb</span>
+              </a>
+              <a href="#" className={styles.row} onClick={toggleDownloadDetail}>
+                <span>Metrics Overview</span> <span>.pdf, 1mb</span>
+              </a>
+              <a href="#" className={styles.row} onClick={toggleDownloadDetail}>
+                <span>Metrics Scorecard</span> <span>pdf, 1mb</span>
+              </a>
+              <a href="#" className={styles.row} onClick={toggleDownloadDetail}>
+                <span>Assess Your Progress</span> <span>pdf, 1mb</span>
+              </a>
+            </div>
+          </div>
+        </div>
         <div className={styles.filters}>
           <button
             onClick={onClickTab}

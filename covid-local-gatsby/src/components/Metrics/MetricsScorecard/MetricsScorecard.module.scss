@@ -102,10 +102,17 @@
       border: none;
       padding: 0 1em;
       text-align: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
 
       &::before {
         border-top-left-radius: 1em;
         border-top-right-radius: 1em;
+      }
+
+      img {
+        height: 1.5em;
       }
     }
   }

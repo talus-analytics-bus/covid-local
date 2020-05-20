@@ -11,6 +11,7 @@ import testingIcon from '../icons/testingicon.svg'
 import caseIcon from '../icons/caseicon.svg'
 import healthcareIcon from '../icons/healthcareicon.svg'
 import protectingIcon from '../icons/protectingicon.svg'
+import lockIcon from '../icons/lockicon.svg'
 
 const icons = [
   infectionIcon,
@@ -116,6 +117,7 @@ const MetricsScorecard = props => {
               <span>KEY METRICS</span>
             </header>
             <div className={styles.phaseOne}>
+              <img src={lockIcon} alt="Phase 1 icon" />
               <strong>Phase 1</strong>
             </div>
             <div className={styles.phase}>
