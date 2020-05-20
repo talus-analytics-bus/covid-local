@@ -88,7 +88,7 @@ const MetricsPage = () => {
                 className={styles.row}
                 onClick={toggleDownloadDetail}
               >
-                <span>Metrics Scorecard</span> <span>pdf, 1mb</span>
+                <span>Metrics Scorecard</span> <span>pdf, 155kb</span>
               </a>
               {/* <a href="#" className={styles.row} onClick={toggleDownloadDetail}> */}
               {/*   <span>Assess Your Progress</span> <span>pdf, 1mb</span> */}
