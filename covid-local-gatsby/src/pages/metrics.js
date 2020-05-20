@@ -12,6 +12,7 @@ import '../styles/metrics/background.css'
 import '../styles/metrics/text.css'
 
 import TabSection from '../components/Metrics/TabSection'
+import MetricsScorecard from '../components/Metrics/MetricsScorecard/MetricsScorecard'
 
 const MetricsPage = () => {
   const [tab, setTab] = useState('METRICS OVERVIEW')
@@ -59,7 +60,11 @@ const MetricsPage = () => {
           </button>
         </div>
 
-        {tab === 'METRICS SCORECARD' && <TabSection />}
+        {tab === 'METRICS OVERVIEW' && <TabSection />}
+        {tab === 'METRICS SCORECARD' && <MetricsScorecard layout="grid" />}
+        {/* {tab === 'ASSESS YOUR PROGRESS' && ( */}
+        {/*   <MetricsScorecard layout="breakout" /> */}
+        {/* )} */}
       </article>
     </Layout>
   )
