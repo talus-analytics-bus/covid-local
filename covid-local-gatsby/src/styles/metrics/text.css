@@ -23,7 +23,7 @@
 	fill: #263349;
 }
 #infectionText .st4 {
-	font-family: 'Rawline';
+	font-family: 'Open Sans', sans-serif;
 }
 #infectionText .st5 {
 	font-size: 12px;
@@ -32,7 +32,7 @@
 	fill: #1e7d87;
 }
 #infectionText .st7 {
-	font-family: 'Rawline';
+	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
 }
 
@@ -66,7 +66,7 @@
 	fill: #263349;
 }
 #testingText .st5 {
-	font-family: 'Rawline';
+	font-family: 'Open Sans', sans-serif;
 }
 #testingText .st6 {
 	font-size: 12px;
@@ -75,7 +75,7 @@
 	fill: #1e7d87;
 }
 #testingText .st8 {
-	font-family: 'Rawline';
+	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
 }
 
@@ -97,7 +97,7 @@
 	fill: #263349;
 }
 #caseText .st3 {
-	font-family: 'Rawline';
+	font-family: 'Open Sans', sans-serif;
 }
 #caseText .st4 {
 	font-size: 12px;
@@ -118,7 +118,7 @@
 	fill: #1e7d87;
 }
 #caseText .st8 {
-	font-family: 'Rawline';
+	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
 }
 
@@ -139,7 +139,7 @@
 	fill: #263349;
 }
 #healthcareText .st3 {
-	font-family: 'Rawline';
+	font-family: 'Open Sans', sans-serif;
 }
 #healthcareText .st4 {
 	font-size: 11.25px;
@@ -155,7 +155,7 @@
 	fill: #1e7d87;
 }
 #healthcareText .st7 {
-	font-family: 'Rawline';
+	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
 }
 #healthcareText .st8 {
@@ -183,7 +183,7 @@
 	fill: #263349;
 }
 #protectingText .st3 {
-	font-family: 'Rawline';
+	font-family: 'Open Sans', sans-serif;
 }
 #protectingText .st4 {
 	font-size: 12px;
@@ -204,6 +204,6 @@
 	fill: #1e7d87;
 }
 #protectingText .st8 {
-	font-family: 'Rawline';
+	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
 }

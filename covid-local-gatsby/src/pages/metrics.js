@@ -52,19 +52,19 @@ const MetricsPage = () => {
           >
             METRICS SCORECARD
           </button>
-          <button
-            onClick={onClickTab}
-            aria-pressed={tab === 'ASSESS YOUR PROGRESS'}
-          >
-            ASSESS YOUR PROGRESS
-          </button>
+          {/* <button */}
+          {/*   onClick={onClickTab} */}
+          {/*   aria-pressed={tab === 'ASSESS YOUR PROGRESS'} */}
+          {/* > */}
+          {/*   ASSESS YOUR PROGRESS */}
+          {/* </button> */}
         </div>
 
         {tab === 'METRICS OVERVIEW' && <TabSection />}
         {tab === 'METRICS SCORECARD' && <MetricsScorecard layout="grid" />}
-        {tab === 'ASSESS YOUR PROGRESS' && (
-          <MetricsScorecard layout="breakout" />
-        )}
+        {/* {tab === 'ASSESS YOUR PROGRESS' && ( */}
+        {/*   <MetricsScorecard layout="breakout" /> */}
+        {/* )} */}
       </article>
     </Layout>
   )

@@ -43,16 +43,13 @@ const HealthcareText = () => (
       <rect x="99.3" y="89.3" className="st1" width="296.9" height="43.8" />
       <text transform="matrix(1 0 0 1 99.3104 97.8642)">
         <tspan x="0" y="0" className="st2 st3 st4">
-          At least 30% of existing ICU capacity is available to accom
-        </tspan>
-        <tspan x="286.1" y="0" className="st2 st3 st4">
-          -
+          At least 30% of existing ICU capacity is available to
         </tspan>
         <tspan x="0" y="14" className="st2 st3 st4">
-          modate a surge in COVID-19 patients without resorting to{' '}
+          accommodate a surge in COVID-19 patients without{' '}
         </tspan>
         <tspan x="0" y="28" className="st2 st3 st4">
-          crisis standards of care
+          resorting to crisis standards of care
         </tspan>
       </text>
       <rect x="99.3" y="150.8" className="st1" width="296.9" height="31.7" />

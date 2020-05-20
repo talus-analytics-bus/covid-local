@@ -41,13 +41,10 @@ const testingText = () => (
     <rect x="99.8" y="249.4" className="st3" width="301.7" height="27.1" />
     <text transform="matrix(1 0 0 1 99.82 257.9073)">
       <tspan x="0" y="0" className="st4 st5 st6">
-        All symptomatic people, all asymptomatic high-risk individ
-      </tspan>
-      <tspan x="292.6" y="0" className="st4 st5 st6">
-        -
+        All symptomatic people, all asymptomatic high-risk
       </tspan>
       <tspan x="0" y="14" className="st4 st5 st6">
-        uals or contacts can access testing{' '}
+        individuals or contacts can access testing{' '}
       </tspan>
     </text>
     <rect x="99.8" y="290.4" className="st3" width="296.9" height="17.5" />
@@ -72,13 +69,10 @@ const testingText = () => (
     <rect x="99.8" y="407.7" className="st3" width="301.7" height="27.1" />
     <text transform="matrix(1 0 0 1 99.82 416.1855)">
       <tspan x="0" y="0" className="st4 st5 st6">
-        All symptomatic people, all asymptomatic high-risk individ
-      </tspan>
-      <tspan x="292.6" y="0" className="st4 st5 st6">
-        -
+        All symptomatic people, all asymptomatic high-risk
       </tspan>
       <tspan x="0" y="14" className="st4 st5 st6">
-        uals or contacts can access testing{' '}
+        individuals or contacts can access testing{' '}
       </tspan>
     </text>
     <rect x="99.8" y="453.6" className="st3" width="296.9" height="17.5" />

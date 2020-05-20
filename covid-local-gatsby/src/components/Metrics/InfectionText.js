@@ -25,7 +25,7 @@ const InfectionText = () => (
         transform="matrix(1 0 0 1 99.3093 117.3874)"
         className="st3 st4 st5"
       >
-        &gt;3% of tests conducted are positive
+        &lt;3% of tests conducted are positive
       </text>
     </g>
     <line className="st1" x1="99.3" y1="285.4" x2="484" y2="285.4" />
@@ -35,7 +35,7 @@ const InfectionText = () => (
     </text>
     <rect x="99.3" y="301.5" className="st2" width="296.9" height="17.5" />
     <text transform="matrix(1 0 0 1 99.3093 309.9919)" className="st3 st4 st5">
-      &gt;3% of tests conducted are positive
+      &lt;3% of tests conducted are positive
     </text>
     <rect x="99.3" y="341" className="st2" width="296.9" height="30.1" />
     <text transform="matrix(1 0 0 1 99.3103 349.5114)">
@@ -49,15 +49,15 @@ const InfectionText = () => (
     <rect x="99.3" y="411.7" className="st2" width="301.7" height="27.1" />
     <text transform="matrix(1 0 0 1 99.3101 420.1881)">
       <tspan x="0" y="0" className="st3 st4 st5">
-        Sustained decline in daily cases for 21 consecutive days, as{' '}
+        Sustained decline in daily cases for 21 consecutive{' '}
       </tspan>
       <tspan x="0" y="14" className="st3 st4 st5">
-        reflected in the 5-day rolling average
+        days, as reflected in the 5-day rolling average
       </tspan>
     </text>
     <rect x="99.3" y="464.4" className="st2" width="296.9" height="17.5" />
     <text transform="matrix(1 0 0 1 99.3093 472.9456)" className="st3 st4 st5">
-      &gt;10% of tests conducted are positive
+      &lt;10% of tests conducted are positive
     </text>
     <rect x="99.3" y="496.8" className="st2" width="296.9" height="30.8" />
     <text transform="matrix(1 0 0 1 99.3103 505.2734)">

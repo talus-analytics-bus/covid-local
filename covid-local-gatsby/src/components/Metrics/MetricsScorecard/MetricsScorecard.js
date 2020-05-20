@@ -21,11 +21,17 @@ const icons = [
 ]
 
 const MetricsScorecard = props => {
-  const createCheckboxElements = strings =>
-    strings.map(string => (
-      <Checkbox key={string}>
+  // const onChangeCheckbox = e => {
+  //   e.preventDefault()
+  //
+  // }
+  const createCheckboxElements = phases =>
+    phases.map(phase => (
+      <Checkbox key={phase.text}>
         <span
-          dangerouslySetInnerHTML={{ __html: string.replace(/-/g, '&#8209;') }}
+          dangerouslySetInnerHTML={{
+            __html: phase.text.replace(/-/g, '&#8209;'),
+          }}
         ></span>
       </Checkbox>
     ))
