@@ -120,7 +120,7 @@ jobs:
             "/blog/launching-field-notes/index.html" \
             "/about/index.html" \
             "/contact/index.html" \
-            "/metrics/index.html" \
+            "/guide/index.html" \
             "/" \
             "/resources/" \
             "/blog/" \
@@ -129,7 +129,7 @@ jobs:
             "/blog/launching-field-notes/" \
             "/about/" \
             "/contact/" \
-            "/metrics/"
+            "/guide/"
 
       - run:
           name: Notify Slack
