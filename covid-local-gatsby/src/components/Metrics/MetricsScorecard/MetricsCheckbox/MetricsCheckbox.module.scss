@@ -1,0 +1,11 @@
+.label {
+  display: flex;
+  padding-bottom: 0.125em;
+  margin: 0.25em;
+  margin-bottom: 0.125em;
+  border-bottom: 1px solid #ddd;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
