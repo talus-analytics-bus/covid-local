@@ -74,6 +74,7 @@
       margin-bottom: 2rem;
 
       button {
+        box-sizing: border-box;
         border: none;
         background: transparent;
         cursor: pointer;
@@ -81,6 +82,7 @@
         padding: 1rem 2rem;
         // padding-left: 0;
         font-size: 1.2rem;
+        margin: 0;
 
         border-right: 1px solid #25695b55;
 
@@ -94,8 +96,11 @@
 
         &:hover,
         &[aria-pressed='true'] {
-          font-weight: 900;
           background-color: #25695b22;
+        }
+
+        &[aria-pressed='true'] {
+          font-weight: 900;
         }
       }
 
