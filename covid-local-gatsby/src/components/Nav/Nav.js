@@ -105,33 +105,47 @@ const Nav = () => {
               onMouseEnter={toggleSubmenu}
               onMouseLeave={toggleSubmenu}
             >
-              <li style={subMenuButtonStyle}>
-                <button
-                  onClick={e => {
-                    e.preventDefault()
-                  }}
-                  className={styles.subMenuButton}
-                >
-                  More &#9660;
-                </button>
-              </li>
+              <ul>
+                <li style={subMenuButtonStyle}>
+                  <button
+                    onClick={e => {
+                      e.preventDefault()
+                    }}
+                    className={styles.subMenuButton}
+                  >
+                    More &#9660;
+                  </button>
+                </li>
+              </ul>
+
               <div className={styles.subMenuHider} style={subMenuHiderStyle}>
                 <div className={styles.subMenuContent} ref={subMenuContent}>
-                  <li>
-                    <Link activeClassName={styles.active} to="/about/">
-                      About
-                    </Link>
-                  </li>
-                  <li>
-                    <Link activeClassName={styles.active} to="/resources/">
-                      Resources
-                    </Link>
-                  </li>
-                  <li>
-                    <Link activeClassName={styles.active} to="/blog/">
-                      Blog
-                    </Link>
-                  </li>
+                  <ul>
+                    <li>
+                      <Link
+                        className={styles.item}
+                        activeClassName={styles.active}
+                        to="/about/"
+                      >
+                        About
+                      </Link>
+                    </li>
+                    <li>
+                      <Link activeClassName={styles.active} to="/resources/">
+                        Resources
+                      </Link>
+                    </li>
+                    <li>
+                      <Link activeClassName={styles.active} to="/blog/">
+                        Blog
+                      </Link>
+                    </li>
+                    <li>
+                      <Link activeClassName={styles.active} to="/covid-amp/">
+                        COVID AMP policy site
+                      </Link>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>

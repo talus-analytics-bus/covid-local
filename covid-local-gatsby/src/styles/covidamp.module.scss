@@ -1,0 +1,107 @@
+@import './page.module.scss';
+
+// Mixins // -----------------------------------------------------------------//
+// TODO move to different file if reused elsewhere
+@mixin spaceVert($spacing) {
+  > *:not(:last-child) {
+    margin-bottom: $spacing;
+  }
+}
+@mixin spaceHoriz($spacing) {
+  > *:not(:last-child) {
+    margin-right: $spacing;
+  }
+}
+
+// COVID AMP page-specific styles // -----------------------------------------//
+$spacing: 20px;
+.covidAmp {
+  border-bottom: 8px solid #173244;
+  padding: 3rem 0;
+  width: 100%;
+  > a > img {
+    width: 100%;
+    max-width: 30vw;
+    min-width: 325px;
+  }
+}
+.main {
+  display: flex;
+  flex-flow: column;
+
+  a {
+    // TODO define this link style globally
+    font-family: 'rawline', serif;
+    color: #1b7f6e;
+    button {
+      position: relative;
+      flex-direction: row;
+      background-color: #273349;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      text-align: left;
+      font-style: normal;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 15px;
+      transition: 0.75s background-color ease;
+      cursor: pointer;
+      &:hover {
+        background-color: #344464;
+      }
+    }
+  }
+  p {
+    width: 100%;
+    max-width: 30rem;
+    line-height: 1.8;
+  }
+}
+
+.thumb {
+  margin-left: auto;
+  &,
+  img {
+    box-shadow: 5px 5px 15px 0 #b3b3b3;
+    -webkit-box-shadow: 5px 5px 15px 0 #b3b3b3;
+    height: auto;
+    width: 100%;
+    max-width: 35vw;
+    min-width: 300px;
+  }
+}
+
+.columns {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  @include spaceHoriz($spacing);
+}
+.column {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  @include spaceVert($spacing);
+}
+
+@media (max-width: 930px) {
+  .columns {
+    flex-flow: column;
+    @include spaceVert($spacing);
+  }
+  .main {
+    .thumb {
+      &,
+      img {
+        margin-left: unset;
+        max-width: unset;
+      }
+    }
+    p {
+      max-width: unset;
+    }
+  }
+}
