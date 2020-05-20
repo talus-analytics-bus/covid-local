@@ -62,25 +62,31 @@ const MetricsPage = () => {
             className={styles.downloadButton}
             onClick={toggleDownloadDetail}
           >
-            Download
+            Download&nbsp;
           </button>
           <div
             className={styles.downloadDetailHider}
             style={downloadHiderStyle}
           >
+            {downloadHiderStyle.height !== 0 && (
+              <div
+                className={styles.downloadDetailCloser}
+                onClick={toggleDownloadDetail}
+              ></div>
+            )}
             <div className={styles.downloadDetail} ref={downloadDetailContent}>
-              <a href="#" className={styles.row} onClick={toggleDownloadDetail}>
-                <span>Download All</span> <span>.zip, 2mb</span>
-              </a>
-              <a href="#" className={styles.row} onClick={toggleDownloadDetail}>
-                <span>Metrics Overview</span> <span>.pdf, 1mb</span>
-              </a>
+              {/* <a href="#" className={styles.row} onClick={toggleDownloadDetail}> */}
+              {/*   <span>Download All</span> <span>.zip, 2mb</span> */}
+              {/* </a> */}
+              {/* <a href="#" className={styles.row} onClick={toggleDownloadDetail}> */}
+              {/*   <span>Metrics Overview</span> <span>.pdf, 1mb</span> */}
+              {/* </a> */}
               <a href="#" className={styles.row} onClick={toggleDownloadDetail}>
                 <span>Metrics Scorecard</span> <span>pdf, 1mb</span>
               </a>
-              <a href="#" className={styles.row} onClick={toggleDownloadDetail}>
-                <span>Assess Your Progress</span> <span>pdf, 1mb</span>
-              </a>
+              {/* <a href="#" className={styles.row} onClick={toggleDownloadDetail}> */}
+              {/*   <span>Assess Your Progress</span> <span>pdf, 1mb</span> */}
+              {/* </a> */}
             </div>
           </div>
         </div>
