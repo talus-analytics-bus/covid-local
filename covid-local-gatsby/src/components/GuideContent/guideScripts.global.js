@@ -56,7 +56,7 @@ const initGuideScripts = () => {
 
   // Hide / show the sticky nav... this needs to be improved
   const toggleDocumentNav = () => {
-    if (window.location.pathname === '/') {
+    if (window.location.pathname === '/guide/') {
       const documentNav = document.querySelector('.document-nav')
 
       documentNav.style.height === '0px'
@@ -227,7 +227,7 @@ const initGuideScripts = () => {
   // the document nav when there are open sections on-screen
   let onScreen = []
   const sectionObserver = new IntersectionObserver((entries, observer) => {
-    if (window.location.pathname === '/') {
+    if (window.location.pathname === '/guide/') {
       const newOnScreen = entries
         .filter(entry => entry.isIntersecting)
         .map(entry =>

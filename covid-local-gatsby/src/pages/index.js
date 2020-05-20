@@ -1,72 +1,124 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
+import 'tippy.js/dist/tippy.css'
+import 'tippy.js/themes/light.css'
 
 import Layout from '../components/Layout/Layout'
 
-import '../styles/guideStyle.css'
+import styles from '../styles/metrics/metrics.module.scss'
 
-import guideHTML from '../components/GuideContent/GuideContent.html'
-import initGuideScripts from '../components/GuideContent/guideScripts.global.js'
+import '../styles/metrics/background.css'
+import '../styles/metrics/text.css'
 
-const HomePage = () => {
-  const guideObject = { __html: guideHTML }
-  React.useEffect(() => {
-    initGuideScripts()
-  }, [])
-  //   React.useEffect(() => {
-  //     // add js files
-  //     const mainJS = document.createElement('script')
-  //     mainJS.text = guideScripts
-  //
-  //     const cookieConsent = document.createElement('script')
-  //     cookieConsent.src =
-  //       'https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js'
-  //     const cookieScript = document.createElement('script')
-  //     cookieScript.text = `
-  //
-  //     window.cookieconsent.initialise({
-  //     "palette": {
-  //       "popup": {
-  //       "background": "#edeff5",
-  //       "text": "#333333"
-  //       },
-  //       "button": {
-  //       "background": "#33776b"
-  //       }
-  //     },
-  //     "position": "bottom-right",
-  //     "content": {
-  //       "message": "COVID-Local uses cookies to ensure you get the best experience possible.",
-  //       "dismiss": "OK"
-  //     }
-  //     });`
-  //
-  //     document.body.appendChild(mainJS)
-  //     // document.body.appendChild(cookieConsent)
-  //     // document.body.appendChild(cookieScript)
-  //   }, [])
+import TabSection from '../components/Metrics/TabSection'
+import MetricsScorecard from '../components/Metrics/MetricsScorecard/MetricsScorecard'
+
+const MetricsPage = () => {
+  const [tab, setTab] = useState('METRICS OVERVIEW')
+  const onClickTab = e => {
+    e.preventDefault()
+    setTab(e.target.innerHTML)
+  }
+
+  const [downloadHiderStyle, setDownloadHiderSyle] = useState({
+    height: 0,
+    padding: '0 15px',
+  })
+
+  const downloadDetailContent = React.useRef()
+
+  const toggleDownloadDetail = () => {
+    if (downloadHiderStyle.height !== 0) {
+      setDownloadHiderSyle({ height: 0, padding: '0 15px' })
+    } else {
+      setDownloadHiderSyle({
+        height: downloadDetailContent.current.offsetHeight + 30,
+        padding: 15,
+      })
+    }
+  }
 
   return (
     <Layout>
       <Helmet
-        title={`A Frontline Guide for Local Decision-Makers`}
+        title={`About The COVID Local Project, Authors, and Contributors`}
         meta={[
           {
             name: 'description',
-            content:
-              'A Frontline Guide for Local Decision-Makers Facing The COVID-19 Pandemic',
-          },
-          {
-            name: 'og:site_name',
-            content: 'A Frontline Guide for Local Decision-Makers',
+            content: `The authors and contributors to the COVID Local guide and resource website helping local leaders handle the COVID-19 pandemic.`,
           },
         ]}
       />
-      {/* The guide classname is used to scope the global CSS */}
-      <main className="guide" dangerouslySetInnerHTML={guideObject}></main>
+
+      <header className={styles.header}>
+        <h1>Metrics for Phased Reopening</h1>
+        <Link to="/contact/">Contact us</Link>
+      </header>
+
+      <article className={styles.main}>
+        <div className={styles.downloadRow}>
+          <button
+            className={styles.downloadButton}
+            onClick={toggleDownloadDetail}
+          >
+            Download&nbsp;
+          </button>
+          <div
+            className={styles.downloadDetailHider}
+            style={downloadHiderStyle}
+          >
+            {downloadHiderStyle.height !== 0 && (
+              <div
+                className={styles.downloadDetailCloser}
+                onClick={toggleDownloadDetail}
+              ></div>
+            )}
+            <div className={styles.downloadDetail} ref={downloadDetailContent}>
+              {/* <a href="#" className={styles.row} onClick={toggleDownloadDetail}> */}
+              {/*   <span>Download All</span> <span>.zip, 2mb</span> */}
+              {/* </a> */}
+              {/* <a href="#" className={styles.row} onClick={toggleDownloadDetail}> */}
+              {/*   <span>Metrics Overview</span> <span>.pdf, 1mb</span> */}
+              {/* </a> */}
+              <a href="#" className={styles.row} onClick={toggleDownloadDetail}>
+                <span>Metrics Scorecard</span> <span>pdf, 1mb</span>
+              </a>
+              {/* <a href="#" className={styles.row} onClick={toggleDownloadDetail}> */}
+              {/*   <span>Assess Your Progress</span> <span>pdf, 1mb</span> */}
+              {/* </a> */}
+            </div>
+          </div>
+        </div>
+        <div className={styles.filters}>
+          <button
+            onClick={onClickTab}
+            aria-pressed={tab === 'METRICS OVERVIEW'}
+          >
+            METRICS OVERVIEW
+          </button>
+          <button
+            onClick={onClickTab}
+            aria-pressed={tab === 'METRICS SCORECARD'}
+          >
+            METRICS SCORECARD
+          </button>
+          {/* <button */}
+          {/*   onClick={onClickTab} */}
+          {/*   aria-pressed={tab === 'ASSESS YOUR PROGRESS'} */}
+          {/* > */}
+          {/*   ASSESS YOUR PROGRESS */}
+          {/* </button> */}
+        </div>
+
+        {tab === 'METRICS OVERVIEW' && <TabSection />}
+        {tab === 'METRICS SCORECARD' && <MetricsScorecard layout="grid" />}
+        {/* {tab === 'ASSESS YOUR PROGRESS' && ( */}
+        {/*   <MetricsScorecard layout="breakout" /> */}
+        {/* )} */}
+      </article>
     </Layout>
   )
 }
 
-export default HomePage
+export default MetricsPage
