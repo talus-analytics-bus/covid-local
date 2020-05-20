@@ -286,10 +286,10 @@ const TabSection = () => {
               height="18.6"
             />
             <text
-              transform="matrix(1 0 0 1 352.6178 180.0564)"
+              transform="matrix(1 0 0 1 352.6178 180.0564) translate(70)"
               className="st25 st18 st19"
             >
-              SOCIAL DISTANCING RESTRICTIONS OPEN UP
+              PHASES FOR RE-OPENING
             </text>
           </g>
           <g>

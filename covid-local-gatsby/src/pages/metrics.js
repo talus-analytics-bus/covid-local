@@ -34,7 +34,7 @@ const MetricsPage = () => {
       />
 
       <header className={styles.header}>
-        <h1>Metrics</h1>
+        <h1>Metrics for Phased Reopening</h1>
         <Link to="/contact/">Contact us</Link>
       </header>
 

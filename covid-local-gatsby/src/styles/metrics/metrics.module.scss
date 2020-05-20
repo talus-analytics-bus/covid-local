@@ -21,13 +21,12 @@
     background-position: 0 center;
     font-size: 40px;
     background-size: 2.25em;
-    max-width: calc(5em + 2.25em + 105px);
+    max-width: calc(8em + 2.25em + 105px);
     padding-left: calc(2.25em + 15px);
     padding-top: 2rem;
     padding-bottom: 2rem;
     color: #28334b;
     line-height: 1.1em;
-    margin-top: 2rem;
   }
 
   a {
@@ -60,7 +59,7 @@
 .main {
   .filters {
     border-bottom: 2px solid #25695b;
-    padding-bottom: 0.5rem;
+    // padding-bottom: 0.5rem;
     margin-bottom: 2rem;
 
     button {
@@ -68,20 +67,24 @@
       background: transparent;
       cursor: pointer;
       color: #28334b;
-      padding: 0 15px 15px 0;
+      padding: 1rem 2rem;
       // padding-left: 0;
-      margin-left: 2rem;
-      text-decoration: underline;
       font-size: 1.2rem;
+
+      border-right: 1px solid #25695b55;
 
       &:first-of-type {
         margin-left: 0;
       }
 
+      &:last-of-type {
+        border-right: none;
+      }
+
       &:hover,
       &[aria-pressed='true'] {
-        text-decoration: underline;
         font-weight: 900;
+        background-color: #25695b22;
       }
     }
 

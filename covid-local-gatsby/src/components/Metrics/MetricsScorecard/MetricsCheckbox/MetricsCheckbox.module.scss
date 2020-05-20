@@ -1,11 +1,17 @@
 .label {
+  font-family: 'Open Sans', sans-serif;
   display: flex;
-  padding-bottom: 0.125em;
+  padding-bottom: 0.5em;
   margin: 0.25em;
-  margin-bottom: 0.125em;
+  margin-bottom: 0.25em;
   border-bottom: 1px solid #ddd;
+  line-height: 1.3em;
 
   &:last-of-type {
     border-bottom: none;
+  }
+
+  input {
+    margin-right: 0.6em;
   }
 }

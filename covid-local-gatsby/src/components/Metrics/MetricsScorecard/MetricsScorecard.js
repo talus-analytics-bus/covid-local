@@ -89,12 +89,10 @@ const MetricsScorecard = props => {
               </div>
             ))}
             <div className={styles.status}>
-              <select>
+              <select defaultValue="unselected">
                 <option value="unselected">Define Metric Status</option>
                 <option value="notMet">Not Met</option>
-                <option selected value="complete">
-                  Complete
-                </option>
+                <option value="complete">Complete</option>
               </select>
             </div>
           </div>

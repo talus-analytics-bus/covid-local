@@ -50,7 +50,7 @@ const scorecardContent = [
       [
         '75% of close contacts are elicited and located within 48 hours',
         'At least 30 contact tracers per 100,000, as well as case managers, care resource coordinators, community health workers',
-        '<60% of new cases from identified contacts',
+        '>60% of new cases from identified contacts',
       ],
       [
         '90% of close contacts are elicited, located, tested within 24 hours',
