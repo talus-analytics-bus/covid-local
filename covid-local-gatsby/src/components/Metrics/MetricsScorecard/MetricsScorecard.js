@@ -99,8 +99,8 @@ const MetricsScorecard = props => {
   // }
 
   const saveStatus = status => {
-    console.log('set localStorage')
-    console.log(JSON.stringify(status))
+    // console.log('set localStorage')
+    // console.log(JSON.stringify(status))
     window.localStorage.setItem('status', JSON.stringify(status))
   }
 
