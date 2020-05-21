@@ -32,6 +32,17 @@ scorecardContent.map((metric, metricIndex) => {
   })
 })
 
+const scorecardStatusSetup = {}
+scorecardContent.map((metric, metricIndex) => {
+  metric.phases.map((phase, phaseIndex) => {
+    assessmentStatusSetup['S' + phaseIndex + metricIndex] = 'u'
+    phase.map((item, checkboxIndex) => {
+      assessmentStatusSetup['C' + phaseIndex + metricIndex + checkboxIndex] =
+        'f'
+    })
+  })
+})
+
 const MetricsScorecard = props => {
   // const onChangeCheckbox = e => {
   //   e.preventDefault()
@@ -41,27 +52,48 @@ const MetricsScorecard = props => {
     assessmentStatusSetup
   )
 
+  const [scorecardStatus, setScorecardStatus] = React.useState(
+    scorecardStatusSetup
+  )
+
   React.useEffect(() => {
-    if (window.localStorage.getItem('status') !== null) {
-      setAssessmentStatus(JSON.parse(window.localStorage.getItem('status')))
+    if (window.localStorage.getItem('scorecardStatus') !== null) {
+      setScorecardStatus(
+        JSON.parse(window.localStorage.getItem('scorecardStatus'))
+      )
+    }
+    if (window.localStorage.getItem('assessmentStatus') !== null) {
+      setAssessmentStatus(
+        JSON.parse(window.localStorage.getItem('assessmentStatus'))
+      )
     }
   }, [])
 
-  const onChangeStatus = (id, e) => {
+  const onChangeStatus = (id, view, e) => {
     if (id.startsWith('S')) {
-      setAssessmentStatus({ ...assessmentStatus, [id]: e.target.value })
-      saveStatus({ ...assessmentStatus, [id]: e.target.value })
+      if (view === 'scorecard') {
+        setScorecardStatus({ ...scorecardStatus, [id]: e.target.value })
+        saveStatus('scorecard', { ...scorecardStatus, [id]: e.target.value })
+      } else {
+        setAssessmentStatus({ ...assessmentStatus, [id]: e.target.value })
+        saveStatus('assessment', { ...assessmentStatus, [id]: e.target.value })
+      }
+
       // updateUrlHash({ ...assessmentStatus, [id]: e.target.value })
       // console.log(id + ': ' + e.target.value)
     } else {
-      const newStatus = {
-        ...assessmentStatus,
-        [id]: e.target.checked ? 't' : 'f',
-      }
+      const newStatus =
+        view === 'assessment'
+          ? {
+              ...assessmentStatus,
+              [id]: e.target.checked ? 't' : 'f',
+            }
+          : {
+              ...scorecardStatus,
+              [id]: e.target.checked ? 't' : 'f',
+            }
 
       const [, phaseNumber, metricIndex] = id.split('')
-
-      // console.log(phaseNumber, metricIndex)
 
       const adjacentCheckboxes = Object.keys(newStatus)
         .filter(key => key.startsWith('C' + phaseNumber + metricIndex))
@@ -74,15 +106,17 @@ const MetricsScorecard = props => {
         value => value === 't'
       )
 
-      // console.log(adjacentCheckboxes)
-      // console.log(complete)
-
       if (complete) {
         newStatus['S' + phaseNumber + metricIndex] = 'c'
       }
 
-      setAssessmentStatus(newStatus)
-      saveStatus(newStatus)
+      if (view === 'scorecard') {
+        setScorecardStatus(newStatus)
+        saveStatus('scorecard', newStatus)
+      } else {
+        setAssessmentStatus(newStatus)
+        saveStatus('assessment', newStatus)
+      }
       // updateUrlHash({
       //   ...assessmentStatus,
       //   [id]: e.target.checked ? 't' : 'f',
@@ -98,10 +132,10 @@ const MetricsScorecard = props => {
   //     window.location.href + '#' + encodeURIComponent(JSON.stringify(object))
   // }
 
-  const saveStatus = status => {
+  const saveStatus = (view, status) => {
     // console.log('set localStorage')
     // console.log(JSON.stringify(status))
-    window.localStorage.setItem('status', JSON.stringify(status))
+    window.localStorage.setItem(view + 'Status', JSON.stringify(status))
   }
 
   const createCheckboxElements = (phase, phaseNumber, metricIndex) =>
@@ -111,14 +145,17 @@ const MetricsScorecard = props => {
           name={item.text}
           type="checkbox"
           checked={
-            assessmentStatus[
-              'C' + phaseNumber + metricIndex + checkboxIndex
-            ] === 't'
+            scorecardStatus['C' + phaseNumber + metricIndex + checkboxIndex] ===
+            't'
               ? true
               : false
           }
           onChange={e =>
-            onChangeStatus('C' + phaseNumber + metricIndex + checkboxIndex, e)
+            onChangeStatus(
+              'C' + phaseNumber + metricIndex + checkboxIndex,
+              'scorecard',
+              e
+            )
           }
         />
         {item.text}
@@ -194,6 +231,7 @@ const MetricsScorecard = props => {
                     onChange={e =>
                       onChangeStatus(
                         'C' + phaseNumber + metricIndex + checkboxIndex,
+                        'assessment',
                         e
                       )
                     }
@@ -206,7 +244,9 @@ const MetricsScorecard = props => {
           <div className={styles.status}>
             <select
               value={assessmentStatus['S' + phaseNumber + metricIndex]}
-              onChange={e => onChangeStatus('S' + phaseNumber + metricIndex, e)}
+              onChange={e =>
+                onChangeStatus('S' + phaseNumber + metricIndex, 'assessment', e)
+              }
             >
               <option value="u">Define Metric Status</option>
               <option value="n">Not Met</option>
