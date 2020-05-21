@@ -12,6 +12,8 @@ import caseIcon from '../icons/caseicon.svg'
 import healthcareIcon from '../icons/healthcareicon.svg'
 import protectingIcon from '../icons/protectingicon.svg'
 import lockIcon from '../icons/lockicon.svg'
+import notMetIcon from '../icons/notMetIcon.svg'
+import completeIcon from '../icons/completeIcon.svg'
 
 const icons = [
   infectionIcon,
@@ -187,6 +189,7 @@ const MetricsScorecard = props => {
   const breakoutMetricsElements = (content, phaseNumber) =>
     content.map((row, metricIndex) => {
       let metricStyle = { backgroundColor: '', color: 'white' }
+      let metricStatus = 'undefined'
 
       // console.log(assessmentStatus)
       switch (assessmentStatus['S' + phaseNumber + metricIndex]) {
@@ -197,10 +200,12 @@ const MetricsScorecard = props => {
 
         case 'n':
           metricStyle.backgroundColor = '#666667'
+          metricStatus = 'notMet'
           break
 
         case 'c':
           metricStyle.backgroundColor = '#409385'
+          metricStatus = 'complete'
           break
       }
 
@@ -252,6 +257,12 @@ const MetricsScorecard = props => {
               <option value="n">Not Met</option>
               <option value="c">Complete</option>
             </select>
+            {metricStatus === 'notMet' && (
+              <img src={notMetIcon} alt="Not Met" />
+            )}
+            {metricStatus === 'complete' && (
+              <img src={completeIcon} alt="Complete" />
+            )}
             {/* <p>{'S' + phaseNumber + metricIndex}</p> */}
           </div>
         </div>
