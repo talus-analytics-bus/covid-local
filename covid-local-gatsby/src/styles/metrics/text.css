@@ -1,0 +1,209 @@
+#infectionText .st0 {
+	fill: none;
+	stroke: #b51a34;
+	stroke-width: 0.5;
+	stroke-miterlimit: 10;
+}
+#infectionText .st1 {
+	fill: none;
+	stroke: #ff7224;
+	stroke-width: 0.5;
+	stroke-miterlimit: 10;
+}
+#infectionText .st8 {
+	fill: none;
+	stroke: #fcca3a;
+	stroke-width: 0.5;
+	stroke-miterlimit: 10;
+}
+#infectionText .st2 {
+	fill: none;
+}
+#infectionText .st3 {
+	fill: #263349;
+}
+#infectionText .st4 {
+	font-family: 'Open Sans', sans-serif;
+}
+#infectionText .st5 {
+	font-size: 12px;
+}
+#infectionText .st6 {
+	fill: #1e7d87;
+}
+#infectionText .st7 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+}
+
+/*
+*/
+/*
+*/
+
+#testingText .st0 {
+	fill: none;
+	stroke: #b51a34;
+	stroke-width: 0.5;
+	stroke-miterlimit: 10;
+}
+#testingText .st1 {
+	fill: none;
+	stroke: #ff7224;
+	stroke-width: 0.5;
+	stroke-miterlimit: 10;
+}
+#testingText .st2 {
+	fill: none;
+	stroke: #fcca3a;
+	stroke-width: 0.5;
+	stroke-miterlimit: 10;
+}
+#testingText .st3 {
+	fill: none;
+}
+#testingText .st4 {
+	fill: #263349;
+}
+#testingText .st5 {
+	font-family: 'Open Sans', sans-serif;
+}
+#testingText .st6 {
+	font-size: 12px;
+}
+#testingText .st7 {
+	fill: #1e7d87;
+}
+#testingText .st8 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+}
+
+/*
+*/
+/*
+*/
+
+#caseText .st0 {
+	fill: none;
+	stroke: #b51a34;
+	stroke-width: 0.5;
+	stroke-miterlimit: 10;
+}
+#caseText .st1 {
+	fill: none;
+}
+#caseText .st2 {
+	fill: #263349;
+}
+#caseText .st3 {
+	font-family: 'Open Sans', sans-serif;
+}
+#caseText .st4 {
+	font-size: 12px;
+}
+#caseText .st5 {
+	fill: none;
+	stroke: #fcca3a;
+	stroke-width: 0.5;
+	stroke-miterlimit: 10;
+}
+#caseText .st6 {
+	fill: none;
+	stroke: #ff7224;
+	stroke-width: 0.5;
+	stroke-miterlimit: 10;
+}
+#caseText .st7 {
+	fill: #1e7d87;
+}
+#caseText .st8 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+}
+
+/*
+*/
+/*
+*/
+#healthcareText .st0 {
+	fill: none;
+	stroke: #ff7224;
+	stroke-width: 0.5;
+	stroke-miterlimit: 10;
+}
+#healthcareText .st1 {
+	fill: none;
+}
+#healthcareText .st2 {
+	fill: #263349;
+}
+#healthcareText .st3 {
+	font-family: 'Open Sans', sans-serif;
+}
+#healthcareText .st4 {
+	font-size: 11.25px;
+	letter-spacing: -0.25px;
+}
+#healthcareText .st5 {
+	fill: none;
+	stroke: #fcca3a;
+	stroke-width: 0.5;
+	stroke-miterlimit: 10;
+}
+#healthcareText .st6 {
+	fill: #1e7d87;
+}
+#healthcareText .st7 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+}
+#healthcareText .st8 {
+	fill: none;
+	stroke: #b51a34;
+	stroke-width: 0.5;
+	stroke-miterlimit: 10;
+}
+
+/*
+*/
+/*
+*/
+
+#protectingText .st0 {
+	fill: none;
+	stroke: #ff7224;
+	stroke-width: 0.5;
+	stroke-miterlimit: 10;
+}
+#protectingText .st1 {
+	fill: none;
+}
+#protectingText .st2 {
+	fill: #263349;
+}
+#protectingText .st3 {
+	font-family: 'Open Sans', sans-serif;
+}
+#protectingText .st4 {
+	font-size: 12px;
+}
+#protectingText .st5 {
+	fill: none;
+	stroke: #b51a34;
+	stroke-width: 0.5;
+	stroke-miterlimit: 10;
+}
+#protectingText .st6 {
+	fill: none;
+	stroke: #fcca3a;
+	stroke-width: 0.5;
+	stroke-miterlimit: 10;
+}
+#protectingText .st7 {
+	fill: #1e7d87;
+}
+#protectingText .st8 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+}

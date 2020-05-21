@@ -1,0 +1,185 @@
+.scorecard {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4em;
+
+  .metricArrows,
+  .metricHeader,
+  .metric {
+    display: flex;
+    background-color: #409385;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    margin-top: 1em;
+    z-index: 1;
+    font-size: 12px;
+
+    @media (max-width: 1138px) {
+      font-size: 1vw;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 1.5em;
+      color: white;
+      font-weight: 500;
+      padding: 1em;
+      flex: 0 0 11em;
+
+      img {
+        width: 3em;
+        margin-bottom: 0.5em;
+      }
+    }
+
+    .phaseOne,
+    .phase {
+      position: relative;
+      flex: 2 1 0px;
+      background-color: #fff;
+      margin: 0 0.33em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+
+      &::before {
+        display: block;
+        position: absolute;
+        top: -1em;
+        left: -1px;
+        right: -1px;
+        bottom: -0.25em;
+        content: '';
+        background-color: red;
+        z-index: -1;
+        // box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+      }
+      &:nth-of-type(1)::before {
+        background-color: #7d1440;
+      }
+      &:nth-of-type(2)::before {
+        background-color: #b51f35;
+      }
+      &:nth-of-type(3)::before {
+        background-color: #f27329;
+      }
+      &:nth-of-type(4)::before {
+        background-color: #ffae42;
+      }
+      &:nth-of-type(1) {
+        input {
+          // filter: hue-rotate(100deg);
+        }
+      }
+      &:nth-of-type(2) {
+        input {
+          // #3B88FD
+          // checkbox 216 deg
+          // filter: hue-rotate(135deg) saturate(0.75);
+        }
+      }
+      &:nth-of-type(3) {
+        input {
+          backcolor: #f27329;
+          // filter: hue-rotate(-194deg) brightness(1.1);
+        }
+      }
+      &:nth-of-type(4) {
+        input {
+          background-color: #ffae42;
+          // filter: hue-rotate(-182deg) contrast(200%) saturate(0.5);
+        }
+      }
+    }
+
+    .phaseOne {
+      flex: 1 2 0px;
+      padding: 0.5em;
+      align-items: center;
+    }
+
+    .status {
+      flex: 0 0 15em;
+      padding: 1em;
+    }
+  }
+
+  .metricArrows,
+  .metricHeader {
+    background-color: transparent;
+
+    header {
+      text-align: left;
+      color: #409385;
+      font-weight: 400;
+      padding: 0 1em;
+
+      span {
+        font-size: 0.75em;
+      }
+    }
+
+    .phaseOne,
+    .phase {
+      color: white;
+      background-color: transparent;
+      border: none;
+      padding: 0 1em;
+      text-align: center;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+
+      &::before {
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+      }
+
+      img {
+        height: 1.5em;
+      }
+    }
+  }
+
+  .metricArrows {
+    background: none;
+
+    .phaseOne,
+    .phase {
+      background: none;
+      margin-top: 0.5em;
+      margin-bottom: 1em;
+
+      &::before {
+        background: none;
+        border-radius: 0;
+        background-repeat: no-repeat;
+        height: 2em;
+      }
+
+      &:nth-of-type(1)::before {
+        background: none;
+      }
+
+      &:nth-of-type(2)::before {
+        background: none;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 594.6 46.7'%3E%3Cpolygon style='fill:%23B51F35;' points='32.6,12.3 32.6,0 0.4,23.3 32.6,46.7 32.6,34.3 594.6,34.3 594.6,12.3 '/%3E%3C/svg%3E%0A");
+      }
+      &:nth-of-type(3)::before {
+        background: none;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 594.2 46.7'%3E%3Crect x='0.2' y='12.3' style='fill:%23F27329;' width='594' height='22'/%3E%3C/svg%3E");
+      }
+      &:nth-of-type(4)::before {
+        background: none;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' viewBox='0 0 594.2 46.7'%3E%3Cpolygon style='fill:%23FFAE42;' points='562,12.3 562,0 594.2,23.3 562,46.7 562,34.3 0,34.3 0,12.3 '/%3E%3C/svg%3E%0A");
+      }
+    }
+  }
+}

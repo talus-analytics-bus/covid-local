@@ -160,7 +160,10 @@
     }
 } */
 
+nav .subMenu button,
 nav a {
+  background: none;
+  border: none;
   text-decoration: none;
   font-style: normal;
   color: inherit;
@@ -171,6 +174,7 @@ nav a {
   transition: 0.25s background-color ease;
 }
 
+nav .subMenu button:hover,
 nav a:hover {
   background-color: rgba(64, 147, 133, 0.125);
   transition: 0.25s background-color ease;
@@ -179,6 +183,18 @@ nav a:hover {
 nav > a:hover {
   background-color: rgba(64, 147, 133, 0);
   transition: 0.25s background-color ease;
+}
+
+@media only screen and (min-width: 1170) {
+  .navbarRight > ul > li:last-of-type a {
+    background-color: rgba(64, 147, 133, 1);
+    color: white;
+    margin-left: 0.5rem;
+  }
+}
+
+nav .subMenu button {
+  margin-top: -0.5rem;
 }
 
 .navbarRightHider {
@@ -242,6 +258,56 @@ nav > a:hover {
   }
 
   .navbarRight li {
+    position: relative;
+    padding: 10px 0;
+  }
+}
+
+.subMenu {
+  position: relative;
+}
+
+.subMenuHider {
+  position: relative;
+  margin-left: auto;
+  margin-bottom: 1rem;
+  height: auto;
+}
+
+@media (min-width: 1170px) {
+  .subMenuHider {
+    position: absolute;
+    left: -5px;
+    top: 30px;
+    width: 10rem;
+    overflow: hidden;
+    height: 0;
+    transition: 250ms ease;
+    z-index: 2;
+    padding: 15px;
+  }
+
+  .subMenuContent {
+    position: absolute;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #fff;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .subMenuContent ul {
+    flex-direction: column;
+    justify-content: flex-start;
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .subMenuContent li {
     position: relative;
     padding: 10px 0;
   }

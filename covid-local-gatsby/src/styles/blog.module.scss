@@ -70,35 +70,45 @@
 
     .filters {
       border-bottom: 2px solid #25695b;
-      padding-bottom: 0.5rem;
+      // padding-bottom: 0.5rem;
       margin-bottom: 2rem;
 
       button {
+        box-sizing: border-box;
         border: none;
         background: transparent;
         cursor: pointer;
         color: #28334b;
-        padding: 0 15px 15px 0;
+        padding: 1rem 2rem;
         // padding-left: 0;
-        margin-left: 2rem;
-        text-decoration: underline;
         font-size: 1.2rem;
+        margin: 0;
+
+        border-right: 1px solid #25695b55;
 
         &:first-of-type {
           margin-left: 0;
         }
 
+        &:last-of-type {
+          border-right: none;
+        }
+
         &:hover,
         &[aria-pressed='true'] {
-          text-decoration: underline;
+          background-color: #25695b22;
+        }
+
+        &[aria-pressed='true'] {
           font-weight: 900;
         }
       }
 
-      @media (max-width: 670px) {
+      @media (max-width: 1135px) {
         button {
           margin-left: 0;
           width: 100%;
+          border-right: none;
         }
       }
     }
