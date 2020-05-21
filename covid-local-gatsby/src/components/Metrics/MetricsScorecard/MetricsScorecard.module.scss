@@ -158,6 +158,10 @@
     .status {
       flex: 0 0 15em;
       padding: 1em;
+
+      select {
+        width: 100%;
+      }
     }
   }
 
