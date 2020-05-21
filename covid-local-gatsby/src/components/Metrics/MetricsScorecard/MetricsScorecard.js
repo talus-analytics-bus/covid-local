@@ -210,7 +210,11 @@ const MetricsScorecard = props => {
       }
 
       return (
-        <div key={row.metric} className={styles.metric} style={metricStyle}>
+        <div
+          key={row.metric}
+          className={styles.metricBreakout}
+          style={metricStyle}
+        >
           <header>
             <img src={icons[metricIndex]} alt={'Icon for ' + row.metric} />
             <span
@@ -278,7 +282,7 @@ const MetricsScorecard = props => {
 
     return (
       <article key={phaseNumber} className={styles.scorecard}>
-        <div className={styles.metricHeader}>
+        <div className={styles.metricBreakoutHeader}>
           <header>
             <span>KEY METRICS</span>
           </header>
