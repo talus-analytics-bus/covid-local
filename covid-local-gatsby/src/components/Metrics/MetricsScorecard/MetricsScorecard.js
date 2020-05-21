@@ -104,22 +104,32 @@ const MetricsScorecard = props => {
     window.localStorage.setItem('status', JSON.stringify(status))
   }
 
-  const createCheckboxElements = phases =>
-    phases.map(phase => (
-      <Checkbox key={phase.text}>
-        <span
-          dangerouslySetInnerHTML={{
-            __html: phase.text.replace(/-/g, '&#8209;'),
-          }}
-        ></span>
-      </Checkbox>
+  const createCheckboxElements = (phase, phaseNumber, metricIndex) =>
+    phase.map((item, checkboxIndex) => (
+      <label key={checkboxIndex} className={styles.label}>
+        <input
+          name={item.text}
+          type="checkbox"
+          checked={
+            assessmentStatus[
+              'C' + phaseNumber + metricIndex + checkboxIndex
+            ] === 't'
+              ? true
+              : false
+          }
+          onChange={e =>
+            onChangeStatus('C' + phaseNumber + metricIndex + checkboxIndex, e)
+          }
+        />
+        {item.text}
+      </label>
     ))
 
   const scorecardMetricsElements = content =>
-    content.map((row, index) => (
+    content.map((row, metricIndex) => (
       <div key={row.metric} className={styles.metric}>
         <header>
-          <img src={icons[index]} alt={'Icon for ' + row.metric} />
+          <img src={icons[metricIndex]} alt={'Icon for ' + row.metric} />
           <span
             dangerouslySetInnerHTML={{
               __html: row.metric.replace(/-/g, '&#8209;'),
@@ -129,9 +139,9 @@ const MetricsScorecard = props => {
         <div className={styles.phaseOne}>
           Maximum <br /> social-distancing
         </div>
-        {row.phases.map((phase, index) => (
-          <div key={index} className={styles.phase}>
-            {createCheckboxElements(phase)}
+        {row.phases.map((phase, phaseNumber) => (
+          <div key={phaseNumber} className={styles.phase}>
+            {createCheckboxElements(phase, phaseNumber, metricIndex)}
           </div>
         ))}
       </div>
