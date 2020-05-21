@@ -97,16 +97,18 @@ const MetricsPage = () => {
           </div>
         </div>
         <p>
-          As the COVID-19 pandemic continues, communities around the United
-          States are working to identify the best response and identify the
-          right time to re-open while both protecting their communities from the
-          disease and supporting economic recovery and growth. A phased
-          re-opening strategy is being adopted by many based on progress toward
-          metrics defined by key public health measures. The graphics in the
-          Metrics Overview describe these phases and the key metrics associated
-          with each phase under a set of public health categories. The Scorecard
-          on the Metrics Scorecard tab and available as a PDF download can be
-          used to self-assess community progress.
+          As the COVID-19 pandemic continues, local leaders across the United
+          States are working to bolster public health capacity and take some
+          initial steps to reopen — protecting their communities from the
+          disease and supporting economic recovery and growth. Below,
+          COVID-Local provides decision-makers with easy-to-use metrics for a
+          phased re-opening strategy. These metrics can be used to assess
+          existing response, pinpoint areas for action, and make decisions for
+          moving to the next phase of re-opening. The graphics in the Metrics
+          Overview describe phases and the key metrics associated with each
+          phase under a set of public health categories. The Scorecard (found on
+          the Metrics Scorecard tab and available as a PDF download) can be used
+          to self-assess community progress across all metrics for each Phase.
         </p>
         <div className={styles.filters}>
           <button
