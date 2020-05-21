@@ -21,11 +21,89 @@ const icons = [
   protectingIcon,
 ]
 
+const assessmentStatusSetup = {}
+scorecardContent.map((metric, metricIndex) => {
+  metric.phases.map((phase, phaseIndex) => {
+    assessmentStatusSetup['S' + phaseIndex + metricIndex] = 'u'
+    phase.map((item, checkboxIndex) => {
+      assessmentStatusSetup['C' + phaseIndex + metricIndex + checkboxIndex] =
+        'f'
+    })
+  })
+})
+
 const MetricsScorecard = props => {
   // const onChangeCheckbox = e => {
   //   e.preventDefault()
   //
   // }
+  const [assessmentStatus, setAssessmentStatus] = React.useState(
+    assessmentStatusSetup
+  )
+
+  React.useEffect(() => {
+    if (window.localStorage.getItem('status') !== null) {
+      setAssessmentStatus(JSON.parse(window.localStorage.getItem('status')))
+    }
+  }, [])
+
+  const onChangeStatus = (id, e) => {
+    if (id.startsWith('S')) {
+      setAssessmentStatus({ ...assessmentStatus, [id]: e.target.value })
+      saveStatus({ ...assessmentStatus, [id]: e.target.value })
+      // updateUrlHash({ ...assessmentStatus, [id]: e.target.value })
+      // console.log(id + ': ' + e.target.value)
+    } else {
+      const newStatus = {
+        ...assessmentStatus,
+        [id]: e.target.checked ? 't' : 'f',
+      }
+
+      const [, phaseNumber, metricIndex] = id.split('')
+
+      // console.log(phaseNumber, metricIndex)
+
+      const adjacentCheckboxes = Object.keys(newStatus)
+        .filter(key => key.startsWith('C' + phaseNumber + metricIndex))
+        .reduce((obj, key) => {
+          obj[key] = newStatus[key]
+          return obj
+        }, {})
+
+      const complete = Object.values(adjacentCheckboxes).every(
+        value => value === 't'
+      )
+
+      // console.log(adjacentCheckboxes)
+      // console.log(complete)
+
+      if (complete) {
+        newStatus['S' + phaseNumber + metricIndex] = 'c'
+      }
+
+      setAssessmentStatus(newStatus)
+      saveStatus(newStatus)
+      // updateUrlHash({
+      //   ...assessmentStatus,
+      //   [id]: e.target.checked ? 't' : 'f',
+      // })
+      // console.log(id + ': ' + e.target.checked)
+    }
+  }
+
+  // const updateUrlHash = object => {
+  //   console.log('update')
+  //   console.log(object)
+  //   document.location =
+  //     window.location.href + '#' + encodeURIComponent(JSON.stringify(object))
+  // }
+
+  const saveStatus = status => {
+    console.log('set localStorage')
+    console.log(JSON.stringify(status))
+    window.localStorage.setItem('status', JSON.stringify(status))
+  }
+
   const createCheckboxElements = phases =>
     phases.map(phase => (
       <Checkbox key={phase.text}>
@@ -59,8 +137,79 @@ const MetricsScorecard = props => {
       </div>
     ))
 
+  const breakoutMetricsElements = (content, phaseNumber) =>
+    content.map((row, metricIndex) => {
+      let metricStyle = { backgroundColor: '', color: 'white' }
+
+      // console.log(assessmentStatus)
+      switch (assessmentStatus['S' + phaseNumber + metricIndex]) {
+        case 'u':
+          metricStyle.backgroundColor = '#d4eef9'
+          metricStyle.color = '#273349'
+          break
+
+        case 'n':
+          metricStyle.backgroundColor = '#666667'
+          break
+
+        case 'c':
+          metricStyle.backgroundColor = '#409385'
+          break
+      }
+
+      return (
+        <div key={row.metric} className={styles.metric} style={metricStyle}>
+          <header>
+            <img src={icons[metricIndex]} alt={'Icon for ' + row.metric} />
+            <span
+              dangerouslySetInnerHTML={{
+                __html: row.metric.replace(/-/g, '&#8209;'),
+              }}
+            ></span>
+          </header>
+          {row.phases.map((phase, phaseIndex) => (
+            <div key={phaseIndex} className={styles.phaseBreakout}>
+              {phase.map((item, checkboxIndex) => (
+                <label key={checkboxIndex} className={styles.label}>
+                  <input
+                    name={item.text}
+                    type="checkbox"
+                    checked={
+                      assessmentStatus[
+                        'C' + phaseNumber + metricIndex + checkboxIndex
+                      ] === 't'
+                        ? true
+                        : false
+                    }
+                    onChange={e =>
+                      onChangeStatus(
+                        'C' + phaseNumber + metricIndex + checkboxIndex,
+                        e
+                      )
+                    }
+                  />
+                  {item.text}
+                </label>
+              ))}
+            </div>
+          ))}
+          <div className={styles.status}>
+            <select
+              value={assessmentStatus['S' + phaseNumber + metricIndex]}
+              onChange={e => onChangeStatus('S' + phaseNumber + metricIndex, e)}
+            >
+              <option value="u">Define Metric Status</option>
+              <option value="n">Not Met</option>
+              <option value="c">Complete</option>
+            </select>
+            {/* <p>{'S' + phaseNumber + metricIndex}</p> */}
+          </div>
+        </div>
+      )
+    })
+
   const breakoutPhases = [0, 1, 2]
-  const breakoutMetricsElements = breakoutPhases.map(phaseNumber => {
+  const breakoutScorecardElements = breakoutPhases.map(phaseNumber => {
     const phaseContent = scorecardContent.map(row => ({
       ...row,
       phases: [row.phases[phaseNumber]],
@@ -72,7 +221,7 @@ const MetricsScorecard = props => {
           <header>
             <span>KEY METRICS</span>
           </header>
-          <div className={styles.phase}>
+          <div className={styles.phaseBreakout}>
             <span>
               Thresholds To Enter{' '}
               <strong>{'Phase ' + (phaseNumber + 2)}</strong>
@@ -80,30 +229,7 @@ const MetricsScorecard = props => {
           </div>
           <div className={styles.status}></div>
         </div>
-        {phaseContent.map((row, index) => (
-          <div key={row.metric} className={styles.metric}>
-            <header>
-              <img src={icons[index]} alt={'Icon for ' + row.metric} />
-              <span
-                dangerouslySetInnerHTML={{
-                  __html: row.metric.replace(/-/g, '&#8209;'),
-                }}
-              ></span>
-            </header>
-            {row.phases.map((phase, index) => (
-              <div key={index} className={styles.phase}>
-                {createCheckboxElements(phase)}
-              </div>
-            ))}
-            <div className={styles.status}>
-              <select defaultValue="unselected">
-                <option value="unselected">Define Metric Status</option>
-                <option value="notMet">Not Met</option>
-                <option value="complete">Complete</option>
-              </select>
-            </div>
-          </div>
-        ))}
+        {breakoutMetricsElements(phaseContent, phaseNumber)}
       </article>
     )
   })
@@ -153,7 +279,7 @@ const MetricsScorecard = props => {
           </div>
         </article>
       )}
-      {props.layout === 'breakout' && <>{breakoutMetricsElements}</>}
+      {props.layout === 'breakout' && <>{breakoutScorecardElements}</>}
     </>
   )
 }
