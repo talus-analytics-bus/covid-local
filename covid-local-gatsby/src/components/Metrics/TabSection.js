@@ -675,7 +675,7 @@ const TabSection = () => {
                 activeTab === 'testing' ? 'st20 st35 st36' : 'st34 st35 st36'
               }
             >
-              Viral
+              Diagnostic
             </tspan>
             <tspan
               x="0"

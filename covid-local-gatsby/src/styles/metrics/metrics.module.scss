@@ -109,7 +109,7 @@
       position: absolute;
       right: -1rem;
       top: 2.5rem;
-      width: 20rem;
+      width: 25rem;
       overflow: hidden;
       height: 0;
       transition: 250ms ease;
@@ -139,6 +139,14 @@
           transition: 500ms ease;
           text-decoration: none;
           font-family: 'Open Sans', sans-serif;
+
+          &:first-of-type {
+            padding-top: 1rem;
+          }
+
+          &:last-of-type {
+            padding-bottom: 1rem;
+          }
 
           span {
             font-style: italic;
