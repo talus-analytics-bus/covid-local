@@ -100,7 +100,8 @@ jobs:
 
       - run:
           name: gatsby build
-          command: yarn global add gatsby-cli; cd covid-local-gatsby; gatsby build
+          command: cd covid-local-gatsby; yarn build;
+          # command: yarn global add gatsby-cli; cd covid-local-gatsby; gatsby build
 
       - run:
           name: deploy
