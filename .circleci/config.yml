@@ -54,6 +54,7 @@ jobs:
             "/blog/launching-field-notes/index.html" \
             "/about/index.html" \
             "/contact/index.html"\
+            "/guide/index.html" \
             "/" \
             "/resources/" \
             "/blog/" \
@@ -61,7 +62,9 @@ jobs:
             "/blog/webinar-launch/" \
             "/blog/launching-field-notes/" \
             "/about/" \
-            "/contact/"
+            "/contact/" \
+            "/guide/"
+
 
       - run:
           name: Notify Slack
