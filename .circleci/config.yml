@@ -33,7 +33,7 @@ jobs:
 
       - run:
           name: gatsby build
-	  command: cd covid-local-gatsby; yarn build;
+          command: cd covid-local-gatsby; yarn build;
           # command: npm i -g gatsby-cli; cd covid-local-gatsby; gatsby build
 
       - run:
