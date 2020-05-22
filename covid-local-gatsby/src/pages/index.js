@@ -75,24 +75,34 @@ const MetricsPage = () => {
               ></div>
             )}
             <div className={styles.downloadDetail} ref={downloadDetailContent}>
-              {/* <a href="#" className={styles.row} onClick={toggleDownloadDetail}> */}
-              {/*   <span>Download All</span> <span>.zip, 2mb</span> */}
-              {/* </a> */}
-              {/* <a href="#" className={styles.row} onClick={toggleDownloadDetail}> */}
-              {/*   <span>Metrics Overview</span> <span>.pdf, 1mb</span> */}
+              {/* <a */}
+              {/*   target="_blank" */}
+              {/*   rel="noopener noreferrer" */}
+              {/*   href="/assets/documents/COVID Local Metrics overview and scorecard.pdf" */}
+              {/*   className={styles.row} */}
+              {/*   onClick={toggleDownloadDetail} */}
+              {/* > */}
+              {/*   <span>Metrics overview and scorecard</span>{' '} */}
+              {/*   <span>pdf, 616kb</span> */}
               {/* </a> */}
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="/assets/documents/Metrics_Scorecard.pdf"
+                href="/assets/documents/COVID Local Metrics overview.pdf"
                 className={styles.row}
                 onClick={toggleDownloadDetail}
               >
-                <span>Metrics Scorecard</span> <span>pdf, 155kb</span>
+                <span>Metrics overview</span> <span>pdf, 535kb</span>
               </a>
-              {/* <a href="#" className={styles.row} onClick={toggleDownloadDetail}> */}
-              {/*   <span>Assess Your Progress</span> <span>pdf, 1mb</span> */}
-              {/* </a> */}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="/assets/documents/COVID Local Metrics scorecard.pdf"
+                className={styles.row}
+                onClick={toggleDownloadDetail}
+              >
+                <span>Metrics scorecard</span> <span>pdf, 157kb</span>
+              </a>
             </div>
           </div>
         </div>
@@ -104,14 +114,15 @@ const MetricsPage = () => {
           COVID-Local provides decision-makers with easy-to-use metrics for a
           phased re-opening strategy. These metrics can be used to assess
           existing response, pinpoint areas for action, and make decisions for
-          moving to the next phase of re-opening. The graphics in the Metrics
-          Overview describe phases and the key metrics associated with each
-          phase under a set of public health categories. The Scorecard (found on
-          the Metrics Scorecard tab and available as a PDF download) can be used
-          to self-assess community progress across all metrics for each Phase.
-          The “Assess Your Progress” tab provides a series of graphics with
-          phase-specific metrics. The interactive checklist can be used to show
-          progress toward meeting thresholds for each phase.
+          moving to the next phase of re-opening. The graphics in the{' '}
+          <strong>Metrics Overview</strong> describe phases and the key metrics
+          associated with each phase under a set of public health categories.
+          The <strong>Scorecard</strong> (found on the Metrics Scorecard tab and
+          available as a PDF download) can be used to self-assess community
+          progress across all metrics for each Phase. The{' '}
+          <strong>Assess Your Progress</strong> tab provides a series of
+          graphics with phase-specific metrics. The interactive checklist can be
+          used to show progress toward meeting thresholds for each phase.
         </p>
         <div className={styles.filters}>
           <button
