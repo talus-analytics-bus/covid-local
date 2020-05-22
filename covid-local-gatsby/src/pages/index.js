@@ -109,6 +109,9 @@ const MetricsPage = () => {
           phase under a set of public health categories. The Scorecard (found on
           the Metrics Scorecard tab and available as a PDF download) can be used
           to self-assess community progress across all metrics for each Phase.
+          The “Assess Your Progress” tab provides a series of graphics with
+          phase-specific metrics. The interactive checklist can be used to show
+          progress toward meeting thresholds for each phase.
         </p>
         <div className={styles.filters}>
           <button
