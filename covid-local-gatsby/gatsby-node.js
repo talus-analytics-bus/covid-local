@@ -6,7 +6,7 @@
 
 // You can delete this file if you're not using it
 
-const path = require("path")
+const path = require('path')
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
   const blogPostTemplate = path.resolve(`src/templates/blog-post.js`)
@@ -37,4 +37,23 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       context: {}, // additional data can be passed via context
     })
   })
-} 
+}
+
+exports.onCreateWebpackConfig = ({
+  stage,
+  rules,
+  loaders,
+  plugins,
+  actions,
+}) => {
+  actions.setWebpackConfig({
+    module: {
+      rules: [
+        {
+          test: /\.html$/i,
+          loader: 'html-loader',
+        },
+      ],
+    },
+  })
+}

@@ -26,11 +26,13 @@ const Contact = () => {
         </h2>
       )
     } else {
+      data['subject'] = 'New message from COVID-Local'
+      data['site'] = 'covid-local'
       setErrorMessage('')
       setSubmitButtonText('Submitting...')
       axios
         .post(
-          'https://jcvp6imvv9.execute-api.us-east-1.amazonaws.com/submit',
+          'https://p0hkpngww3.execute-api.us-east-1.amazonaws.com/submit',
           JSON.stringify(data),
           { headers: { 'Content-Type': 'application/json' } }
         )
@@ -80,32 +82,32 @@ const Contact = () => {
         </div>
         <div className={styles.formRow}>{errorMessage}</div>
         <div className={styles.formRow}>
-          <label className={styles.firstName} htmlFor="firstName">
+          <label className={styles.firstName} htmlFor="First_Name">
             First Name*
-            <input type="text" id="firstName" name="firstName" />
+            <input type="text" id="First_Name" name="First_Name" />
           </label>
-          <label className={styles.lastName} htmlFor="lastName">
+          <label className={styles.lastName} htmlFor="Last_Name">
             Last Name*
-            <input type="text" id="lastName" name="lastName" />
+            <input type="text" id="Last_Name" name="Last_Name" />
           </label>
         </div>
 
         <div className={styles.formRow}>
-          <label className={styles.email} htmlFor="email">
+          <label className={styles.email} htmlFor="Email">
             Email*
-            <input type="text" id="email" name="email" />
+            <input type="text" id="Email" name="Email" />
           </label>
-          <label className={styles.org} htmlFor="org">
+          <label className={styles.org} htmlFor="Organization">
             Organization*
-            <input type="text" id="org" name="org" />
+            <input type="text" id="Organization" name="Organization" />
           </label>
         </div>
 
         <div className={styles.formRow}>
-          <label className={styles.type} htmlFor="type">
+          <label className={styles.type} htmlFor="Type">
             Topic*
             <select
-              name="type"
+              name="Type"
               onChange={e => {
                 setType(e.target.value)
                 console.log(e.target.value)
@@ -121,7 +123,7 @@ const Contact = () => {
 
           <label
             className={styles.type}
-            htmlFor="type"
+            htmlFor="Type"
             style={
               type === 'Question'
                 ? { visibility: 'visible' }
@@ -129,7 +131,7 @@ const Contact = () => {
             }
           >
             Comment category*
-            <select name="category">
+            <select name="Category">
               <option value="General">General</option>
               <option value="Medical Capacity">Medical Capacity</option>
               <option value="Logistics">Logistics / PPE Suppy Chain</option>

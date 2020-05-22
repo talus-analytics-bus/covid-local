@@ -1,0 +1,136 @@
+#background .st0 {
+  opacity: 0.4;
+  fill: url(#SVGID_1_);
+}
+#background .st1 {
+  opacity: 0.35;
+  fill: url(#SVGID_2_);
+}
+#background .st2 {
+  opacity: 0.3;
+  fill: url(#SVGID_3_);
+}
+#background .st3 {
+  opacity: 0.35;
+  fill: url(#SVGID_4_);
+}
+#background .st4 {
+  fill: none;
+  stroke: #ff7224;
+  stroke-miterlimit: 10;
+}
+#background .st5 {
+  fill: none;
+  stroke: #fcca3a;
+  stroke-miterlimit: 10;
+}
+#background .st6 {
+  fill: none;
+  stroke: #b51a34;
+  stroke-miterlimit: 10;
+}
+#background .st7 {
+  fill: none;
+  stroke: #7c003e;
+  stroke-miterlimit: 10;
+}
+#background .st8 {
+  fill: #fcca3a;
+}
+#background .st9 {
+  fill: #ff7224;
+}
+#background .st10 {
+  fill: #b51a34;
+}
+#background .st11 {
+  fill: url(#SVGID_5_);
+}
+#background .st12 {
+  fill: url(#SVGID_6_);
+}
+#background .st13 {
+  fill: url(#SVGID_7_);
+}
+#background .st14 {
+  fill: url(#SVGID_8_);
+}
+#background .st15 {
+  stroke: #ffffff;
+  stroke-miterlimit: 10;
+}
+#background .st16 {
+  fill: none;
+}
+#background .st17 {
+  fill: #666666;
+}
+#background .st18 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 8px;
+}
+#background .st19 {
+  font-size: 15px;
+}
+#background .st20 {
+  fill: #ffffff;
+}
+#background .st21 {
+  font-size: 22px;
+}
+#background .st22 {
+  font-size: 33px;
+}
+#background .st23 {
+  font-size: 29px;
+}
+#background .st24 {
+  font-size: 26px;
+}
+#background .st25 {
+  fill: #1e7d87;
+}
+#background .st26 {
+  fill: #409385;
+}
+#background .st27 {
+  fill: #263349;
+}
+#background .st28 {
+  font-size: 13px;
+}
+#background .st29 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+#background .st30 {
+  font-size: 12px;
+}
+#background .st31 {
+  letter-spacing: 43;
+}
+#background .st32 {
+  font-size: 8px;
+}
+#background .st33 {
+  fill: #d4eef9;
+}
+#background .st34 {
+  fill: #273349;
+}
+#background .st35 {
+  font-family: 'Rawline', sans-serif;
+  font-weight: 800;
+}
+#background .st36 {
+  font-size: 14.6568px;
+}
+
+#infection,
+#testing,
+#case,
+#healthcare,
+#protecting {
+  cursor: pointer;
+}
