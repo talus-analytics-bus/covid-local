@@ -58,25 +58,25 @@ const LandingPage = () => (
       </main>
       <footer className={styles.footer}>
         <h1>A JOINT PROJECT OF</h1>
-        <a href="#" className={styles.georgetown}>
+        <a href="https://ghss.georgetown.edu/" className={styles.georgetown}>
           <img
             src="/assets/images/logos/Georgetown-small.png"
             alt="Georgetown University"
           />
         </a>
-        <a href="#" className={styles.talus}>
+        <a href="http://talusanalytics.com/" className={styles.talus}>
           <img
             src="/assets/images/logos/talus-logo-01.png"
             alt="Talus Analytics"
           />
         </a>
-        <a href="#" className={styles.nti}>
+        <a href="https://www.nti.org/about/biosecurity/" className={styles.nti}>
           <img
             src="/assets/images/logos/Nuclear_Threat_Initiative_logo.svg"
             alt="Nuclear Threat Initiative"
           />
         </a>
-        <a href="#" className={styles.cgd}>
+        <a href="https://www.cgdev.org/" className={styles.cgd}>
           <img
             src="/assets/images/logos/center-for-global-development.png"
             alt="Center for Global Development"
