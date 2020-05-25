@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
+import { Helmet } from 'react-helmet'
 
 import Layout from '../components/Layout/Layout'
 
@@ -30,6 +31,15 @@ const LandingPage = props => {
 
   return (
     <Layout>
+      <Helmet
+        title={`COVID-Local: A Frontline Guide for Local Decision-Makers`}
+        meta={[
+          {
+            name: 'description',
+            content: `The COVID-19 pandemic is causing significant disruptions to cities and local communities globally. Given these challenges, we have developed this guide to provide a decision framework for local leaders to think through what will need to be done to help reduce the impact of the outbreak, both by reducing spread and decreasing the number of cases, but also in responding and supporting communities effectively.`,
+          },
+        ]}
+      />
       <div className={styles.gradient}>
         <main className={styles.main}>
           <header>
