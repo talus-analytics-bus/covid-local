@@ -49,10 +49,15 @@ const LandingPage = () => (
             <h2>Recommended resources</h2>
             <a href="/resources/">Go to Resources</a>
           </div>
+          {/* <div> */}
+          {/*   <h1>REACHBACK</h1> */}
+          {/*   <h2>Ask the experts</h2> */}
+          {/*   <a href="/reachback/">Go to Reachback</a> */}
+          {/* </div> */}
           <div>
-            <h1>REACHBACK</h1>
-            <h2>Ask the experts</h2>
-            <a href="/reachback/">Go to Reachback</a>
+            <h1>FEEDBACK</h1>
+            <h2>Contact Us</h2>
+            <a href="/reachback/">Go to Contact Us</a>
           </div>
         </div>
       </main>

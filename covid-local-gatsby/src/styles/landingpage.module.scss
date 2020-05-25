@@ -11,17 +11,24 @@
 
 .gradient {
   background: linear-gradient(#b2e1f5, #b2e1f511);
+  position: relative;
   margin: auto;
-  width: 90%;
-  max-width: 64rem;
   padding-top: 0;
   padding-bottom: 3rem;
+  width: 90%;
+  max-width: 69rem;
+
+  @media only screen and (max-width: 992px) {
+    left: 0rem;
+    width: calc(90% + 2rem);
+  }
 
   @media (max-width: 500px) {
-    position: relative;
     top: -2px;
     width: 100%;
     padding: 0rem;
+    left: 0rem;
+    right: 0rem;
   }
 }
 
@@ -74,6 +81,11 @@
         line-height: 1.2em;
         // flex-grow: 0;
         // align-self: flex-start;
+      }
+
+      p {
+        margin-top: 1rem;
+        font-size: 1.1em;
       }
 
       .btnrow {
@@ -204,6 +216,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    // justify-content: flex-start;
     margin-bottom: 2rem;
 
     @media (max-width: 900px) {
@@ -218,6 +231,7 @@
       position: relative;
       flex-basis: 32%;
       margin-top: 3rem;
+      // margin-right: 1rem;
 
       &:before {
         position: absolute;
