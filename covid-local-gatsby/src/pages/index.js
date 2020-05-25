@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
 import Layout from '../components/Layout/Layout'
@@ -14,8 +14,30 @@ function shuffleArray(array) {
   }
 }
 
-const LandingPage = props => {
-  const blogpost = props.data.allMarkdownRemark.edges[0].node
+const LandingPage = () => {
+  const data = useStaticQuery(graphql`
+    query blogQuery {
+      allMarkdownRemark(
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1
+      ) {
+        edges {
+          node {
+            excerpt(pruneLength: 300)
+            id
+            frontmatter {
+              title
+              date(formatString: "dddd, MMMM DD, YYYY")
+              path
+              category
+              author
+            }
+          }
+        }
+      }
+    }
+  `)
+  const blogpost = data.allMarkdownRemark.edges[0].node
 
   const [resource, setResource] = React.useState()
 
@@ -167,27 +189,27 @@ const LandingPage = props => {
   )
 }
 
-export const pageQuery = graphql`
-  query blogQuery {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 1
-    ) {
-      edges {
-        node {
-          excerpt(pruneLength: 300)
-          id
-          frontmatter {
-            title
-            date(formatString: "dddd, MMMM DD, YYYY")
-            path
-            category
-            author
-          }
-        }
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query blogQuery {
+//     allMarkdownRemark(
+//       sort: { order: DESC, fields: [frontmatter___date] }
+//       limit: 1
+//     ) {
+//       edges {
+//         node {
+//           excerpt(pruneLength: 300)
+//           id
+//           frontmatter {
+//             title
+//             date(formatString: "dddd, MMMM DD, YYYY")
+//             path
+//             category
+//             author
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
 
 export default LandingPage
