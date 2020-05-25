@@ -21,8 +21,8 @@ const LandingPage = () => (
               communities effectively.
             </p>
             <div className={styles.btnrow}>
-              <a href="#">How to use the guide</a>
-              <a href="/guide/">Go to guide</a>
+              {/* <a href="#">How to use the guide</a> */}
+              <a href="/guide/">Go to Guide</a>
             </div>
           </div>
           <div className={styles.right}>
