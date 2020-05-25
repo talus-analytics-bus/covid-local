@@ -92,6 +92,11 @@ const Nav = () => {
           <ul>
             <li>
               <Link activeClassName={styles.active} to="/">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link activeClassName={styles.active} to="/metrics/">
                 Metrics
               </Link>
             </li>

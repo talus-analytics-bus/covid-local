@@ -1,158 +1,90 @@
-import React, { useState } from 'react'
-import { Link } from 'gatsby'
-import { Helmet } from 'react-helmet'
-import 'tippy.js/dist/tippy.css'
-import 'tippy.js/themes/light.css'
+import React from 'react'
 
 import Layout from '../components/Layout/Layout'
 
-import styles from '../styles/metrics/metrics.module.scss'
+import styles from '../styles/landingpage.module.scss'
 
-import '../styles/metrics/background.css'
-import '../styles/metrics/text.css'
-
-import TabSection from '../components/Metrics/TabSection'
-import MetricsScorecard from '../components/Metrics/MetricsScorecard/MetricsScorecard'
-
-const MetricsPage = () => {
-  const [tab, setTab] = useState('METRICS OVERVIEW')
-  const onClickTab = e => {
-    e.preventDefault()
-    setTab(e.target.innerHTML)
-  }
-
-  const [downloadHiderStyle, setDownloadHiderSyle] = useState({
-    height: 0,
-    padding: '0 15px',
-  })
-
-  const downloadDetailContent = React.useRef()
-
-  const toggleDownloadDetail = () => {
-    if (downloadHiderStyle.height !== 0) {
-      setDownloadHiderSyle({ height: 0, padding: '0 15px' })
-    } else {
-      setDownloadHiderSyle({
-        height: downloadDetailContent.current.offsetHeight + 30,
-        padding: 15,
-      })
-    }
-  }
-
-  return (
-    <Layout>
-      <Helmet
-        title={`About The COVID Local Project, Authors, and Contributors`}
-        meta={[
-          {
-            name: 'description',
-            content: `The authors and contributors to the COVID Local guide and resource website helping local leaders handle the COVID-19 pandemic.`,
-          },
-        ]}
-      />
-
-      <header className={styles.header}>
-        <h1>Metrics for Phased Reopening</h1>
-        <Link to="/contact/">Contact us</Link>
-      </header>
-
-      <article className={styles.main}>
-        <div className={styles.downloadRow}>
-          <button
-            className={styles.downloadButton}
-            onClick={toggleDownloadDetail}
-          >
-            Download&nbsp;
-          </button>
-          <div
-            className={styles.downloadDetailHider}
-            style={downloadHiderStyle}
-          >
-            {downloadHiderStyle.height !== 0 && (
-              <div
-                className={styles.downloadDetailCloser}
-                onClick={toggleDownloadDetail}
-              ></div>
-            )}
-            <div className={styles.downloadDetail} ref={downloadDetailContent}>
-              {/* <a */}
-              {/*   target="_blank" */}
-              {/*   rel="noopener noreferrer" */}
-              {/*   href="/assets/documents/COVID Local Metrics overview and scorecard.pdf" */}
-              {/*   className={styles.row} */}
-              {/*   onClick={toggleDownloadDetail} */}
-              {/* > */}
-              {/*   <span>Metrics overview and scorecard</span>{' '} */}
-              {/*   <span>pdf, 616kb</span> */}
-              {/* </a> */}
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="/assets/documents/COVID Local Metrics overview.pdf"
-                className={styles.row}
-                onClick={toggleDownloadDetail}
-              >
-                <span>Metrics overview</span> <span>pdf, 535kb</span>
-              </a>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="/assets/documents/COVID Local Metrics scorecard.pdf"
-                className={styles.row}
-                onClick={toggleDownloadDetail}
-              >
-                <span>Metrics scorecard</span> <span>pdf, 157kb</span>
-              </a>
+const LandingPage = () => (
+  <Layout>
+    <div className={styles.gradient}>
+      <main className={styles.main}>
+        <header>
+          <div className={styles.left}>
+            <h1>A Frontline Guide for Local Decision-Makers</h1>
+            <p>
+              The COVID-19 pandemic is causing significant disruptions to cities
+              and local communities globally. Given these challenges, we have
+              developed this guide to provide a decision framework for local
+              leaders to think through what will need to be done to help reduce
+              the impact of the outbreak, both by reducing spread and decreasing
+              the number of cases, but also in responding and supporting
+              communities effectively.
+            </p>
+            <div className={styles.btnrow}>
+              <a href="#">How to use the guide</a>
+              <a href="/guide/">Go to guide</a>
             </div>
           </div>
+          <div className={styles.right}>
+            <h2>Metrics for Phased Reopening</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+              nonummy
+            </p>
+            <img
+              src="/assets/images/metrics-screenshot.png"
+              alt="Metrics for Phased Reopening Screenshot"
+            />
+            <a href="/metrics/">Go to Metrics</a>
+          </div>
+        </header>
+        <div className={styles.cols}>
+          <div>
+            <h1>BLOG</h1>
+            <h2>Notes from the field</h2>
+            <a href="/blog/">Go to Blog</a>
+          </div>
+          <div>
+            <h1>LEARN</h1>
+            <h2>Recommended resources</h2>
+            <a href="/resources/">Go to Resources</a>
+          </div>
+          <div>
+            <h1>REACHBACK</h1>
+            <h2>Ask the experts</h2>
+            <a href="/reachback/">Go to Reachback</a>
+          </div>
         </div>
-        <p>
-          As the COVID-19 pandemic continues, local leaders across the United
-          States are working to bolster public health capacity and take some
-          initial steps to reopen — protecting their communities from the
-          disease and supporting economic recovery and growth. Below,
-          COVID-Local provides decision-makers with easy-to-use metrics for a
-          phased re-opening strategy. These metrics can be used to assess
-          existing response, pinpoint areas for action, and make decisions for
-          moving to the next phase of re-opening. The graphics in the{' '}
-          <strong>Metrics Overview</strong> describe phases and the key metrics
-          associated with each phase under a set of public health categories.
-          The <strong>Scorecard</strong> (found on the Metrics Scorecard tab and
-          available as a PDF download) can be used to self-assess community
-          progress across all metrics for each Phase. The{' '}
-          <strong>Assess Your Progress</strong> tab provides a series of
-          graphics with phase-specific metrics. The interactive checklist can be
-          used to show progress toward meeting thresholds for each phase.
-        </p>
-        <div className={styles.filters}>
-          <button
-            onClick={onClickTab}
-            aria-pressed={tab === 'METRICS OVERVIEW'}
-          >
-            METRICS OVERVIEW
-          </button>
-          <button
-            onClick={onClickTab}
-            aria-pressed={tab === 'METRICS SCORECARD'}
-          >
-            METRICS SCORECARD
-          </button>
-          <button
-            onClick={onClickTab}
-            aria-pressed={tab === 'ASSESS YOUR PROGRESS'}
-          >
-            ASSESS YOUR PROGRESS
-          </button>
-        </div>
+      </main>
+      <footer className={styles.footer}>
+        <h1>A JOINT PROJECT OF</h1>
+        <a href="#" className={styles.georgetown}>
+          <img
+            src="/assets/images/logos/Georgetown-small.png"
+            alt="Georgetown University"
+          />
+        </a>
+        <a href="#" className={styles.talus}>
+          <img
+            src="/assets/images/logos/talus-logo-01.png"
+            alt="Talus Analytics"
+          />
+        </a>
+        <a href="#" className={styles.nti}>
+          <img
+            src="/assets/images/logos/Nuclear_Threat_Initiative_logo.svg"
+            alt="Nuclear Threat Initiative"
+          />
+        </a>
+        <a href="#" className={styles.cgd}>
+          <img
+            src="/assets/images/logos/center-for-global-development.png"
+            alt="Center for Global Development"
+          />
+        </a>
+      </footer>
+    </div>
+  </Layout>
+)
 
-        {tab === 'METRICS OVERVIEW' && <TabSection />}
-        {tab === 'METRICS SCORECARD' && <MetricsScorecard layout="grid" />}
-        {tab === 'ASSESS YOUR PROGRESS' && (
-          <MetricsScorecard layout="breakout" />
-        )}
-      </article>
-    </Layout>
-  )
-}
-
-export default MetricsPage
+export default LandingPage

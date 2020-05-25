@@ -1,5 +1,7 @@
 /* @import 'https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/css/rawline.css'; */
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
 /* Fonts weights are commented out if they are not used to imprive performance */
 /* font-display swap is used to allow browsers to show text before font load on slow connections. */
 
@@ -15,7 +17,6 @@
     font-style: normal;
 } */
 
-
 /* 
 @font-face {
     font-family: 'rawline';
@@ -29,7 +30,6 @@
     font-style: italic;
 
 } */
-
 
 /* 
 @font-face {
@@ -60,52 +60,59 @@
 
 } */
 
-
-
 @font-face {
-    font-family: 'rawline';
-    src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300-.eot');
-    src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300-.eot?#iefix') format('embedded-opentype'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300.woff2') format('woff2'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300.woff') format('woff'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300.ttf') format('truetype'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300.svg') format('svg');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'rawline';
+  src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300-.eot');
+  src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300-.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300.woff2')
+      format('woff2'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300.woff')
+      format('woff'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300.ttf')
+      format('truetype'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300.svg')
+      format('svg');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
-
-
 @font-face {
-    font-family: 'rawline';
-    src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300i.eot');
-    src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300i.eot?#iefix') format('embedded-opentype'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300i.woff2') format('woff2'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300i.woff') format('woff'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300i.ttf') format('truetype'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300i.svg') format('svg');
-    font-weight: 300;
-    font-style: italic;
-    font-display: swap;
+  font-family: 'rawline';
+  src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300i.eot');
+  src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300i.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300i.woff2')
+      format('woff2'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300i.woff')
+      format('woff'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300i.ttf')
+      format('truetype'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-300i.svg')
+      format('svg');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
 }
 
-
-
 @font-face {
-    font-family: 'rawline';
-    src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-400.eot');
-    src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-400.eot?#iefix') format('embedded-opentype'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-400.woff2') format('woff2'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-400.woff') format('woff'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-400.ttf') format('truetype'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-400.svg') format('svg');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'rawline';
+  src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-400.eot');
+  src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-400.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-400.woff2')
+      format('woff2'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-400.woff')
+      format('woff'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-400.ttf')
+      format('truetype'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-400.svg')
+      format('svg');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
-
-
 
 /* @font-face {
     font-family: 'rawline';
@@ -120,36 +127,41 @@
 
 } */
 
-
-
 @font-face {
-    font-family: 'rawline';
-    src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500.eot');
-    src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500.eot?#iefix') format('embedded-opentype'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500.woff2') format('woff2'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500.woff') format('woff'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-.ttf') format('truetype'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500.svg') format('svg');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'rawline';
+  src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500.eot');
+  src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500.woff2')
+      format('woff2'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500.woff')
+      format('woff'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-.ttf')
+      format('truetype'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500.svg')
+      format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
-
-
 @font-face {
-    font-family: 'rawline';
-    src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500i.eot');
-    src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500i.eot?#iefix') format('embedded-opentype'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500i.woff2') format('woff2'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500i.woff') format('woff'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500i.ttf') format('truetype'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500i.svg') format('svg');
-    font-weight: 500;
-    font-style: italic;
-    font-display: swap;
+  font-family: 'rawline';
+  src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500i.eot');
+  src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500i.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500i.woff2')
+      format('woff2'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500i.woff')
+      format('woff'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500i.ttf')
+      format('truetype'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-500i.svg')
+      format('svg');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
 }
-
 
 /* 
 @font-face {
@@ -180,21 +192,23 @@
 
 } */
 
-
-
 @font-face {
-    font-family: 'rawline';
-    src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-700.eot');
-    src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-700.eot?#iefix') format('embedded-opentype'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-700.woff2') format('woff2'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-700.woff') format('woff'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-700.ttf') format('truetype'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-700.svg') format('svg');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'rawline';
+  src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-700.eot');
+  src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-700.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-700.woff2')
+      format('woff2'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-700.woff')
+      format('woff'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-700.ttf')
+      format('truetype'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-700.svg')
+      format('svg');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
-
 
 /* 
 @font-face {
@@ -211,19 +225,22 @@
 } */
 
 @font-face {
-    font-family: 'rawline';
-    src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-800.eot');
-    src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-800.eot?#iefix') format('embedded-opentype'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-800.woff2') format('woff2'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-800.woff') format('woff'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-800.ttf') format('truetype'),
-         url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-800.svg') format('svg');
-    font-weight: 800;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'rawline';
+  src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-800.eot');
+  src: url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-800.eot?#iefix')
+      format('embedded-opentype'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-800.woff2')
+      format('woff2'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-800.woff')
+      format('woff'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-800.ttf')
+      format('truetype'),
+    url('https://cdn.rawgit.com/h-ibaldo/Raleway_Fixed_Numerals/master/font/rawline-800.svg')
+      format('svg');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
 }
-
-
 
 /* @font-face {
     font-family: 'rawline';
@@ -251,7 +268,6 @@
 
 } */
 
-
 /* 
 @font-face {
     font-family: 'rawline';
@@ -265,4 +281,3 @@
     font-style: italic;
 
 } */
-
