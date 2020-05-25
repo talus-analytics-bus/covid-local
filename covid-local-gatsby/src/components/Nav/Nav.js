@@ -143,7 +143,7 @@ const Nav = () => {
 
             <li>
               <Link activeClassName={styles.active} to="/contact/">
-                Contact&nbsp;Us
+                Feedback
               </Link>
             </li>
           </ul>
