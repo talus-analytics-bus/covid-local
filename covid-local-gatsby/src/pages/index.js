@@ -7,10 +7,7 @@ import styles from '../styles/landingpage.module.scss'
 
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 function shuffleArray(array) {
-  console.log('shuffle')
-  console.log(array.length)
   for (let i = array.length - 1; i > 0; i--) {
-    console.log('shuffle')
     const j = Math.floor(Math.random() * (i + 1))
     ;[array[i], array[j]] = [array[j], array[i]]
   }
@@ -24,15 +21,10 @@ const LandingPage = props => {
   React.useEffect(() => {
     fetch('/assets/content/resources.json')
       .then(response => response.json())
-      .then(resources => {
-        const resources2 = resources.resources
-        console.log('before shuffle')
-        console.log(resources2)
-        shuffleArray(resources2)
-        console.log('after shuffle')
-        console.log(resources2)
-        console.log(resources2[0])
-        setResource(resources2[0])
+      .then(jsonString => {
+        const resources = jsonString.resources
+        shuffleArray(resources)
+        setResource(resources[0])
       })
   }, [])
 
@@ -54,7 +46,7 @@ const LandingPage = props => {
               </p>
               <div className={styles.btnrow}>
                 {/* <a href="#">How to use the guide</a> */}
-                <a href="/guide/">Go to Guide</a>
+                <Link to="/guide/">Go to Guide</Link>
               </div>
             </div>
             <div className={styles.right}>
@@ -67,9 +59,9 @@ const LandingPage = props => {
                 src="/assets/images/metrics-screenshot.png"
                 alt="Metrics for Phased Reopening Screenshot"
               />
-              <a className={styles.buttonlink} href="/metrics/">
+              <Link className={styles.buttonlink} to="/metrics/">
                 Go to Metrics
-              </a>
+              </Link>
             </div>
           </header>
           <div className={styles.cols}>
@@ -88,9 +80,9 @@ const LandingPage = props => {
                   .slice(0, 50)
                   .join(' ') + '...'}
               </p>
-              <a className={styles.buttonlink} href="/blog/">
+              <Link className={styles.buttonlink} to="/blog/">
                 Go to Blog
-              </a>
+              </Link>
             </div>
             <div>
               <h1>LEARN</h1>
@@ -99,7 +91,7 @@ const LandingPage = props => {
                 <>
                   <h3>{resource.organization}</h3>
                   <h4>
-                    <Link to={resource.link}>{resource.name}</Link>
+                    <a href={resource.link}>{resource.name}</a>
                   </h4>
                   <p>
                     {resource.description.length > 250
@@ -109,24 +101,24 @@ const LandingPage = props => {
                           .join(' ') + '...'
                       : resource.description}
                   </p>
-                  <Link to={resource.link}>
+                  <a href={resource.link}>
                     {resource.link
                       .split('/')
                       .slice(0, 3)
                       .join('/')}
-                  </Link>
+                  </a>
                 </>
               )}
-              <a className={styles.buttonlink} href="/resources/">
+              <Link className={styles.buttonlink} to="/resources/">
                 Go to Resources
-              </a>
+              </Link>
             </div>
             <div>
               <h1>FEEDBACK</h1>
               <h2>Contact Us</h2>
-              <a className={styles.buttonlink} href="/reachback/">
+              <Link className={styles.buttonlink} to="/contact/">
                 Go to Contact Us
-              </a>
+              </Link>
             </div>
           </div>
         </main>
