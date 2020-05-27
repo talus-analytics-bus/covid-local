@@ -66,7 +66,11 @@ const LandingPage = () => {
         <main className={styles.main}>
           <header>
             <div className={styles.left}>
-              <h1>A Frontline Guide for Local Decision-Makers</h1>
+              <div className={styles.logo}></div>
+              <h1>
+                <strong>COVID</strong>-19
+              </h1>
+              <h2>A Frontline Guide for Local Decision-Makers</h2>
               <p>
                 The COVID-19 pandemic is causing significant disruptions to
                 cities and local communities globally. Given these challenges,
@@ -83,10 +87,7 @@ const LandingPage = () => {
             </div>
             <div className={styles.right}>
               <h2>Metrics for Phased Reopening</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                diam nonummy
-              </p>
+              <p>For communities planning for phased re-opening</p>
               <img
                 src="/assets/images/metrics-screenshot.png"
                 alt="Metrics for Phased Reopening Screenshot"

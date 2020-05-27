@@ -12,10 +12,10 @@
       "link": "https://georgetown.app.box.com/s/0sruh3cnji6txorqt2acgm0z9xx73ac1"
     },
     {
-      "name": "John's Hopkins COVID-19 Global Case Tracker",
+      "name": "Johns Hopkins COVID-19 Global Case Tracker",
       "description":
         "This tracking tool shows a map of the global case counts, deaths, and recoveries from COVID-19. In the United States, it also shows state level data. It is regularly updated. ",
-      "organization": "John's Hopkins",
+      "organization": "Johns Hopkins",
       "topic": "Caseload Mapping",
       "phase": "Response",
       "image": "Johns_Hopkins_Caseload_Tracker.png",
