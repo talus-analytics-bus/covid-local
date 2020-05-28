@@ -72,10 +72,11 @@ const Blog = () => {
                   .replace('<p>', '')
                   .split(' ')
                   .slice(0, 150)
-                  .join(' '),
+                  .join(' ') +
+                ' ' +
+                renderToString(<Link to={post.data.slug}>read more</Link>),
             }}
           ></p>
-          <Link to={post.data.slug}>read more</Link>
         </div>
       ))
 
