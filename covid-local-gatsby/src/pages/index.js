@@ -109,20 +109,22 @@ const LandingPage = () => {
               </h4>
               <h5>{blogpost.data.Date}</h5>
               <section
-                // grab the first 250 words, then add an ellipsis
-                // if the first paragraph is shorter than 250
-                // words, just use that without the ellipsis
-                dangerouslySetInnerHTML={{
-                  __html: unified()
+              // grab the first 250 words, then add an ellipsis
+              // if the first paragraph is shorter than 250
+              // words, just use that without the ellipsis
+              >
+                <p>
+                  {unified()
                     .use(markdown)
                     .use(html)
-                    .processSync(
-                      blogpost.data.Blog_Text.split(' ')
-                        .slice(0, 50)
-                        .join(' ') + '... '
-                    ),
-                }}
-              ></section>
+                    .processSync(blogpost.data.Blog_Text)
+                    .contents.split('</p>')[0]
+                    .replace('<p>', '')
+                    .split(' ')
+                    .slice(0, 50)
+                    .join(' ')}
+                </p>
+              </section>
               <Link className={styles.buttonlink} to="/blog/">
                 Go to Blog
               </Link>
