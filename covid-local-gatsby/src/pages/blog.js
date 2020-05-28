@@ -95,12 +95,12 @@ const Blog = () => {
       setFilter('ALL')
     }
   }
-  console.log('run component')
-  console.log(posts)
-  posts.map((index, post) => {
-    console.log(post)
-    console.log('index ', index)
-  })
+  // console.log('run component')
+  // console.log(posts)
+  // posts.map((index, post) => {
+  // console.log(post)
+  // console.log('index ', index)
+  // })
 
   let filteredPosts = posts
   if (filter !== '') {
