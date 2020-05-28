@@ -141,16 +141,20 @@
         margin-bottom: 0.5rem;
       }
 
-      p {
-        margin-bottom: 0.5rem;
-        a {
-          color: #479283;
-        }
+      a {
+        color: #479283;
       }
 
-      img {
-        max-height: 10rem;
-        max-width: 100%;
+      p {
+        margin-bottom: 0.5rem;
+
+        img {
+          float: right;
+          max-height: 8rem;
+          max-width: 60%;
+          margin-left: 0.5rem;
+          // margin-bottom: 0.25rem;
+        }
       }
 
       @media (max-width: 800px) {

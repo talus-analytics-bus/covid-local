@@ -1,4 +1,5 @@
 import React from 'react'
+import { renderToString } from 'react-dom/server'
 import { Helmet } from 'react-helmet'
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import Fuse from 'fuse.js'
@@ -54,25 +55,26 @@ const Blog = () => {
           </h1>
           <h2>{post.data.Date}</h2>
           <h3>{post.data.author}</h3>
-          <Link to={post.data.slug}>
-            <img src={post.data.Images[0].url} alt={post.data.title} />
-          </Link>
-          <div
-            // grab the first 250 words, then add an ellipsis
-            // if the first paragraph is shorter than 250
-            // words, just use that without the ellipsis
+          <p
             dangerouslySetInnerHTML={{
-              __html: unified()
-                .use(markdown)
-                .use(html)
-                .processSync(
-                  post.data.Blog_Text.split(' ')
-                    .slice(0, 100)
-                    .join(' ') + '... '
-                )
-                .contents.split(/<\/p>/g)[0],
+              __html:
+                renderToString(
+                  <Link to={post.data.slug}>
+                    <img src={post.data.Images[0].url} alt={post.data.title} />
+                  </Link>
+                ) +
+                unified()
+                  .use(markdown)
+                  .use(html)
+                  .processSync(post.data.Blog_Text)
+                  // Need to get just the text from the first paragraph
+                  .contents.split(/<\/p>/g)[0]
+                  .replace('<p>', '')
+                  .split(' ')
+                  .slice(0, 150)
+                  .join(' '),
             }}
-          ></div>
+          ></p>
           <Link to={post.data.slug}>read more</Link>
         </div>
       ))
