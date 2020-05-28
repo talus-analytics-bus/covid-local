@@ -83,15 +83,17 @@ const Nav = () => {
     <nav className={styles.mainNav}>
       <Link to="/" aria-label="home" className={styles.navbarLogo}></Link>
       <Link to="/" className={styles.navbarLeftText}>
-        <h1>COVID-19</h1>
-        <h2>A Frontline Guide for Local Decision-Makers</h2>
+        <h1>
+          <strong>COVID</strong> LOCAL
+        </h1>
+        {/* <h2>A Frontline Guide for Local Decision-Makers</h2> */}
       </Link>
 
       <div className={styles.navbarRightHider} style={dropHiderStyle}>
         <div className={styles.navbarRight} ref={navbarRightContent}>
           <ul>
             <li>
-              <Link activeClassName={styles.active} to="/">
+              <Link activeClassName={styles.active} to="/metrics/">
                 Metrics
               </Link>
             </li>
@@ -138,7 +140,7 @@ const Nav = () => {
 
             <li>
               <Link activeClassName={styles.active} to="/contact/">
-                Contact&nbsp;Us
+                Contact Us
               </Link>
             </li>
           </ul>
