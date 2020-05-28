@@ -68,7 +68,7 @@ const LandingPage = () => {
             <div className={styles.left}>
               <div className={styles.logo}></div>
               <h1>
-                <strong>COVID</strong>-19
+                <strong>COVID</strong> LOCAL
               </h1>
               <h2>A Frontline Guide for Local Decision-Makers</h2>
               <p>
@@ -87,7 +87,7 @@ const LandingPage = () => {
             </div>
             <div className={styles.right}>
               <h2>Metrics for Phased Reopening</h2>
-              <p>For communities planning for phased re-opening</p>
+              <p>To help leaders plan for phased re-opening</p>
               <img
                 src="/assets/images/metrics-screenshot.png"
                 alt="Metrics for Phased Reopening Screenshot"
