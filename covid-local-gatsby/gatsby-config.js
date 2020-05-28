@@ -8,19 +8,16 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/blog`,
-        name: 'blog',
-      },
-    },
-    {
-      resolve: 'gatsby-transformer-remark',
-      options: {
-        plugins: [], // just in case those previously mentioned remark plugins sound cool :)
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     path: `${__dirname}/src/blog`,
+    //     name: 'blog',
+    //   },
+    // },
+    // {
+    //   resolve: 'gatsby-transformer-remark',
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
