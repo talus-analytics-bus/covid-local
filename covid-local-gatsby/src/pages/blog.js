@@ -1,6 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { Link, graphql } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import Fuse from 'fuse.js'
 import unified from 'unified'
 import markdown from 'remark-parse'
@@ -10,9 +10,33 @@ import Layout from '../components/Layout/Layout'
 
 import styles from '../styles/blog.module.scss'
 
-const Blog = props => {
-  console.log(props.data.allAirtable)
-  const { edges: posts } = props.data.allAirtable
+const Blog = () => {
+  const data = useStaticQuery(graphql`
+    query IndexQuery {
+      allAirtable(
+        filter: { data: { publishing_status: { eq: "Publish" } } }
+        sort: { order: DESC, fields: data___Date }
+      ) {
+        edges {
+          node {
+            id
+            data {
+              Blog_Text
+              Images {
+                url
+              }
+              author
+              Category
+              Date
+              title
+              slug
+            }
+          }
+        }
+      }
+    }
+  `)
+  const { edges: posts } = data.allAirtable
 
   // console.log(posts)
   // console.log(posts.map(post => console.log(post)))
@@ -159,31 +183,31 @@ const Blog = props => {
   )
 }
 
-export const pageQuery = graphql`
-  query IndexQuery {
-    allAirtable(
-      filter: { data: { publishing_status: { eq: "Publish" } } }
-      sort: { order: DESC, fields: data___Date }
-    ) {
-      edges {
-        node {
-          id
-          data {
-            Blog_Text
-            Images {
-              url
-            }
-            author
-            Category
-            Date
-            title
-            slug
-          }
-        }
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query IndexQuery {
+//     allAirtable(
+//       filter: { data: { publishing_status: { eq: "Publish" } } }
+//       sort: { order: DESC, fields: data___Date }
+//     ) {
+//       edges {
+//         node {
+//           id
+//           data {
+//             Blog_Text
+//             Images {
+//               url
+//             }
+//             author
+//             Category
+//             Date
+//             title
+//             slug
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
 
 // export const pageQuery = graphql`
 //   query IndexQuery {
