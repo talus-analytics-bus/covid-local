@@ -72,12 +72,15 @@ const Contact = () => {
           <p>
             We welcome questions about the Frontline Guide, feedback on its
             contents, input on how COVID-Local efforts can support your
-            community, or other questions or comments, using the form below.
+            community, or other questions or comments, using the form below. You
+            can also sign-up to receive updates about the guide by selecting the
+            mailing list option when filling out the form below.
           </p>
           <p>
-            Your personal and contact information will only be used to respond
-            to your input. Do not submit any proprietary or protected
-            information via this form.
+            Your personal and contact information will only be used in
+            accordance with your preferences and follow the guidelines in{' '}
+            <a href="https://www.nti.org/legal/">NTI's outreach policies</a>. Do
+            not submit any proprietary or protected information via this form.
           </p>
         </div>
         <div className={styles.formRow}>{errorMessage}</div>
@@ -118,6 +121,7 @@ const Contact = () => {
                 Feedback on the Guide
               </option>
               <option value="Question">Submit question</option>
+              <option value="Join Mailinglist">Join mailing list</option>
             </select>
           </label>
 
