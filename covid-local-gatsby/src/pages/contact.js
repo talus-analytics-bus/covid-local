@@ -75,9 +75,10 @@ const Contact = () => {
             community, or other questions or comments, using the form below.
           </p>
           <p>
-            Your personal and contact information will only be used to respond
-            to your input. Do not submit any proprietary or protected
-            information via this form.
+            Your personal and contact information will be used to respond to
+            your input and to provide future updates regarding the site. Do not
+            submit any proprietary or protected information via this form. (
+            <a href="https://www.nti.org/legal/">NTI privacy policy</a>)
           </p>
         </div>
         <div className={styles.formRow}>{errorMessage}</div>
@@ -118,6 +119,7 @@ const Contact = () => {
                 Feedback on the Guide
               </option>
               <option value="Question">Submit question</option>
+              <option value="Join Mailinglist">Join mailing list</option>
             </select>
           </label>
 
