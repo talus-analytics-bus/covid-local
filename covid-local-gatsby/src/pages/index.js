@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
+import unified from 'unified'
+import markdown from 'remark-parse'
+import html from 'remark-html'
 
 import Layout from '../components/Layout/Layout'
 
@@ -17,27 +20,27 @@ function shuffleArray(array) {
 const LandingPage = () => {
   const data = useStaticQuery(graphql`
     query blogQuery {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
+      allAirtable(
+        filter: { data: { publishing_status: { eq: "Publish" } } }
+        sort: { order: DESC, fields: data___Date }
         limit: 1
       ) {
         edges {
           node {
-            excerpt(pruneLength: 300)
             id
-            frontmatter {
-              title
-              date(formatString: "dddd, MMMM DD, YYYY")
-              path
-              category
+            data {
+              Blog_Text
               author
+              Date
+              title
+              slug
             }
           }
         }
       }
     }
   `)
-  const blogpost = data.allMarkdownRemark.edges[0].node
+  const blogpost = data.allAirtable.edges[0].node
 
   const [resource, setResource] = React.useState()
 
@@ -68,7 +71,7 @@ const LandingPage = () => {
             <div className={styles.left}>
               <div className={styles.logo}></div>
               <h1>
-                <strong>COVID</strong>-19
+                <strong>COVID</strong> LOCAL
               </h1>
               <h2>A Frontline Guide for Local Decision-Makers</h2>
               <p>
@@ -87,7 +90,7 @@ const LandingPage = () => {
             </div>
             <div className={styles.right}>
               <h2>Metrics for Phased Reopening</h2>
-              <p>For communities planning for phased re-opening</p>
+              <p>To help leaders plan for phased re-opening</p>
               <img
                 src="/assets/images/metrics-screenshot.png"
                 alt="Metrics for Phased Reopening Screenshot"
@@ -102,17 +105,26 @@ const LandingPage = () => {
               <h1>BLOG</h1>
               <h2>Notes from the field</h2>
               <h4>
-                <Link to={blogpost.frontmatter.path}>
-                  {blogpost.frontmatter.title}
-                </Link>
+                <Link to={blogpost.data.slug}>{blogpost.data.title}</Link>
               </h4>
-              <h5>{blogpost.frontmatter.date}</h5>
-              <p>
-                {blogpost.excerpt
-                  .split(' ')
-                  .slice(0, 50)
-                  .join(' ') + '...'}
-              </p>
+              <h5>{blogpost.data.Date}</h5>
+              <section
+              // grab the first 250 words, then add an ellipsis
+              // if the first paragraph is shorter than 250
+              // words, just use that without the ellipsis
+              >
+                <p>
+                  {unified()
+                    .use(markdown)
+                    .use(html)
+                    .processSync(blogpost.data.Blog_Text)
+                    .contents.split('</p>')[0]
+                    .replace('<p>', '')
+                    .split(' ')
+                    .slice(0, 50)
+                    .join(' ')}
+                </p>
+              </section>
               <Link className={styles.buttonlink} to="/blog/">
                 Go to Blog
               </Link>

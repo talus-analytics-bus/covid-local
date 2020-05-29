@@ -107,22 +107,29 @@ const MetricsPage = () => {
           </div>
         </div>
         <p>
-          As the COVID-19 pandemic continues, local leaders across the United
-          States are working to bolster public health capacity and take some
-          initial steps to reopen — protecting their communities from the
-          disease and supporting economic recovery and growth. Below,
-          COVID-Local provides decision-makers with easy-to-use metrics for a
-          phased re-opening strategy. These metrics can be used to assess
-          existing response, pinpoint areas for action, and make decisions for
-          moving to the next phase of re-opening. The graphics in the{' '}
-          <strong>Metrics Overview</strong> describe phases and the key metrics
-          associated with each phase under a set of public health categories.
-          The <strong>Scorecard</strong> (found on the Metrics Scorecard tab and
-          available as a PDF download) can be used to self-assess community
-          progress across all metrics for each Phase. The{' '}
-          <strong>Assess Your Progress</strong> tab provides a series of
-          graphics with phase-specific metrics. The interactive checklist can be
-          used to show progress toward meeting thresholds for each phase.
+          Local leaders across the United States are working to bolster public
+          health capacity and take some initial steps to reopen — protecting
+          their communities from the disease and supporting economic recovery
+          and growth. COVID-Local provides decision-makers with easy-to-use
+          metrics for a phased re-opening strategy. These metrics can be used to
+          assess current response, pinpoint areas for action, and make decisions
+          for moving to the next phase of re-opening.
+          <ul>
+            <li>
+              <strong>Metrics Overview</strong> Describes phases and key metrics
+              associated with each phase under a set of public health
+              categories.
+            </li>
+            <li>
+              <strong>Scorecard</strong> Shows how to self-assess your
+              community’s progress across all metrics for each Phase.
+            </li>
+            <li>
+              <strong>Assess Your Progress</strong> Offers an interactive
+              checklist to be used to show progress toward meeting thresholds
+              for each phase.
+            </li>
+          </ul>
         </p>
         <div className={styles.filters}>
           <button

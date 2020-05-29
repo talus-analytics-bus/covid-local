@@ -114,7 +114,7 @@
     }
 
     .post {
-      margin-bottom: 2rem;
+      margin-bottom: 4rem;
 
       h1 {
         font-size: 24px;
@@ -141,9 +141,20 @@
         margin-bottom: 0.5rem;
       }
 
+      a {
+        color: #479283;
+      }
+
       p {
-        a {
-          color: #479283;
+        margin-bottom: 0.5rem;
+        // text-align: justify;
+
+        img {
+          float: right;
+          max-height: 8rem;
+          max-width: 50%;
+          margin-left: 0.75rem;
+          // margin-bottom: 0.25rem;
         }
       }
 

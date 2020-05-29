@@ -51,6 +51,7 @@
 @media only screen and (max-width: 992px) {
   .mainNav {
     padding: 2rem 0;
+    padding-right: 4rem;
   }
   .mainNav:after {
     left: -1rem;
@@ -224,6 +225,14 @@ nav .subMenu button {
 }
 
 @media (max-width: 1170px) {
+  .mainNav {
+    align-items: center;
+  }
+
+  .navbarLeftText {
+    margin: 0;
+  }
+
   .menuButton {
     display: block;
     background: none;
@@ -238,14 +247,14 @@ nav .subMenu button {
     margin-left: auto;
     z-index: 3;
     position: absolute;
-    top: 60px;
+    top: 48px;
     right: 20px;
   }
 
   .navbarRightHider {
     position: absolute;
     right: -15px;
-    top: 30px;
+    top: 18px;
     overflow: hidden;
     height: 0;
     transition: 250ms ease;
