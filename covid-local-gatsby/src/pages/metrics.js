@@ -92,16 +92,16 @@ const MetricsPage = () => {
                 className={styles.row}
                 onClick={toggleDownloadDetail}
               >
-                <span>Metrics overview</span> <span>pdf, 535kb</span>
+                <span>Metrics overview</span> <span>pdf, 5.7mb</span>
               </a>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="/assets/documents/COVID Local Metrics scorecard.pdf"
+                href="/assets/documents/COVID Local Metrics scorecard.png"
                 className={styles.row}
                 onClick={toggleDownloadDetail}
               >
-                <span>Metrics scorecard</span> <span>pdf, 157kb</span>
+                <span>Metrics scorecard</span> <span>png, 1.2b</span>
               </a>
             </div>
           </div>
