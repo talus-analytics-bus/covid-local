@@ -26,7 +26,7 @@ export default function Template({
             },
           ]}
         />
-        <Link to="/blog">&lt; back to all posts</Link>
+        <Link to="/blog/">&lt; back to all posts</Link>
         <header>
           <h1>{post.data.title}</h1>
           <h2>{post.data.Date}</h2>

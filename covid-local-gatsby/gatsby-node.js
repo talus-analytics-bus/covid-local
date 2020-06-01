@@ -36,7 +36,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
+  // printing out paths to make it easy to copy / paste for the invalidation
+  console.log('blog post paths')
   result.data.allAirtable.edges.forEach(({ node }) => {
+    console.log('"' + node.data.slug + 'index.html' + '" \\')
+    console.log('"' + node.data.slug + '" \\')
     createPage({
       path: node.data.slug,
       component: blogPostTemplate,
