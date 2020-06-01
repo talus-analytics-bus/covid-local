@@ -68,7 +68,7 @@ jobs:
             "/blog/front-and-center-ep1/" \
             "/blog/Lauching-COVID-Local/index.html" \
             "/blog/Lauching-COVID-Local/" \
-            "/assets/documents/COVID Local Metrics overview.pdf" \
+            "/assets/documents/COVID\ Local\ Metrics\ overview.pdf" \
 
 
       - run:
