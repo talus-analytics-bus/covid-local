@@ -42,34 +42,8 @@ jobs:
           command: cd covid-local-gatsby; aws s3 sync public/ s3://covid-checklist --delete
 
       - run:
-          name: invalidate index.html
-          command: |
-            aws cloudfront create-invalidation \
-            --distribution-id E268NLA9SJTWCC \
-            --paths \
-            "/index.html" \
-            "/resources/index.html" \
-            "/blog/index.html" \
-            "/about/index.html" \
-            "/contact/index.html" \
-            "/guide/index.html" \
-            "/" \
-            "/resources/" \
-            "/blog/" \
-            "/about/" \
-            "/contact/" \
-            "/guide/" \
-            "/blog/COVID-19-Frontline-Guide/index.html" \
-            "/blog/COVID-19-Frontline-Guide/" \
-            "/blog/Global-Parliament-of-Mayors/index.html" \
-            "/blog/Global-Parliament-of-Mayors/" \
-            "/blog/front-and-center-ep0/index.html" \
-            "/blog/front-and-center-ep0/" \
-            "/blog/front-and-center-ep1/index.html" \
-            "/blog/front-and-center-ep1/" \
-            "/blog/Lauching-COVID-Local/index.html" \
-            "/blog/Lauching-COVID-Local/" \
-            "/assets/documents/COVID%20Local%20Metrics%20overview.pdf" \
+          name: cloudfront invalidation
+          command: cd .circleci; python3 invalidate.py E268NLA9SJTWCC
 
 
       - run:

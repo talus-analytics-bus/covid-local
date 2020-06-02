@@ -1,8 +1,20 @@
 import os 
 import sys
 import boto3
+import argparse
 from time import time
 from urllib.parse import quote
+
+# I want to add actual argparsing eventually
+# parser=argparse.ArgumentParser()
+
+# parser.add_argument('--distribution', 
+# 	help='AWS Cloudfront Distribution ID to invalidate')
+
+# parser.add_argument('--directory', 
+# 	help='Root web directory (location of index.html entry point)')
+	
+
 
 PATHS = []
 CLIENT = boto3.client('cloudfront')
