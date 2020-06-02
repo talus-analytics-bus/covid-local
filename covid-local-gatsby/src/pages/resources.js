@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import Fuse from 'fuse.js'
 
 import Layout from '../components/Layout/Layout'
@@ -203,23 +204,23 @@ const Resources = props => {
       <div className={styles.info}>
         <h2>{r.topic}</h2>
         <h1>{r.name}</h1>
-        <a target="_blank" rel="noopener noreferrer" href={r.link}>
+        <OutboundLink target="_blank" rel="noopener noreferrer" href={r.link}>
           {r.link
             .split('/')
             .slice(0, 3)
             .join('/')}
-        </a>
+        </OutboundLink>
         <p>{r.description}</p>
       </div>
       {r.image && (
-        <a
+        <OutboundLink
           target="_blank"
           rel="noopener noreferrer"
           href={r.link}
           className={styles.image}
         >
           <img src={imgpath + r.image} alt={r.name + ' Image'} />
-        </a>
+        </OutboundLink>
       )}
     </div>
   ))
