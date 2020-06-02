@@ -97,7 +97,7 @@ const MetricsPage = () => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="/assets/documents/COVID Local Metrics scorecard.png"
+                href="/assets/documents/COVID Local Metrics scorecard.pdf"
                 className={styles.row}
                 onClick={toggleDownloadDetail}
               >
