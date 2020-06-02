@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
 import 'tippy.js/dist/tippy.css'
 import 'tippy.js/themes/light.css'
 
@@ -90,7 +91,14 @@ const MetricsPage = () => {
                 rel="noopener noreferrer"
                 href="/assets/documents/COVID Local Metrics overview.pdf"
                 className={styles.row}
-                onClick={toggleDownloadDetail}
+                onClick={() => {
+                  trackCustomEvent({
+                    category: 'Document Download',
+                    action: 'Metrics Overview Download',
+                    label: 'Metrics Overview Download',
+                  })
+                  toggleDownloadDetail()
+                }}
               >
                 <span>Metrics overview</span> <span>pdf, 939kb</span>
               </a>
@@ -99,7 +107,14 @@ const MetricsPage = () => {
                 rel="noopener noreferrer"
                 href="/assets/documents/COVID Local Metrics scorecard.pdf"
                 className={styles.row}
-                onClick={toggleDownloadDetail}
+                onClick={() => {
+                  trackCustomEvent({
+                    category: 'Document Download',
+                    action: 'Metrics Scorecard Download',
+                    label: 'Metrics Scorecard Download',
+                  })
+                  toggleDownloadDetail()
+                }}
               >
                 <span>Metrics scorecard</span> <span>pdf, 209kb</span>
               </a>
