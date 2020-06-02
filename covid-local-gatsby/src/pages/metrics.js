@@ -92,7 +92,7 @@ const MetricsPage = () => {
                 className={styles.row}
                 onClick={toggleDownloadDetail}
               >
-                <span>Metrics overview</span> <span>pdf, 5.7mb</span>
+                <span>Metrics overview</span> <span>pdf, 939kb</span>
               </a>
               <a
                 target="_blank"
@@ -101,7 +101,7 @@ const MetricsPage = () => {
                 className={styles.row}
                 onClick={toggleDownloadDetail}
               >
-                <span>Metrics scorecard</span> <span>png, 1.2b</span>
+                <span>Metrics scorecard</span> <span>pdf, 209kb</span>
               </a>
             </div>
           </div>
