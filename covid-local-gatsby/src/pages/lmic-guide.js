@@ -3,11 +3,14 @@ import { useStaticQuery, graphql } from 'gatsby'
 
 const LmicGuide = () => {
   const {
-    allAirtable: { edges: guideData },
+    questions: { edges: questions },
+    text: { edges: text },
   } = useStaticQuery(
     graphql`
       query guideData {
-        allAirtable(filter: { table: { regex: "/^Key Objective #[1-9]/" } }) {
+        questions: allAirtable(
+          filter: { table: { regex: "/^Key Objective #[1-9]/" } }
+        ) {
           edges {
             node {
               id
@@ -21,10 +24,25 @@ const LmicGuide = () => {
             }
           }
         }
+        text: allAirtable(filter: { table: { eq: "Objective Descriptions" } }) {
+          edges {
+            node {
+              data {
+                objective
+                title
+                description
+              }
+            }
+          }
+        }
       }
     `
   )
-  guideData.reverse()
+
+  console.log(questions)
+  console.log(text)
+
+  questions.reverse()
 
   const guideRestructured = {}
   let objective = ''
@@ -32,39 +50,60 @@ const LmicGuide = () => {
   let guidingQuestion = ''
   let subquestion = ''
 
-  guideData.forEach(edge => {
-    if (edge.node.table !== objective) {
-      guideRestructured[edge.node.table] = {}
-      objective = edge.node.table
+  questions.forEach(edge => {
+    const {
+      node: { table: table, data: data },
+    } = edge
+
+    // create new objective object
+    if (table !== objective) {
+      const textEntry = text.filter(entry =>
+        entry.node.data.objective.includes(table)
+      )[0].node.data
+
+      objective = table
+      guideRestructured[objective] = {
+        sections: {},
+        title: textEntry.title,
+        description: textEntry.description,
+      }
     }
-    if (edge.node.data.Section !== section) {
-      guideRestructured[edge.node.table][edge.node.data.Section] = {}
-      section = edge.node.data.Section
+
+    // create new section object
+    if (data.Section !== section) {
+      section = data.Section
+      guideRestructured[objective].sections[section] = {}
     }
-    if (edge.node.data.Guiding_Question !== guidingQuestion) {
-      guideRestructured[edge.node.table][edge.node.data.Section][
-        edge.node.data.Guiding_Question
-      ] = []
-      guidingQuestion = edge.node.data.Guiding_Question
+
+    // create new guiding question, with an array for subquestions
+    if (data.Guiding_Question !== guidingQuestion) {
+      guidingQuestion = data.Guiding_Question
+      guideRestructured[objective].sections[section][guidingQuestion] = []
     }
+
+    // create new subquestion in the array
     if (
-      (edge.node.data.Associated_subquestions !== subquestion) &
-      (edge.node.data.Associated_subquestions !== 'N/A')
+      (data.Associated_subquestions !== subquestion) &
+      (data.Associated_subquestions !== 'N/A')
     ) {
-      guideRestructured[edge.node.table][edge.node.data.Section][
-        edge.node.data.Guiding_Question
-      ].push(edge.node.data.Associated_subquestions)
-      subquestion = edge.node.data.Associated_subquestions
+      subquestion = data.Associated_subquestions
+      guideRestructured[objective].sections[section][guidingQuestion].push(
+        data.Associated_subquestions
+      )
     }
   })
+
+  console.log(guideRestructured)
 
   return (
     <>
       <h1>Guide</h1>
-      {Object.entries(guideRestructured).map(([objective, sections]) => (
+      {Object.entries(guideRestructured).map(([objective, metadata]) => (
         <section key={objective}>
           <h2>{objective}</h2>
-          {Object.entries(sections).map(([section, questions]) => (
+          <h3>{metadata.title}</h3>
+          <p>{metadata.description}</p>
+          {Object.entries(metadata.sections).map(([section, questions]) => (
             <div key={section}>
               <h3>{section}</h3>
               <ol>
