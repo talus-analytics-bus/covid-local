@@ -51,6 +51,9 @@ module.exports = {
             baseId: `appolHuog4LD1xAjJ`,
             tableName: `Table 1`,
           },
+          {
+            baseId: 'appc2oaizsxQaNADz',
+          },
         ],
       },
     },
