@@ -39,9 +39,6 @@ const LmicGuide = () => {
     `
   )
 
-  console.log(questions)
-  console.log(text)
-
   questions.reverse()
 
   const guideRestructured = {}
@@ -57,15 +54,15 @@ const LmicGuide = () => {
 
     // create new objective object
     if (table !== objective) {
-      const textEntry = text.filter(entry =>
+      const metadata = text.filter(entry =>
         entry.node.data.objective.includes(table)
       )[0].node.data
 
       objective = table
       guideRestructured[objective] = {
         sections: {},
-        title: textEntry.title,
-        description: textEntry.description,
+        title: metadata.title,
+        description: metadata.description,
       }
     }
 
