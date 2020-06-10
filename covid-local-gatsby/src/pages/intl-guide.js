@@ -4,7 +4,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby'
 import Layout from '../components/Layout/Layout'
 import BlueExpandBox from '../components/BlueExpandBox/BlueExpandBox'
 
-import styles from '../styles/lmicGuide.module.scss'
+import styles from '../styles/intlGuide.module.scss'
 
 const LmicGuide = () => {
   const {
