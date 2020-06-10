@@ -1,5 +1,10 @@
 import React from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, Link } from 'gatsby'
+
+import Layout from '../components/Layout/Layout'
+import BlueExpandBox from '../components/BlueExpandBox/BlueExpandBox'
+
+import styles from '../styles/lmicGuide.module.scss'
 
 const LmicGuide = () => {
   const {
@@ -93,35 +98,52 @@ const LmicGuide = () => {
   console.log(guideRestructured)
 
   return (
-    <>
-      <h1>Guide</h1>
-      {Object.entries(guideRestructured).map(([objective, metadata]) => (
-        <section key={objective}>
-          <h2>{objective}</h2>
-          <h3>{metadata.title}</h3>
-          <p>{metadata.description}</p>
-          {Object.entries(metadata.sections).map(([section, questions]) => (
-            <div key={section}>
-              <h3>{section}</h3>
-              <ol>
-                {Object.entries(questions).map(([question, subquestions]) => (
-                  <li key={question}>
-                    {question}
-                    {subquestions.length > 0 && (
-                      <ol>
-                        {subquestions.map(subquestion => (
-                          <li key={subquestion}>{subquestion}</li>
-                        ))}
-                      </ol>
-                    )}
-                  </li>
-                ))}
-              </ol>
-            </div>
+    <Layout>
+      <header className={styles.header}>
+        <h1>International Guide</h1>
+        <Link to="/contact/">Contact Us</Link>
+      </header>
+      <section className={styles.main}>
+        <section className={styles.guide}>
+          {Object.entries(guideRestructured).map(([objective, metadata]) => (
+            <BlueExpandBox key={objective}>
+              <header>
+                <h2>{objective}</h2>
+                <h3>{metadata.title}</h3>
+              </header>
+              <div className={styles.content}>
+                <div className={styles.text}>
+                  <p>{metadata.description}</p>
+                  {Object.entries(metadata.sections).map(
+                    ([section, questions]) => (
+                      <div key={section}>
+                        <h3>{section}</h3>
+                        <ol>
+                          {Object.entries(questions).map(
+                            ([question, subquestions]) => (
+                              <li key={question}>
+                                {question}
+                                {subquestions.length > 0 && (
+                                  <ol>
+                                    {subquestions.map(subquestion => (
+                                      <li key={subquestion}>{subquestion}</li>
+                                    ))}
+                                  </ol>
+                                )}
+                              </li>
+                            )
+                          )}
+                        </ol>
+                      </div>
+                    )
+                  )}
+                </div>
+              </div>
+            </BlueExpandBox>
           ))}
         </section>
-      ))}
-    </>
+      </section>
+    </Layout>
   )
 }
 
