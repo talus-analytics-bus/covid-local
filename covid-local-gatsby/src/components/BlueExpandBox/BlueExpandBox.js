@@ -21,7 +21,7 @@ const ExpandBox = props => {
   }
 
   return (
-    <section className={styles.main}>
+    <section className={styles.main + ' ' + props.className}>
       <button
         aria-label={'Expand Section'}
         className={styles.firstSection}

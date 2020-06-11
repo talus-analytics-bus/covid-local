@@ -26,9 +26,12 @@ const alpha = [
 ]
 
 const GuideObjective = props => (
-  <BlueExpandBox>
+  <BlueExpandBox className="expanding-boxes">
     <header>
-      <div className={styles.number} data-number={props.objectiveNumber}>
+      <div
+        className={styles.number + ' number'}
+        data-number={props.objectiveNumber + 1}
+      >
         {props.objectiveNumber + 1}
       </div>
       <h2>{props.objective}</h2>
@@ -123,31 +126,8 @@ const GuideSubQuestion = props => {
       <span className={styles.number}>{alpha[props.subquestionNumber]}. </span>
       <span className={styles.labelText}>{props.subquestion}</span>
     </label>
-    // <label>
-    //   <input
-    //     name={props.id}
-    //     type="checkbox"
-    //     checked={checkboxState.checkboxStatus[props.id]}
-    //     onChange={e => checkboxState.changeCheckboxStatus(props.id, e)}
-    //   />
-    //   {props.subquestionNumber + 1} {props.subquestion}
-    // </label>
   )
 }
-
-const GuideSection = props => (
-  <div>
-    <h3>{props.section}</h3>
-    <ol>{props.children}</ol>
-  </div>
-)
-
-const GuideQuestion = props => (
-  <li>
-    {props.question}
-    {props.children}
-  </li>
-)
 
 const Guide = props => {
   // set up in itial checkbox state
@@ -206,6 +186,10 @@ const Guide = props => {
 
   return (
     <CheckboxState.Provider value={{ checkboxStatus, changeCheckboxStatus }}>
+      <div className="guide">
+        <nav className={styles.documentNav + ' document-nav'}></nav>
+      </div>
+
       <section className={styles.guide}>
         {// Map over objectives
         Object.entries(props.content).map(

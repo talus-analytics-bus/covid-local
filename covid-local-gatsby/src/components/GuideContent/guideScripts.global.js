@@ -54,9 +54,15 @@ const initGuideScripts = () => {
     }
   }
 
+  // document-nav needs to be set to 0px on pageload
+  document.querySelector('.document-nav').style.height = '0px'
+
   // Hide / show the sticky nav... this needs to be improved
   const toggleDocumentNav = () => {
-    if (window.location.pathname === '/guide/') {
+    if (
+      window.location.pathname === '/guide/' ||
+      window.location.pathname === '/intl-guide/'
+    ) {
       const documentNav = document.querySelector('.document-nav')
 
       documentNav.style.height === '0px'
@@ -227,7 +233,10 @@ const initGuideScripts = () => {
   // the document nav when there are open sections on-screen
   let onScreen = []
   const sectionObserver = new IntersectionObserver((entries, observer) => {
-    if (window.location.pathname === '/guide/') {
+    if (
+      window.location.pathname === '/guide/' ||
+      window.location.pathname === '/intl-guide/'
+    ) {
       const newOnScreen = entries
         .filter(entry => entry.isIntersecting)
         .map(entry =>
@@ -257,6 +266,10 @@ const initGuideScripts = () => {
     sectionObserver.observe(section)
   })
 
+  document.querySelectorAll('section.expanding-boxes').forEach(section => {
+    sectionObserver.observe(section)
+  })
+
   // // This isn't safe, due to asychronous event handling...
   // const allSectionsCollapsed = () => {
   //  return Array.from(document.querySelectorAll('.expand-button'))
@@ -267,7 +280,12 @@ const initGuideScripts = () => {
 
   // open the document nav after the first section has passed
   const headerObserver = new IntersectionObserver((entries, observer) => {
-    toggleDocumentNav()
+    if (
+      window.scrollY >
+      document.querySelector('.introduction-header').offsetHeight
+    ) {
+      toggleDocumentNav()
+    }
   })
 
   headerObserver.observe(document.querySelector('.introduction-header'))

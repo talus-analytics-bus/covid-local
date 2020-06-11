@@ -7,7 +7,15 @@ import Guide from '../components/Guide/Guide'
 
 import styles from '../styles/intlGuide.module.scss'
 
+import initGuideScripts from '../components/GuideContent/guideScripts.global.js'
+import '../styles/guideStyle.css'
+import guideHeaderContent from '../components/Guide/GuideHeaderContent.html'
+
 const LmicGuide = () => {
+  React.useEffect(() => {
+    initGuideScripts()
+  }, [])
+
   const {
     questions: { edges: questions },
     text: { edges: text },
@@ -103,10 +111,14 @@ const LmicGuide = () => {
 
   return (
     <Layout>
-      <header className={styles.header}>
-        <h1>International Guide</h1>
-        <Link to="/contact/">Contact Us</Link>
-      </header>
+      {/* <header className={styles.header}> */}
+      {/*   <h1>International Guide</h1> */}
+      {/*   <Link to="/contact/">Contact Us</Link> */}
+      {/* </header> */}
+      <header
+        className={'guide'}
+        dangerouslySetInnerHTML={{ __html: guideHeaderContent }}
+      />
       <section className={styles.main}>
         <Guide content={guideRestructured} />
       </section>
