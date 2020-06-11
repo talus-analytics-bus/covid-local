@@ -279,12 +279,18 @@ const initGuideScripts = () => {
   // };
 
   // open the document nav after the first section has passed
+
   const headerObserver = new IntersectionObserver((entries, observer) => {
     if (
-      window.scrollY >
-      document.querySelector('.introduction-header').offsetHeight
+      window.location.pathname === '/guide/' ||
+      window.location.pathname === '/intl-guide/'
     ) {
-      toggleDocumentNav()
+      if (
+        window.scrollY >
+        document.querySelector('.introduction-header').offsetHeight
+      ) {
+        toggleDocumentNav()
+      }
     }
   })
 
