@@ -1,4 +1,5 @@
 import React from 'react'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 import BlueExpandBox from '../BlueExpandBox/BlueExpandBox'
 
@@ -40,6 +41,14 @@ const GuideObjective = props => (
     <div className={styles.content}>
       <p>{props.metadata.description}</p>
       <div className={styles.questions}>{props.children}</div>
+      <div className={styles.resources}>
+        <h3>Resources</h3>
+        {props.metadata.resources.map(link => (
+          <OutboundLink key={link.href} href={link.href}>
+            {link.content}
+          </OutboundLink>
+        ))}
+      </div>
     </div>
   </BlueExpandBox>
 )
@@ -129,6 +138,13 @@ const GuideSubQuestion = props => {
   )
 }
 
+const Resources = props => (
+  <div className={styles.resources}>
+    <h3>{props.section}</h3>
+    {props.children}
+  </div>
+)
+
 const Guide = props => {
   // set up in itial checkbox state
   const checkboxStatusSetup = {}
@@ -141,15 +157,17 @@ const Guide = props => {
           ] = false
         }
 
-        subquestions.map((subquestion, subquestionNumber) => {
-          checkboxStatusSetup[
-            '' +
-              objectiveNumber +
-              sectionNumber +
-              questionNumber +
-              subquestionNumber
-          ] = false
-        })
+        if (subquestions.length > 0) {
+          subquestions.map((subquestion, subquestionNumber) => {
+            checkboxStatusSetup[
+              '' +
+                objectiveNumber +
+                sectionNumber +
+                questionNumber +
+                subquestionNumber
+            ] = false
+          })
+        }
       })
     })
   })
@@ -174,7 +192,6 @@ const Guide = props => {
       ...checkboxStatus,
       [id]: e.target.checked,
     })
-    console.log('save state' + e.target.checked)
     window.localStorage.setItem(
       'intlGuideCheckboxes',
       JSON.stringify({

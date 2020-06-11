@@ -100,6 +100,11 @@ module.exports = {
             tableName: 'Objective Descriptions',
             tableView: 'Grid view',
           },
+          {
+            baseId: 'appc2oaizsxQaNADz',
+            tableName: 'Resources Links',
+            tableView: 'Grid view',
+          },
         ],
       },
     },

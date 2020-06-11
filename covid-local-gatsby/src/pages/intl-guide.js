@@ -19,6 +19,7 @@ const LmicGuide = () => {
   const {
     questions: { edges: questions },
     text: { edges: text },
+    resources: { edges: resources },
   } = useStaticQuery(
     graphql`
       query guideData {
@@ -49,6 +50,17 @@ const LmicGuide = () => {
             }
           }
         }
+        resources: allAirtable(filter: { table: { eq: "Resources Links" } }) {
+          edges {
+            node {
+              data {
+                Link_Language
+                Associated_Link
+                Objective__
+              }
+            }
+          }
+        }
       }
     `
   )
@@ -56,6 +68,7 @@ const LmicGuide = () => {
   // For some reason, the records come in from airtable in reverse order...
   if (questions[0].node.table !== 'Key Objective #1') {
     questions.reverse()
+    resources.reverse()
   }
 
   const guideRestructured = {}
@@ -75,11 +88,23 @@ const LmicGuide = () => {
         entry.node.data.objective.includes(table)
       )[0].node.data
 
+      const links = resources
+        .filter(
+          resource =>
+            resource.node.data.Objective__ ===
+            Number(table.split('#').slice(-1)[0])
+        )
+        .map(resource => ({
+          href: resource.node.data.Associated_Link,
+          content: resource.node.data.Link_Language,
+        }))
+
       objective = table.trim()
       guideRestructured[objective] = {
         sections: {},
         title: metadata.title,
         description: metadata.description,
+        resources: links,
       }
     }
 
