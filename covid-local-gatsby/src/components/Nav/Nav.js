@@ -7,49 +7,20 @@ import styles from './Nav.module.scss'
 
 const Nav = () => {
   const navbarRightContent = React.useRef()
-  // const subMenuContent = React.useRef()
 
   const [mobileNavOpen, setMobileNavOpen] = React.useState(false)
-  // const [subMenuOpen, setSubMenuOpen] = React.useState(false)
 
   const [dropHiderStyle, setDropHiderStyle] = React.useState({
     height: 0,
     padding: '0 15px',
   })
 
-  //   const [subMenuHiderStyle, setSubMenuHiderStyle] = React.useState({
-  //     height: 0,
-  //     padding: '0 15px',
-  //   })
-  //
-  //   const [subMenuButtonStyle, setSubMenuButtonStyle] = React.useState({
-  //     display: 'block',
-  //   })
-
   React.useEffect(() => {
-    // Mobile menu or desktop menu
-    // if (window.innerWidth < 1170) {
-    //   setSubMenuHiderStyle({ height: 'auto', padding: 0, marginBottom: 0 })
-    //   setSubMenuButtonStyle({ display: 'none' })
-    // }
-    // Switch between mobile and desktop menus
-    // window.addEventListener('resize', () => {
-    //   if ((window.innerWidth < 1170) & (subMenuHiderStyle.height !== 'auto')) {
-    //     setSubMenuHiderStyle({ height: 'auto', padding: 0, marginBottom: 0 })
-    //     setSubMenuButtonStyle({ display: 'none' })
-    //   } else if (subMenuHiderStyle.height !== 'block') {
-    //     setDropHiderStyle({ height: 0, padding: '0 15px' })
-    // setSubMenuButtonStyle({ display: 'block' })
-    // if (subMenuOpen) {
-    //   setSubMenuHiderStyle({
-    //     height: subMenuContent.current.offsetHeight + 30,
-    //     padding: 15,
-    //   })
-    // } else {
-    //   setSubMenuHiderStyle({ height: 0, padding: '0 15px' })
-    // }
-    // }
-    // })
+    window.addEventListener('resize', () => {
+      if ((window.innerWidth > 1170) & (dropHiderStyle.height !== 'block')) {
+        setDropHiderStyle({ height: 0, padding: '0 15px' })
+      }
+    })
   }, [])
 
   const toggleNav = () => {
@@ -64,21 +35,6 @@ const Nav = () => {
       })
     }
   }
-
-  // const toggleSubmenu = () => {
-  //   if (window.innerWidth > 1170) {
-  //     if (subMenuOpen) {
-  //       setSubMenuOpen(false)
-  //       setSubMenuHiderStyle({ height: 0, padding: '0 15px' })
-  //     } else {
-  //       setSubMenuOpen(true)
-  //       setSubMenuHiderStyle({
-  //         height: subMenuContent.current.offsetHeight + 30,
-  //         padding: 15,
-  //       })
-  //     }
-  //   }
-  // }
 
   return (
     <nav className={styles.mainNav}>
