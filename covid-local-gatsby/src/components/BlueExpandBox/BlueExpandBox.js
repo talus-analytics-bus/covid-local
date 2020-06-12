@@ -25,7 +25,9 @@ const ExpandBox = props => {
 
   const expandHider = () => {
     // only call expand hider, don't toggle it
+    console.log('expandHider called')
     if (hiderStyle.height === 0) {
+      console.log('Expand the box')
       setHiderStyle({ height: content.current.offsetHeight })
       setIconStyle({ transform: 'scale(1, -1)' })
     }
