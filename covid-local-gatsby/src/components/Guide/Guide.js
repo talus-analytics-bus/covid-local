@@ -167,14 +167,16 @@ const GuideIndicatorsSection = props => (
 
 const GuideIndicator = props => (
   <>
-    {props.subquestions.length > 0 ? (
+    {props.metadata.subQuestions.length > 0 ? (
       <>
+        {console.log(props)}
         <div className="header">
-          <div className="number">{props.questionNumber}</div>
+          <div className="number">{props.metadata.number}</div>
           <p>{props.question}</p>
         </div>
-        {props.subquestions.map((subquestion, subquestionNumber) => (
+        {props.metadata.subQuestions.map((subquestion, subquestionNumber) => (
           <div key={props.questionNumber} className="radio">
+            {console.log(subquestion)}
             <div>
               <div className="radio-li">{alpha[subquestionNumber]}</div>
               <p>{subquestion}</p>
@@ -259,10 +261,10 @@ const Guide = props => {
         <GuideIndicatorsSection className="guide">
           {// Map over Indicators of Progress
           Object.entries(props.content.indicators).map(
-            ([question, subquestions], questionNumber) => (
+            ([question, metadata], questionNumber) => (
               <GuideIndicator
                 key={question}
-                {...{ question, subquestions, questionNumber }}
+                {...{ question, metadata, questionNumber }}
               ></GuideIndicator>
             )
           )}

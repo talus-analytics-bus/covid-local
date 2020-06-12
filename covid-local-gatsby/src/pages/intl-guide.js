@@ -87,6 +87,7 @@ const LmicGuide = () => {
   if (questions[0].node.table !== 'Key Objective #1') {
     questions.reverse()
     resources.reverse()
+    indicators.reverse()
   }
 
   const guideRestructured = { questions: {}, indicators: {} }
@@ -152,16 +153,42 @@ const LmicGuide = () => {
     }
   })
 
+  let indicatorQuestion = ''
+  let indicatorSubQuestion = ''
+  // let indicatorSubSubQuestion = ''
+
   indicators.forEach(edge => {
     const {
       node: { data: indicator },
     } = edge
-    guideRestructured.indicators[indicator.Guiding_Question] = []
 
-    if (indicator.Associated_subquestions.trim() !== 'N/A') {
-      subquestion = indicator.Associated_subquestions.trim()
-      guideRestructured.indicators[indicator.Guiding_Question].push(subquestion)
+    if (indicator.Guiding_Question.trim() !== indicatorQuestion) {
+      indicatorQuestion = indicator.Guiding_Question.trim()
+      guideRestructured.indicators[indicatorQuestion] = {
+        number: indicator.Existing__,
+        subQuestions: [],
+      }
     }
+
+    if (
+      (indicator.Associated_subquestions.trim() !== indicatorSubQuestion) &
+      (indicator.Associated_subquestions.trim() !== 'N/A')
+    ) {
+      indicatorSubQuestion = indicator.Associated_subquestions.trim()
+      guideRestructured.indicators[indicatorQuestion].subQuestions.push(
+        indicatorSubQuestion
+      )
+    }
+
+    // if (
+    //   (indicator.Associated_subquestions.trim() !== indicatorSubSubQuestion) &
+    //   (indicator.Associated_subquestions.trim() !== 'N/A')
+    // ) {
+    //   indicatorSubSubQuestion = indicator.Associated_subquestions.trim()
+    //   guideRestructured.indicators[indicatorQuestion][
+    //     indicatorSubQuestion
+    //   ].push(indicatorSubSubQuestion)
+    // }
   })
 
   console.log(guideRestructured)

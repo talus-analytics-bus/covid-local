@@ -54,6 +54,7 @@ module.exports = {
           {
             baseId: 'appc2oaizsxQaNADz',
             tableName: 'Indicators of Progress',
+            tableView: 'Grid view',
           },
           {
             baseId: 'appc2oaizsxQaNADz',
