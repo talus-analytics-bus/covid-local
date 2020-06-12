@@ -5,6 +5,8 @@ import unified from 'unified'
 import markdown from 'remark-parse'
 import html from 'remark-html'
 
+import DropDownLink from '../components/DropDownLink/DropDownLink'
+
 import Layout from '../components/Layout/Layout'
 
 import styles from '../styles/landingpage.module.scss'
@@ -84,8 +86,29 @@ const LandingPage = () => {
                 supporting communities effectively.
               </p>
               <div className={styles.btnrow}>
-                {/* <a href="#">How to use the guide</a> */}
-                <Link to="/guide/">Go to Guide</Link>
+                <DropDownLink className={styles.dropDownLink}>
+                  <a
+                    href="#"
+                    onClick={e => {
+                      e.preventDefault()
+                    }}
+                    className={styles.subMenuButton}
+                  >
+                    Go To Guide &#9660;
+                  </a>
+                  <ul>
+                    <li>
+                      <Link activeClassName={styles.active} to="/guide/">
+                        US Guide
+                      </Link>
+                    </li>
+                    <li>
+                      <Link activeClassName={styles.active} to="/intl-guide/">
+                        International&nbsp;Guide
+                      </Link>
+                    </li>
+                  </ul>
+                </DropDownLink>
               </div>
             </div>
             <div className={styles.right}>
