@@ -148,7 +148,10 @@ const initGuideScripts = () => {
 
         anchorID = anchorID.split('#')[1]
 
-        document.querySelector(`a[id=${anchorID}`).click()
+        const anchor = document.querySelector(`a[id=${anchorID}`)
+        const button = anchor.parentElement.parentElement
+        const expand = new Event('expand')
+        button.dispatchEvent(expand)
       }
 
       if (window.location.pathname === '/guide/') {

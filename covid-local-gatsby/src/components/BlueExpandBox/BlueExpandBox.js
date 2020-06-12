@@ -1,10 +1,13 @@
 import React, { useState, useRef, Children } from 'react'
 
+import useEventListener from '../../hooks/useEventListener'
+
 import styles from './BlueExpandBox.module.scss'
 
 const ExpandBox = props => {
   const children = Children.toArray(props.children)
   const content = useRef()
+  const button = useRef()
 
   const [hiderStyle, setHiderStyle] = useState({ height: 0 })
   const [iconStyle, setIconStyle] = useState({ transform: 'scale(1, 1)' })
@@ -20,12 +23,23 @@ const ExpandBox = props => {
     }
   }
 
+  const expandHider = e => {
+    // only call toggle hider if the
+    // expander is closed.
+    if (hiderStyle.height === 0) {
+      toggleHider(e)
+    }
+  }
+
+  useEventListener('expand', expandHider, button.current)
+
   return (
     <section className={styles.main + ' ' + props.className}>
       <button
         aria-label={'Expand Section'}
         className={styles.firstSection}
         onClick={toggleHider}
+        ref={button}
         // style={arrowStyle}
       >
         {children[0]}
