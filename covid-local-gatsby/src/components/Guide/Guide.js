@@ -169,14 +169,12 @@ const GuideIndicator = props => (
   <>
     {props.metadata.subQuestions.length > 0 ? (
       <>
-        {console.log(props)}
         <div className="header">
           <div className="number">{props.metadata.number}</div>
           <p>{props.question}</p>
         </div>
         {props.metadata.subQuestions.map((subquestion, subquestionNumber) => (
-          <div key={props.questionNumber} className="radio">
-            {console.log(subquestion)}
+          <div key={subquestionNumber} className="radio">
             <div>
               <div className="radio-li">{alpha[subquestionNumber]}</div>
               <p>{subquestion}</p>
