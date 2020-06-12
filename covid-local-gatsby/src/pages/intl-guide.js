@@ -10,6 +10,7 @@ import styles from '../styles/intlGuide.module.scss'
 import initGuideScripts from '../components/GuideContent/guideScripts.global.js'
 import '../styles/guideStyle.css'
 import guideHeaderContent from '../components/Guide/GuideHeaderContent.html'
+import indicatorsOfProgress from '../components/Guide/GuideIndicatorsOfProgressContent.html'
 
 const LmicGuide = () => {
   React.useEffect(() => {
@@ -144,6 +145,12 @@ const LmicGuide = () => {
         className={'guide'}
         dangerouslySetInnerHTML={{ __html: guideHeaderContent }}
       />
+      <div className="guide">
+        <article
+          className="expanding-boxes"
+          dangerouslySetInnerHTML={{ __html: indicatorsOfProgress }}
+        />
+      </div>
       <section className={styles.main}>
         <Guide content={guideRestructured} />
       </section>
