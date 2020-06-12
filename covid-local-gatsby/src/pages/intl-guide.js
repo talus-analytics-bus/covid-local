@@ -21,9 +21,26 @@ const LmicGuide = () => {
     questions: { edges: questions },
     text: { edges: text },
     resources: { edges: resources },
+    indicators: { edges: indicators },
   } = useStaticQuery(
     graphql`
       query guideData {
+        indicators: allAirtable(
+          filter: { table: { eq: "Indicators of Progress" } }
+        ) {
+          edges {
+            node {
+              id
+              data {
+                Guiding_Question
+                Associated_subquestions
+                Sub_subquestions
+                Objective__
+                Existing__
+              }
+            }
+          }
+        }
         questions: allAirtable(
           filter: { table: { regex: "/^Key Objective #[1-9]/" } }
         ) {
@@ -72,7 +89,7 @@ const LmicGuide = () => {
     resources.reverse()
   }
 
-  const guideRestructured = {}
+  const guideRestructured = { questions: {}, indicators: {} }
   let objective = ''
   let section = ''
   let guidingQuestion = ''
@@ -101,7 +118,7 @@ const LmicGuide = () => {
         }))
 
       objective = table.trim()
-      guideRestructured[objective] = {
+      guideRestructured.questions[objective] = {
         sections: {},
         title: metadata.title,
         description: metadata.description,
@@ -112,13 +129,15 @@ const LmicGuide = () => {
     // create new section object
     if (data.Section.trim() !== section) {
       section = data.Section.trim()
-      guideRestructured[objective].sections[section] = {}
+      guideRestructured.questions[objective].sections[section] = {}
     }
 
     // create new guiding question, with an array for subquestions
     if (data.Guiding_Question.trim() !== guidingQuestion) {
       guidingQuestion = data.Guiding_Question.trim()
-      guideRestructured[objective].sections[section][guidingQuestion] = []
+      guideRestructured.questions[objective].sections[section][
+        guidingQuestion
+      ] = []
     }
 
     // create new subquestion in the array
@@ -127,9 +146,21 @@ const LmicGuide = () => {
       (data.Associated_subquestions.trim() !== 'N/A')
     ) {
       subquestion = data.Associated_subquestions.trim()
-      guideRestructured[objective].sections[section][guidingQuestion].push(
-        subquestion
-      )
+      guideRestructured.questions[objective].sections[section][
+        guidingQuestion
+      ].push(subquestion)
+    }
+  })
+
+  indicators.forEach(edge => {
+    const {
+      node: { data: indicator },
+    } = edge
+    guideRestructured.indicators[indicator.Guiding_Question] = []
+
+    if (indicator.Associated_subquestions.trim() !== 'N/A') {
+      subquestion = indicator.Associated_subquestions.trim()
+      guideRestructured.indicators[indicator.Guiding_Question].push(subquestion)
     }
   })
 
@@ -145,12 +176,12 @@ const LmicGuide = () => {
         className={'guide'}
         dangerouslySetInnerHTML={{ __html: guideHeaderContent }}
       />
-      <div className="guide">
-        <article
-          className="expanding-boxes"
-          dangerouslySetInnerHTML={{ __html: indicatorsOfProgress }}
-        />
-      </div>
+      {/* <div className="guide"> */}
+      {/*   <article */}
+      {/*     className="expanding-boxes" */}
+      {/*     dangerouslySetInnerHTML={{ __html: indicatorsOfProgress }} */}
+      {/*   /> */}
+      {/* </div> */}
       <section className={styles.main}>
         <Guide content={guideRestructured} />
       </section>

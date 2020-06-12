@@ -145,32 +145,80 @@ const Resources = props => (
   </div>
 )
 
+const GuideIndicatorsSection = props => (
+  <BlueExpandBox className={props.className + ' expanding-boxes'}>
+    <header>
+      <div className={'no-number'} data-number={0}></div>
+      <h2>Indicators of Progress</h2>
+    </header>
+    <div className={styles.content}>
+      <div className={styles.questions}>
+        <div
+          className="implementation-metrics"
+          style={{ margin: 0, paddingTop: 0 }}
+        >
+          {props.children}
+          <h3>Progress: 0%</h3>
+        </div>
+      </div>
+    </div>
+  </BlueExpandBox>
+)
+
+const GuideIndicator = props => (
+  <>
+    {props.subquestions.length > 0 ? (
+      <>
+        <div className="header">
+          <div className="number">{props.questionNumber}</div>
+          <p>{props.question}</p>
+        </div>
+        {props.subquestions.map((subquestion, subquestionNumber) => (
+          <div key={props.questionNumber} className="radio">
+            <div>
+              <div className="radio-li">{alpha[subquestionNumber]}</div>
+              <p>{subquestion}</p>
+            </div>
+          </div>
+        ))}
+      </>
+    ) : (
+      <div className="header radio">
+        <div className="number">{props.questionNumber}</div>
+        <p>{props.question}</p>
+      </div>
+    )}
+  </>
+)
+
 const Guide = props => {
   // set up in itial checkbox state
   const checkboxStatusSetup = {}
-  Object.entries(props.content).map(([, metadata], objectiveNumber) => {
-    Object.entries(metadata.sections).map(([, questions], sectionNumber) => {
-      Object.entries(questions).map(([, subquestions], questionNumber) => {
-        if (subquestions.length === 0) {
-          checkboxStatusSetup[
-            '' + objectiveNumber + sectionNumber + questionNumber
-          ] = false
-        }
-
-        if (subquestions.length > 0) {
-          subquestions.map((subquestion, subquestionNumber) => {
+  Object.entries(props.content.questions).map(
+    ([, metadata], objectiveNumber) => {
+      Object.entries(metadata.sections).map(([, questions], sectionNumber) => {
+        Object.entries(questions).map(([, subquestions], questionNumber) => {
+          if (subquestions.length === 0) {
             checkboxStatusSetup[
-              '' +
-                objectiveNumber +
-                sectionNumber +
-                questionNumber +
-                subquestionNumber
+              '' + objectiveNumber + sectionNumber + questionNumber
             ] = false
-          })
-        }
+          }
+
+          if (subquestions.length > 0) {
+            subquestions.map((subquestion, subquestionNumber) => {
+              checkboxStatusSetup[
+                '' +
+                  objectiveNumber +
+                  sectionNumber +
+                  questionNumber +
+                  subquestionNumber
+              ] = false
+            })
+          }
+        })
       })
-    })
-  })
+    }
+  )
 
   // checkbox state
   const [checkboxStatus, setCheckboxStatus] = React.useState(
@@ -208,8 +256,19 @@ const Guide = props => {
       </div>
 
       <section className={styles.guide}>
+        <GuideIndicatorsSection className="guide">
+          {// Map over Indicators of Progress
+          Object.entries(props.content.indicators).map(
+            ([question, subquestions], questionNumber) => (
+              <GuideIndicator
+                key={question}
+                {...{ question, subquestions, questionNumber }}
+              ></GuideIndicator>
+            )
+          )}
+        </GuideIndicatorsSection>
         {// Map over objectives
-        Object.entries(props.content).map(
+        Object.entries(props.content.questions).map(
           ([objective, metadata], objectiveNumber) => (
             <GuideObjective
               key={objectiveNumber}
