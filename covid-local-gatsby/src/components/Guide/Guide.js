@@ -29,12 +29,17 @@ const alpha = [
 const GuideObjective = props => (
   <BlueExpandBox className="expanding-boxes">
     <header>
+      <a
+        id={'action-' + (props.objectiveNumber + 1)}
+        className="page-anchor"
+      ></a>
       <div
         className={styles.number + ' number'}
         data-number={props.objectiveNumber + 1}
       >
         {props.objectiveNumber + 1}
       </div>
+
       <h2>{props.objective}</h2>
       <h3>{props.metadata.title}</h3>
     </header>
@@ -148,6 +153,7 @@ const Resources = props => (
 const GuideIndicatorsSection = props => (
   <BlueExpandBox className={props.className + ' expanding-boxes'}>
     <header>
+      <a id={'action-0'} className="page-anchor"></a>
       <div className={'no-number'} data-number={0}></div>
       <h2>Indicators of Progress</h2>
     </header>

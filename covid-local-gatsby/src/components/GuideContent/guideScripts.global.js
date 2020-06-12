@@ -141,68 +141,86 @@ const initGuideScripts = () => {
   // Expand correct section when toc link is clicked
   document.querySelectorAll('a[href^="#action"]').forEach(link => {
     link.addEventListener('click', event => {
-      const anchorID = event.target.getAttribute('href')
-        ? event.target.getAttribute('href')
-        : event.target.parentElement.getAttribute('href')
+      if (window.location.pathname === '/intl-guide/') {
+        console.log('expand button on react page')
 
-      const section = document.querySelector(anchorID).parentElement
-      const button = section.querySelector('.expand-button')
-      const hider = section.parentElement.querySelector('.expand-hider')
+        let anchorID = event.target.getAttribute('href')
+          ? event.target.getAttribute('href')
+          : event.target.parentElement.getAttribute('href')
 
-      // Not using the toggle handler so to skip the animation
-      hider.style.height = 'auto'
-      hider.hidden = false
-      button.setAttribute('aria-label', 'Collapse Details')
+        anchorID = anchorID.split('#')[1]
 
-      // This is a horrible horrible hack to deal with
-      // the intersectionObserver only using the top of
-      // the window, not the top of the nav...
-      setTimeout(() => {
-        const sectionNumber = anchorID.split('-')[1]
-        if (sectionNumber) {
-          updateDocumentNav(sectionNumber)
-        } else {
-          updateDocumentNav()
-        }
-      }, 100)
+        console.log(anchorID)
+        document.querySelector(`a[id=${anchorID}`).click()
+        // event.target.parentElement.parentElement.click()
+      }
+
+      if (window.location.pathname === '/guide/') {
+        const anchorID = event.target.getAttribute('href')
+          ? event.target.getAttribute('href')
+          : event.target.parentElement.getAttribute('href')
+
+        const section = document.querySelector(anchorID).parentElement
+        const button = section.querySelector('.expand-button')
+        const hider = section.parentElement.querySelector('.expand-hider')
+
+        // Not using the toggle handler so to skip the animation
+        hider.style.height = 'auto'
+        hider.hidden = false
+        button.setAttribute('aria-label', 'Collapse Details')
+
+        // This is a horrible horrible hack to deal with
+        // the intersectionObserver only using the top of
+        // the window, not the top of the nav...
+        setTimeout(() => {
+          const sectionNumber = anchorID.split('-')[1]
+          if (sectionNumber) {
+            updateDocumentNav(sectionNumber)
+          } else {
+            updateDocumentNav()
+          }
+        }, 100)
+      }
     })
   })
 
   // Parse #action- urls on page load so that people can send
   // links to one another and the right section will open
   if (window.location.hash.includes('action')) {
-    const anchorID = window.location.hash
-    const anchor = document.querySelector(anchorID)
-    const section = anchor.parentElement
-    const button = section.querySelector('.expand-button')
-    const hider = section.parentElement.querySelector('.expand-hider')
+    if (window.location.pathname === '/guide/') {
+      const anchorID = window.location.hash
+      const anchor = document.querySelector(anchorID)
+      const section = anchor.parentElement
+      const button = section.querySelector('.expand-button')
+      const hider = section.parentElement.querySelector('.expand-hider')
 
-    // Not using the toggle handler so that we skip the animation
-    hider.style.height = 'auto'
-    hider.hidden = false
-    button.setAttribute('aria-label', 'Collapse Details')
+      // Not using the toggle handler so that we skip the animation
+      hider.style.height = 'auto'
+      hider.hidden = false
+      button.setAttribute('aria-label', 'Collapse Details')
 
-    // This is a horrible hack to deal with
-    // the intersectionObserver only using the top of
-    // the window, not the top of the nav
-    setTimeout(() => {
-      const sectionNumber = anchorID.split('-')[1]
-      if (sectionNumber === '91') {
-        updateDocumentNav('-1')
-      } else if (sectionNumber > 0) {
-        updateDocumentNav(sectionNumber)
-      } else {
-        updateDocumentNav()
-      }
+      // This is a horrible hack to deal with
+      // the intersectionObserver only using the top of
+      // the window, not the top of the nav
+      setTimeout(() => {
+        const sectionNumber = anchorID.split('-')[1]
+        if (sectionNumber === '91') {
+          updateDocumentNav('-1')
+        } else if (sectionNumber > 0) {
+          updateDocumentNav(sectionNumber)
+        } else {
+          updateDocumentNav()
+        }
 
-      // This fixes the bug where you can get the navbar inverted
-      // by refreshing a url with a has while scrolled to the top
-      // of the page.
-      const expandBoxesRect = section.parentElement.parentElement.getBoundingClientRect()
-      if (expandBoxesRect.top < 0) {
-        toggleDocumentNav()
-      }
-    }, 100)
+        // This fixes the bug where you can get the navbar inverted
+        // by refreshing a url with a has while scrolled to the top
+        // of the page.
+        const expandBoxesRect = section.parentElement.parentElement.getBoundingClientRect()
+        if (expandBoxesRect.top < 0) {
+          toggleDocumentNav()
+        }
+      }, 100)
+    }
   }
 
   // fake "checkbox" click handler
