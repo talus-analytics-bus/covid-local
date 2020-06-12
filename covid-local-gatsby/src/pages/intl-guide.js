@@ -191,7 +191,7 @@ const LmicGuide = () => {
     // }
   })
 
-  console.log(guideRestructured)
+  // console.log(guideRestructured)
 
   return (
     <Layout>
