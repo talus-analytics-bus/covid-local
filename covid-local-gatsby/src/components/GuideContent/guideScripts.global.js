@@ -140,17 +140,25 @@ const initGuideScripts = () => {
 
   // Expand correct section when toc link is clicked
   document.querySelectorAll('a[href^="#action"]').forEach(link => {
+    console.log('add event listener')
     link.addEventListener('click', event => {
+      console.log('event listener')
       if (window.location.pathname === '/intl-guide/') {
+        console.log('international guide')
+        console.log(event)
+
         let anchorID = event.target.getAttribute('href')
           ? event.target.getAttribute('href')
           : event.target.parentElement.getAttribute('href')
+
+        console.log(anchorID)
 
         anchorID = anchorID.split('#')[1]
 
         const anchor = document.querySelector(`a[id=${anchorID}`)
         const button = anchor.parentElement.parentElement
         const expand = new Event('expand')
+        console.log('dispatchEvent')
         button.dispatchEvent(expand)
       }
 
