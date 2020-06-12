@@ -23,11 +23,11 @@ const ExpandBox = props => {
     }
   }
 
-  const expandHider = e => {
-    // only call toggle hider if the
-    // expander is closed.
+  const expandHider = () => {
+    // only call expand hider, don't toggle it
     if (hiderStyle.height === 0) {
-      toggleHider(e)
+      setHiderStyle({ height: content.current.offsetHeight })
+      setIconStyle({ transform: 'scale(1, -1)' })
     }
   }
 
