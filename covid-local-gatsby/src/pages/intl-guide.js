@@ -165,7 +165,7 @@ const LmicGuide = () => {
     if (indicator.Guiding_Question.trim() !== indicatorQuestion) {
       indicatorQuestion = indicator.Guiding_Question.trim()
       guideRestructured.indicators[indicatorQuestion] = {
-        number: indicator.Existing__,
+        number: indicator.Objective__,
         subQuestions: [],
       }
     }
