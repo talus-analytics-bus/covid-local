@@ -142,17 +142,13 @@ const initGuideScripts = () => {
   document.querySelectorAll('a[href^="#action"]').forEach(link => {
     link.addEventListener('click', event => {
       if (window.location.pathname === '/intl-guide/') {
-        console.log('expand button on react page')
-
         let anchorID = event.target.getAttribute('href')
           ? event.target.getAttribute('href')
           : event.target.parentElement.getAttribute('href')
 
         anchorID = anchorID.split('#')[1]
 
-        console.log(anchorID)
         document.querySelector(`a[id=${anchorID}`).click()
-        // event.target.parentElement.parentElement.click()
       }
 
       if (window.location.pathname === '/guide/') {
@@ -187,6 +183,15 @@ const initGuideScripts = () => {
   // Parse #action- urls on page load so that people can send
   // links to one another and the right section will open
   if (window.location.hash.includes('action')) {
+    // The opening happens before react is done rendering
+    // so this messes up the sizing of the animated expanding
+    // and doesn't scroll to the right point (because it's
+    // not rendered yet by react.)
+    // if (window.location.pathname === '/intl-guide/') {
+    //   const anchorID = window.location.hash.split('#')[1]
+    //   document.querySelector(`a[id=${anchorID}`).click()
+    // }
+
     if (window.location.pathname === '/guide/') {
       const anchorID = window.location.hash
       const anchor = document.querySelector(anchorID)
