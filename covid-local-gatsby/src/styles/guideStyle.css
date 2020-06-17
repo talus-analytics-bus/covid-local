@@ -387,20 +387,30 @@
   width: 6rem;
   height: 6rem;
 }
+.guide .introduction .left-col .version-marker {
+  display: block;
+  height: 2.75rem;
+  margin-top: 1rem;
+}
+
+/*.guide .introduction .left-col svg {
+  width: 6rem;
+  height: 6rem;
+}*/
 
 .guide .introduction h1 {
   margin-bottom: 1rem;
 }
 
 .guide .introduction h1 {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' x='0px' y='0px' viewBox='0 0 204.46 204.46' style='enable-background:new 0 0 204.46 204.46;' xml:space='preserve' class='clipboard-icon'%3E%3Ccircle style='fill:%23409385;' cx='102.23' cy='102.23' r='102.23'/%3E%3Cpath style='fill:%2328334B;' d='M113.85,69.68c0-2.25-1.83-4.09-4.09-4.09h-4.09v-4.09h12.26l0,16.34h8.18V61.51c0-4.51-3.66-8.17-8.17-8.17h-12.26v-4.09c0-2.25-1.83-4.09-4.09-4.09H85.25c-2.25,0-4.09,1.83-4.09,4.09v4.09H68.91c-4.5,0-8.17,3.66-8.17,8.17v57.2c0,4.5,3.67,8.17,8.17,8.17h32.69v-8.17H68.91v-57.2h12.26v4.09h-4.09c-2.25,0-4.09,1.83-4.09,4.09v40.86c0,2.26,1.83,4.09,4.09,4.09h24.51V77.85h12.26V69.68z M97.51,65.6h-8.17V53.34h8.17V65.6zM109.76,86.01v57.2h49.03v-57.2H109.76z M146.53,130.96h-24.51v-4.09h24.51V130.96z M146.53,118.7h-24.51v-4.09h24.51V118.7zM146.53,106.44h-16.34v-4.09h16.34V106.44z'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: 0 center;
+  /*background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' version='1.1' x='0px' y='0px' viewBox='0 0 204.46 204.46' style='enable-background:new 0 0 204.46 204.46;' xml:space='preserve' class='clipboard-icon'%3E%3Ccircle style='fill:%23409385;' cx='102.23' cy='102.23' r='102.23'/%3E%3Cpath style='fill:%2328334B;' d='M113.85,69.68c0-2.25-1.83-4.09-4.09-4.09h-4.09v-4.09h12.26l0,16.34h8.18V61.51c0-4.51-3.66-8.17-8.17-8.17h-12.26v-4.09c0-2.25-1.83-4.09-4.09-4.09H85.25c-2.25,0-4.09,1.83-4.09,4.09v4.09H68.91c-4.5,0-8.17,3.66-8.17,8.17v57.2c0,4.5,3.67,8.17,8.17,8.17h32.69v-8.17H68.91v-57.2h12.26v4.09h-4.09c-2.25,0-4.09,1.83-4.09,4.09v40.86c0,2.26,1.83,4.09,4.09,4.09h24.51V77.85h12.26V69.68z M97.51,65.6h-8.17V53.34h8.17V65.6zM109.76,86.01v57.2h49.03v-57.2H109.76z M146.53,130.96h-24.51v-4.09h24.51V130.96z M146.53,118.7h-24.51v-4.09h24.51V118.7zM146.53,106.44h-16.34v-4.09h16.34V106.44z'/%3E%3C/svg%3E");*/
+  /*background-repeat: no-repeat;*/
+  /*background-position: 0 center;*/
   font-size: 40px;
-  background-size: 2.25em;
+  /*background-size: 2.25em;*/
   /*max-width: calc(5em + 2.25em + 105px);*/
-  padding-left: calc(2.25em + 15px);
-  padding-top: 2rem;
+  /*padding-left: calc(2.25em + 15px);*/
+  padding-top: 1rem;
   padding-bottom: 2rem;
   color: #28334b;
   line-height: 1.1em;

@@ -44,6 +44,10 @@ const ExpandBox = props => {
         ref={button}
         // style={arrowStyle}
       >
+        <div
+          className={styles.flag}
+          style={{ backgroundColor: props.flagColor }}
+        ></div>
         {children[0]}
         <span className={styles.buttonIcon} style={iconStyle}></span>
       </button>

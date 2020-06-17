@@ -75,10 +75,12 @@
     //   transition: 250ms ease;
     // }
 
-    &:before {
+    .flag {
       display: block;
+      // this color is the default
+      // and gets overwritten in JS
       background-color: #469383;
-      content: '';
+      // content: '';
       position: absolute;
       left: 0;
       top: 0;
