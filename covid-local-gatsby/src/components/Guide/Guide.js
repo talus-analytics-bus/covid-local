@@ -289,7 +289,7 @@ const Guide = props => {
 
   return (
     <CheckboxState.Provider value={{ checkboxStatus, changeCheckboxStatus }}>
-      <div className="guide">
+      <div className="guide intl">
         <nav className={styles.documentNav + ' document-nav'}></nav>
       </div>
 

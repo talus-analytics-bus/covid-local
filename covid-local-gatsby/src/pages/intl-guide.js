@@ -196,7 +196,7 @@ const LmicGuide = () => {
   return (
     <Layout>
       <header
-        className={'guide'}
+        className={'guide intl'}
         dangerouslySetInnerHTML={{ __html: guideHeaderContent }}
       />
       <section className={styles.main}>
