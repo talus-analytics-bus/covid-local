@@ -9,6 +9,7 @@ import styles from '../styles/intlGuide.module.scss'
 
 import initGuideScripts from '../components/GuideContent/guideScripts.global.js'
 import '../styles/guideStyle.css'
+import '../styles/intlGuideStyleOverrides.css'
 import guideHeaderContent from '../components/Guide/GuideHeaderContent.html'
 
 const LmicGuide = () => {
