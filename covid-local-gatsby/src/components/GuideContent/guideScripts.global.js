@@ -75,7 +75,7 @@ const initGuideScripts = () => {
   const updateDocumentNav = number => {
     const documentNav = document.querySelector('.document-nav')
 
-    console.log('updateDocumentNav: ' + number)
+    // console.log('updateDocumentNav: ' + number)
 
     if (number === '91') {
       documentNav.innerHTML = `<div class="nav-squish">
@@ -314,21 +314,49 @@ const initGuideScripts = () => {
 
   // open the document nav after the first section has passed
 
-  const headerObserver = new IntersectionObserver((entries, observer) => {
+  //   const headerObserver = new IntersectionObserver((entries, observer) => {
+  //     if (
+  //       window.location.pathname === '/guide/' ||
+  //       window.location.pathname === '/intl-guide/'
+  //     ) {
+  //       console.log(window.scrollY)
+  //       console.log(document.querySelector('.introduction-header').offsetHeight)
+  //       if (
+  //         window.scrollY >
+  //         document.querySelector('.introduction-header').offsetHeight / 2
+  //       ) {
+  //         console.log('toggle documentNav')
+  //         toggleDocumentNav()
+  //       }
+  //     }
+  //   })
+  //
+  //   headerObserver.observe(document.querySelector('.introduction-header'))
+
+  // Toggling the document nav with a passive scroll listener
+  // so it can't get 'fooled' the way the interactionObserver can if
+  // scrolling happens fast enough that the interactionObserver
+  // doesn't fire until the user is scrolled completely to the top of the page.
+  window.addEventListener('scroll', () => {
     if (
       window.location.pathname === '/guide/' ||
       window.location.pathname === '/intl-guide/'
     ) {
       if (
-        window.scrollY >
-        document.querySelector('.introduction-header').offsetHeight
+        (window.scrollY >
+          document.querySelector('.introduction-header').offsetHeight) &
+        (document.querySelector('.document-nav').style.height === '0px')
+      ) {
+        toggleDocumentNav()
+      } else if (
+        (window.scrollY <
+          document.querySelector('.introduction-header').offsetHeight) &
+        (document.querySelector('.document-nav').style.height !== '0px')
       ) {
         toggleDocumentNav()
       }
     }
   })
-
-  headerObserver.observe(document.querySelector('.introduction-header'))
 
   // Build radio buttons
   let radioCount = 0
