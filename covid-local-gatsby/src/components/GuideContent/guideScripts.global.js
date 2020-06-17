@@ -75,7 +75,7 @@ const initGuideScripts = () => {
   const updateDocumentNav = number => {
     const documentNav = document.querySelector('.document-nav')
 
-    // console.log('updateDocumentNav: ' + number);
+    console.log('updateDocumentNav: ' + number)
 
     if (number === '91') {
       documentNav.innerHTML = `<div class="nav-squish">
@@ -140,25 +140,25 @@ const initGuideScripts = () => {
 
   // Expand correct section when toc link is clicked
   document.querySelectorAll('a[href^="#action"]').forEach(link => {
-    console.log('add event listener')
+    // console.log('add event listener')
     link.addEventListener('click', event => {
-      console.log('event listener')
+      // console.log('event listener')
       if (window.location.pathname === '/intl-guide/') {
-        console.log('international guide')
-        console.log(event)
+        // console.log('international guide')
+        // console.log(event)
 
         let anchorID = event.target.getAttribute('href')
           ? event.target.getAttribute('href')
           : event.target.parentElement.getAttribute('href')
 
-        console.log(anchorID)
+        // console.log(anchorID)
 
         anchorID = anchorID.split('#')[1]
 
         const anchor = document.querySelector(`a[id=${anchorID}`)
         const button = anchor.parentElement.parentElement
         const expand = new Event('expand')
-        console.log('dispatchEvent')
+        // console.log('dispatchEvent')
         button.dispatchEvent(expand)
       }
 
