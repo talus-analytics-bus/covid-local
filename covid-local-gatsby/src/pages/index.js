@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql } from 'gatsby'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import { Helmet } from 'react-helmet'
 import unified from 'unified'
 import markdown from 'remark-parse'
@@ -187,6 +188,23 @@ const LandingPage = () => {
               <Link className={styles.buttonlink} to="/contact/">
                 Go to Contact Us
               </Link>
+            </div>
+          </div>
+          <div className={styles.media}>
+            <h1>Highlighted By</h1>
+            <div className={styles.logos}>
+              <OutboundLink href="https://www.nbcnews.com/dateline/video/amid-threat-of-more-coronavirus-outbreaks-pandemic-experts-create-guide-for-local-governments-84937285768">
+                <img
+                  src="/assets/images/media-logos/dateline.svg"
+                  alt="NBC Dateline Logo"
+                />
+              </OutboundLink>
+              <OutboundLink href="https://www.theguardian.com/us-news/2020/mar/28/trump-coronavirus-politics-us-health-disaster">
+                <img
+                  src="/assets/images/media-logos/guardian.svg"
+                  alt="The Guardian Logo"
+                />
+              </OutboundLink>
             </div>
           </div>
         </main>

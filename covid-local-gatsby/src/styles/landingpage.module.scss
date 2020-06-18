@@ -431,6 +431,28 @@
   }
 }
 
+.media {
+  margin: 2rem 0;
+  padding: 1rem 0;
+  border-top: 2px solid #409385;
+  border-bottom: 2px solid #409385;
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  .logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  a {
+    width: 12rem;
+    margin: 2rem 3rem;
+  }
+}
+
 .footer {
   font-family: 'Open Sans', sans-serif;
   margin-top: 4rem;
