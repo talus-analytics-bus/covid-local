@@ -12,14 +12,20 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const blogPostTemplate = path.resolve(`src/templates/blog-post.js`)
   const result = await graphql(`
     {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
+      allAirtable(filter: { data: { publishing_status: { eq: "Publish" } } }) {
         edges {
           node {
-            frontmatter {
-              path
+            id
+            data {
+              Blog_Text
+              Images {
+                url
+              }
+              author
+              Category
+              Date
+              title
+              slug
             }
           }
         }
@@ -30,9 +36,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  // printing out paths to make it easy to copy / paste for the invalidation
+  console.log('blog post paths')
+  result.data.allAirtable.edges.forEach(({ node }) => {
+    console.log('"' + node.data.slug + 'index.html' + '" \\')
+    console.log('"' + node.data.slug + '" \\')
     createPage({
-      path: node.frontmatter.path,
+      path: node.data.slug,
       component: blogPostTemplate,
       context: {}, // additional data can be passed via context
     })

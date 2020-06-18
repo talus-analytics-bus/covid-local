@@ -1,41 +1,92 @@
 import React from 'react'
+import { renderToString } from 'react-dom/server'
 import { Helmet } from 'react-helmet'
-import { Link, graphql } from 'gatsby'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import Fuse from 'fuse.js'
+import unified from 'unified'
+import markdown from 'remark-parse'
+import html from 'remark-html'
 
 import Layout from '../components/Layout/Layout'
 
 import styles from '../styles/blog.module.scss'
 
-const Blog = props => {
-  const { edges: posts } = props.data.allMarkdownRemark
+const Blog = () => {
+  const data = useStaticQuery(graphql`
+    query IndexQuery {
+      allAirtable(
+        filter: { data: { publishing_status: { eq: "Publish" } } }
+        sort: { order: DESC, fields: data___Date }
+      ) {
+        edges {
+          node {
+            id
+            data {
+              Blog_Text
+              Images {
+                url
+              }
+              author
+              Category
+              Date
+              title
+              slug
+            }
+          }
+        }
+      }
+    }
+  `)
+  const { edges: posts } = data.allAirtable
+
+  // console.log(posts)
+  // console.log(posts.map(post => console.log(post)))
 
   const [searchString, setSearchString] = React.useState('')
   const [filter, setFilter] = React.useState('ALL')
 
   const createBlogPostElements = posts =>
     posts
-      .filter(post => post.node.frontmatter.title.length > 0)
+      .filter(post => post.node.data.title.length > 0)
       .map(({ node: post }) => (
         <div className={styles.post} key={post.id}>
           <h1>
-            <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
+            <Link to={post.data.slug}>{post.data.title}</Link>
           </h1>
-          <h2>{post.frontmatter.date}</h2>
-          <h3>{post.frontmatter.author}</h3>
-          <p>
-            {post.excerpt} <Link to={post.frontmatter.path}>read more</Link>
-          </p>
+          <h2>{post.data.Date}</h2>
+          <h3>{post.data.author}</h3>
+          <p
+            dangerouslySetInnerHTML={{
+              __html:
+                renderToString(
+                  <Link to={post.data.slug}>
+                    <img src={post.data.Images[0].url} alt={post.data.title} />
+                  </Link>
+                ) +
+                unified()
+                  .use(markdown)
+                  .use(html)
+                  .processSync(post.data.Blog_Text)
+                  // Need to get just the text from the first paragraph
+                  .contents.split(/<\/p>/g)[0]
+                  .replace('<p>', '')
+                  .split(' ')
+                  .slice(0, 150)
+                  .join(' ') +
+                ' ' +
+                renderToString(<Link to={post.data.slug}>read more</Link>),
+            }}
+          ></p>
         </div>
       ))
 
   const createRecentPostsElements = posts =>
     posts
-      .filter(post => post.node.frontmatter.title.length > 0)
+      .filter(({ node: post }) => post.data.title.length > 0)
       .map(({ node: post }) => (
         <div className={styles.post} key={post.id}>
-          <Link to={post.frontmatter.path}>{post.frontmatter.title}</Link>
-          <p>{post.frontmatter.date}</p>
+          <Link to={post.data.slug}>{post.data.title}</Link>
+          <p>{post.data.date}</p>
         </div>
       ))
 
@@ -47,11 +98,17 @@ const Blog = props => {
       setFilter('ALL')
     }
   }
+  // console.log('run component')
+  // console.log(posts)
+  // posts.map((index, post) => {
+  // console.log(post)
+  // console.log('index ', index)
+  // })
 
   let filteredPosts = posts
   if (filter !== '') {
     filteredPosts = posts.filter(post =>
-      post.node.frontmatter.category.includes(filter)
+      (post.node.data.Category.toUpperCase() + ' ALL').includes(filter)
     )
   }
 
@@ -59,7 +116,7 @@ const Blog = props => {
     isCaseSensitive: false,
     distance: 100,
     shouldSort: true,
-    keys: ['node.excerpt', 'node.frontmatter.title'],
+    keys: ['node.data.Blog_Text', 'node.data.title'],
   }
 
   const fuse = new Fuse(posts, searchOptions)
@@ -129,24 +186,50 @@ const Blog = props => {
   )
 }
 
-export const pageQuery = graphql`
-  query IndexQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
-      edges {
-        node {
-          excerpt(pruneLength: 500)
-          id
-          frontmatter {
-            title
-            date(formatString: "dddd, MMMM DD, YYYY")
-            path
-            category
-            author
-          }
-        }
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query IndexQuery {
+//     allAirtable(
+//       filter: { data: { publishing_status: { eq: "Publish" } } }
+//       sort: { order: DESC, fields: data___Date }
+//     ) {
+//       edges {
+//         node {
+//           id
+//           data {
+//             Blog_Text
+//             Images {
+//               url
+//             }
+//             author
+//             Category
+//             Date
+//             title
+//             slug
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
+
+// export const pageQuery = graphql`
+//   query IndexQuery {
+//     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+//       edges {
+//         node {
+//           excerpt(pruneLength: 500)
+//           id
+//           frontmatter {
+//             title
+//             date(formatString: "dddd, MMMM DD, YYYY")
+//             path
+//             category
+//             author
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
 
 export default Blog

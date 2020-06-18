@@ -1,158 +1,251 @@
-import React, { useState } from 'react'
-import { Link } from 'gatsby'
+import React from 'react'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 import { Helmet } from 'react-helmet'
-import 'tippy.js/dist/tippy.css'
-import 'tippy.js/themes/light.css'
+import unified from 'unified'
+import markdown from 'remark-parse'
+import html from 'remark-html'
+
+import DropDownLink from '../components/DropDownLink/DropDownLink'
 
 import Layout from '../components/Layout/Layout'
 
-import styles from '../styles/metrics/metrics.module.scss'
+import styles from '../styles/landingpage.module.scss'
 
-import '../styles/metrics/background.css'
-import '../styles/metrics/text.css'
-
-import TabSection from '../components/Metrics/TabSection'
-import MetricsScorecard from '../components/Metrics/MetricsScorecard/MetricsScorecard'
-
-const MetricsPage = () => {
-  const [tab, setTab] = useState('METRICS OVERVIEW')
-  const onClickTab = e => {
-    e.preventDefault()
-    setTab(e.target.innerHTML)
+// https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[array[i], array[j]] = [array[j], array[i]]
   }
+}
 
-  const [downloadHiderStyle, setDownloadHiderSyle] = useState({
-    height: 0,
-    padding: '0 15px',
-  })
-
-  const downloadDetailContent = React.useRef()
-
-  const toggleDownloadDetail = () => {
-    if (downloadHiderStyle.height !== 0) {
-      setDownloadHiderSyle({ height: 0, padding: '0 15px' })
-    } else {
-      setDownloadHiderSyle({
-        height: downloadDetailContent.current.offsetHeight + 30,
-        padding: 15,
-      })
+const LandingPage = () => {
+  const data = useStaticQuery(graphql`
+    query blogQuery {
+      allAirtable(
+        filter: { data: { publishing_status: { eq: "Publish" } } }
+        sort: { order: DESC, fields: data___Date }
+        limit: 1
+      ) {
+        edges {
+          node {
+            id
+            data {
+              Blog_Text
+              author
+              Date
+              title
+              slug
+            }
+          }
+        }
+      }
     }
-  }
+  `)
+  const blogpost = data.allAirtable.edges[0].node
+
+  const [resource, setResource] = React.useState()
+
+  React.useEffect(() => {
+    fetch('/assets/content/resources.json')
+      .then(response => response.json())
+      .then(jsonString => {
+        const resources = jsonString.resources
+        shuffleArray(resources)
+        setResource(resources[0])
+      })
+  }, [])
 
   return (
     <Layout>
       <Helmet
-        title={`About The COVID Local Project, Authors, and Contributors`}
+        title={`COVID-Local: A Frontline Guide for Local Decision-Makers`}
         meta={[
           {
             name: 'description',
-            content: `The authors and contributors to the COVID Local guide and resource website helping local leaders handle the COVID-19 pandemic.`,
+            content: `The COVID-19 pandemic is causing significant disruptions to cities and local communities globally. Given these challenges, we have developed this guide to provide a decision framework for local leaders to think through what will need to be done to help reduce the impact of the outbreak, both by reducing spread and decreasing the number of cases, but also in responding and supporting communities effectively.`,
           },
         ]}
       />
-
-      <header className={styles.header}>
-        <h1>Metrics for Phased Reopening</h1>
-        <Link to="/contact/">Contact us</Link>
-      </header>
-
-      <article className={styles.main}>
-        <div className={styles.downloadRow}>
-          <button
-            className={styles.downloadButton}
-            onClick={toggleDownloadDetail}
-          >
-            Download&nbsp;
-          </button>
-          <div
-            className={styles.downloadDetailHider}
-            style={downloadHiderStyle}
-          >
-            {downloadHiderStyle.height !== 0 && (
-              <div
-                className={styles.downloadDetailCloser}
-                onClick={toggleDownloadDetail}
-              ></div>
-            )}
-            <div className={styles.downloadDetail} ref={downloadDetailContent}>
-              {/* <a */}
-              {/*   target="_blank" */}
-              {/*   rel="noopener noreferrer" */}
-              {/*   href="/assets/documents/COVID Local Metrics overview and scorecard.pdf" */}
-              {/*   className={styles.row} */}
-              {/*   onClick={toggleDownloadDetail} */}
-              {/* > */}
-              {/*   <span>Metrics overview and scorecard</span>{' '} */}
-              {/*   <span>pdf, 616kb</span> */}
-              {/* </a> */}
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="/assets/documents/COVID Local Metrics overview.pdf"
-                className={styles.row}
-                onClick={toggleDownloadDetail}
+      <div className={styles.gradient}>
+        <main className={styles.main}>
+          <header>
+            <div className={styles.left}>
+              <div className={styles.logo}></div>
+              <h1>
+                <strong>COVID</strong> LOCAL
+              </h1>
+              <h2>A Frontline Guide for Local Decision-Makers</h2>
+              <p>
+                The COVID-19 pandemic is causing significant disruptions to
+                cities and local communities globally. Given these challenges,
+                we have developed this guide to provide a decision framework for
+                local leaders to think through what will need to be done to help
+                reduce the impact of the outbreak, both by reducing spread and
+                decreasing the number of cases, but also in responding and
+                supporting communities effectively.
+              </p>
+              <div className={styles.btnrow}>
+                <DropDownLink className={styles.dropDownLink}>
+                  <a
+                    href="#"
+                    onClick={e => {
+                      e.preventDefault()
+                    }}
+                    className={styles.subMenuButton}
+                  >
+                    Go To Guide &#9660;
+                  </a>
+                  <ul>
+                    <li>
+                      <Link activeClassName={styles.active} to="/guide/">
+                        US Guide
+                      </Link>
+                    </li>
+                    <li>
+                      <Link activeClassName={styles.active} to="/intl-guide/">
+                        International&nbsp;Guide
+                      </Link>
+                    </li>
+                  </ul>
+                </DropDownLink>
+              </div>
+            </div>
+            <div className={styles.right}>
+              <h2>Metrics for Phased Reopening</h2>
+              <p>To help leaders plan for phased re-opening</p>
+              <img
+                src="/assets/images/metrics-screenshot.png"
+                alt="Metrics for Phased Reopening Screenshot"
+              />
+              <Link className={styles.buttonlink} to="/metrics/">
+                Go to Metrics
+              </Link>
+            </div>
+          </header>
+          <div className={styles.cols}>
+            <div>
+              <h1>BLOG</h1>
+              <h2>Notes from the field</h2>
+              <h4>
+                <Link to={blogpost.data.slug}>{blogpost.data.title}</Link>
+              </h4>
+              <h5>{blogpost.data.Date}</h5>
+              <section
+              // grab the first 250 words, then add an ellipsis
+              // if the first paragraph is shorter than 250
+              // words, just use that without the ellipsis
               >
-                <span>Metrics overview</span> <span>pdf, 535kb</span>
-              </a>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="/assets/documents/COVID Local Metrics scorecard.pdf"
-                className={styles.row}
-                onClick={toggleDownloadDetail}
-              >
-                <span>Metrics scorecard</span> <span>pdf, 157kb</span>
-              </a>
+                <p>
+                  {unified()
+                    .use(markdown)
+                    .use(html)
+                    .processSync(blogpost.data.Blog_Text)
+                    .contents.split('</p>')[0]
+                    .replace('<p>', '')
+                    .split(' ')
+                    .slice(0, 50)
+                    .join(' ')}
+                </p>
+              </section>
+              <Link className={styles.buttonlink} to="/blog/">
+                Go to Blog
+              </Link>
+            </div>
+            <div>
+              <h1>LEARN</h1>
+              <h2>Recommended resources</h2>
+              {resource !== undefined && (
+                <>
+                  <h3>{resource.organization}</h3>
+                  <h4>
+                    <a href={resource.link}>{resource.name}</a>
+                  </h4>
+                  <p>
+                    {resource.description.length > 250
+                      ? resource.description
+                          .split(' ')
+                          .slice(0, 30)
+                          .join(' ') + '...'
+                      : resource.description}
+                  </p>
+                  <a href={resource.link}>
+                    {resource.link
+                      .split('/')
+                      .slice(0, 3)
+                      .join('/')}
+                  </a>
+                </>
+              )}
+              <Link className={styles.buttonlink} to="/resources/">
+                Go to Resources
+              </Link>
+            </div>
+            <div>
+              <h1>FEEDBACK</h1>
+              <h2>Contact Us</h2>
+              <Link className={styles.buttonlink} to="/contact/">
+                Go to Contact Us
+              </Link>
             </div>
           </div>
-        </div>
-        <p>
-          As the COVID-19 pandemic continues, local leaders across the United
-          States are working to bolster public health capacity and take some
-          initial steps to reopen — protecting their communities from the
-          disease and supporting economic recovery and growth. Below,
-          COVID-Local provides decision-makers with easy-to-use metrics for a
-          phased re-opening strategy. These metrics can be used to assess
-          existing response, pinpoint areas for action, and make decisions for
-          moving to the next phase of re-opening. The graphics in the{' '}
-          <strong>Metrics Overview</strong> describe phases and the key metrics
-          associated with each phase under a set of public health categories.
-          The <strong>Scorecard</strong> (found on the Metrics Scorecard tab and
-          available as a PDF download) can be used to self-assess community
-          progress across all metrics for each Phase. The{' '}
-          <strong>Assess Your Progress</strong> tab provides a series of
-          graphics with phase-specific metrics. The interactive checklist can be
-          used to show progress toward meeting thresholds for each phase.
-        </p>
-        <div className={styles.filters}>
-          <button
-            onClick={onClickTab}
-            aria-pressed={tab === 'METRICS OVERVIEW'}
+        </main>
+        <footer className={styles.footer}>
+          <h1>A JOINT PROJECT OF</h1>
+          <a href="https://ghss.georgetown.edu/" className={styles.georgetown}>
+            <img
+              src="/assets/images/logos/Georgetown-small.png"
+              alt="Georgetown University"
+            />
+          </a>
+          <a href="http://talusanalytics.com/" className={styles.talus}>
+            <img
+              src="/assets/images/logos/talus-logo-01.png"
+              alt="Talus Analytics"
+            />
+          </a>
+          <a
+            href="https://www.nti.org/about/biosecurity/"
+            className={styles.nti}
           >
-            METRICS OVERVIEW
-          </button>
-          <button
-            onClick={onClickTab}
-            aria-pressed={tab === 'METRICS SCORECARD'}
-          >
-            METRICS SCORECARD
-          </button>
-          <button
-            onClick={onClickTab}
-            aria-pressed={tab === 'ASSESS YOUR PROGRESS'}
-          >
-            ASSESS YOUR PROGRESS
-          </button>
-        </div>
-
-        {tab === 'METRICS OVERVIEW' && <TabSection />}
-        {tab === 'METRICS SCORECARD' && <MetricsScorecard layout="grid" />}
-        {tab === 'ASSESS YOUR PROGRESS' && (
-          <MetricsScorecard layout="breakout" />
-        )}
-      </article>
+            <img
+              src="/assets/images/logos/Nuclear_Threat_Initiative_logo.svg"
+              alt="Nuclear Threat Initiative"
+            />
+          </a>
+          <a href="https://www.cgdev.org/" className={styles.cgd}>
+            <img
+              src="/assets/images/logos/center-for-global-development.png"
+              alt="Center for Global Development"
+            />
+          </a>
+        </footer>
+      </div>
     </Layout>
   )
 }
 
-export default MetricsPage
+// export const pageQuery = graphql`
+//   query blogQuery {
+//     allMarkdownRemark(
+//       sort: { order: DESC, fields: [frontmatter___date] }
+//       limit: 1
+//     ) {
+//       edges {
+//         node {
+//           excerpt(pruneLength: 300)
+//           id
+//           frontmatter {
+//             title
+//             date(formatString: "dddd, MMMM DD, YYYY")
+//             path
+//             category
+//             author
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
+
+export default LandingPage
