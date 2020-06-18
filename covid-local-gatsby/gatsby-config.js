@@ -51,6 +51,61 @@ module.exports = {
             baseId: `appolHuog4LD1xAjJ`,
             tableName: `Table 1`,
           },
+          {
+            baseId: 'appc2oaizsxQaNADz',
+            tableName: 'Indicators of Progress',
+            tableView: 'Grid view',
+          },
+          {
+            baseId: 'appc2oaizsxQaNADz',
+            tableName: 'Key Objective #1',
+            tableView: 'Grid view',
+          },
+          {
+            baseId: 'appc2oaizsxQaNADz',
+            tableName: 'Key Objective #2',
+            tableView: 'Grid view',
+          },
+          {
+            baseId: 'appc2oaizsxQaNADz',
+            tableName: 'Key Objective #3',
+            tableView: 'Grid view',
+          },
+          {
+            baseId: 'appc2oaizsxQaNADz',
+            tableName: 'Key Objective #4',
+            tableView: 'Grid view',
+          },
+          {
+            baseId: 'appc2oaizsxQaNADz',
+            tableName: 'Key Objective #5',
+            tableView: 'Grid view',
+          },
+          {
+            baseId: 'appc2oaizsxQaNADz',
+            tableName: 'Key Objective #6',
+            tableView: 'Grid view',
+          },
+          {
+            baseId: 'appc2oaizsxQaNADz',
+            tableName: 'Key Objective #7',
+            tableView: 'Grid view',
+          },
+          {
+            baseId: 'appc2oaizsxQaNADz',
+            tableName: 'Key Objective #8',
+            tableView: 'Grid view',
+          },
+          {
+            baseId: 'appc2oaizsxQaNADz',
+            tableName: 'Objective Descriptions',
+            tableView: 'Grid view',
+          },
+          {
+            baseId: 'appc2oaizsxQaNADz',
+            tableName: 'Resources Links',
+            tableView: 'Grid view',
+          },
         ],
       },
     },
