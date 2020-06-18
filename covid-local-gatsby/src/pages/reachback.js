@@ -57,11 +57,29 @@ const Reachback = () => {
                 patients as well as decrease the risk of transmission within
                 healthcare settings.
               </p>
+              <h2>Experts</h2>
+              <div className={styles.logos}>
+                <a href="#">
+                  <img
+                    src="/assets/images/reachback-logos-fullsize/harvard-belfer-center.png"
+                    alt=""
+                  />
+                  {/* Harvard Global Health */}
+                </a>
+                <a href="#">
+                  <img
+                    src="/assets/images/reachback-logos-fullsize/columbia-mailman.png"
+                    alt=""
+                  />
+                  {/* Columbia Mailman School of Public Health */}
+                </a>
+                <button>Contact</button>
+              </div>
             </div>
-            <div className={styles.experts}>
-              <a href="#">Harvard Global Health</a>
-              <a href="#">Columbia Mailman School of Public Health</a>
-            </div>
+            {/* <div className={styles.experts}> */}
+            {/*   <a href="#">Harvard Global Health</a> */}
+            {/*   <a href="#">Columbia Mailman School of Public Health</a> */}
+            {/* </div> */}
           </div>
         </BlueExpandBox>
         <BlueExpandBox>
