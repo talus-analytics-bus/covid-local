@@ -56,7 +56,7 @@ jobs:
     working_directory: ~/repo
 
     docker:
-      - image: cimg/node:12.6
+      - image: cimg/node:14.4
 
     steps:
       - checkout
