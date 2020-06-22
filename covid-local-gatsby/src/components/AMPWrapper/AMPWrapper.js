@@ -18,24 +18,6 @@ const AMPWrapper = props => {
         {props.children}
       </div>
       <div className={styles.ampLanding}>
-        {/* <div className={styles.miniNav}> */}
-        {/*   <button */}
-        {/*     onClick={closeAmp} */}
-        {/*     aria-label="back" */}
-        {/*     className={styles.backButton} */}
-        {/*   ></button> */}
-        {/*   <button */}
-        {/*     onClick={closeAmp} */}
-        {/*     aria-label="home" */}
-        {/*     className={styles.navbarLogo} */}
-        {/*   ></button> */}
-        {/*   <button onClick={closeAmp} className={styles.navbarLeftText}> */}
-        {/*     <h1> */}
-        {/*       <strong>COVID</strong> LOCAL */}
-        {/*     </h1> */}
-        {/*   </button> */}
-        {/* </div> */}
-
         <AmpNav {...{ closeAmp }} />
 
         <div className={styles.ampLandingContent}>
