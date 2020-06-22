@@ -61,7 +61,7 @@ const AMPWrapper = props => {
                 src="/assets/images/amp-screenshots/global-policy-maps.png"
                 alt="Global Policy Maps"
               />
-              <a target="_top" href="http://localhost:3000/map">
+              <a target="_blank" rel="noopener noreferrer" href="#">
                 Policy maps
               </a>
             </div>
@@ -70,7 +70,7 @@ const AMPWrapper = props => {
                 src="/assets/images/amp-screenshots/policy-model.png"
                 alt="Policy Model"
               />
-              <a target="_top" href="http://localhost:3000/">
+              <a target="_blank" rel="noopener noreferrer" href="#">
                 Policy model
               </a>
             </div>
@@ -79,7 +79,7 @@ const AMPWrapper = props => {
                 src="/assets/images/amp-screenshots/policy-database.png"
                 alt="Policy Database"
               />
-              <a target="_top" href="http://localhost:3000/">
+              <a target="_blank" rel="noopener noreferrer" href="#">
                 Access data
               </a>
             </div>

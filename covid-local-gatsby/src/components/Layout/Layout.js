@@ -17,7 +17,7 @@ const Layout = props => {
       height: '100vh',
     }
   }
-  console.log(initialPosition)
+
   const [animationStyle, setAnimationStyle] = React.useState(initialPosition)
 
   return (
