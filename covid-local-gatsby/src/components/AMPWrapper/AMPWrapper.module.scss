@@ -19,7 +19,13 @@
     left: 0;
     right: 0;
     z-index: 2;
-    background: linear-gradient(#173244, #27595e 400px, #40938590, #c5edff00);
+    background: white;
+    background-image: linear-gradient(
+      #173244,
+      #27595e 400px,
+      #40938590,
+      #c5edff00
+    );
 
     .ampLandingContent {
       margin: auto;

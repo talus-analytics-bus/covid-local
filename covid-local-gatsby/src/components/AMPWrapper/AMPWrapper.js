@@ -61,7 +61,7 @@ const AMPWrapper = props => {
                 src="/assets/images/amp-screenshots/global-policy-maps.png"
                 alt="Global Policy Maps"
               />
-              <button>Global policy maps</button>
+              <button>Policy maps</button>
             </div>
             <div className={styles.col}>
               <img
