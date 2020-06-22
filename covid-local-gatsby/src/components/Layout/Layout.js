@@ -7,9 +7,18 @@ import './Layout.css'
 import './Fonts.css'
 
 const Layout = props => {
-  const [animationStyle, setAnimationStyle] = React.useState({
+  let initialPosition = {
     transform: 'translateX(0vw)',
-  })
+  }
+  if (props.ampOpen) {
+    initialPosition = {
+      transform: 'translateX(-100vw)',
+      overflow: 'hidden',
+      height: '100vh',
+    }
+  }
+  console.log(initialPosition)
+  const [animationStyle, setAnimationStyle] = React.useState(initialPosition)
 
   return (
     <AMPWrapper

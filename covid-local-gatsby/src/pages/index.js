@@ -20,7 +20,7 @@ function shuffleArray(array) {
   }
 }
 
-const LandingPage = () => {
+const LandingPage = props => {
   const data = useStaticQuery(graphql`
     query blogQuery {
       allAirtable(
@@ -58,7 +58,7 @@ const LandingPage = () => {
   }, [])
 
   return (
-    <Layout>
+    <Layout ampOpen={props.ampOpen || false}>
       <Helmet
         title={`COVID-Local: A Frontline Guide for Local Decision-Makers`}
         meta={[

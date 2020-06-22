@@ -61,21 +61,27 @@ const AMPWrapper = props => {
                 src="/assets/images/amp-screenshots/global-policy-maps.png"
                 alt="Global Policy Maps"
               />
-              <button>Policy maps</button>
+              <a target="_top" href="http://localhost:3000/map">
+                Policy maps
+              </a>
             </div>
             <div className={styles.col}>
               <img
                 src="/assets/images/amp-screenshots/policy-model.png"
                 alt="Policy Model"
               />
-              <button>Policy model</button>
+              <a target="_top" href="http://localhost:3000/">
+                Policy model
+              </a>
             </div>
             <div className={styles.col}>
               <img
                 src="/assets/images/amp-screenshots/policy-database.png"
                 alt="Policy Database"
               />
-              <button>Access data</button>
+              <a target="_top" href="http://localhost:3000/">
+                Access data
+              </a>
             </div>
           </div>
         </div>
