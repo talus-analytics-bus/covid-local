@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 import NavDropdown from './NavDropdown/NavDropdown'
 
-import styles from './Nav.module.scss'
+import styles from './AmpNav.module.scss'
 
 const Nav = props => {
   const navbarRightContent = React.useRef()
@@ -47,13 +47,22 @@ const Nav = props => {
 
   return (
     <nav className={styles.mainNav}>
-      <Link to="/" aria-label="home" className={styles.navbarLogo}></Link>
-      <Link to="/" className={styles.navbarLeftText}>
+      <button
+        onClick={props.closeAmp}
+        aria-label="back"
+        className={styles.backButton}
+      ></button>
+      <button
+        onClick={props.closeAmp}
+        aria-label="home"
+        className={styles.navbarLogo}
+      ></button>
+      <button onClick={props.closeAmp} className={styles.navbarLeftText}>
         <h1>
           <strong>COVID</strong> LOCAL
         </h1>
         {/* <h2>A Frontline Guide for Local Decision-Makers</h2> */}
-      </Link>
+      </button>
 
       <div className={styles.navbarRightHider} style={dropHiderStyle}>
         <div className={styles.navbarRight} ref={navbarRightContent}>
@@ -96,12 +105,6 @@ const Nav = props => {
               <Link activeClassName={styles.active} to="/contact/">
                 Contact Us
               </Link>
-            </li>
-            <li>
-              <button className={styles.ampButton} onClick={onClickAmp}>
-                <img src="/assets/images/ampLogo.svg" alt="COVID AMP" />
-                COVID AMP
-              </button>
             </li>
           </ul>
         </div>
