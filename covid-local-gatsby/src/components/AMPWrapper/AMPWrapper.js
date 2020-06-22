@@ -11,6 +11,12 @@ const AMPWrapper = props => {
       transform: 'translateX(0vw)',
       overflow: 'visible',
     })
+
+    console.log(window.location.pathname)
+
+    if (window.location.pathname === '/amp') {
+      window.history.pushState({}, '', '/')
+    }
   }
   return (
     <div className={styles.animationCrop}>
