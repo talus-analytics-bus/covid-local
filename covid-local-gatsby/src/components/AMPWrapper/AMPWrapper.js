@@ -12,8 +12,6 @@ const AMPWrapper = props => {
       overflow: 'visible',
     })
 
-    console.log(window.location.pathname)
-
     if (window.location.pathname === '/amp') {
       window.history.pushState({}, '', '/')
     }
@@ -67,7 +65,11 @@ const AMPWrapper = props => {
                 src="/assets/images/amp-screenshots/global-policy-maps.png"
                 alt="Global Policy Maps"
               />
-              <a target="_blank" rel="noopener noreferrer" href="#">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://covidamp.org/policymaps"
+              >
                 Policy maps
               </a>
             </div>
@@ -76,7 +78,11 @@ const AMPWrapper = props => {
                 src="/assets/images/amp-screenshots/policy-model.png"
                 alt="Policy Model"
               />
-              <a target="_blank" rel="noopener noreferrer" href="#">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://covidamp.org/"
+              >
                 Policy model
               </a>
             </div>
@@ -85,7 +91,11 @@ const AMPWrapper = props => {
                 src="/assets/images/amp-screenshots/policy-database.png"
                 alt="Policy Database"
               />
-              <a target="_blank" rel="noopener noreferrer" href="#">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://covidamp.org/"
+              >
                 Access data
               </a>
             </div>
