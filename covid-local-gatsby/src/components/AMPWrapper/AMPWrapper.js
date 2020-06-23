@@ -68,7 +68,7 @@ const AMPWrapper = props => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://covidamp.org/policymaps"
+                href="https://test.covidamp.org/policymaps"
               >
                 Policy maps
               </a>
@@ -81,7 +81,7 @@ const AMPWrapper = props => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://covidamp.org/"
+                href="https://test.covidamp.org/"
               >
                 Policy model
               </a>
@@ -94,7 +94,7 @@ const AMPWrapper = props => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://covidamp.org/"
+                href="https://test.covidamp.org/"
               >
                 Access data
               </a>
