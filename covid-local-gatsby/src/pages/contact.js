@@ -27,7 +27,7 @@ const Contact = () => {
       )
     } else {
       data['subject'] = 'New message from COVID-Local'
-      data['site'] = 'covid-local'
+      data['site'] = 'test'
       setErrorMessage('')
       setSubmitButtonText('Submitting...')
       axios
