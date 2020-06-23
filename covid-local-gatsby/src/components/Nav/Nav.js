@@ -38,11 +38,14 @@ const Nav = props => {
 
   const onClickAmp = event => {
     event.preventDefault()
+    console.log('click amp')
     props.setAnimationStyle({
       transform: 'translateX(-100vw)',
       overflow: 'hidden',
       height: '100vh',
     })
+
+    window.history.pushState({}, '', '/amp')
   }
 
   return (
