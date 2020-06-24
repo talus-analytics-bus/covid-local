@@ -40,9 +40,9 @@ const AMPWrapper = props => {
               </h1>
             </button>
           </div>
-          <div onClick={closeAmp}>
+          <div onClick={closeAmp} className={styles.contactDrape}>
             <Link to="/contact/" className={styles.drapes}>
-              <div>Contact Us</div>
+              Contact Us
             </Link>
           </div>
         </div>

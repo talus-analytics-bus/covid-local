@@ -205,14 +205,29 @@ nav > a:hover {
   padding-right: 0;
   margin-right: 0;
   border-radius: 0;
+  position: relative;
 
   @media (max-width: 1170px) {
-    margin-top: 0;
+    margin-top: 0.5rem;
+    padding-top: 1rem;
     border-left: none;
     margin-left: 0;
     padding-left: 0.5rem;
-    margin-bottom: 0;
+    margin-bottom: -1rem;
     padding-bottom: 0;
+    left: -6px;
+    width: 100%;
+
+    &:before {
+      position: relative;
+      display: block;
+      content: '';
+      left: 0;
+      top: -1.25rem;
+      height: 1px;
+      width: 100%;
+      background-color: #aaa;
+    }
   }
 
   > img {
