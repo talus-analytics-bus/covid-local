@@ -103,7 +103,7 @@ const Nav = props => {
             <li>
               <button className={styles.ampButton} onClick={onClickAmp}>
                 <img
-                  src="/assets/images/ampLogoWithArrow.svg"
+                  src="/assets/images/ampLogoWithArrowWide.svg"
                   alt="COVID AMP"
                 />
                 COVID AMP
