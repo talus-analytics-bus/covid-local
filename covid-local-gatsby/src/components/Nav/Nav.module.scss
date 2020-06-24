@@ -233,13 +233,14 @@ nav > a:hover {
     &:after {
       position: absolute;
       content: '';
-      border-top: 2px solid #26324a;
-      border-right: 2px solid #26324a;
+      border-top: 1px solid #26324a;
+      border-right: 1px solid #26324a;
       height: 1em;
       width: 1em;
-      transform: scaleX(0.5) rotate(45deg);
-      left: 6.1em;
+      transform: scaleX(0.75) rotate(45deg);
+      // left: 6.1em;
       top: 0.6em;
+      right: 0.8em;
     }
 
     > img {
