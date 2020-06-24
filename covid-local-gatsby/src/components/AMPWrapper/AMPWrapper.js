@@ -69,42 +69,42 @@ const AMPWrapper = props => {
           </div>
           <div className={styles.ampColumns}>
             <div className={styles.col}>
-              <img
-                src="/assets/images/amp-screenshots/global-policy-maps.png"
-                alt="Global Policy Maps"
-              />
               <a
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://test.covidamp.org/policymaps"
               >
-                Policy maps
+                <img
+                  src="/assets/images/amp-screenshots/global-policy-maps.png"
+                  alt="Global Policy Maps"
+                />
+                <span>Policy maps</span>
               </a>
             </div>
-            <div className={styles.col}>
-              <img
-                src="/assets/images/amp-screenshots/policy-model.png"
-                alt="Policy Model"
-              />
+            <div className={styles.col + ' ' + styles.inactive}>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://test.covidamp.org/"
               >
-                Policy model
+                <img
+                  src="/assets/images/amp-screenshots/policy-model.png"
+                  alt="Policy Model"
+                />
+                <span>Policy model</span>
               </a>
             </div>
             <div className={styles.col}>
-              <img
-                src="/assets/images/amp-screenshots/policy-database.png"
-                alt="Policy Database"
-              />
               <a
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://test.covidamp.org/"
               >
-                Access data
+                <img
+                  src="/assets/images/amp-screenshots/policy-database.png"
+                  alt="Policy Database"
+                />
+                <span>Access data</span>
               </a>
             </div>
           </div>
