@@ -16,12 +16,20 @@ const AMPWrapper = props => {
       window.history.pushState({}, '', '/')
     }
   }
+
+  const landingStyle = {}
+
+  if (props.animationStyle.transform === 'translateX(0vw)') {
+    landingStyle['overflow'] = 'hidden'
+    landingStyle['height'] = '50vh'
+  }
+
   return (
     <div className={styles.animationCrop}>
       <div className={styles.contentFrame} style={props.animationStyle}>
         {props.children}
       </div>
-      <div className={styles.ampLanding}>
+      <div className={styles.ampLanding} style={landingStyle}>
         <AmpNav {...{ closeAmp }} />
 
         <div className={styles.ampLandingContent}>
