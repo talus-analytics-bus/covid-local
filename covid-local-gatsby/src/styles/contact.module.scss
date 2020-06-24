@@ -12,7 +12,8 @@
 
 .main {
   margin-top: 1rem;
-  margin-bottom: 5rem;
+  padding-bottom: 5rem;
+  min-height: 100vh;
 
   .formRow {
     display: flex;
