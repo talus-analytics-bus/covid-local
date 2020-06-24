@@ -81,19 +81,6 @@ const AMPWrapper = props => {
                 <span>Policy maps</span>
               </a>
             </div>
-            <div className={styles.col + ' ' + styles.inactive}>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://test.covidamp.org/"
-              >
-                <img
-                  src="/assets/images/amp-screenshots/policy-model.png"
-                  alt="Policy Model"
-                />
-                <span>Policy model</span>
-              </a>
-            </div>
             <div className={styles.col}>
               <a
                 target="_blank"
@@ -105,6 +92,19 @@ const AMPWrapper = props => {
                   alt="Policy Database"
                 />
                 <span>Access data</span>
+              </a>
+            </div>
+            <div className={styles.col + ' ' + styles.inactive}>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://test.covidamp.org/"
+              >
+                <img
+                  src="/assets/images/amp-screenshots/policy-model.png"
+                  alt="Policy Model"
+                />
+                <span>Policy model</span>
               </a>
             </div>
           </div>
