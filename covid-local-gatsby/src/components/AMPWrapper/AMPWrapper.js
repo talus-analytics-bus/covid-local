@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 import AmpNav from '../AmpNav/AmpNav'
 
@@ -30,7 +31,20 @@ const AMPWrapper = props => {
         {props.children}
       </div>
       <div className={styles.ampLanding} style={landingStyle}>
-        <AmpNav {...{ closeAmp }} />
+        <div className={styles.curtainRod}>
+          <div className={styles.drapes}>
+            <button onClick={closeAmp} aria-label="home">
+              <div className={styles.navbarLogo}></div>
+              <h1>
+                <strong>COVID</strong> LOCAL
+              </h1>
+            </button>
+          </div>
+          <div className={styles.drapes}>
+            <Link to="/contact/">Contact Us</Link>
+          </div>
+        </div>
+        {/* <AmpNav {...{ closeAmp }} /> */}
 
         <div className={styles.ampLandingContent}>
           <div className={styles.ampHeader}>
