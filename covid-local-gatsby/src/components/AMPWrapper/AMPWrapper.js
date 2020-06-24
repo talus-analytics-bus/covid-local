@@ -32,7 +32,7 @@ const AMPWrapper = props => {
       </div>
       <div className={styles.ampLanding} style={landingStyle}>
         <div className={styles.curtainRod}>
-          <div className={styles.drapes}>
+          <div className={styles.drapes} onClick={closeAmp}>
             <button onClick={closeAmp} aria-label="home">
               <div className={styles.navbarLogo}></div>
               <h1>
@@ -40,8 +40,10 @@ const AMPWrapper = props => {
               </h1>
             </button>
           </div>
-          <div className={styles.drapes}>
-            <Link to="/contact/">Contact Us</Link>
+          <div onClick={closeAmp}>
+            <Link to="/contact/" className={styles.drapes}>
+              <div>Contact Us</div>
+            </Link>
           </div>
         </div>
         {/* <AmpNav {...{ closeAmp }} /> */}

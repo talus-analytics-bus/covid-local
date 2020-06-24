@@ -69,6 +69,13 @@ const Contact = () => {
 
       <form className={styles.main} onSubmit={handleSubmit}>
         <div className={styles.formRow}>
+          <div className={styles.accessibility}>
+            <p>
+              If you have any accessibility issues using this site, please
+              contact us directly at{' '}
+              <a href="mailto:COVIDLocal@nti.org">COVIDLocal@nti.org</a>.
+            </p>
+          </div>
           <p>
             We welcome questions about the Frontline Guide, feedback on its
             contents, input on how COVID-Local efforts can support your
@@ -80,16 +87,6 @@ const Contact = () => {
             submit any proprietary or protected information via this form. (
             <a href="https://www.nti.org/legal/">NTI privacy policy</a>)
           </p>
-          <div className={styles.accessibility}>
-            <p>
-              If you have any accessibility issues using this site, please
-              contact us directly at{' '}
-              <a href="mailto:irhcosting@georgetown.edu">
-                irhcosting@georgetown.edu
-              </a>{' '}
-              or <a href="mailto:COVIDLocal@nti.org">COVIDLocal@nti.org</a>.
-            </p>
-          </div>
         </div>
         <div className={styles.formRow}>{errorMessage}</div>
         <div className={styles.formRow}>

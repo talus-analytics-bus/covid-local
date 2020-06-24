@@ -48,6 +48,10 @@
         flex-wrap: wrap;
         align-items: center;
         padding: 0.5rem;
+        font-weight: 600;
+        text-decoration: none;
+        color: #233343;
+        height: 100%;
 
         button {
           position: relative;
@@ -76,12 +80,6 @@
             margin-right: 0.5rem;
             // margin-bottom: 0.25rem;
           }
-        }
-
-        a {
-          font-weight: 600;
-          text-decoration: none;
-          color: #233343;
         }
       }
     }
