@@ -92,8 +92,9 @@ const AMPWrapper = props => {
                 href="https://test.covidamp.org/policymaps"
               >
                 <img
-                  src="/assets/images/amp-screenshots/global-policy-maps.png"
-                  alt="Global Policy Maps"
+                  className={styles.mapImage}
+                  src="/assets/images/amp-screenshots/policy-maps.png"
+                  alt="Policy Maps"
                 />
                 <span>Policy maps</span>
               </a>

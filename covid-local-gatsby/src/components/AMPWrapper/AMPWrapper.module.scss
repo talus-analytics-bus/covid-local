@@ -175,8 +175,15 @@
         justify-content: center;
 
         img {
+          background-color: #fff;
           width: 15rem;
+          height: 15rem;
+          object-fit: contain;
           margin-bottom: 1rem;
+        }
+
+        .mapImage {
+          padding: 1rem;
         }
 
         span {
