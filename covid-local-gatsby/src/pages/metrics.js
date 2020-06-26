@@ -146,24 +146,24 @@ const MetricsPage = () => {
             </li>
           </ul>
         </p>
-        <div className={styles.covidActNow}>
-          <div className={styles.logo}>
-            <div>COVID</div>
-            <div className={styles.green}>ActNow</div>
-          </div>
-          <p>
-            In addition to utilizing the metrics found in COVID Local, we
-            recommend using{' '}
-            <a
-              href="https://covidactnow.org/"
-              target="_blank"
-              rel="noreferrer nofollow"
-            >
-              COVID Act Now
-            </a>{' '}
-            metrics. Learn more on this blog post.
-          </p>
-        </div>
+        {/* <div className={styles.covidActNow}> */}
+        {/*   <div className={styles.logo}> */}
+        {/*     <div>COVID</div> */}
+        {/*     <div className={styles.green}>ActNow</div> */}
+        {/*   </div> */}
+        {/*   <p> */}
+        {/*     In addition to utilizing the metrics found in COVID Local, we */}
+        {/*     recommend using{' '} */}
+        {/*     <a */}
+        {/*       href="https://covidactnow.org/" */}
+        {/*       target="_blank" */}
+        {/*       rel="noreferrer nofollow" */}
+        {/*     > */}
+        {/*       COVID Act Now */}
+        {/*     </a>{' '} */}
+        {/*     metrics. Learn more on this blog post. */}
+        {/*   </p> */}
+        {/* </div> */}
         <div className={styles.filters}>
           <button
             onClick={onClickTab}
