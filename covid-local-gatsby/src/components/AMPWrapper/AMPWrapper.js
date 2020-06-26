@@ -34,6 +34,7 @@ const AMPWrapper = props => {
         <div className={styles.curtainRod}>
           <div className={styles.drapes} onClick={closeAmp}>
             <button onClick={closeAmp} aria-label="home">
+              <div className={styles.backButton}></div>
               <div className={styles.navbarLogo}></div>
               <h1>
                 <strong>COVID</strong> LOCAL
