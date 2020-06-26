@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 import AmpNav from '../AmpNav/AmpNav'
 
@@ -11,14 +12,42 @@ const AMPWrapper = props => {
       transform: 'translateX(0vw)',
       overflow: 'visible',
     })
+
+    if (window.location.pathname === '/amp') {
+      window.history.pushState({}, '', '/')
+    }
   }
+
+  const landingStyle = {}
+
+  if (props.animationStyle.transform === 'translateX(0vw)') {
+    landingStyle['overflow'] = 'hidden'
+    landingStyle['height'] = '50vh'
+  }
+
   return (
     <div className={styles.animationCrop}>
       <div className={styles.contentFrame} style={props.animationStyle}>
         {props.children}
       </div>
-      <div className={styles.ampLanding}>
-        <AmpNav {...{ closeAmp }} />
+      <div className={styles.ampLanding} style={landingStyle}>
+        <div className={styles.curtainRod}>
+          <div className={styles.drapes} onClick={closeAmp}>
+            <button onClick={closeAmp} aria-label="home">
+              <div className={styles.backButton}></div>
+              <div className={styles.navbarLogo}></div>
+              <h1>
+                <strong>COVID</strong> LOCAL
+              </h1>
+            </button>
+          </div>
+          <div onClick={closeAmp} className={styles.contactDrape}>
+            <Link to="/contact/" className={styles.drapes}>
+              Contact Us
+            </Link>
+          </div>
+        </div>
+        {/* <AmpNav {...{ closeAmp }} /> */}
 
         <div className={styles.ampLandingContent}>
           <div className={styles.ampHeader}>
@@ -57,25 +86,44 @@ const AMPWrapper = props => {
           </div>
           <div className={styles.ampColumns}>
             <div className={styles.col}>
-              <img
-                src="/assets/images/amp-screenshots/global-policy-maps.png"
-                alt="Global Policy Maps"
-              />
-              <button>Policy maps</button>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://test.covidamp.org/policymaps"
+              >
+                <img
+                  className={styles.mapImage}
+                  src="/assets/images/amp-screenshots/policy-maps.png"
+                  alt="Policy Maps"
+                />
+                <span>Policy maps</span>
+              </a>
             </div>
             <div className={styles.col}>
-              <img
-                src="/assets/images/amp-screenshots/policy-model.png"
-                alt="Policy Model"
-              />
-              <button>Policy model</button>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://test.covidamp.org/"
+              >
+                <img
+                  src="/assets/images/amp-screenshots/policy-database.png"
+                  alt="Policy Database"
+                />
+                <span>Access data</span>
+              </a>
             </div>
-            <div className={styles.col}>
-              <img
-                src="/assets/images/amp-screenshots/policy-database.png"
-                alt="Policy Database"
-              />
-              <button>Access data</button>
+            <div className={styles.col + ' ' + styles.inactive}>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://test.covidamp.org/"
+              >
+                <img
+                  src="/assets/images/amp-screenshots/policy-model.png"
+                  alt="Policy Model"
+                />
+                <span>Policy model</span>
+              </a>
             </div>
           </div>
         </div>

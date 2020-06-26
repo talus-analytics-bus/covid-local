@@ -38,11 +38,14 @@ const Nav = props => {
 
   const onClickAmp = event => {
     event.preventDefault()
+    console.log('click amp')
     props.setAnimationStyle({
       transform: 'translateX(-100vw)',
       overflow: 'hidden',
       height: '100vh',
     })
+
+    window.history.pushState({}, '', '/amp')
   }
 
   return (
@@ -99,7 +102,10 @@ const Nav = props => {
             </li>
             <li>
               <button className={styles.ampButton} onClick={onClickAmp}>
-                <img src="/assets/images/ampLogo.svg" alt="COVID AMP" />
+                <img
+                  src="/assets/images/ampLogoWithArrowWide.svg"
+                  alt="COVID AMP"
+                />
                 COVID AMP
               </button>
             </li>
