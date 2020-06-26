@@ -1,25 +1,33 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
+import React from 'react'
 
-import React from "react"
+import Nav from '../../components/Nav/Nav'
+import AMPWrapper from '../AMPWrapper/AMPWrapper'
 
-import Nav from '../../components/Nav/Nav';
-
-import "./Layout.css"
-import "./Fonts.css"
+import './Layout.css'
+import './Fonts.css'
 
 const Layout = props => {
+  let initialPosition = {
+    transform: 'translateX(0vw)',
+  }
+  if (props.ampOpen) {
+    initialPosition = {
+      transform: 'translateX(-100vw)',
+      overflow: 'hidden',
+      height: '100vh',
+    }
+  }
 
+  const [animationStyle, setAnimationStyle] = React.useState(initialPosition)
 
   return (
-    <>
-      <Nav />
+    <AMPWrapper
+      animationStyle={animationStyle}
+      setAnimationStyle={setAnimationStyle}
+    >
+      <Nav setAnimationStyle={setAnimationStyle} />
       <main>{props.children}</main>
-    </>
+    </AMPWrapper>
   )
 }
 
