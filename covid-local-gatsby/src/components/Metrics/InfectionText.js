@@ -12,7 +12,7 @@ const InfectionText = () => (
       <rect x="99.3" y="168.2" className="st2" width="296.9" height="31" />
       <text transform="matrix(1 0 0 1 99.3103 176.7517)">
         <tspan x="0" y="0" className="st3 st4 st5">
-          Current estimate of less than 1 case
+          Current estimate of &lt;1 case
         </tspan>
         <tspan x="0" y="14" className="st3 st4 st5">
           per 100,000 population per week
@@ -25,7 +25,7 @@ const InfectionText = () => (
         transform="matrix(1 0 0 1 99.3093 117.3874)"
         className="st3 st4 st5"
       >
-        &lt;3% of tests conducted are positive
+        &lt;1% of tests conducted are positive
       </text>
     </g>
     <line className="st1" x1="99.3" y1="285.4" x2="484" y2="285.4" />
@@ -40,7 +40,7 @@ const InfectionText = () => (
     <rect x="99.3" y="341" className="st2" width="296.9" height="30.1" />
     <text transform="matrix(1 0 0 1 99.3103 349.5114)">
       <tspan x="0" y="0" className="st3 st4 st5">
-        Current estimate of less than 1 case
+        Current estimate of &lt;10 cases
       </tspan>
       <tspan x="0" y="14" className="st3 st4 st5">
         per 100,000 population per day
@@ -62,7 +62,7 @@ const InfectionText = () => (
     <rect x="99.3" y="496.8" className="st2" width="296.9" height="30.8" />
     <text transform="matrix(1 0 0 1 99.3103 505.2734)">
       <tspan x="0" y="0" className="st3 st4 st5">
-        Current estimate of less than 5 cases
+        Current estimate of &lt;25 cases
       </tspan>
       <tspan x="0" y="14" className="st3 st4 st5">
         per 100,000 population per day
