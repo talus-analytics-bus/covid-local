@@ -100,7 +100,7 @@ const MetricsPage = () => {
                   toggleDownloadDetail()
                 }}
               >
-                <span>Metrics overview</span> <span>pdf, 939kb</span>
+                <span>Metrics overview</span> <span>pdf, 987kb</span>
               </a>
               <a
                 target="_blank"
@@ -116,7 +116,7 @@ const MetricsPage = () => {
                   toggleDownloadDetail()
                 }}
               >
-                <span>Metrics scorecard</span> <span>pdf, 209kb</span>
+                <span>Metrics scorecard</span> <span>pdf, 269kb</span>
               </a>
             </div>
           </div>
