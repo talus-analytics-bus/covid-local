@@ -213,6 +213,16 @@ const LandingPage = props => {
                   alt="The Guardian Logo"
                 />
               </OutboundLink>
+              <OutboundLink
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.cnbc.com/2020/06/26/beth-cameron-helped-write-the-white-house-pandemic-playbook.html"
+              >
+                <img
+                  src="/assets/images/media-logos/cnbc.svg"
+                  alt="The Guardian Logo"
+                />
+              </OutboundLink>
             </div>
           </div>
         </main>
