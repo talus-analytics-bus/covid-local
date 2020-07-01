@@ -10,23 +10,20 @@ const scorecardContent = [
         },
         { text: '<10% of tests conducted are positive' },
         {
-          text:
-            'Current estimate of less than 5 cases per 100,000 population per day',
+          text: 'Current estimate of <25 cases per 100,000 population per day',
         },
       ],
       [
         { text: 'Continued decline in daily cases' },
         { text: '<3% of tests conducted are positive' },
         {
-          text:
-            'Current estimate of less than 1 case per 100,000 population per day',
+          text: 'Current estimate of <10 cases per 100,000 population per day',
         },
       ],
       [
-        { text: '<3% of tests conducted are positive' },
+        { text: '<1% of tests conducted are positive' },
         {
-          text:
-            'Current estimate of less than 1 case per 100,000 population per week',
+          text: 'Current estimate of <1 case per 100,000 population per week',
         },
       ],
     ],
