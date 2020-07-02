@@ -220,7 +220,7 @@ const LandingPage = props => {
               >
                 <img
                   src="/assets/images/media-logos/cnbc.svg"
-                  alt="The Guardian Logo"
+                  alt="CNBC Logo"
                 />
               </OutboundLink>
             </div>
