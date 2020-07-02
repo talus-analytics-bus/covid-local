@@ -59,14 +59,11 @@
 .main {
   margin-bottom: 5rem;
 
-  > p {
+  ul {
+    list-style-type: none;
+    margin-top: 0.6em;
+    line-height: 1.6em;
     margin-bottom: 2rem;
-
-    ul {
-      list-style-type: none;
-      margin-top: 0.6em;
-      line-height: 1.6em;
-    }
   }
 
   .downloadRow {
@@ -186,16 +183,11 @@
     border-radius: 1rem;
     margin-bottom: 2rem;
     max-width: 43em;
+    align-items: center;
 
-    .logo {
-      font-weight: 800;
-      line-height: 1em;
-      font-size: 1.3rem;
-      margin-right: 2rem;
-
-      .green {
-        color: #5ecd84;
-      }
+    img {
+      height: 2.5rem;
+      margin-right: 1rem;
     }
   }
 
