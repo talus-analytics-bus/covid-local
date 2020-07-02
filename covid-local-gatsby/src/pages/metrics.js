@@ -151,8 +151,8 @@ const MetricsPage = () => {
             alt="CovidActNow Logo"
           />
           <p>
-            In addition to using these metrics to assess your progress in
-            managing the outbreak, we recommend{' '}
+            In addition to using these metrics to assess your progress, we
+            recommend{' '}
             <a
               href="https://covidactnow.org/"
               target="_blank"
@@ -160,7 +160,7 @@ const MetricsPage = () => {
             >
               COVID Act Now
             </a>{' '}
-            to understand what is happening in your area. Learn more on{' '}
+            to assess current conditions. Learn more on{' '}
             <Link to="/blog/how-do-reopening-metrics-measure-up/">
               this blog post.
             </Link>
