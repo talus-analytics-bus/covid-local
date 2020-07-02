@@ -147,7 +147,7 @@ const Reachback = () => {
                   </Affiliation>
                 </section>
                 <Link
-                  to="/reachback-contact/#Medical_Capacity"
+                  to="/ask-the-experts-contact/#Medical_Capacity"
                   className={styles.linkButton}
                 >
                   Contact
@@ -183,7 +183,7 @@ const Reachback = () => {
                   </Affiliation>
                 </section>
                 <Link
-                  to="/reachback-contact/#Logistics/PPE_Supply_Chain"
+                  to="/ask-the-experts-contact/#Logistics/PPE_Supply_Chain"
                   className={styles.linkButton}
                 >
                   Contact
@@ -245,7 +245,7 @@ const Reachback = () => {
                 </section>
 
                 <Link
-                  to="/reachback-contact/#Disease_Testing,_Contact_Tracing,_&_Surveillance"
+                  to="/ask-the-experts-contact/#Disease_Testing,_Contact_Tracing,_&_Surveillance"
                   className={styles.linkButton}
                 >
                   Contact
@@ -281,7 +281,7 @@ const Reachback = () => {
                 </section>
 
                 <Link
-                  to="/reachback-contact/#Data_Sources,_Analysis,_and_Modeling"
+                  to="/ask-the-experts-contact/#Data_Sources,_Analysis,_and_Modeling"
                   className={styles.linkButton}
                 >
                   Contact
@@ -328,7 +328,7 @@ const Reachback = () => {
                 </section>
 
                 <Link
-                  to="/reachback-contact/#Vulnerable_Populations_and_Low_Resource_Settings"
+                  to="/ask-the-experts-contact/#Vulnerable_Populations_and_Low_Resource_Settings"
                   className={styles.linkButton}
                 >
                   Contact
@@ -393,7 +393,7 @@ const Reachback = () => {
                   </Affiliation>
                 </section>
                 <Link
-                  to="/reachback-contact/#Policy_Coordination"
+                  to="/ask-the-experts-contact/#Policy_Coordination"
                   className={styles.linkButton}
                 >
                   Contact
