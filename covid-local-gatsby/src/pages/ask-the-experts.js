@@ -193,7 +193,7 @@ const Reachback = () => {
           </div>
         </BlueExpandBox>
         <BlueExpandBox>
-          <h1>Disease Testing, Contact Tracing, & Surveillance:</h1>
+          <h1>Disease Testing, Contact Tracing, & Surveillance</h1>
           <div className={styles.content}>
             <div className={styles.text}>
               <p>
