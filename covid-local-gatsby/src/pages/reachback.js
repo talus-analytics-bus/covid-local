@@ -146,7 +146,12 @@ const Reachback = () => {
                     <p>John Kraemer</p>
                   </Affiliation>
                 </section>
-                <button>Contact</button>
+                <Link
+                  to="/reachback-contact/#Medical_Capacity"
+                  className={styles.linkButton}
+                >
+                  Contact
+                </Link>
               </div>
             </div>
           </div>
@@ -177,7 +182,12 @@ const Reachback = () => {
                     <p>Valerie Karplus</p>
                   </Affiliation>
                 </section>
-                <button>Contact</button>
+                <Link
+                  to="/reachback-contact/#Logistics/PPE_Supply_Chain"
+                  className={styles.linkButton}
+                >
+                  Contact
+                </Link>
               </div>
             </div>
           </div>
@@ -234,7 +244,12 @@ const Reachback = () => {
                   </Affiliation>
                 </section>
 
-                <button>Contact</button>
+                <Link
+                  to="/reachback-contact/#Disease_Testing,_Contact_Tracing,_&_Surveillance"
+                  className={styles.linkButton}
+                >
+                  Contact
+                </Link>
               </div>
             </div>
           </div>
@@ -265,13 +280,18 @@ const Reachback = () => {
                   </Affiliation>
                 </section>
 
-                <button>Contact</button>
+                <Link
+                  to="/reachback-contact/#Data_Sources,_Analysis,_and_Modeling"
+                  className={styles.linkButton}
+                >
+                  Contact
+                </Link>
               </div>
             </div>
           </div>
         </BlueExpandBox>
         <BlueExpandBox>
-          <h1>Vulnerable Populations, Low Resource Settings</h1>
+          <h1>Vulnerable Populations and Low Resource Settings</h1>
           <div className={styles.content}>
             <div className={styles.text}>
               <p>
@@ -307,7 +327,12 @@ const Reachback = () => {
                   </Affiliation>
                 </section>
 
-                <button>Contact</button>
+                <Link
+                  to="/reachback-contact/#Vulnerable_Populations_and_Low_Resource_Settings"
+                  className={styles.linkButton}
+                >
+                  Contact
+                </Link>
               </div>
             </div>
           </div>
@@ -367,7 +392,12 @@ const Reachback = () => {
                     <p>Juliette Kayyem</p>
                   </Affiliation>
                 </section>
-                <button>Contact</button>
+                <Link
+                  to="/reachback-contact/#Policy_Coordination"
+                  className={styles.linkButton}
+                >
+                  Contact
+                </Link>
               </div>
             </div>
           </div>

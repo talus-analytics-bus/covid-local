@@ -134,8 +134,9 @@
         }
       }
 
-      button {
+      .linkButton {
         background-color: #469383;
+        text-decoration: none;
         border: none;
         border-radius: 0.5rem;
         flex-grow: 0;
