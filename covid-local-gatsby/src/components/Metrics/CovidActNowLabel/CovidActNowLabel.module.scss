@@ -1,0 +1,26 @@
+.covidActNow {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  background-color: #eee;
+  padding: 4px;
+  border-radius: 0.25em;
+  margin-bottom: 2rem;
+  // max-width: 43em;
+  font-size: 0.75vw;
+
+  img {
+    height: 1em;
+    max-height: 8px;
+  }
+
+  // .logo {
+  //   font-weight: 800;
+  //   line-height: 1em;
+  //   display: flex;
+
+  //   .green {
+  //     color: #5ecd84;
+  //   }
+  // }
+}
