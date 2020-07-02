@@ -1,11 +1,84 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 import Layout from '../components/Layout/Layout'
 import BlueExpandBox from '../components/BlueExpandBox/BlueExpandBox'
 
 import styles from '../styles/reachback.module.scss'
+
+const orgs = {
+  HarvardKennedySchool: {
+    link: 'https://www.belfercenter.org/SAGH',
+    logo: '/assets/images/reachback-logos-fullsize/harvard-belfer-center.png',
+    altText:
+      'Harvard Kennedy School Belfer Center for Science and International Affairs',
+  },
+  ColumbiaMailman: {
+    link: 'https://www.publichealth.columbia.edu/covid-19',
+    logo: '/assets/images/reachback-logos-fullsize/columbia-mailman.png',
+    altText: 'Columbia Mailman School of Public Health',
+  },
+  Georgetown: {
+    link: 'https://ghss.georgetown.edu/',
+    logo: '/assets/images/reachback-logos-fullsize/Georgetown-small.png',
+    altText:
+      'Georgetown University Center for Global Health Science and Security',
+  },
+  CenterForGlobalDevelopment: {
+    link: 'https://www.cgdev.org/',
+    logo:
+      '/assets/images/reachback-logos-fullsize/center-for-global-development.png',
+    altText: 'Center for Global Development',
+  },
+  NuclearThreatInitiative: {
+    link: 'https://www.nti.org/about/biosecurity/',
+    logo:
+      '/assets/images/reachback-logos-fullsize/Nuclear_Threat_Initiative_logo.png',
+    altText: 'Nuclear Threat Initiative Biosecurity',
+  },
+  MIT: {
+    link: 'https://www.covidalliance.com/',
+    logo: '/assets/images/reachback-logos-fullsize/MIT-updated.png',
+    altText: 'Massachusetts Institute of Technology COVID-19 Policy Alliance',
+  },
+  JohnsHopkins: {
+    link: 'https://coronavirus.jhu.edu/',
+    logo: '/assets/images/reachback-logos-fullsize/jhu2.png',
+    altText: 'Johns Hopkins Coronavirus Resource Center',
+  },
+  InQTel: {
+    link: 'https://www.iqt.org/covid-19/',
+    logo: '/assets/images/reachback-logos-fullsize/IQT_logo.png',
+    altText: 'IN-Q-TEL COVID-19',
+  },
+  Talus: {
+    link: 'http://talusanalytics.com/',
+    logo: '/assets/images/reachback-logos-fullsize/talus-logo-01.png',
+    altText: 'Talus Analytics',
+  },
+  MontanaState: {
+    link: 'https://www.montana.edu/',
+    logo: '/assets/images/reachback-logos-fullsize/MontanaState.png',
+    altText: 'Montana State University',
+  },
+}
+
+const Affiliation = props => (
+  <div className={styles.experts}>
+    <div className={styles.logo}>
+      <OutboundLink
+        href={props.org.link}
+        target="_blank"
+        rel="nofollow noreferrer"
+      >
+        <img src={props.org.logo} alt={props.org.altText} />
+      </OutboundLink>
+    </div>
+    <div className={styles.names}>{props.children}</div>
+  </div>
+)
 
 const Reachback = () => {
   return (
@@ -58,28 +131,24 @@ const Reachback = () => {
                 healthcare settings.
               </p>
               <h2>Experts</h2>
-              <div className={styles.logos}>
-                <a href="#">
-                  <img
-                    src="/assets/images/reachback-logos-fullsize/harvard-belfer-center.png"
-                    alt=""
-                  />
-                  {/* Harvard Global Health */}
-                </a>
-                <a href="#">
-                  <img
-                    src="/assets/images/reachback-logos-fullsize/columbia-mailman.png"
-                    alt=""
-                  />
-                  {/* Columbia Mailman School of Public Health */}
-                </a>
+              <div className={styles.categories}>
+                <section>
+                  <h3>Hospital Capacity</h3>
+                  <Affiliation org={orgs.HarvardKennedySchool}>
+                    <p>Ashish Jha</p>
+                  </Affiliation>
+                </section>
+                <section>
+                  <h3>ICU Beds</h3>
+                  <Affiliation org={orgs.ColumbiaMailman}>
+                    <p>Maria O&apos;Brien</p>
+                    <p>Charles Branas</p>
+                    <p>John Kraemer</p>
+                  </Affiliation>
+                </section>
                 <button>Contact</button>
               </div>
             </div>
-            {/* <div className={styles.experts}> */}
-            {/*   <a href="#">Harvard Global Health</a> */}
-            {/*   <a href="#">Columbia Mailman School of Public Health</a> */}
-            {/* </div> */}
           </div>
         </BlueExpandBox>
         <BlueExpandBox>
@@ -97,10 +166,19 @@ const Reachback = () => {
                 supply chain strategies must be adapted to the current realities
                 as opposed to relying on past models.
               </p>
-            </div>
-            <div className={styles.experts}>
-              <a href="#">MIT</a>
-              <a href="#">Harvard Kennedy School of Government</a>
+              <h2>Experts</h2>
+              <div className={styles.categories}>
+                <section>
+                  <h3>General</h3>
+                  <Affiliation org={orgs.HarvardKennedySchool}>
+                    <p>Juliette Kayyem</p>
+                  </Affiliation>
+                  <Affiliation org={orgs.MIT}>
+                    <p>Valerie Karplus</p>
+                  </Affiliation>
+                </section>
+                <button>Contact</button>
+              </div>
             </div>
           </div>
         </BlueExpandBox>
@@ -117,12 +195,47 @@ const Reachback = () => {
                 information on local transmission is available to inform
                 strategy-setting and daily tactical decision-making.
               </p>
-            </div>
-            <div className={styles.experts}>
-              <a href="#">Georgetown</a>
-              <a href="#">In-Q-Tel</a>
-              <a href="#">JHU</a>
-              <a href="#">Columbia Mailman School of Public Health</a>
+              <h2>Experts</h2>
+              <div className={styles.categories}>
+                <section>
+                  <h3>Contact Tracing and Isolation</h3>
+                  <Affiliation org={orgs.ColumbiaMailman}>
+                    <p>Maria O&apos;Brien</p>
+                    <p>Wafaa El-Sadr</p>
+                  </Affiliation>
+                </section>
+
+                <section>
+                  <h3>Testing</h3>
+                  <Affiliation org={orgs.ColumbiaMailman}>
+                    <p>Maria O&apos;Brien</p>
+                    <p>Wafaa El-Sadr</p>
+                  </Affiliation>
+                </section>
+
+                <section>
+                  <h3>Local Outbreak Modeling</h3>
+                  <Affiliation org={orgs.ColumbiaMailman}>
+                    <p>Maria O&apos;Brien</p>
+                    <p>J. Shaman</p>
+                  </Affiliation>
+                </section>
+
+                <section>
+                  <h3>General</h3>
+                  <Affiliation org={orgs.Georgetown}>
+                    <p>Matt Boyce</p>
+                  </Affiliation>
+                  <Affiliation org={orgs.JohnsHopkins}>
+                    <p>Jennifer Nuzzo</p>
+                  </Affiliation>
+                  <Affiliation org={orgs.InQTel}>
+                    <p>Dylan George, PhD</p>
+                  </Affiliation>
+                </section>
+
+                <button>Contact</button>
+              </div>
             </div>
           </div>
         </BlueExpandBox>
@@ -140,10 +253,20 @@ const Reachback = () => {
                 critical care requirements, ventilator orders, staffing
                 requirements, and logistics requirements.
               </p>
-            </div>
-            <div className={styles.experts}>
-              <a href="#">Talus</a>
-              <a href="#">Georgetown</a>
+              <h2>Experts</h2>
+              <div className={styles.categories}>
+                <section>
+                  <h3>General</h3>
+                  <Affiliation org={orgs.Talus}>
+                    <p>Ellie Graden</p>
+                  </Affiliation>
+                  <Affiliation org={orgs.Georgetown}>
+                    <p>Matt Boyce</p>
+                  </Affiliation>
+                </section>
+
+                <button>Contact</button>
+              </div>
             </div>
           </div>
         </BlueExpandBox>
@@ -162,13 +285,90 @@ const Reachback = () => {
                 only will protect these vulnerable populations, but may also
                 alleviate pressure on healthcare systems.
               </p>
+              <h2>Experts</h2>
+              <div className={styles.categories}>
+                <section>
+                  <h3>Low Resource, Rural, and Tribal Communities</h3>
+                  <Affiliation org={orgs.MontanaState}>
+                    <p>Jayne Morrow</p>
+                  </Affiliation>
+                </section>
+
+                <section>
+                  <h3>General</h3>
+                  <Affiliation org={orgs.HarvardKennedySchool}>
+                    <p>Ashish Jha</p>
+                  </Affiliation>
+                  <Affiliation org={orgs.ColumbiaMailman}>
+                    <p>Maria O&apos;Brien</p>
+                    <p>Wafaa El-Sadr</p>
+                    <p>Terry McGovern</p>
+                    <p>Cora Neumann</p>
+                  </Affiliation>
+                </section>
+
+                <button>Contact</button>
+              </div>
             </div>
-            <div className={styles.experts}>
-              <a href="#">Harvard</a>
-              <a href="#">GCD</a>
-              <a href="#">NTI</a>
-              <a href="#">Columbia Mailman School of Public Health</a>
-              <a href="#">Georgetown</a>
+          </div>
+        </BlueExpandBox>
+        <BlueExpandBox>
+          <h1>Policy Coordination</h1>
+          <div className={styles.content}>
+            <div className={styles.text}>
+              <p>
+                The COVID-19 outbreak has placed significant pressure on
+                subnational governments to tailor policy response to the
+                outbreak based on local conditions. While some policies will
+                cause disruptions, they can be particularly problematic if they
+                create economic disincentives to cooperating with social
+                distancing measures. Coordinating policies and mitigating these
+                disruptions can help to reduce the human cost of the outbreak,
+                beyond the immediate toll of the disease itself.
+              </p>
+              <h2>Experts</h2>
+              <div className={styles.categories}>
+                <section>
+                  <h3>Law and Governance</h3>
+                  <Affiliation org={orgs.Georgetown}>
+                    <p>Matt Boyce</p>
+                    <p>Mike Soto</p>
+                    <p>John Kraemer</p>
+                  </Affiliation>
+                </section>
+                <section>
+                  <h3>State-Level Policy</h3>
+                  <Affiliation org={orgs.ColumbiaMailman}>
+                    <p>Maria O&apos;Brien</p>
+                    <p>Michael Sparer</p>
+                  </Affiliation>
+                </section>
+                <section>
+                  <h3>Population and Family Health</h3>
+                  <Affiliation org={orgs.ColumbiaMailman}>
+                    <p>Maria O&apos;Brien</p>
+                    <p>Terry McGovern</p>
+                  </Affiliation>
+                </section>
+                <section>
+                  <h3>Quarantine Policy</h3>
+                  <Affiliation org={orgs.Georgetown}>
+                    <p>Matt Boyce</p>
+                    <p>Mike Soto</p>
+                    <p>John Kraemer</p>
+                  </Affiliation>
+                </section>
+                <section>
+                  <h3>General</h3>
+                  <Affiliation org={orgs.CenterForGlobalDevelopment}>
+                    <p>Jeremy Konyndyk</p>
+                  </Affiliation>
+                  <Affiliation org={orgs.NuclearThreatInitiative}>
+                    <p>Juliette Kayyem</p>
+                  </Affiliation>
+                </section>
+                <button>Contact</button>
+              </div>
             </div>
           </div>
         </BlueExpandBox>
