@@ -59,14 +59,11 @@
 .main {
   margin-bottom: 5rem;
 
-  > p {
+  ul {
+    list-style-type: none;
+    margin-top: 0.6em;
+    line-height: 1.6em;
     margin-bottom: 2rem;
-
-    ul {
-      list-style-type: none;
-      margin-top: 0.6em;
-      line-height: 1.6em;
-    }
   }
 
   .downloadRow {
