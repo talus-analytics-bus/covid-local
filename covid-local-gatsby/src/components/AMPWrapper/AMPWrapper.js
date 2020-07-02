@@ -116,7 +116,7 @@ const AMPWrapper = props => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://covidamp.org/"
+                href="https://covidamp.org/data"
               >
                 <img
                   src="/assets/images/amp-screenshots/policy-model.png"
