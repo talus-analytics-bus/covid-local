@@ -67,8 +67,10 @@ const AMPWrapper = props => {
             <p>
               <strong>
                 Helping local leaders assess the impact of COVID-19 response
-                plans and policies{' '}
+                plans and policies
               </strong>
+            </p>
+            <p>
               The COVID Analysis and Mapping of Policies (AMP) visualization
               tool is a comprehensive database of policies and plans to address
               the COVID-19 pandemic. Decision-makers can use COVID AMP’s
@@ -103,7 +105,7 @@ const AMPWrapper = props => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://covidamp.org/"
+                href="https://covidamp.org/data"
               >
                 <img
                   src="/assets/images/amp-screenshots/policy-database.png"
@@ -116,7 +118,7 @@ const AMPWrapper = props => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://covidamp.org/"
+                href="https://covidamp.org/data"
               >
                 <img
                   src="/assets/images/amp-screenshots/policy-model.png"
