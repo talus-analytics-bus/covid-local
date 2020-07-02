@@ -227,7 +227,7 @@ const Reachback = () => {
                   <h3>Local Outbreak Modeling</h3>
                   <Affiliation org={orgs.ColumbiaMailman}>
                     <p>Maria O&apos;Brien</p>
-                    <p>J. Shaman</p>
+                    <p>Jeffrey Shaman</p>
                   </Affiliation>
                 </section>
 
@@ -240,7 +240,7 @@ const Reachback = () => {
                     <p>Jennifer Nuzzo</p>
                   </Affiliation>
                   <Affiliation org={orgs.InQTel}>
-                    <p>Dylan George, PhD</p>
+                    <p>Dylan George</p>
                   </Affiliation>
                 </section>
 
@@ -273,7 +273,7 @@ const Reachback = () => {
                 <section>
                   <h3>General</h3>
                   <Affiliation org={orgs.Talus}>
-                    <p>Ellie Graden</p>
+                    <p>Ellie Graeden</p>
                   </Affiliation>
                   <Affiliation org={orgs.Georgetown}>
                     <p>Matt Boyce</p>
