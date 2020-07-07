@@ -67,7 +67,11 @@ const Contact = () => {
         <h1>Contact us</h1>
       </header>
 
-      <form className={styles.main} onSubmit={handleSubmit}>
+      <form
+        className={styles.main}
+        onSubmit={handleSubmit}
+        aria-label="Contact Us"
+      >
         <div className={styles.formRow}>
           <div className={styles.accessibility}>
             <p>
