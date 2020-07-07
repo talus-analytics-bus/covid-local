@@ -24,7 +24,7 @@ const Contact = () => {
     } else {
       setJoinErrorMessage('')
       setJoinButtonText('Submitting...')
-      data['subject'] = 'Mailinglist Join Request from COVID Local'
+      data['subject'] = 'Request to Join COVID Local Mailinglist'
       data['site'] = 'COVID Local Mailinglist Request'
       data[
         'body'
