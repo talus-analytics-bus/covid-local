@@ -12,6 +12,8 @@ const Contact = () => {
   const [submitButtonText, setSubmitButtonText] = React.useState('Submit')
   const [type, setType] = React.useState('')
 
+  const [joinButtonText, setJoinButtonText] = React.useState('Join')
+
   const handleSubmit = event => {
     event.preventDefault()
     const data = Object.fromEntries(new FormData(event.target))
@@ -130,10 +132,9 @@ const Contact = () => {
                 Feedback on the Guide
               </option>
               <option value="Question">Submit question</option>
-              <option value="Join Mailinglist">Join mailing list</option>
+              {/* <option value="Join Mailinglist">Join mailing list</option> */}
             </select>
           </label>
-
           <label
             className={styles.type}
             htmlFor="Type"
@@ -159,7 +160,6 @@ const Contact = () => {
             </select>
           </label>
         </div>
-
         <div className={styles.formRow}>
           <label className={styles.body} htmlFor="body">
             Comment or question*
@@ -171,6 +171,21 @@ const Contact = () => {
           <button className={styles.submit}>{submitButtonText}</button>
         </div>
         <div className={styles.formRow}>{successMessage}</div>
+      </form>
+
+      <form className={styles.join} aria-label="Join Email List">
+        <div className={styles.formRow}>
+          <label>
+            <span>
+              To receive updates about new COVID Local resources, join our email
+              list:
+            </span>
+            <input type="text" aria-label="Enter email address to join" />
+          </label>
+        </div>
+        <div className={styles.formRow}>
+          <button className={styles.submit}>{joinButtonText}</button>
+        </div>
       </form>
     </Layout>
   )
