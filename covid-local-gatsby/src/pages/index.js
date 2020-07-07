@@ -154,7 +154,7 @@ const LandingPage = props => {
               </Link>
             </div>
             <div>
-              <h1>LEARN</h1>
+              <h1>EXPLORE</h1>
               <h2>Recommended resources</h2>
               {resource !== undefined && (
                 <>
@@ -183,10 +183,14 @@ const LandingPage = props => {
               </Link>
             </div>
             <div>
-              <h1>FEEDBACK</h1>
-              <h2>Contact Us</h2>
-              <Link className={styles.buttonlink} to="/contact/">
-                Go to Contact Us
+              <h1>LEARN</h1>
+              <h2>Ask The Experts</h2>
+              <p>
+                A brief list of topics, relevant resources, and options to
+                contact leading experts for additional information.
+              </p>
+              <Link className={styles.buttonlink} to="/ask-the-experts/">
+                Go to Ask The Experts
               </Link>
             </div>
           </div>
