@@ -13,6 +13,39 @@ const Contact = () => {
   const [type, setType] = React.useState('')
 
   const [joinButtonText, setJoinButtonText] = React.useState('Join')
+  const [joinErrorMessage, setJoinErrorMessage] = React.useState('')
+
+  const handleJoin = event => {
+    event.preventDefault()
+    const data = Object.fromEntries(new FormData(event.target))
+
+    if (data.Email_Address === '') {
+      setJoinErrorMessage(<p>Please Enter an Email Address.</p>)
+    } else {
+      setJoinErrorMessage('')
+      setJoinButtonText('Submitting...')
+      data['subject'] = 'Mailinglist Join Request from COVID Local'
+      data['site'] = 'COVID Local Mailinglist Request'
+      data[
+        'body'
+      ] = `${data.Email_Address} would like to be added to the COVID Local mailinglist.`
+      axios
+        .post(
+          'https://p0hkpngww3.execute-api.us-east-1.amazonaws.com/submit',
+          JSON.stringify(data),
+          { headers: { 'Content-Type': 'application/json' } }
+        )
+        .then(() => {
+          setJoinErrorMessage(<p>Success!</p>)
+          setJoinButtonText('Join')
+        })
+        .catch(error =>
+          setJoinErrorMessage(
+            'There was an error submitting your request, please check your network connection and try again.'
+          )
+        )
+    }
+  }
 
   const handleSubmit = event => {
     event.preventDefault()
@@ -173,17 +206,26 @@ const Contact = () => {
         <div className={styles.formRow}>{successMessage}</div>
       </form>
 
-      <form className={styles.join} aria-label="Join Email List">
+      <form
+        className={styles.join}
+        onSubmit={handleJoin}
+        aria-label="Join Email List"
+      >
         <div className={styles.formRow}>
           <label>
             <span>
               To receive updates about new COVID Local resources, join our email
               list:
             </span>
-            <input type="text" aria-label="Enter email address to join" />
+            <input
+              type="text"
+              aria-label="Enter email address to join mailing list"
+              name="Email_Address"
+            />
           </label>
         </div>
         <div className={styles.formRow}>
+          {joinErrorMessage}
           <button className={styles.submit}>{joinButtonText}</button>
         </div>
       </form>
