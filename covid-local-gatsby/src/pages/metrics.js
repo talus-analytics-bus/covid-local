@@ -145,27 +145,6 @@ const MetricsPage = () => {
             each phase.
           </li>
         </ul>
-        <div className={styles.covidActNow}>
-          <img
-            src="/assets/images/logos/CovidActNow/CAN_Logo_Stacked_TransparentBG.png"
-            alt="CovidActNow Logo"
-          />
-          <p>
-            In addition to using these metrics to assess your progress, we
-            recommend{' '}
-            <a
-              href="https://covidactnow.org/"
-              target="_blank"
-              rel="noreferrer nofollow"
-            >
-              COVID Act Now
-            </a>{' '}
-            to assess current conditions. Learn more on{' '}
-            <Link to="/blog/how-do-reopening-metrics-measure-up/">
-              this blog post.
-            </Link>
-          </p>
-        </div>
         <div className={styles.filters}>
           <button
             onClick={onClickTab}
@@ -192,6 +171,28 @@ const MetricsPage = () => {
         {tab === 'ASSESS YOUR PROGRESS' && (
           <MetricsScorecard layout="breakout" />
         )}
+
+        <div className={styles.covidActNow}>
+          <img
+            src="/assets/images/logos/CovidActNow/CAN_Logo_Stacked_TransparentBG.png"
+            alt="CovidActNow Logo"
+          />
+          <p>
+            In addition to utilizing the metrics found in COVID Local, we
+            recommend using{' '}
+            <a
+              href="https://covidactnow.org/"
+              target="_blank"
+              rel="noreferrer nofollow"
+            >
+              COVID Act Now
+            </a>{' '}
+            for data on your state or locality. Learn more on{' '}
+            <Link to="/blog/how-do-reopening-metrics-measure-up/">
+              this blog post.
+            </Link>
+          </p>
+        </div>
       </article>
     </Layout>
   )
