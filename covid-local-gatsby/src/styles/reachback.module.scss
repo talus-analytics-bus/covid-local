@@ -112,6 +112,7 @@
           .logo {
             width: 12rem;
             margin-right: 1rem;
+            margin-left: 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -122,15 +123,15 @@
             }
           }
 
-          .names {
-            border-left: 1px solid #aaa;
-            padding-left: 1rem;
-            width: 16rem;
+          // .names {
+          // border-left: 1px solid #aaa;
+          // padding-left: 1rem;
+          // width: 16rem;
 
-            p {
-              font-weight: 500;
-            }
-          }
+          // p {
+          // font-weight: 500;
+          // }
+          // }
         }
       }
 

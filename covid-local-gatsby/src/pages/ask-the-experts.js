@@ -132,20 +132,20 @@ const Reachback = () => {
               </p>
               <h2>Experts</h2>
               <div className={styles.categories}>
-                <section>
-                  <h3>Hospital Capacity</h3>
-                  <Affiliation org={orgs.HarvardKennedySchool}>
-                    <p>Ashish Jha</p>
-                  </Affiliation>
-                </section>
-                <section>
-                  <h3>ICU Beds</h3>
-                  <Affiliation org={orgs.ColumbiaMailman}>
-                    <p>Maria O&apos;Brien</p>
-                    <p>Charles Branas</p>
-                    <p>John Kraemer</p>
-                  </Affiliation>
-                </section>
+                {/* <section> */}
+                {/* <h3>Hospital Capacity</h3> */}
+                <Affiliation org={orgs.HarvardKennedySchool}>
+                  {/* <p>Ashish Jha</p> */}
+                </Affiliation>
+                {/* </section> */}
+                {/* <section> */}
+                {/* <h3>ICU Beds</h3> */}
+                <Affiliation org={orgs.ColumbiaMailman}>
+                  {/* <p>Maria O&apos;Brien</p> */}
+                  {/* <p>Charles Branas</p> */}
+                  {/* <p>John Kraemer</p> */}
+                </Affiliation>
+                {/* </section> */}
                 <Link
                   to="/ask-the-experts-contact/#Medical_Capacity"
                   className={styles.linkButton}
@@ -173,15 +173,15 @@ const Reachback = () => {
               </p>
               <h2>Experts</h2>
               <div className={styles.categories}>
-                <section>
-                  <h3>General</h3>
-                  <Affiliation org={orgs.HarvardKennedySchool}>
-                    <p>Juliette Kayyem</p>
-                  </Affiliation>
-                  <Affiliation org={orgs.MIT}>
-                    <p>Valerie Karplus</p>
-                  </Affiliation>
-                </section>
+                {/* <section> */}
+                {/* <h3>General</h3> */}
+                <Affiliation org={orgs.HarvardKennedySchool}>
+                  {/* <p>Juliette Kayyem</p> */}
+                </Affiliation>
+                <Affiliation org={orgs.MIT}>
+                  {/* <p>Valerie Karplus</p> */}
+                </Affiliation>
+                {/* </section> */}
                 <Link
                   to="/ask-the-experts-contact/#Logistics/PPE_Supply_Chain"
                   className={styles.linkButton}
@@ -207,42 +207,42 @@ const Reachback = () => {
               </p>
               <h2>Experts</h2>
               <div className={styles.categories}>
-                <section>
-                  <h3>Contact Tracing and Isolation</h3>
-                  <Affiliation org={orgs.ColumbiaMailman}>
-                    <p>Maria O&apos;Brien</p>
-                    <p>Wafaa El-Sadr</p>
-                  </Affiliation>
-                </section>
+                {/* <section> */}
+                {/* <h3>Contact Tracing and Isolation</h3> */}
+                {/* <Affiliation org={orgs.ColumbiaMailman}> */}
+                {/* <p>Maria O&apos;Brien</p> */}
+                {/* <p>Wafaa El-Sadr</p> */}
+                {/* </Affiliation> */}
+                {/* </section> */}
 
-                <section>
-                  <h3>Testing</h3>
-                  <Affiliation org={orgs.ColumbiaMailman}>
-                    <p>Maria O&apos;Brien</p>
-                    <p>Wafaa El-Sadr</p>
-                  </Affiliation>
-                </section>
+                {/* <section> */}
+                {/* <h3>Testing</h3> */}
+                {/* <Affiliation org={orgs.ColumbiaMailman}> */}
+                {/* <p>Maria O&apos;Brien</p> */}
+                {/* <p>Wafaa El-Sadr</p> */}
+                {/* </Affiliation> */}
+                {/* </section> */}
 
-                <section>
-                  <h3>Local Outbreak Modeling</h3>
-                  <Affiliation org={orgs.ColumbiaMailman}>
-                    <p>Maria O&apos;Brien</p>
-                    <p>Jeffrey Shaman</p>
-                  </Affiliation>
-                </section>
+                {/* <section> */}
+                {/* <h3>Local Outbreak Modeling</h3> */}
+                <Affiliation org={orgs.ColumbiaMailman}>
+                  {/* <p>Maria O&apos;Brien</p> */}
+                  {/* <p>Jeffrey Shaman</p> */}
+                </Affiliation>
+                {/* </section> */}
 
-                <section>
-                  <h3>General</h3>
-                  <Affiliation org={orgs.Georgetown}>
-                    <p>Matt Boyce</p>
-                  </Affiliation>
-                  <Affiliation org={orgs.JohnsHopkins}>
-                    <p>Jennifer Nuzzo</p>
-                  </Affiliation>
-                  <Affiliation org={orgs.InQTel}>
-                    <p>Dylan George</p>
-                  </Affiliation>
-                </section>
+                {/* <section> */}
+                {/* <h3>General</h3> */}
+                <Affiliation org={orgs.Georgetown}>
+                  {/* <p>Matt Boyce</p> */}
+                </Affiliation>
+                {/* <Affiliation org={orgs.JohnsHopkins}> */}
+                {/* <p>Jennifer Nuzzo</p> */}
+                {/* </Affiliation> */}
+                {/* <Affiliation org={orgs.InQTel}> */}
+                {/* <p>Dylan George</p> */}
+                {/* </Affiliation> */}
+                {/* </section> */}
 
                 <Link
                   to="/ask-the-experts-contact/#Disease_Testing,_Contact_Tracing,_&_Surveillance"
@@ -270,15 +270,15 @@ const Reachback = () => {
               </p>
               <h2>Experts</h2>
               <div className={styles.categories}>
-                <section>
-                  <h3>General</h3>
-                  <Affiliation org={orgs.Talus}>
-                    <p>Ellie Graeden</p>
-                  </Affiliation>
-                  <Affiliation org={orgs.Georgetown}>
-                    <p>Matt Boyce</p>
-                  </Affiliation>
-                </section>
+                {/* <section> */}
+                {/* <h3>General</h3> */}
+                <Affiliation org={orgs.Talus}>
+                  {/* <p>Ellie Graeden</p> */}
+                </Affiliation>
+                <Affiliation org={orgs.Georgetown}>
+                  {/* <p>Matt Boyce</p> */}
+                </Affiliation>
+                {/* </section> */}
 
                 <Link
                   to="/ask-the-experts-contact/#Data_Sources,_Analysis,_and_Modeling"
@@ -307,25 +307,25 @@ const Reachback = () => {
               </p>
               <h2>Experts</h2>
               <div className={styles.categories}>
-                <section>
-                  <h3>Low Resource, Rural, and Tribal Communities</h3>
-                  <Affiliation org={orgs.MontanaState}>
-                    <p>Jayne Morrow</p>
-                  </Affiliation>
-                </section>
+                {/* <section> */}
+                {/* <h3>Low Resource, Rural, and Tribal Communities</h3> */}
+                <Affiliation org={orgs.MontanaState}>
+                  {/* <p>Jayne Morrow</p> */}
+                </Affiliation>
+                {/* </section> */}
 
-                <section>
-                  <h3>General</h3>
-                  <Affiliation org={orgs.HarvardKennedySchool}>
-                    <p>Ashish Jha</p>
-                  </Affiliation>
-                  <Affiliation org={orgs.ColumbiaMailman}>
-                    <p>Maria O&apos;Brien</p>
-                    <p>Wafaa El-Sadr</p>
-                    <p>Terry McGovern</p>
-                    <p>Cora Neumann</p>
-                  </Affiliation>
-                </section>
+                {/* <section> */}
+                {/* <h3>General</h3> */}
+                <Affiliation org={orgs.HarvardKennedySchool}>
+                  {/* <p>Ashish Jha</p> */}
+                </Affiliation>
+                <Affiliation org={orgs.ColumbiaMailman}>
+                  {/* <p>Maria O&apos;Brien</p> */}
+                  {/* <p>Wafaa El-Sadr</p> */}
+                  {/* <p>Terry McGovern</p> */}
+                  {/* <p>Cora Neumann</p> */}
+                </Affiliation>
+                {/* </section> */}
 
                 <Link
                   to="/ask-the-experts-contact/#Vulnerable_Populations_and_Low_Resource_Settings"
@@ -353,45 +353,47 @@ const Reachback = () => {
               </p>
               <h2>Experts</h2>
               <div className={styles.categories}>
-                <section>
-                  <h3>Law and Governance</h3>
-                  <Affiliation org={orgs.Georgetown}>
-                    <p>Matt Boyce</p>
-                    <p>Mike Soto</p>
-                    <p>John Kraemer</p>
-                  </Affiliation>
-                </section>
-                <section>
-                  <h3>State-Level Policy</h3>
-                  <Affiliation org={orgs.ColumbiaMailman}>
-                    <p>Maria O&apos;Brien</p>
-                    <p>Michael Sparer</p>
-                  </Affiliation>
-                </section>
-                <section>
-                  <h3>Population and Family Health</h3>
-                  <Affiliation org={orgs.ColumbiaMailman}>
-                    <p>Maria O&apos;Brien</p>
-                    <p>Terry McGovern</p>
-                  </Affiliation>
-                </section>
-                <section>
-                  <h3>Quarantine Policy</h3>
-                  <Affiliation org={orgs.Georgetown}>
-                    <p>Matt Boyce</p>
-                    <p>Mike Soto</p>
-                    <p>John Kraemer</p>
-                  </Affiliation>
-                </section>
-                <section>
-                  <h3>General</h3>
-                  <Affiliation org={orgs.CenterForGlobalDevelopment}>
-                    <p>Jeremy Konyndyk</p>
-                  </Affiliation>
-                  <Affiliation org={orgs.NuclearThreatInitiative}>
-                    <p>Juliette Kayyem</p>
-                  </Affiliation>
-                </section>
+                {/* <section> */}
+                {/* <h3>Law and Governance</h3> */}
+                <Affiliation org={orgs.Georgetown}>
+                  {/* <p>Matt Boyce</p> */}
+                  {/* <p>Mike Soto</p> */}
+                  {/* <p>John Kraemer</p> */}
+                </Affiliation>
+                {/* </section> */}
+                {/* <section> */}
+                {/* <h3>State-Level Policy</h3> */}
+                <Affiliation org={orgs.ColumbiaMailman}>
+                  {/* <p>Maria O&apos;Brien</p> */}
+                  {/* <p>Michael Sparer</p> */}
+                </Affiliation>
+                {/* </section> */}
+                {/* <section> */}
+                {/* <h3>Population and Family Health</h3> */}
+                {/* <Affiliation org={orgs.ColumbiaMailman}> */}
+                {/* <p>Maria O&apos;Brien</p> */}
+                {/* <p>Terry McGovern</p> */}
+                {/* </Affiliation> */}
+                {/* </section> */}
+                {/* <section> */}
+                {/* <h3>Quarantine Policy</h3> */}
+                {/* <Affiliation org={orgs.Georgetown}> */}
+                {/* <p>Matt Boyce</p> */}
+                {/* <p>Mike Soto</p> */}
+                {/* <p>John Kraemer</p> */}
+                {/* </Affiliation> */}
+                {/* </section> */}
+                {/* <section> */}
+                {/* <h3>General</h3> */}
+
+                <Affiliation org={orgs.NuclearThreatInitiative}>
+                  {/* <p>Juliette Kayyem</p> */}
+                </Affiliation>
+                <Affiliation org={orgs.HarvardKennedySchool}></Affiliation>
+                {/* </section> */}
+                <Affiliation org={orgs.CenterForGlobalDevelopment}>
+                  {/* <p>Jeremy Konyndyk</p> */}
+                </Affiliation>
                 <Link
                   to="/ask-the-experts-contact/#Policy_Coordination"
                   className={styles.linkButton}
