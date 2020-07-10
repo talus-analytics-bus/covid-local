@@ -91,7 +91,7 @@ const AMPWrapper = props => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://covidamp.org/policymaps"
+                href="https://test.covidamp.org/policymaps"
               >
                 <img
                   className={styles.mapImage}
@@ -105,7 +105,7 @@ const AMPWrapper = props => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://covidamp.org/data"
+                href="https://test.covidamp.org/data"
               >
                 <img
                   src="/assets/images/amp-screenshots/policy-database.png"
@@ -114,11 +114,11 @@ const AMPWrapper = props => {
                 <span>Access data</span>
               </a>
             </div>
-            <div className={styles.col + ' ' + styles.inactive}>
+            <div className={styles.col}>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://covidamp.org/data"
+                href="https://test.covidamp.org/model"
               >
                 <img
                   src="/assets/images/amp-screenshots/policy-model.png"

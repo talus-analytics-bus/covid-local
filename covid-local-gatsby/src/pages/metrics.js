@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import { Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
 import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
-import 'tippy.js/dist/tippy.css'
-import 'tippy.js/themes/light.css'
 
 import Layout from '../components/Layout/Layout'
 
