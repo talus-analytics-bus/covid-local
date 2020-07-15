@@ -60,16 +60,7 @@ const AMPWrapper = props => {
             </div>
           </div>
           <div className={styles.ampDescription}>
-            <h3>
-              Helping policy makers visualize the impact of policies in the
-              COVID response
-            </h3>
-            <p>
-              <strong>
-                Helping local leaders assess the impact of COVID-19 response
-                plans and policies
-              </strong>
-            </p>
+            <h3>Visualizing the impact of policies on COVID response</h3>
             <p>
               The COVID Analysis and Mapping of Policies (AMP) visualization
               tool is a comprehensive database of policies and plans to address
