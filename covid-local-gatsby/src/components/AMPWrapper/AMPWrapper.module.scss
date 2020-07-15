@@ -175,9 +175,10 @@
         justify-content: center;
 
         img {
+          $thumbnail-size: 20rem;
           background-color: #fff;
-          width: 15rem;
-          height: 15rem;
+          width: $thumbnail-size;
+          height: $thumbnail-size;
           object-fit: contain;
           margin-bottom: 1rem;
         }
