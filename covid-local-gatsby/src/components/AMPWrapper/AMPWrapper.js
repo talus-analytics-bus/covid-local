@@ -60,16 +60,7 @@ const AMPWrapper = props => {
             </div>
           </div>
           <div className={styles.ampDescription}>
-            <h3>
-              Helping policy makers visualize the impact of policies in the
-              COVID response
-            </h3>
-            <p>
-              <strong>
-                Helping local leaders assess the impact of COVID-19 response
-                plans and policies
-              </strong>
-            </p>
+            <h3>Visualizing the impact of policies on COVID response</h3>
             <p>
               The COVID Analysis and Mapping of Policies (AMP) visualization
               tool is a comprehensive database of policies and plans to address
@@ -77,21 +68,13 @@ const AMPWrapper = props => {
               user-friendly interface to easily identify effective policies and
               plans to reduce the impacts of the COVID-19 pandemic.
             </p>
-            <p>
-              COVID AMP is part of the COVID-Local suite of free resources
-              developed for local decision-makers who are working to keep their
-              communities safe during the COVID-19 pandemic. The COVID AMP
-              library includes policies and plans published by subnational
-              governments or private and non-profit organizations, in addition
-              to those released by national governments.
-            </p>
           </div>
           <div className={styles.ampColumns}>
             <div className={styles.col}>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://covidamp.org/policymaps"
+                href="https://test.covidamp.org/policymaps"
               >
                 <img
                   className={styles.mapImage}
@@ -105,26 +88,26 @@ const AMPWrapper = props => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://covidamp.org/data"
-              >
-                <img
-                  src="/assets/images/amp-screenshots/policy-database.png"
-                  alt="Policy Database"
-                />
-                <span>Access data</span>
-              </a>
-            </div>
-            <div className={styles.col + ' ' + styles.inactive}>
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://covidamp.org/data"
+                href="https://test.covidamp.org/model"
               >
                 <img
                   src="/assets/images/amp-screenshots/policy-model.png"
                   alt="Policy Model"
                 />
                 <span>Policy model</span>
+              </a>
+            </div>
+            <div className={styles.col}>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://test.covidamp.org/data"
+              >
+                <img
+                  src="/assets/images/amp-screenshots/policy-database.png"
+                  alt="Policy Database"
+                />
+                <span>Access data</span>
               </a>
             </div>
           </div>

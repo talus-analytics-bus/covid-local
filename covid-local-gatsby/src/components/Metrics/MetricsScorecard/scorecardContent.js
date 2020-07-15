@@ -8,20 +8,20 @@ const scorecardContent = [
           text:
             'Sustained decline in daily cases for 21 consecutive days, as reflected in the 5-day rolling average',
         },
-        { text: '<10% of tests conducted are positive' },
+        { text: '<10% of tests conducted are positive [CAN]' },
         {
           text: 'Current estimate of <25 cases per 100,000 population per day',
         },
       ],
       [
         { text: 'Continued decline in daily cases' },
-        { text: '<3% of tests conducted are positive' },
+        { text: '<3% of tests conducted are positive [CAN]' },
         {
           text: 'Current estimate of <10 cases per 100,000 population per day',
         },
       ],
       [
-        { text: '<1% of tests conducted are positive' },
+        { text: '<1% of tests conducted are positive [CAN]' },
         {
           text: 'Current estimate of <1 case per 100,000 population per week',
         },
@@ -82,7 +82,7 @@ const scorecardContent = [
       [
         {
           text:
-            '75% of close contacts are elicited and located within 48 hours',
+            '75% of close contacts are elicited and located within 48 hours [CAN]',
         },
         {
           text:
@@ -97,14 +97,14 @@ const scorecardContent = [
         },
         {
           text:
-            'At least 30 contact tracers per 100,000, as well as case managers, care resource coordinators, community health workers',
+            'At least 30 contact tracers per 100,000, as well as case managers, care resource coordinators, community health workers [CAN]',
         },
         { text: '>80% of new cases from identified contacts' },
       ],
       [
         {
           text:
-            '95% of close contacts are elicited, located, tested within 24 hours',
+            '95% of close contacts are elicited, located, tested within 24 hours [CAN]',
         },
         {
           text:
@@ -121,7 +121,7 @@ const scorecardContent = [
       [
         {
           text:
-            'At least 15% of existing ICU capacity is available to accommodate a surge in COVID-19 patients without resorting to crisis standards of care',
+            'At least 15% of existing ICU capacity is available to accommodate a surge in COVID-19 patients without resorting to crisis standards of care [CAN]',
         },
         {
           text:
@@ -131,7 +131,7 @@ const scorecardContent = [
       [
         {
           text:
-            'At least 30% of existing ICU capacity is available to accommodate a surge in COVID-19 patients without resorting to crisis standards of care',
+            'At least 30% of existing ICU capacity is available to accommodate a surge in COVID-19 patients without resorting to crisis standards of care [CAN]',
         },
         {
           text:
@@ -142,7 +142,7 @@ const scorecardContent = [
       [
         {
           text:
-            'At least 30% of existing ICU capacity is available to accommodate a surge in COVID-19 patients without resorting to crisis standards of care',
+            'At least 30% of existing ICU capacity is available to accommodate a surge in COVID-19 patients without resorting to crisis standards of care [CAN]',
         },
         {
           text:
