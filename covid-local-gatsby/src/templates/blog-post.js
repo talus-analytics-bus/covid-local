@@ -13,7 +13,7 @@ export default function Template({
   data, // this prop will be injected by the GraphQL query we'll write in a bit
 }) {
   const { airtable: post } = data // data.markdownRemark holds your post data
-  console.log(post)
+  // console.log(post)
   return (
     <Layout>
       <article className={styles.main}>

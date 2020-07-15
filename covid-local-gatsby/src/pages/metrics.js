@@ -100,7 +100,7 @@ const MetricsPage = () => {
                   toggleDownloadDetail()
                 }}
               >
-                <span>Metrics overview</span> <span>pdf, 939kb</span>
+                <span>Metrics overview</span> <span>pdf, 987kb</span>
               </a>
               <a
                 target="_blank"
@@ -116,7 +116,7 @@ const MetricsPage = () => {
                   toggleDownloadDetail()
                 }}
               >
-                <span>Metrics scorecard</span> <span>pdf, 209kb</span>
+                <span>Metrics scorecard</span> <span>pdf, 269kb</span>
               </a>
             </div>
           </div>
@@ -129,23 +129,43 @@ const MetricsPage = () => {
           metrics for a phased re-opening strategy. These metrics can be used to
           assess current response, pinpoint areas for action, and make decisions
           for moving to the next phase of re-opening.
-          <ul>
-            <li>
-              <strong>Metrics Overview</strong> Describes phases and key metrics
-              associated with each phase under a set of public health
-              categories.
-            </li>
-            <li>
-              <strong>Scorecard</strong> Shows how to self-assess your
-              community’s progress across all metrics for each Phase.
-            </li>
-            <li>
-              <strong>Assess Your Progress</strong> Offers an interactive
-              checklist to be used to show progress toward meeting thresholds
-              for each phase.
-            </li>
-          </ul>
         </p>
+        <ul>
+          <li>
+            <strong>Metrics Overview</strong> Describes phases and key metrics
+            associated with each phase under a set of public health categories.
+          </li>
+          <li>
+            <strong>Scorecard</strong> Shows how to self-assess your community’s
+            progress across all metrics for each Phase.
+          </li>
+          <li>
+            <strong>Assess Your Progress</strong> Offers an interactive
+            checklist to be used to show progress toward meeting thresholds for
+            each phase.
+          </li>
+        </ul>
+        <div className={styles.covidActNow}>
+          <img
+            src="/assets/images/logos/CovidActNow/CAN_Logo_Stacked_TransparentBG.png"
+            alt="CovidActNow Logo"
+          />
+          <p>
+            In addition to utilizing the metrics found in COVID Local, we
+            recommend using{' '}
+            <a
+              href="https://covidactnow.org/"
+              target="_blank"
+              rel="noreferrer nofollow"
+            >
+              COVID Act Now
+            </a>{' '}
+            metrics. Learn more on{' '}
+            <Link to="/blog/how-do-reopening-metrics-measure-up/">
+              this blog post.
+            </Link>
+          </p>
+        </div>
         <div className={styles.filters}>
           <button
             onClick={onClickTab}

@@ -85,7 +85,7 @@ const ProtectingText = () => (
     <rect x="99.3" y="188" className="st1" width="308.1" height="38.4" />
     <text transform="matrix(1 0 0 1 99.3104 196.5112)">
       <tspan x="0" y="0" className="st2 st3 st4">
-        Local rapid response teams are avaialble to respond to{' '}
+        Local rapid response teams are available to respond to{' '}
       </tspan>
       <tspan x="0" y="14" className="st2 st3 st4">
         outbreak hotspots within 24 hours with sufficient PPE
@@ -94,7 +94,7 @@ const ProtectingText = () => (
     <rect x="100.8" y="339.3" className="st1" width="308.1" height="38.4" />
     <text transform="matrix(1 0 0 1 100.7819 347.782)">
       <tspan x="0" y="0" className="st2 st3 st4">
-        Local rapid response teams are avaialble to respond to{' '}
+        Local rapid response teams are available to respond to{' '}
       </tspan>
       <tspan x="0" y="14" className="st2 st3 st4">
         outbreak hotspots within 24 hours with sufficient PPE
@@ -104,7 +104,7 @@ const ProtectingText = () => (
     <rect x="99" y="503.8" className="st1" width="308.1" height="38.4" />
     <text transform="matrix(1 0 0 1 98.9745 512.3193)">
       <tspan x="0" y="0" className="st2 st3 st4">
-        Local rapid response teams are avaialble to respond to{' '}
+        Local rapid response teams are available to respond to{' '}
       </tspan>
       <tspan x="0" y="14" className="st2 st3 st4">
         outbreak hotspots within 24 hours with sufficient PPE

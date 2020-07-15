@@ -1,4 +1,5 @@
 import React from 'react'
+import { renderToString } from 'react-dom/server'
 import { Link, useStaticQuery, graphql } from 'gatsby'
 import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import { Helmet } from 'react-helmet'
@@ -20,7 +21,7 @@ function shuffleArray(array) {
   }
 }
 
-const LandingPage = () => {
+const LandingPage = props => {
   const data = useStaticQuery(graphql`
     query blogQuery {
       allAirtable(
@@ -58,7 +59,7 @@ const LandingPage = () => {
   }, [])
 
   return (
-    <Layout>
+    <Layout ampOpen={props.ampOpen || false}>
       <Helmet
         title={`COVID-Local: A Frontline Guide for Local Decision-Makers`}
         meta={[
@@ -137,17 +138,36 @@ const LandingPage = () => {
               // if the first paragraph is shorter than 250
               // words, just use that without the ellipsis
               >
-                <p>
-                  {unified()
-                    .use(markdown)
-                    .use(html)
-                    .processSync(blogpost.data.Blog_Text)
-                    .contents.split('</p>')[0]
-                    .replace('<p>', '')
-                    .split(' ')
-                    .slice(0, 50)
-                    .join(' ')}
-                </p>
+                {/* <p> */}
+                {/*   {unified() */}
+                {/*     .use(markdown) */}
+                {/*     .use(html) */}
+                {/*     .processSync(blogpost.data.Blog_Text) */}
+                {/*     .contents.split('</p>')[0] */}
+                {/*     .replace('<p>', '') */}
+                {/*     .split(' ') */}
+                {/*     .slice(0, 50) */}
+                {/*     .join(' ')} */}
+                {/* </p> */}
+                <p
+                  dangerouslySetInnerHTML={{
+                    __html:
+                      unified()
+                        .use(markdown)
+                        .use(html)
+                        .processSync(blogpost.data.Blog_Text)
+                        // Need to get just the text from the first paragraph
+                        .contents.split(/<\/p>/g)[0]
+                        .replace('<p>', '')
+                        .split(' ')
+                        .slice(0, 50)
+                        .join(' ') +
+                      '... ' +
+                      renderToString(
+                        <Link to={blogpost.data.slug}>read more</Link>
+                      ),
+                  }}
+                ></p>
               </section>
               <Link className={styles.buttonlink} to="/blog/">
                 Go to Blog
@@ -169,13 +189,14 @@ const LandingPage = () => {
                           .slice(0, 30)
                           .join(' ') + '...'
                       : resource.description}
+                    <br />
+                    <a href={resource.link}>
+                      {resource.link
+                        .split('/')
+                        .slice(0, 3)
+                        .join('/')}
+                    </a>
                   </p>
-                  <a href={resource.link}>
-                    {resource.link
-                      .split('/')
-                      .slice(0, 3)
-                      .join('/')}
-                  </a>
                 </>
               )}
               <Link className={styles.buttonlink} to="/resources/">
@@ -211,6 +232,16 @@ const LandingPage = () => {
                 <img
                   src="/assets/images/media-logos/guardian.svg"
                   alt="The Guardian Logo"
+                />
+              </OutboundLink>
+              <OutboundLink
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.cnbc.com/2020/06/26/beth-cameron-helped-write-the-white-house-pandemic-playbook.html"
+              >
+                <img
+                  src="/assets/images/media-logos/cnbc.svg"
+                  alt="CNBC Logo"
                 />
               </OutboundLink>
             </div>
