@@ -77,14 +77,6 @@ const AMPWrapper = props => {
               user-friendly interface to easily identify effective policies and
               plans to reduce the impacts of the COVID-19 pandemic.
             </p>
-            <p>
-              COVID AMP is part of the COVID-Local suite of free resources
-              developed for local decision-makers who are working to keep their
-              communities safe during the COVID-19 pandemic. The COVID AMP
-              library includes policies and plans published by subnational
-              governments or private and non-profit organizations, in addition
-              to those released by national governments.
-            </p>
           </div>
           <div className={styles.ampColumns}>
             <div className={styles.col}>
