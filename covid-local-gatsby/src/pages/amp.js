@@ -15,7 +15,7 @@ const AmpPage = () => {
         />
         <meta
           name="image"
-          content={'/images/amp-screenshots/global-policy-maps.png'}
+          content={'/assets/images/amp-screenshots/global-policy-maps.png'}
         />
         <meta
           property="og:title"
