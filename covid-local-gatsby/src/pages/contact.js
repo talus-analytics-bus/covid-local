@@ -12,6 +12,41 @@ const Contact = () => {
   const [submitButtonText, setSubmitButtonText] = React.useState('Submit')
   const [type, setType] = React.useState('')
 
+  const [joinButtonText, setJoinButtonText] = React.useState('Join')
+  const [joinErrorMessage, setJoinErrorMessage] = React.useState('')
+
+  const handleJoin = event => {
+    event.preventDefault()
+    const data = Object.fromEntries(new FormData(event.target))
+
+    if (data.Email_Address === '') {
+      setJoinErrorMessage(<p>Please Enter an Email Address.</p>)
+    } else {
+      setJoinErrorMessage('')
+      setJoinButtonText('Submitting...')
+      data['subject'] = 'Request to Join COVID Local Mailinglist'
+      data['site'] = 'COVID Local Mailinglist Request'
+      data[
+        'body'
+      ] = `${data.Email_Address} would like to be added to the COVID Local mailinglist.`
+      axios
+        .post(
+          'https://p0hkpngww3.execute-api.us-east-1.amazonaws.com/submit',
+          JSON.stringify(data),
+          { headers: { 'Content-Type': 'application/json' } }
+        )
+        .then(() => {
+          setJoinErrorMessage(<p>Success!</p>)
+          setJoinButtonText('Join')
+        })
+        .catch(error =>
+          setJoinErrorMessage(
+            'There was an error submitting your request, please check your network connection and try again.'
+          )
+        )
+    }
+  }
+
   const handleSubmit = event => {
     event.preventDefault()
     const data = Object.fromEntries(new FormData(event.target))
@@ -67,7 +102,11 @@ const Contact = () => {
         <h1>Contact us</h1>
       </header>
 
-      <form className={styles.main} onSubmit={handleSubmit}>
+      <form
+        className={styles.main}
+        onSubmit={handleSubmit}
+        aria-label="Contact Us"
+      >
         <div className={styles.formRow}>
           <div className={styles.accessibility}>
             <p>
@@ -126,10 +165,9 @@ const Contact = () => {
                 Feedback on the Guide
               </option>
               <option value="Question">Submit question</option>
-              <option value="Join Mailinglist">Join mailing list</option>
+              {/* <option value="Join Mailinglist">Join mailing list</option> */}
             </select>
           </label>
-
           <label
             className={styles.type}
             htmlFor="Type"
@@ -155,7 +193,6 @@ const Contact = () => {
             </select>
           </label>
         </div>
-
         <div className={styles.formRow}>
           <label className={styles.body} htmlFor="body">
             Comment or question*
@@ -167,6 +204,30 @@ const Contact = () => {
           <button className={styles.submit}>{submitButtonText}</button>
         </div>
         <div className={styles.formRow}>{successMessage}</div>
+      </form>
+
+      <form
+        className={styles.join}
+        onSubmit={handleJoin}
+        aria-label="Join Email List"
+      >
+        <div className={styles.formRow}>
+          <label>
+            <span>
+              To receive updates about new COVID Local resources, join our email
+              list:
+            </span>
+            <input
+              type="text"
+              aria-label="Enter email address to join mailing list"
+              name="Email_Address"
+            />
+          </label>
+        </div>
+        <div className={styles.formRow}>
+          {joinErrorMessage}
+          <button className={styles.submit}>{joinButtonText}</button>
+        </div>
       </form>
     </Layout>
   )
