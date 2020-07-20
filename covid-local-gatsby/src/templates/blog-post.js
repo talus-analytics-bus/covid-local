@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOMServer from 'react-dom/server'
 import { Helmet } from 'react-helmet'
 import { Link, graphql } from 'gatsby'
 import unified from 'unified'
@@ -13,7 +14,39 @@ export default function Template({
   data, // this prop will be injected by the GraphQL query we'll write in a bit
 }) {
   const { airtable: post } = data // data.markdownRemark holds your post data
-  // console.log(post)
+
+  const blogPostImage = filename => {
+    const url = post.data.Additional_Images.find(
+      img => img.filename === filename
+    ).url
+
+    return ReactDOMServer.renderToString(
+      <img
+        src={url}
+        alt={`Blog post image ${filename}`}
+        style={{ width: '100%' }}
+      />
+    )
+  }
+
+  let blogTextWithImages = ''
+
+  if (post.data.Additional_Images && post.data.Additional_Images.length > 0) {
+    const textSections = post.data.Blog_Text.split(/\[IMAGE: ".*"\]/g)
+    const imageFileNames = [
+      ...post.data.Blog_Text.matchAll(/\[IMAGE: "(.*)"\]/g),
+    ]
+
+    textSections.forEach((text, index) => {
+      if (post.data.Additional_Images[index]) {
+        blogTextWithImages =
+          blogTextWithImages + text + blogPostImage(imageFileNames[index][1])
+      }
+    })
+  } else {
+    blogTextWithImages = post.data.Blog_Text
+  }
+
   return (
     <Layout>
       <article className={styles.main}>
@@ -41,7 +74,7 @@ export default function Template({
             __html: unified()
               .use(markdown)
               .use(html)
-              .processSync(post.data.Blog_Text),
+              .processSync(blogTextWithImages),
           }}
         />
       </article>
@@ -57,6 +90,10 @@ export const pageQuery = graphql`
         Blog_Text
         Date
         Images {
+          url
+        }
+        Additional_Images {
+          filename
           url
         }
         slug
