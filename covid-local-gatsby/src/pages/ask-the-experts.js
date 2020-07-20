@@ -15,22 +15,20 @@ const orgs = {
     altText:
       'Harvard Kennedy School Belfer Center for Science and International Affairs',
   },
+  MIT: {
+    link: 'https://www.covidalliance.com/',
+    logo: '/assets/images/reachback-logos-fullsize/MIT-updated.png',
+    altText: 'Massachusetts Institute of Technology COVID-19 Policy Alliance',
+  },
   ColumbiaMailman: {
     link: 'https://www.publichealth.columbia.edu/covid-19',
     logo: '/assets/images/reachback-logos-fullsize/columbia-mailman.png',
     altText: 'Columbia Mailman School of Public Health',
   },
-  Georgetown: {
-    link: 'https://ghss.georgetown.edu/',
-    logo: '/assets/images/reachback-logos-fullsize/Georgetown-small.png',
-    altText:
-      'Georgetown University Center for Global Health Science and Security',
-  },
-  CenterForGlobalDevelopment: {
-    link: 'https://www.cgdev.org/',
-    logo:
-      '/assets/images/reachback-logos-fullsize/center-for-global-development.png',
-    altText: 'Center for Global Development',
+  MontanaState: {
+    link: 'https://www.montana.edu/',
+    logo: '/assets/images/reachback-logos-fullsize/MontanaState.png',
+    altText: 'Montana State University',
   },
   NuclearThreatInitiative: {
     link: 'https://www.nti.org/about/biosecurity/',
@@ -38,31 +36,34 @@ const orgs = {
       '/assets/images/reachback-logos-fullsize/Nuclear_Threat_Initiative_logo.png',
     altText: 'Nuclear Threat Initiative Biosecurity',
   },
-  MIT: {
-    link: 'https://www.covidalliance.com/',
-    logo: '/assets/images/reachback-logos-fullsize/MIT-updated.png',
-    altText: 'Massachusetts Institute of Technology COVID-19 Policy Alliance',
-  },
-  JohnsHopkins: {
-    link: 'https://coronavirus.jhu.edu/',
-    logo: '/assets/images/reachback-logos-fullsize/jhu2.png',
-    altText: 'Johns Hopkins Coronavirus Resource Center',
-  },
-  InQTel: {
-    link: 'https://www.iqt.org/covid-19/',
-    logo: '/assets/images/reachback-logos-fullsize/IQT_logo.png',
-    altText: 'IN-Q-TEL COVID-19',
+  Georgetown: {
+    link: 'https://ghss.georgetown.edu/',
+    logo: '/assets/images/reachback-logos-fullsize/Georgetown-small.png',
+    altText:
+      'Georgetown University Center for Global Health Science and Security',
   },
   Talus: {
     link: 'http://talusanalytics.com/',
     logo: '/assets/images/reachback-logos-fullsize/talus-logo-01.png',
     altText: 'Talus Analytics',
   },
-  MontanaState: {
-    link: 'https://www.montana.edu/',
-    logo: '/assets/images/reachback-logos-fullsize/MontanaState.png',
-    altText: 'Montana State University',
+  CenterForGlobalDevelopment: {
+    link: 'https://www.cgdev.org/',
+    logo:
+      '/assets/images/reachback-logos-fullsize/center-for-global-development.png',
+    altText: 'Center for Global Development',
   },
+
+  // JohnsHopkins: {
+  //   link: 'https://coronavirus.jhu.edu/',
+  //   logo: '/assets/images/reachback-logos-fullsize/jhu2.png',
+  //   altText: 'Johns Hopkins Coronavirus Resource Center',
+  // },
+  // InQTel: {
+  //   link: 'https://www.iqt.org/covid-19/',
+  //   logo: '/assets/images/reachback-logos-fullsize/IQT_logo.png',
+  //   altText: 'IN-Q-TEL COVID-19',
+  // },
 }
 
 const Affiliation = props => (
@@ -113,6 +114,13 @@ const Reachback = () => {
           list of topics, relevant resources, and options to contact leading
           experts for additional information.
         </p>
+        <div className={styles.logoBar}>
+          {Object.entries(orgs).map(org => (
+            // <div key={org[1].link}>
+            <img key={org[1].link} src={org[1].logo} alt={org[1].altText} />
+            // </div>
+          ))}
+        </div>
         <BlueExpandBox>
           <h1>Medical Capacity</h1>
           <div className={styles.content}>
