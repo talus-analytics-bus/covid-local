@@ -58,6 +58,33 @@
 .main {
   margin-bottom: 5rem;
 
+  .logoBar {
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    // align-items: center;
+
+    // div {
+    // height: 2.5rem;
+    // width: 6rem;
+    // text-align: center;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+
+    img {
+      margin-left: 1rem;
+      margin-right: 1rem;
+      max-width: 7rem;
+      max-height: 2rem;
+      object-fit: contain;
+    }
+    // }
+  }
+
   h1 {
     font-size: 1.5rem;
   }
