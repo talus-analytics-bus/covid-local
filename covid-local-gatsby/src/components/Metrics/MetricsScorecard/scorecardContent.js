@@ -8,20 +8,20 @@ const scorecardContent = [
           text:
             'Sustained decline in daily cases for 21 consecutive days, as reflected in the 5-day rolling average',
         },
-        { text: '<10% of tests conducted are positive [CAN]' },
+        { text: '<10% positive of tests conducted (daily) [CAN]' },
         {
           text: 'Current estimate of <25 cases per 100,000 population per day',
         },
       ],
       [
         { text: 'Continued decline in daily cases' },
-        { text: '<3% of tests conducted are positive [CAN]' },
+        { text: '<3% positive of tests conducted (daily) [CAN]' },
         {
           text: 'Current estimate of <10 cases per 100,000 population per day',
         },
       ],
       [
-        { text: '<1% of tests conducted are positive [CAN]' },
+        { text: '<1% positive of tests conducted (daily) [CAN]' },
         {
           text: 'Current estimate of <1 case per 100,000 population per day',
         },
