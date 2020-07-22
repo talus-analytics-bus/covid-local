@@ -23,7 +23,7 @@ const scorecardContent = [
       [
         { text: '<1% of tests conducted are positive [CAN]' },
         {
-          text: 'Current estimate of <1 case per 100,000 population per week',
+          text: 'Current estimate of <1 case per 100,000 population per day',
         },
       ],
     ],

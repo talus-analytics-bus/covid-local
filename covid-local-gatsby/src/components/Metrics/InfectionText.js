@@ -22,7 +22,7 @@ const InfectionText = () => (
             Current estimate of &lt;1 case
           </tspan>
           <tspan x="0" y="14" className="st3 st4 st5">
-            per 100,000 population per week
+            per 100,000 population per day
           </tspan>
         </text>
       </g>
