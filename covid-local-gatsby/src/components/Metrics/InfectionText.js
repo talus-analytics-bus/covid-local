@@ -6,9 +6,9 @@ import CovidActNowLabel from './CovidActNowLabel/CovidActNowLabel'
 
 const InfectionText = () => (
   <>
-    <CovidActNowLabel style={{ top: '26%', left: '31.5%' }} />
-    <CovidActNowLabel style={{ top: '49.1%', left: '31.5%' }} />
-    <CovidActNowLabel style={{ top: '68.7%', left: '32%' }} />
+    <CovidActNowLabel style={{ top: '26%', left: '33%' }} />
+    <CovidActNowLabel style={{ top: '49.1%', left: '33%' }} />
+    <CovidActNowLabel style={{ top: '68.7%', left: '33.5%' }} />
 
     <svg id="infectionText" x="0px" y="0px" viewBox="0 0 509.5 704.3">
       <line className="st0" x1="99.3" y1="450.3" x2="509.5" y2="450.3" />
@@ -22,7 +22,7 @@ const InfectionText = () => (
             Current estimate of &lt;1 case
           </tspan>
           <tspan x="0" y="14" className="st3 st4 st5">
-            per 100,000 population per week
+            per 100,000 population per day
           </tspan>
         </text>
       </g>
@@ -32,7 +32,7 @@ const InfectionText = () => (
           transform="matrix(1 0 0 1 99.3093 117.3874)"
           className="st3 st4 st5"
         >
-          &lt;1% of tests conducted are positive
+          &lt;1% positive of tests conducted (daily)
         </text>
       </g>
       <line className="st1" x1="99.3" y1="285.4" x2="484" y2="285.4" />
@@ -48,7 +48,7 @@ const InfectionText = () => (
         transform="matrix(1 0 0 1 99.3093 309.9919)"
         className="st3 st4 st5"
       >
-        &lt;3% of tests conducted are positive
+        &lt;3% positive of tests conducted (daily)
       </text>
       <rect x="99.3" y="341" className="st2" width="296.9" height="30.1" />
       <text transform="matrix(1 0 0 1 99.3103 349.5114)">
@@ -73,7 +73,7 @@ const InfectionText = () => (
         transform="matrix(1 0 0 1 99.3093 472.9456)"
         className="st3 st4 st5"
       >
-        &lt;10% of tests conducted are positive
+        &lt;10% positive of tests conducted (daily)
       </text>
       <rect x="99.3" y="496.8" className="st2" width="296.9" height="30.8" />
       <text transform="matrix(1 0 0 1 99.3103 505.2734)">
