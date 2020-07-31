@@ -51,12 +51,30 @@ const AMPWrapper = props => {
 
         <div className={styles.ampLandingContent}>
           <div className={styles.ampHeader}>
-            <img src="/assets/images/ampLogo.svg" alt="COVID AMP Logo" />
-            <div className={styles.text}>
-              <h1>
-                <strong>COVID</strong> AMP
-              </h1>
-              <h2>ANALYSIS AND MAPPING OF POLICIES</h2>
+            <div className={styles.wrapHolder}>
+              <img src="/assets/images/ampLogo.svg" alt="COVID AMP Logo" />
+              <div className={styles.text}>
+                <h1>
+                  <strong>COVID</strong> AMP
+                </h1>
+                <h2>ANALYSIS AND MAPPING OF POLICIES</h2>
+              </div>
+            </div>
+            <div className={styles.links}>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://covidamp.org/about/doc"
+              >
+                Documentation
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://covidamp.org/about/amp"
+              >
+                About
+              </a>
             </div>
           </div>
           <div className={styles.ampDescription}>

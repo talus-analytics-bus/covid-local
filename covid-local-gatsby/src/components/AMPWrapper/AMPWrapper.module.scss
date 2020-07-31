@@ -117,12 +117,25 @@
         display: flex;
         align-items: center;
 
+        .wrapHolder {
+          display: flex;
+
+          @media (max-width: 550px) {
+            flex-direction: column;
+            align-items: flex-start;
+            img {
+              padding-bottom: 0.5rem;
+              width: 7rem;
+            }
+          }
+        }
+
         img {
           width: 6rem;
           margin-right: 1rem;
         }
 
-        @media (max-width: 435px) {
+        @media (max-width: 750px) {
           flex-direction: column;
           align-items: flex-start;
           img {
@@ -139,6 +152,32 @@
         h2 {
           font-weight: 300;
           font-size: 1.3rem;
+        }
+
+        .links {
+          margin-left: auto;
+          display: flex;
+
+          a {
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+            margin-left: 1rem;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+
+          @media (max-width: 700px) {
+            flex-direction: column;
+            margin-left: 0;
+            margin-top: 1rem;
+
+            a {
+              margin-left: 0;
+            }
+          }
         }
       }
 
