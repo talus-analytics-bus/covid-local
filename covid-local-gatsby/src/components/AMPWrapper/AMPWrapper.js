@@ -73,7 +73,7 @@ const AMPWrapper = props => {
                 rel="noopener noreferrer"
                 href="https://covidamp.org/about/amp"
               >
-                about
+                About
               </a>
             </div>
           </div>
