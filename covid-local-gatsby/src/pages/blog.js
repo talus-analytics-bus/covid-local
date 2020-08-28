@@ -53,7 +53,14 @@ const Blog = () => {
           <h1>
             <Link to={post.data.slug}>{post.data.title}</Link>
           </h1>
-          <h2>{post.data.Date}</h2>
+          <h2>
+            {new Date(post.data.Date).toLocaleString('default', {
+              month: 'short',
+              day: 'numeric',
+              year: 'numeric',
+              timeZone: 'UTC',
+            })}
+          </h2>
           <h3>{post.data.author}</h3>
           <p
             dangerouslySetInnerHTML={{
