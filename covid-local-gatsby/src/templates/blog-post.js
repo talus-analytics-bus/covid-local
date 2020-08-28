@@ -41,6 +41,8 @@ export default function Template({
       if (post.data.Additional_Images[index]) {
         blogTextWithImages =
           blogTextWithImages + text + blogPostImage(imageFileNames[index][1])
+      } else {
+        blogTextWithImages += text
       }
     })
   } else {
