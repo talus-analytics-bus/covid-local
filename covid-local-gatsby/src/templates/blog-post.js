@@ -41,6 +41,8 @@ export default function Template({
       if (post.data.Additional_Images[index]) {
         blogTextWithImages =
           blogTextWithImages + text + blogPostImage(imageFileNames[index][1])
+      } else {
+        blogTextWithImages += text
       }
     })
   } else {
@@ -62,7 +64,14 @@ export default function Template({
         <Link to="/blog/">&lt; back to all posts</Link>
         <header>
           <h1>{post.data.title}</h1>
-          <h2>{post.data.Date}</h2>
+          <h2>
+            {new Date(post.data.Date).toLocaleString('default', {
+              month: 'short',
+              day: 'numeric',
+              year: 'numeric',
+              timeZone: 'UTC',
+            })}
+          </h2>
         </header>
         <div className={styles.imageContainer}>
           <img src={post.data.Images[0].url} alt={post.data.title} />
