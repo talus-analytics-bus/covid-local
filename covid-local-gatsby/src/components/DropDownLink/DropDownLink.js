@@ -6,6 +6,7 @@ const NavDropdown = props => {
   const children = Children.toArray(props.children)
 
   const subMenuContent = useRef()
+  const subMenuOpener = useRef()
   const [subMenuOpen, setSubMenuOpen] = useState(false)
 
   const [subMenuHiderStyle, setSubMenuHiderStyle] = useState({
@@ -64,15 +65,21 @@ const NavDropdown = props => {
     // if (window.innerWidth > 1170) {
     if (subMenuOpen) {
       setSubMenuOpen(false)
-      setSubMenuHiderStyle({ height: 0, padding: '0 15px', marginLeft: -10 })
+      setSubMenuHiderStyle({
+        height: 0,
+        padding: '0 15px',
+        marginLeft: -10,
+        top: subMenuOpener.current.offsetHeight * 0.85,
+      })
     } else {
       setSubMenuOpen(true)
       setSubMenuHiderStyle({
         height: subMenuContent.current.offsetHeight + 30,
         padding: 15,
         // paddingTop: 3,
-        marginTop: -12,
+        // marginTop: -12,
         marginLeft: -10,
+        top: subMenuOpener.current.offsetHeight * 0.85,
       })
     }
     // }
@@ -81,9 +88,11 @@ const NavDropdown = props => {
   return (
     <div
       className={styles.subMenu + ' ' + props.className}
+      style={props.style}
       onMouseEnter={toggleOnMouse}
       onMouseLeave={toggleSubmenu}
       onTouchStart={toggleOnTouch}
+      ref={subMenuOpener}
     >
       {children[0]}
       <div className={styles.subMenuHider} style={subMenuHiderStyle}>

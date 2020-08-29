@@ -454,7 +454,7 @@
 
 .guide a.introduction-criteria,
 .guide a.introduction-feedback,
-.guide a.introduction-download {
+.guide .introduction-download {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -476,7 +476,7 @@
 
 .guide a.introduction-criteria > span,
 .guide a.introduction-feedback > span,
-.guide a.introduction-download > span {
+.guide .introduction-download > span {
   flex-grow: 1;
   min-width: 8.25rem;
 }
@@ -487,12 +487,12 @@
   margin-bottom: 1.25rem;
 }
 
-.guide a.introduction-download {
+.guide .introduction-download {
   background-color: rgb(51, 119, 107);
   margin-bottom: 1.25rem;
 }
 
-.guide a.introduction-download:last-of-type {
+.guide .introduction-download:last-child {
   margin-bottom: 0;
 }
 
@@ -503,14 +503,14 @@
 
 .guide a.introduction-criteria svg,
 .guide a.introduction-feedback svg,
-.guide a.introduction-download svg {
+.guide .introduction-download svg {
   flex-shrink: 0;
   height: 3rem;
   margin-left: 1rem;
   /*margin-bottom: -.5rem;*/
 }
 
-.guide a.introduction-download:hover {
+.guide .introduction-download:hover {
   background-color: rgba(64, 147, 133);
   transition: 0.25s background-color ease;
 }
@@ -537,7 +537,7 @@
 
   .guide a.introduction-criteria,
   .guide a.introduction-feedback,
-  .guide a.introduction-download {
+  .guide .introduction-download {
     /* margin: -1rem -1rem -1rem 2rem; */
     margin-bottom: 1rem;
     /*padding: 0rem 1rem; */
@@ -547,13 +547,13 @@
   }
 
   .guide a.introduction-criteria:last-of-type,
-  .guide a.introduction-download:last-of-type,
+  .guide .introduction-download:last-child,
   .guide a.introduction-feedback:last-of-type {
     margin-right: 0;
     margin-bottom: 0;
   }
 
-  .guide a.introduction-download {
+  .guide .introduction-download {
     margin-right: 1rem;
   }
 }
@@ -570,7 +570,7 @@
 
   .guide a.introduction-criteria,
   .guide a.introduction-feedback,
-  .guide a.introduction-download {
+  .guide .introduction-download {
     /* margin: 2rem -1rem -1rem -1rem; */
     margin: 0;
     margin-bottom: 1rem;
@@ -582,13 +582,13 @@
     margin-bottom: 1rem;
   }
 
-  .guide a.introduction-download:last-of-type {
+  .guide .introduction-download:last-child {
     margin-bottom: 0;
   }
 
   .guide a.introduction-criteria svg,
   .guide a.introduction-feedback svg,
-  .guide a.introduction-download svg {
+  .guide .introduction-download svg {
     margin-bottom: 0rem;
   }
 }
