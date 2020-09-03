@@ -244,6 +244,16 @@ const LandingPage = props => {
                   alt="CNBC Logo"
                 />
               </OutboundLink>
+              <OutboundLink
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://www.npr.org/sections/health-shots/2020/07/01/885263658/green-yellow-orange-or-red-this-new-tool-shows-covid-19-risk-in-your-county"
+              >
+                <img
+                  src="/assets/images/media-logos/NPR.svg"
+                  alt="NBC Dateline Logo"
+                />
+              </OutboundLink>
             </div>
           </div>
         </main>
