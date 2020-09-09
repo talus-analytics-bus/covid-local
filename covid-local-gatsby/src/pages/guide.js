@@ -88,6 +88,7 @@ const HomePage = () => {
       />
 
       <div className="guide">
+        <nav className="document-nav"></nav>
         <header className="introduction-header">
           <div className="introduction">
             <div className="left-col">

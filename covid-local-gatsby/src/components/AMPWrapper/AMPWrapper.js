@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import AmpNav from '../AmpNav/AmpNav'
+// import AmpNav from '../AmpNav/AmpNav'
 
 import styles from './AMPWrapper.module.scss'
 
@@ -9,7 +9,7 @@ const AMPWrapper = props => {
   const closeAmp = e => {
     e.preventDefault()
     props.setAnimationStyle({
-      transform: 'translateX(0vw)',
+      // transform: 'translateX(0vw)',
       overflow: 'visible',
     })
 
@@ -20,7 +20,7 @@ const AMPWrapper = props => {
 
   const landingStyle = {}
 
-  if (props.animationStyle.transform === 'translateX(0vw)') {
+  if (!props.animationStyle.transform) {
     landingStyle['overflow'] = 'hidden'
     landingStyle['height'] = '50vh'
   }
