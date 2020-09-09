@@ -438,7 +438,8 @@ const LmicGuide = () => {
                     {translations.map(file => (
                       <li key={file.name}>
                         <a
-                          href={`COVID-19/assets/documents/translations/${file.name}`}
+                          href={`/assets/documents/translations/${file.name}`}
+                          target="_blank"
                         >
                           {file.language}
                         </a>
