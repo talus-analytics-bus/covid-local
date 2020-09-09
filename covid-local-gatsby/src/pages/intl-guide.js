@@ -4,7 +4,8 @@ import { useStaticQuery, graphql, Link } from 'gatsby'
 import Layout from '../components/Layout/Layout'
 // import BlueExpandBox from '../components/BlueExpandBox/BlueExpandBox'
 import Guide from '../components/Guide/Guide'
-import DropDownLink from '../components/DropDownLink/DropDownLink'
+// import DropDownLink from '../components/DropDownLink/DropDownLink'
+import { trackCustomEvent } from 'gatsby-plugin-google-analytics'
 
 import styles from '../styles/intlGuide.module.scss'
 
@@ -13,24 +14,24 @@ import '../styles/guideStyle.css'
 import '../styles/intlGuideStyleOverrides.css'
 // import guideHeaderContent from '../components/Guide/GuideHeaderContent.html'
 
-const translations = [
-  { language: 'Amharic', name: 'COVID-19 Frontline Guide Amharic.pdf' },
-  { language: 'Arabic', name: 'COVID-19 Frontline Guide Arabic.pdf' },
-  { language: 'French', name: 'COVID-19 Frontline Guide French.pdf' },
-  { language: 'Hindi', name: 'COVID-19 Frontline Guide Hindi.pdf' },
-  { language: 'Korean', name: 'COVID-19 Frontline Guide Korean.pdf' },
-  { language: 'Kurdish', name: 'COVID-19 Frontline Guide Kurdish.pdf' },
-  { language: 'Nepali', name: 'COVID-19 Frontline Guide Nepali.pdf' },
-  {
-    language: 'Simplified Chinese',
-    name: 'COVID-19 Frontline Guide Simplified Chinese.pdf',
-  },
-  { language: 'Somali', name: 'COVID-19 Frontline Guide Somali.pdf' },
-  { language: 'Spanish', name: 'COVID-19 Frontline Guide Spanish.pdf' },
-  { language: 'Tagalog', name: 'COVID-19 Frontline Guide Tagalog.pdf' },
-  { language: 'Urdu', name: 'COVID-19 Frontline Guide Urdu.pdf' },
-  { language: 'Vietnamese', name: 'COVID-19 Frontline Guide Vietnamese.pdf' },
-]
+// const translations = [
+//   { language: 'Amharic', name: 'COVID-19 Frontline Guide Amharic.pdf' },
+//   { language: 'Arabic', name: 'COVID-19 Frontline Guide Arabic.pdf' },
+//   { language: 'French', name: 'COVID-19 Frontline Guide French.pdf' },
+//   { language: 'Hindi', name: 'COVID-19 Frontline Guide Hindi.pdf' },
+//   { language: 'Korean', name: 'COVID-19 Frontline Guide Korean.pdf' },
+//   { language: 'Kurdish', name: 'COVID-19 Frontline Guide Kurdish.pdf' },
+//   { language: 'Nepali', name: 'COVID-19 Frontline Guide Nepali.pdf' },
+//   {
+//     language: 'Simplified Chinese',
+//     name: 'COVID-19 Frontline Guide Simplified Chinese.pdf',
+//   },
+//   { language: 'Somali', name: 'COVID-19 Frontline Guide Somali.pdf' },
+//   { language: 'Spanish', name: 'COVID-19 Frontline Guide Spanish.pdf' },
+//   { language: 'Tagalog', name: 'COVID-19 Frontline Guide Tagalog.pdf' },
+//   { language: 'Urdu', name: 'COVID-19 Frontline Guide Urdu.pdf' },
+//   { language: 'Vietnamese', name: 'COVID-19 Frontline Guide Vietnamese.pdf' },
+// ]
 
 const LmicGuide = () => {
   React.useEffect(() => {
@@ -400,13 +401,21 @@ const LmicGuide = () => {
                 </a>
               </div>
               <div>
-                <DropDownLink
-                  // target="_blank"
-                  // href="/assets/documents/COVID16 International Guide for Local Decision-Makers.pdf"
+                <a
+                  target="_blank"
+                  href="/assets/documents/COVID16 International Guide for Local Decision-Makers.pdf"
                   className={
-                    'introduction-download' + ' ' + styles.translationList
+                    'introduction-download'
+                    // + ' ' + styles.translationList
                   }
-                  // onclick="ga('send', 'event', 'Document Download', 'Guide Download', 'Guide Download');"
+                  // onClick="ga('send', 'event', 'Document Download', 'Guide Download', 'Guide Download');"
+                  onClick={() =>
+                    trackCustomEvent({
+                      category: 'Document Download',
+                      action: 'Guide Download',
+                      label: 'International Guide Download',
+                    })
+                  }
                   style={{ backgroundColor: '#F27329' }}
                 >
                   <>
@@ -424,29 +433,29 @@ const LmicGuide = () => {
                       />
                     </svg>
                   </>
-                  <h4>Download English:</h4>
-                  <ul>
-                    <li>
-                      <a href="/assets/documents/COVID16 International Guide for Local Decision-Makers.pdf">
-                        English
-                      </a>
-                    </li>
-                  </ul>
-
-                  <h4>Choose Language:</h4>
-                  <ul>
-                    {translations.map(file => (
-                      <li key={file.name}>
-                        <a
-                          href={`/assets/documents/translations/${file.name}`}
-                          target="_blank"
-                        >
-                          {file.language}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </DropDownLink>
+                  {/*                   <h4>Download English:</h4> */}
+                  {/*                   <ul> */}
+                  {/*                     <li> */}
+                  {/*                       <a href="/assets/documents/COVID16 International Guide for Local Decision-Makers.pdf"> */}
+                  {/*                         English */}
+                  {/*                       </a> */}
+                  {/*                     </li> */}
+                  {/*                   </ul> */}
+                  {/*  */}
+                  {/*                   <h4>Choose Language:</h4> */}
+                  {/*                   <ul> */}
+                  {/*                     {translations.map(file => ( */}
+                  {/*                       <li key={file.name}> */}
+                  {/*                         <a */}
+                  {/*                           href={`/assets/documents/translations/${file.name}`} */}
+                  {/*                           target="_blank" */}
+                  {/*                         > */}
+                  {/*                           {file.language} */}
+                  {/*                         </a> */}
+                  {/*                       </li> */}
+                  {/*                     ))} */}
+                  {/*                   </ul> */}
+                </a>
                 <a
                   href="/contact/"
                   className="introduction-download"
