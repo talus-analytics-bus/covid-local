@@ -309,7 +309,7 @@ const HomePage = () => {
                   <h4>Download English:</h4>
                   <ul>
                     <li>
-                      <a href="/assets/documents/COVID16 International Guide for Local Decision-Makers.pdf">
+                      <a href="/assets/documents/COVID19 Frontline Guide for Local Decision Makers.pdf">
                         English
                       </a>
                     </li>
