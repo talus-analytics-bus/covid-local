@@ -15,7 +15,7 @@ import '../styles/intlGuideStyleOverrides.css'
 
 const translations = [
   { language: 'Amharic', name: 'COVID-19 Frontline Guide Amharic.pdf' },
-  { language: 'Arabic', name: 'COVID-19 Frontline Guide Arabic-V2.pdf' },
+  { language: 'Arabic', name: 'COVID-19 Frontline Guide Arabic.pdf' },
   { language: 'French', name: 'COVID-19 Frontline Guide French.pdf' },
   { language: 'Hindi', name: 'COVID-19 Frontline Guide Hindi.pdf' },
   { language: 'Korean', name: 'COVID-19 Frontline Guide Korean.pdf' },
