@@ -8,7 +8,7 @@ import './Fonts.css'
 
 const Layout = props => {
   let initialPosition = {
-    transform: 'translateX(0vw)',
+    // transform: 'translateX(0vw)',
   }
   if (props.ampOpen) {
     initialPosition = {
