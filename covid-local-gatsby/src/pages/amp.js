@@ -29,7 +29,7 @@ const AmpPage = () => {
         />
         <meta
           property="og:image"
-          content={'/images/amp-screenshots/global-policy-maps.png'}
+          content={'/assets/images/amp-screenshots/global-policy-maps.png'}
         />
       </Helmet>
       <LandingPage ampOpen={true} />
