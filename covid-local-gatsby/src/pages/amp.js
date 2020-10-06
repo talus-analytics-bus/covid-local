@@ -29,7 +29,17 @@ const AmpPage = () => {
         />
         <meta
           property="og:image"
+          content={'/assets/images/amp-screenshots/global-policy-maps.png'}
+        />
+        <meta
+          property="twitter:image"
           content={'/images/amp-screenshots/global-policy-maps.png'}
+        />
+        <meta
+          property="twitter:description"
+          content={
+            'A tool for exploring, analyzing, and mapping COVID-19 policies enacted around the globe.'
+          }
         />
       </Helmet>
       <LandingPage ampOpen={true} />
