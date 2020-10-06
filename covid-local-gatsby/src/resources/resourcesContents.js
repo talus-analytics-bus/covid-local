@@ -62,6 +62,17 @@ const resourcesContents = [
     link: 'https://www.esri.com/en-us/disaster-response/overview',
   },
   {
+    name: 'Homelessness During the Pandemic: What to Do and How to Help',
+    description:
+      'Since the outbreak, difficult conditions of homelessness in our country have increased. People that are experiencing unstable housing, food insecurity, and poverty have continued to struggle with limited access to resources. We created a guide that highlights the increased vulnerability of homelessness for families and children and how to support underprivileged populations during these unprecedented times.',
+    organization: 'MyMove',
+    topic: 'Local Guidance',
+    phase: 'Response',
+    image: 'mymove.jpg',
+    link:
+      'https://www.mymove.com/moving/covid-19/homelessness-during-coronavirus/',
+  },
+  {
     name: 'Emergency Operations Center Assessment Checklist',
     description:
       'This checklist outlines critical elements needed when state and local governments perform assessments of existing Emergency Operations Centers.',
