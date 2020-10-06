@@ -67,6 +67,24 @@ const LandingPage = props => {
             name: 'description',
             content: `The COVID-19 pandemic is causing significant disruptions to cities and local communities globally. Given these challenges, we have developed this guide to provide a decision framework for local leaders to think through what will need to be done to help reduce the impact of the outbreak, both by reducing spread and decreasing the number of cases, but also in responding and supporting communities effectively.`,
           },
+          {
+            name: 'og:description',
+            content:
+              'A tool for exploring, analyzing, and mapping COVID-19 policies enacted around the globe.',
+          },
+          {
+            name: 'twitter:description',
+            content:
+              'A tool for exploring, analyzing, and mapping COVID-19 policies enacted around the globe.',
+          },
+          {
+            name: 'twitter:image',
+            content: '/assets/images/metrics-screenshot.png',
+          },
+          {
+            name: 'og:image',
+            content: '/assets/images/metrics-screenshot.png',
+          },
         ]}
       />
       <div className={styles.gradient}>
