@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap');
+
 .animationCrop {
   overflow-x: hidden;
   // overflow-y: scroll;
@@ -229,14 +231,30 @@
         }
 
         span {
-          background-color: #124561;
-          border: 1px solid #092634;
-          border-radius: 3px;
+          border: 2px solid #023f88;
+          border-radius: 5px;
+          font-family: 'Open Sans', sans-serif;
+          font-size: 16px;
+          font-weight: 600;
+          padding: 10px 30px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: linear-gradient(
+            180deg,
+            rgba(2, 63, 136, 0.85) 0%,
+            #023f88 100%
+          );
           color: white;
-          padding: 0.5em 1em;
-          font-size: 1.1rem;
-          margin-bottom: 2rem;
-          text-decoration: none;
+          &:hover {
+            background: white;
+            color: #023f88;
+          }
+          &:active {
+            box-shadow: 5px 5px 15px 0 #b3b3b3;
+            -webkit-box-shadow: 5px 5px 15px 0 #b3b3b3;
+          }
+          cursor: pointer;
         }
       }
 
