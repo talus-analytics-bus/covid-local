@@ -124,8 +124,8 @@ const AMPWrapper = props => {
             </div>
           </div>
         </div>
-        <div class={styles.footer}>
-          <div class={styles.content}>
+        <div className={styles.footer}>
+          <div className={styles.content}>
             <a target="_blank" href="https://ghssidea.org">
               <img
                 src="assets/images/logo-title.png"
@@ -138,11 +138,16 @@ const AMPWrapper = props => {
                 alt="Georgetown University Center for Global Health Science and Security"
               />
             </a>
-            <a target="_blank" href="http://talusanalytics.com/">
+            <a
+              target="_blank"
+              href="http://talusanalytics.com/"
+              className={styles.talusLogo}
+            >
               <img
                 src="assets/images/logo-talus.png"
                 alt="Talus Analytics, LLC"
               />
+              <div className={styles.builtBy}>Built by</div>
             </a>
             <a target="_blank" href="https://www.nti.org/">
               <img
