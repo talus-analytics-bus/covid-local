@@ -52,13 +52,7 @@ const AMPWrapper = props => {
         <div className={styles.ampLandingContent}>
           <div className={styles.ampHeader}>
             <div className={styles.wrapHolder}>
-              <img src="/assets/images/ampLogo.svg" alt="COVID AMP Logo" />
-              <div className={styles.text}>
-                <h1>
-                  <strong>COVID</strong> AMP
-                </h1>
-                <h2>ANALYSIS AND MAPPING OF POLICIES</h2>
-              </div>
+              <img src="/assets/images/amp.png" alt="COVID AMP Logo" />
             </div>
             <div className={styles.links}>
               <a
@@ -128,6 +122,39 @@ const AMPWrapper = props => {
                 <span>Access data</span>
               </a>
             </div>
+          </div>
+        </div>
+        <div className={styles.footer}>
+          <div className={styles.content}>
+            <a target="_blank" href="https://ghssidea.org">
+              <img
+                src="/assets/images/logo-title.png"
+                alt="International Disease and Events Analysis"
+              />
+            </a>
+            <a target="_blank" href="https://ghss.georgetown.edu/">
+              <img
+                src="/assets/images/logo-georgetown.png"
+                alt="Georgetown University Center for Global Health Science and Security"
+              />
+            </a>
+            <a
+              target="_blank"
+              href="http://talusanalytics.com/"
+              className={styles.talusLogo}
+            >
+              <img
+                src="/assets/images/logo-talus.png"
+                alt="Talus Analytics, LLC"
+              />
+              <div className={styles.builtBy}>Built by</div>
+            </a>
+            <a target="_blank" href="https://www.nti.org/">
+              <img
+                src="/assets/images/nti.png"
+                alt="Nuclear Threat Initiative"
+              />
+            </a>
           </div>
         </div>
       </div>
