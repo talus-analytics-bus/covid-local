@@ -16,10 +16,8 @@ export default function Template({
   const { airtable: post } = data // data.markdownRemark holds your post data
 
   const blogPostImage = filename => {
-    console.log(post.data.Additional_Images.localFiles)
-
     const url = post.data.Additional_Images.localFiles.find(
-      img => img.name === filename.split('.')[0].replace(/ /g, '')
+      img => img.name === filename.split('.')[0].replace(/[ ()]/g, '')
     ).publicURL
 
     return ReactDOMServer.renderToString(
@@ -34,7 +32,7 @@ export default function Template({
   let blogTextWithImages = ''
 
   if (
-    post.data.Additional_Images.localFiles &&
+    post.data.Additional_Images &&
     post.data.Additional_Images.localFiles.length > 0
   ) {
     const textSections = post.data.Blog_Text.split(/\[IMAGE: ".*"\]/g)
