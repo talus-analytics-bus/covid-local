@@ -50,6 +50,10 @@ module.exports = {
           {
             baseId: `appolHuog4LD1xAjJ`,
             tableName: `Table 1`,
+            mapping: {
+              Images: `fileNode`,
+              Additional_Images: `fileNode`,
+            },
           },
           {
             baseId: 'appc2oaizsxQaNADz',

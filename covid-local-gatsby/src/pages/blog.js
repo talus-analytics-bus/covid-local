@@ -24,7 +24,9 @@ const Blog = () => {
             data {
               Blog_Text
               Images {
-                url
+                localFiles {
+                  publicURL
+                }
               }
               author
               Category
@@ -67,7 +69,10 @@ const Blog = () => {
               __html:
                 renderToString(
                   <Link to={post.data.slug}>
-                    <img src={post.data.Images[0].url} alt={post.data.title} />
+                    <img
+                      src={post.data.Images.localFiles[0].publicURL}
+                      alt={post.data.title}
+                    />
                   </Link>
                 ) +
                 unified()
