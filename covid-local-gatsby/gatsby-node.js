@@ -15,16 +15,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       allAirtable(filter: { data: { publishing_status: { eq: "Publish" } } }) {
         edges {
           node {
-            id
             data {
-              Blog_Text
-              Images {
-                url
-              }
-              author
-              Category
-              Date
-              title
               slug
             }
           }

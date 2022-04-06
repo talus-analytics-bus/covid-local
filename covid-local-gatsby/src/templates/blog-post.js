@@ -16,9 +16,9 @@ export default function Template({
   const { airtable: post } = data // data.markdownRemark holds your post data
 
   const blogPostImage = filename => {
-    const url = post.data.Additional_Images.find(
-      img => img.filename === filename
-    ).url
+    const url = post.data.Additional_Images.localFiles.find(
+      img => img.name === filename.split('.')[0].replace(/[ ()]/g, '')
+    ).publicURL
 
     return ReactDOMServer.renderToString(
       <img
@@ -31,14 +31,17 @@ export default function Template({
 
   let blogTextWithImages = ''
 
-  if (post.data.Additional_Images && post.data.Additional_Images.length > 0) {
+  if (
+    post.data.Additional_Images &&
+    post.data.Additional_Images.localFiles.length > 0
+  ) {
     const textSections = post.data.Blog_Text.split(/\[IMAGE: ".*"\]/g)
     const imageFileNames = [
       ...post.data.Blog_Text.matchAll(/\[IMAGE: "(.*)"\]/g),
     ]
 
     textSections.forEach((text, index) => {
-      if (post.data.Additional_Images[index]) {
+      if (post.data.Additional_Images.localFiles[index]) {
         blogTextWithImages =
           blogTextWithImages + text + blogPostImage(imageFileNames[index][1])
       } else {
@@ -74,7 +77,10 @@ export default function Template({
           </h2>
         </header>
         <div className={styles.imageContainer}>
-          <img src={post.data.Images[0].url} alt={post.data.title} />
+          <img
+            src={post.data.Images.localFiles[0].publicURL}
+            alt={post.data.title}
+          />
         </div>
 
         <h3>{post.data.author}</h3>
@@ -99,11 +105,15 @@ export const pageQuery = graphql`
         Blog_Text
         Date
         Images {
-          url
+          localFiles {
+            publicURL
+          }
         }
         Additional_Images {
-          filename
-          url
+          localFiles {
+            name
+            publicURL
+          }
         }
         slug
         title
