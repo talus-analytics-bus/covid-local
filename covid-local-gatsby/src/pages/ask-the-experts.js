@@ -105,8 +105,8 @@ const Reachback = () => {
 
       <section className={styles.main}>
         <p>
-          As the COVID-19 response continues, the team behind COVID-19 Frontline
-          Guide for Local Decision-Makers has received a large number of
+          While the COVID-19 response continued, the team behind COVID-19
+          Frontline Guide for Local Decision-Makers received a large number of
           requests for information, questions, and recommendations for
           additional guidance. While we welcome feedback (see the Contact Us
           link in the upper right!), we also recognize that there are experts

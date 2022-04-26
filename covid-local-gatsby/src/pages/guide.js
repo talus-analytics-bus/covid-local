@@ -199,12 +199,12 @@ const HomePage = () => {
 
               <h1>A Frontline Guide for Local Decision-Makers</h1>
               <p>
-                The COVID-19 pandemic is creating significant disruption to
-                daily life in cities and communities around the world. This
-                guide provides an initial strategic framework for state, city,
-                and local leaders as they begin planning what will need to be
-                done to reduce the impact of the outbreak in the near term. The
-                guide and checklists were developed by{' '}
+                The COVID-19 pandemic continues to create significant disruption
+                to daily life in cities and communities around the world. This
+                guide, developed in Spring 2020, provides an initial strategic
+                framework for state, city, and local leaders as they plan what
+                will need to be done to reduce the impact of the outbreak in the
+                near term. The guide and checklists were developed by{' '}
                 <a href="/about/">
                   a team of deeply experienced experts and former public health
                   officials
@@ -361,7 +361,7 @@ const HomePage = () => {
                 <p>
                   COVID-19, caused by severe acute respiratory syndrome
                   coronavirus 2 (SARS-CoV-2), can spread explosively if not
-                  rapidly addressed. Different cities will face differing risk
+                  rapidly addressed. Different cities face differing risk
                   profiles and require tailored mitigation and control
                   strategies, depending on the trajectory of the outbreak in any
                   given location. This guide is intended to provide leaders and
@@ -512,13 +512,12 @@ const HomePage = () => {
                 <p>
                   Different actions and approaches should be triggered as a
                   community moves along these stages of the outbreak. Knowing
-                  which stage a community is currently experiencing will be
-                  challenging early in an ongoing outbreak, especially if
-                  diagnostic testing is not widely available. Outbreaks develop
-                  quickly and information will be imperfect or incomplete.
-                  Decision-making may need to progress on a no-regrets basis
-                  before having clear evidence of which stage a community is
-                  experiencing.
+                  which stage a community is currently experiencing is
+                  challenging early in an outbreak, especially if diagnostic
+                  testing is not widely available. Outbreaks develop quickly and
+                  information will be imperfect or incomplete. Decision-making
+                  may need to progress on a no-regrets basis before having clear
+                  evidence of which stage a community is experiencing.
                 </p>
                 <p>
                   These stages are specific to this guide and not in reference

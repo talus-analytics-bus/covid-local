@@ -120,8 +120,8 @@ const MetricsPage = () => {
           </div>
         </div>
         <p>
-          Local leaders across the United States are working to bolster public
-          health capacity and take some initial steps to reopen — protecting
+          Local leaders across the United States have been working to bolster
+          public health capacity and reopen and stay open safely — protecting
           their communities from the disease and supporting economic recovery
           and growth. COVID-Local provides decision-makers with easy-to-use
           metrics for a phased re-opening strategy. These metrics can be used to

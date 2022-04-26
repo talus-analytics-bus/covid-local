@@ -245,10 +245,10 @@ const Resources = props => {
 
       <section className={styles.main}>
         <p>
-          These resources are a curated set of information sources and tools
-          designed to support and inform operational decisions during the
-          COVID-19 response effort. All are publicly-accessible and free to
-          access.
+          These resources, curated in Spring of 2020, represent a set of
+          information sources and tools designed to support and inform
+          operational decisions during the COVID-19 response effort. All are
+          publicly-accessible and free to access.
         </p>
         <p>
           Resources are tagged by topic and phase of response. Use the filters

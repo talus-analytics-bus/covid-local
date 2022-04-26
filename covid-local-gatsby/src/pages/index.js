@@ -97,13 +97,13 @@ const LandingPage = props => {
               </h1>
               <h2>A Frontline Guide for Local Decision-Makers</h2>
               <p>
-                The COVID-19 pandemic is causing significant disruptions to
+                The COVID-19 pandemic has caused significant disruptions to
                 cities and local communities globally. Given these challenges,
-                we have developed this guide to provide a decision framework for
-                local leaders to think through what will need to be done to help
-                reduce the impact of the outbreak, both by reducing spread and
-                decreasing the number of cases, but also in responding and
-                supporting communities effectively.
+                in March 2020 we developed this guide to provide a decision
+                framework for local leaders to think through what needs to be
+                done to help reduce the impact of the outbreak, both by reducing
+                spread and decreasing the number of cases, but also in
+                responding and supporting communities effectively.
               </p>
               <div className={styles.btnrow}>
                 <DropDownLink className={styles.dropDownLink}>
@@ -133,7 +133,10 @@ const LandingPage = props => {
             </div>
             <div className={styles.right}>
               <h2>Metrics for Phased Reopening</h2>
-              <p>To help leaders plan for phased re-opening</p>
+              <p>
+                Developed in Spring 2020 to help local level leaders plan for
+                phased reopening as well as when to reinstitute control measures
+              </p>
               <img
                 src="/assets/images/metrics-screenshot.png"
                 alt="Metrics for Phased Reopening Screenshot"

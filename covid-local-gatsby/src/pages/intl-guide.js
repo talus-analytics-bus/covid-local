@@ -339,6 +339,13 @@ const LmicGuide = () => {
               </svg>
               <h1>The International Guide for Local Decision-Makers</h1>
               <p>
+                <strong>
+                  *This guide was developed at the beginning of 2020 and in the
+                  early stages of the COVID-19 pandemic, before any treatments
+                  or vaccines were available.
+                </strong>
+              </p>
+              <p>
                 The COVID-19 pandemic is disrupting daily life in communities
                 around the world. This guide provides an initial strategic
                 framework to reduce the impact of the outbreak in the near term,
