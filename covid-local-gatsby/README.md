@@ -2,6 +2,12 @@
 
 The build process now requires an API key from any account with permission to access the COVID Local Airtable bases, set as an environment variable named `AIRTABLE_API_KEY`.
 
+## Airtable bases
+
+The COVID Local Airtable bases are as follows:
+
+- [COVID Local Blog](https://airtable.com/appolHuog4LD1xAjJ/tblpVYVKO1H0B7McP/viwJBt038PONhdCvZ?blocks=hide). Contains blog post content.
+
 ## COVID-Local Full site build
 
 COVID-Local started as a single static page, with a single basic JS file.
