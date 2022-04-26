@@ -1,19 +1,14 @@
+# Note about development server:
 
-# Note about development server: 
-The build process now requires an API key from any account with permission to access the COVID Local Airtable bases, set as an environment variable named `AIRTABLE_API_KEY`. 
+The build process now requires an API key from any account with permission to access the COVID Local Airtable bases, set as an environment variable named `AIRTABLE_API_KEY`.
 
-## COVID-Local Full site build 
+## COVID-Local Full site build
 
-COVID-Local started as a single static page, with a single basic JS file. 
+COVID-Local started as a single static page, with a single basic JS file.
 
 The original HTML, CSS, and JS are now imported and bundled by the `pages/index.js` component, meaning that commands such as `gatsby develop` work properly again and deployment is simplified because all files in the `/public/` directory except for each default object contain correct version-controlled hash names (it is still necessary to invalidate all `index.html` files during deployment).
 
 All code, including the JS for the guide page, is now built during the `gatsby build` command, eliminating the previous two-step process for modifying that code.
-
-
-
-
-
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
