@@ -48,8 +48,9 @@ module.exports = {
         concurrency: 5, // default, see using markdown and attachments for more information
         tables: [
           {
-            baseId: `appolHuog4LD1xAjJ`,
-            tableName: `Table 1`,
+            // baseId: `appolHuog4LD1xAjJ`,
+            baseId: 'appc2oaizsxQaNADz',
+            tableName: `Blog`,
             mapping: {
               Images: `fileNode`,
               Additional_Images: `fileNode`,

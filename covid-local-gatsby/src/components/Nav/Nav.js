@@ -36,17 +36,17 @@ const Nav = props => {
     }
   }
 
-  const onClickAmp = event => {
-    event.preventDefault()
-    console.log('click amp')
-    props.setAnimationStyle({
-      transform: 'translateX(-100vw)',
-      overflow: 'hidden',
-      height: '100vh',
-    })
+  // const onClickAmp = event => {
+  //   event.preventDefault()
+  //   console.log('click amp')
+  //   props.setAnimationStyle({
+  //     transform: 'translateX(-100vw)',
+  //     overflow: 'hidden',
+  //     height: '100vh',
+  //   })
 
-    window.history.pushState({}, '', '/amp')
-  }
+  //   window.history.pushState({}, '', '/amp')
+  // }
 
   return (
     <nav className={styles.mainNav}>
@@ -106,13 +106,19 @@ const Nav = props => {
               </Link>
             </li>
             <li>
-              <button className={styles.ampButton} onClick={onClickAmp}>
+              {
+                // <button className={styles.ampButton} onClick={onClickAmp}>
+              }
+              <a className={styles.ampButton} href="https://covidamp.org">
                 <img
                   src="/assets/images/idea-branded-amp-logo.svg"
                   alt="COVID AMP"
                 />
                 COVID AMP
-              </button>
+              </a>
+              {
+                // </button>
+              }
             </li>
           </ul>
         </div>

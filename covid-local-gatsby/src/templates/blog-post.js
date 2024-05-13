@@ -10,6 +10,8 @@ import Layout from '../components/Layout/Layout'
 
 import styles from '../styles/blog-post.module.scss'
 
+const simplifyName = name => name.split('.')[0].replace(/[ ()]/g, '')
+
 export default function Template({
   data, // this prop will be injected by the GraphQL query we'll write in a bit
 }) {
@@ -17,7 +19,7 @@ export default function Template({
 
   const blogPostImage = filename => {
     const url = post.data.Additional_Images.localFiles.find(
-      img => img.name === filename.split('.')[0].replace(/[ ()]/g, '')
+      img => simplifyName(img.name) === simplifyName(filename)
     ).publicURL
 
     return ReactDOMServer.renderToString(
